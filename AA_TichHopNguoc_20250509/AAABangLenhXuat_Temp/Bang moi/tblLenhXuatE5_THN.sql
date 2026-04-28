@@ -1,0 +1,42 @@
+
+CREATE TABLE [dbo].[tblLenhXuatE5_THN](	[MaLenh] [nvarchar](4) NULL,[NgayXuat] [datetime] NOT NULL,[SoLenh] [nvarchar](10) NOT NULL,
+	[MaDonVi] [nvarchar](4) NULL,[MaNguon] [nvarchar](10) NULL,[MaKho] [nvarchar](4) NULL,[MaVanChuyen] [nvarchar](10) NULL,
+	[MaPhuongTien] [nvarchar](10) NULL,[NguoiVanChuyen] [nvarchar](100) NULL,[MaPhuongThucBan] [nvarchar](2) NULL,
+	[MaPhuongThucXuat] [nvarchar](3) NULL,[MaKhachHang] [nvarchar](10) NULL,[LoaiPhieu] [nvarchar](10) NULL,
+	[Niem] [nvarchar](300) NULL,[LuongGiamDinh] [nvarchar](50) NULL,[NhietDoTaiTau] [nvarchar](5) NULL,
+	[GhiChu] [nvarchar](1000) NULL,[NgayHieuLuc] [nvarchar](10) NULL,[Status] [char](2) NULL,
+	[Number] [int] NULL,[Createby] [nvarchar](30) NULL,[UpdatedBy] [nvarchar](30) NULL,[CreateDate] [datetime] NULL,
+	[UpdateDate] [datetime] NULL,[SoLenhSAP] [nvarchar](10) NULL,[Client] [nvarchar](50) NULL,[HTTG] [nvarchar](2) NULL,
+	[Approved] [nvarchar](2) NULL,[User_Approve] [nvarchar](50) NULL,[Date_Approve] [datetime] NULL,
+	[EditApprove] [nvarchar](2) NULL,[NhaCungCap] [nvarchar](500) NULL,[AppDesc] [nvarchar](1000) NULL,
+	[AppN30] [varchar](1) NULL,[AppN30Date] [datetime] NULL,[AppN30User] [nvarchar](200) NULL,
+	[QCI_KG] [decimal](18, 2) NULL,[QCI_NhietDo] [decimal](5, 2) NULL,[Slog] [varchar](100) NULL,
+	[NgayHetHieuLuc] [datetime] NULL,[NgayTichKe] [datetime] NULL,[STO] [nvarchar](250) NULL,
+	[NguoiDaiDien] [nvarchar](250) NULL,[DonViCungCapVanTai] [nvarchar](250) NULL,[UserTichKe] [nvarchar](250) NULL,
+	[DiemTraHang] [nvarchar](500) NULL,[Tax] [decimal](3, 0) NULL,[PaymentMethod] [varchar](1) NULL,
+	[Term] [varchar](4) NULL,[MaKhoNhap] [nvarchar](4) NULL,[SoHopDong] [varchar](10) NULL,[NgayHopDong] [datetime] NULL,
+	[TyGia] [decimal](10, 2) NULL,[SoTKHQNhap] [varchar](20) NULL,[SoTKHQXuat] [varchar](20) NULL,
+	[SelfShipping] [varchar](1) NULL,[PriceGroup] [varchar](2) NULL,[Inco1] [varchar](3) NULL,[Inco2] [nvarchar](28) NULL,
+	[SoPXK] [nvarchar](150) NULL,[NgayPXK] [datetime] NULL,[MaTuyenDuong] [varchar](6) NULL,
+	[XuatHangGui] [nvarchar](500) NULL,[So_TKTN] [nvarchar](500) NULL,[So_TKTX] [nvarchar](500) NULL,
+	[Ngay_TKTX] [datetime] NULL,[PTXuat_ID] [int] NULL,[DischargePoint] [nvarchar](50) NULL,[DesDischargePoint] [nvarchar](1500) NULL,
+	[BSART] [nvarchar](50) NULL,[BWART] [nvarchar](50) NULL,[VTWEG] [nvarchar](50) NULL,[TenKhoNhap] [nvarchar](500) NULL,
+	[Xitec_Option] [nvarchar](10) NULL,[SoLenhGoc] [nvarchar](50) NULL,[Dem] [nvarchar](50) NULL,[PTIEN] [nvarchar](50) NULL,
+	[SCHUYEN] [int] NULL,[NgayVaoKho] [datetime] NULL,[SMO_ID] [int] NULL,[CardNum] [nvarchar](100) NULL,
+	[CardData] [nvarchar](100) NULL,[MaTraCuu] [nvarchar](200) NULL,[TongSoNiem] [int] NULL,[SoBienBanMau] [nvarchar](150) NULL,
+	[DO1_SoLenh] [nvarchar](50) NULL,[DO1_MaKhach] [nvarchar](2000) NULL,[SoBienBan] [nvarchar](150) NULL,
+	[NgayLapBienBan] [datetime] NULL,[SOType] [nvarchar](50) NULL,[PrcingDate] [datetime] NULL,[POType] [nvarchar](50) NULL,
+	[FromSoLenh] [nvarchar](50) NULL,[PriceGroupDO1] [nvarchar](100) NULL,[LXLoai] [nvarchar](100) NULL,[LXPhieu] [nvarchar](100) NULL,
+	[SO_POType] [nvarchar](50) NULL,[Prcing] [datetime] NULL,[DOCT] [nvarchar](1000) NULL,[HDChuyen] [nvarchar](100) NULL,
+	[BatchNum] [nvarchar](100) NULL,[DO1_MaNguon] [nvarchar](100) NULL,[CrSysDate] [datetime] NULL,[PriceSynDate] [datetime] NULL,
+	[NOTE_LX] [nvarchar](100) NULL,[SO_CHUYEN] [int] NULL,[LOAI_KH] [nvarchar](2) NULL,[NOTE_SMO] [nvarchar](100) NULL,
+	[NhomBeXuat] [nvarchar](20) NULL,[NhomBeAPP] [nvarchar](20) NULL,[NhomBeAPPU] [nvarchar](100) NULL,
+	[NhomBeAPPD] [datetime] NULL,[ThongTinTDH] [nvarchar](20) NULL,[trangthai] [nvarchar](20) NULL,
+	[TK_SynDate] [datetime] NULL,[R_KWMENG2] [int] NULL,
+ CONSTRAINT [PK_tblLenhXuatE5_THN] PRIMARY KEY CLUSTERED (
+	[SoLenh] ASC)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, 
+	ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[tblLenhXuatE5_THN] ADD  CONSTRAINT [DF__tblLenhXuatE5_THN__2E20C9B8]  DEFAULT (getdate()) FOR [CrSysDate]
+GO
+

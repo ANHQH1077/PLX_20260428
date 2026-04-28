@@ -1,0 +1,7 @@
+1. copy len may chu
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+InstallUtil.exe C:\HTTG_Service\B1Service20.exe
+
+InstallUtil.exe/u C:\HTTG_Service\B1Service20.exe

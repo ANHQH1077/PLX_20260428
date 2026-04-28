@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetValueFromTankCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetSampleDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueFromTankCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValueFromTankCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueFromVehicle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VehicleNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetSampleDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValueFromVehicleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValueFromVehicleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProportionOfTank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProportionOfTankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProportionOfTankResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankOrTransportation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankKeyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransportationKeyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankOrTransportationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityOfTankOrTransportationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListReportOfTankOrShip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCodeOrShipCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListReportOfTankOrShipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListReportOfTankOrShipResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfTank">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfTankResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportOfTankResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfTankbyDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfTankbyDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportOfTankbyDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfVehicleByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VehilePlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportOfVehicleByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportOfVehicleByDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProportionOfTankByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProportionOfTankByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProportionOfTankByDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequestDone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequestDoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormRequestDoneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequestDoneToJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="from" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="to" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormRequestDoneToJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormRequestDoneToJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfPipeHeadOrTankByDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfPipeHeadOrTankByDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityOfPipeHeadOrTankByDateTimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankByDateTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankByDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityOfTankByDateTimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityImport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankByDateTimeToJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TankCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityOfTankByDateTimeToJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityOfTankByDateTimeToJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDensityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDensityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetValueFromTankCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValueFromTankCode" />
+  </wsdl:message>
+  <wsdl:message name="GetValueFromTankCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValueFromTankCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValueFromVehicleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValueFromVehicle" />
+  </wsdl:message>
+  <wsdl:message name="GetValueFromVehicleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValueFromVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProportionOfTankSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProportionOfTank" />
+  </wsdl:message>
+  <wsdl:message name="GetProportionOfTankSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProportionOfTankResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankOrTransportationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankOrTransportation" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankOrTransportationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankOrTransportationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListReportOfTankOrShipSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListReportOfTankOrShip" />
+  </wsdl:message>
+  <wsdl:message name="GetListReportOfTankOrShipSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListReportOfTankOrShipResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfTankSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportOfTank" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfTankSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportOfTankResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfTankbyDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportOfTankbyDate" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfTankbyDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportOfTankbyDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfVehicleByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportOfVehicleByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetReportOfVehicleByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportOfVehicleByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProportionOfTankByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProportionOfTankByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetProportionOfTankByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProportionOfTankByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestDoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormRequestDone" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestDoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormRequestDoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestDoneToJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormRequestDoneToJson" />
+  </wsdl:message>
+  <wsdl:message name="GetFormRequestDoneToJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormRequestDoneToJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfPipeHeadOrTankByDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensityOfPipeHeadOrTankByDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfPipeHeadOrTankByDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityOfPipeHeadOrTankByDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankByDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankByDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankByDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankByDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityImportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensityImport" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityImportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankByDateTimeToJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankByDateTimeToJson" />
+  </wsdl:message>
+  <wsdl:message name="GetDensityOfTankByDateTimeToJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityOfTankByDateTimeToJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDensitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDensity" />
+  </wsdl:message>
+  <wsdl:message name="GetDensitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDensityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LMSAPISoap">
+    <wsdl:operation name="GetValueFromTankCode">
+      <wsdl:input message="tns:GetValueFromTankCodeSoapIn" />
+      <wsdl:output message="tns:GetValueFromTankCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValueFromVehicle">
+      <wsdl:input message="tns:GetValueFromVehicleSoapIn" />
+      <wsdl:output message="tns:GetValueFromVehicleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTank">
+      <wsdl:input message="tns:GetProportionOfTankSoapIn" />
+      <wsdl:output message="tns:GetProportionOfTankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankOrTransportation">
+      <wsdl:input message="tns:GetDensityOfTankOrTransportationSoapIn" />
+      <wsdl:output message="tns:GetDensityOfTankOrTransportationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListReportOfTankOrShip">
+      <wsdl:input message="tns:GetListReportOfTankOrShipSoapIn" />
+      <wsdl:output message="tns:GetListReportOfTankOrShipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTank">
+      <wsdl:input message="tns:GetReportOfTankSoapIn" />
+      <wsdl:output message="tns:GetReportOfTankSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTankbyDate">
+      <wsdl:input message="tns:GetReportOfTankbyDateSoapIn" />
+      <wsdl:output message="tns:GetReportOfTankbyDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfVehicleByDate">
+      <wsdl:input message="tns:GetReportOfVehicleByDateSoapIn" />
+      <wsdl:output message="tns:GetReportOfVehicleByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTankByDate">
+      <wsdl:input message="tns:GetProportionOfTankByDateSoapIn" />
+      <wsdl:output message="tns:GetProportionOfTankByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDone">
+      <wsdl:input message="tns:GetFormRequestDoneSoapIn" />
+      <wsdl:output message="tns:GetFormRequestDoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDoneToJson">
+      <wsdl:input message="tns:GetFormRequestDoneToJsonSoapIn" />
+      <wsdl:output message="tns:GetFormRequestDoneToJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfPipeHeadOrTankByDateTime">
+      <wsdl:input message="tns:GetDensityOfPipeHeadOrTankByDateTimeSoapIn" />
+      <wsdl:output message="tns:GetDensityOfPipeHeadOrTankByDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTime">
+      <wsdl:input message="tns:GetDensityOfTankByDateTimeSoapIn" />
+      <wsdl:output message="tns:GetDensityOfTankByDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityImport">
+      <wsdl:input message="tns:GetDensityImportSoapIn" />
+      <wsdl:output message="tns:GetDensityImportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTimeToJson">
+      <wsdl:input message="tns:GetDensityOfTankByDateTimeToJsonSoapIn" />
+      <wsdl:output message="tns:GetDensityOfTankByDateTimeToJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDensity">
+      <wsdl:input message="tns:GetDensitySoapIn" />
+      <wsdl:output message="tns:GetDensitySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LMSAPISoap" type="tns:LMSAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetValueFromTankCode">
+      <soap:operation soapAction="http://tempuri.org/GetValueFromTankCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueFromVehicle">
+      <soap:operation soapAction="http://tempuri.org/GetValueFromVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTank">
+      <soap:operation soapAction="http://tempuri.org/GetProportionOfTank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankOrTransportation">
+      <soap:operation soapAction="http://tempuri.org/GetDensityOfTankOrTransportation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListReportOfTankOrShip">
+      <soap:operation soapAction="http://tempuri.org/GetListReportOfTankOrShip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTank">
+      <soap:operation soapAction="http://tempuri.org/GetReportOfTank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTankbyDate">
+      <soap:operation soapAction="http://tempuri.org/GetReportOfTankbyDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfVehicleByDate">
+      <soap:operation soapAction="http://tempuri.org/GetReportOfVehicleByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTankByDate">
+      <soap:operation soapAction="http://tempuri.org/GetProportionOfTankByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDone">
+      <soap:operation soapAction="http://tempuri.org/GetFormRequestDone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDoneToJson">
+      <soap:operation soapAction="http://tempuri.org/GetFormRequestDoneToJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfPipeHeadOrTankByDateTime">
+      <soap:operation soapAction="http://tempuri.org/GetDensityOfPipeHeadOrTankByDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTime">
+      <soap:operation soapAction="http://tempuri.org/GetDensityOfTankByDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityImport">
+      <soap:operation soapAction="http://tempuri.org/GetDensityImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTimeToJson">
+      <soap:operation soapAction="http://tempuri.org/GetDensityOfTankByDateTimeToJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensity">
+      <soap:operation soapAction="http://tempuri.org/GetDensity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LMSAPISoap12" type="tns:LMSAPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetValueFromTankCode">
+      <soap12:operation soapAction="http://tempuri.org/GetValueFromTankCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValueFromVehicle">
+      <soap12:operation soapAction="http://tempuri.org/GetValueFromVehicle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTank">
+      <soap12:operation soapAction="http://tempuri.org/GetProportionOfTank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankOrTransportation">
+      <soap12:operation soapAction="http://tempuri.org/GetDensityOfTankOrTransportation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListReportOfTankOrShip">
+      <soap12:operation soapAction="http://tempuri.org/GetListReportOfTankOrShip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTank">
+      <soap12:operation soapAction="http://tempuri.org/GetReportOfTank" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfTankbyDate">
+      <soap12:operation soapAction="http://tempuri.org/GetReportOfTankbyDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportOfVehicleByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetReportOfVehicleByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProportionOfTankByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetProportionOfTankByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDone">
+      <soap12:operation soapAction="http://tempuri.org/GetFormRequestDone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormRequestDoneToJson">
+      <soap12:operation soapAction="http://tempuri.org/GetFormRequestDoneToJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfPipeHeadOrTankByDateTime">
+      <soap12:operation soapAction="http://tempuri.org/GetDensityOfPipeHeadOrTankByDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTime">
+      <soap12:operation soapAction="http://tempuri.org/GetDensityOfTankByDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityImport">
+      <soap12:operation soapAction="http://tempuri.org/GetDensityImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensityOfTankByDateTimeToJson">
+      <soap12:operation soapAction="http://tempuri.org/GetDensityOfTankByDateTimeToJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDensity">
+      <soap12:operation soapAction="http://tempuri.org/GetDensity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LMSAPI">
+    <wsdl:port name="LMSAPISoap" binding="tns:LMSAPISoap">
+      <soap:address location="https://lms.petrolimexsg.com.vn/lmsapi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LMSAPISoap12" binding="tns:LMSAPISoap12">
+      <soap12:address location="https://lms.petrolimexsg.com.vn/lmsapi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

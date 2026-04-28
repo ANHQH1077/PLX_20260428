@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e40a7aab-c66a-49b0-817c-9bcc8c0d6da8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceATG.xsd" MetadataType="Schema" ID="e408863a-d938-411f-80d2-4eeded729d96" SourceId="1" SourceUrl="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceATG.disco" MetadataType="Disco" ID="ea0a8926-30a8-4f1d-8f6a-123483599ca1" SourceId="1" SourceUrl="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc?disco" />
+    <MetadataFile FileName="ServiceATG1.wsdl" MetadataType="Wsdl" ID="516d7db9-f1df-4e5c-9079-d66ef8bb07ca" SourceId="1" SourceUrl="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceATG11.wsdl" MetadataType="Wsdl" ID="0eb47127-14e3-4f33-8580-c9ca02b8d4d9" SourceId="1" SourceUrl="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc?wsdl" />
+    <MetadataFile FileName="ServiceATG1.xsd" MetadataType="Schema" ID="ce9ce524-3d83-45c8-8804-1b5d87d622af" SourceId="1" SourceUrl="http://www.b12petroleum.com.vn/Tichhoptrungtam/Service/ServiceATG.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,8 @@
+1. cài bộ cài HTTG dể tạo bảng ,trường
+2. Chạy 2 script trigger cho lịch sử thay đổi
+3. edit các view: FPT_tblLenhXuatE5_V, fpt_tblLenhXuat_HangHoaE5_V thêm trường NhomBeXuat 
+	 FPT_tblLenhXuatChiTietE5_V  thêm trường NhomBeXuatTDH, BeXuatTDH
+4. chay script dbo.FPT_GetDataToScada bo sung truong NhomBe
+5. Chạy script GetTankGroupHTTG , CapNhatThongTin_NhomBe, XacNhanHoanThien_NhomBe
+5. Bo sung tham so TANK_GROUP =Y  trong SYS_CONFIG
+6. HTTG vaof menu Hệ thống>Cấu hình Scadar:  cấu hình đẩy thêm Bể xuất và Nhóm bể xuất cho Scadar

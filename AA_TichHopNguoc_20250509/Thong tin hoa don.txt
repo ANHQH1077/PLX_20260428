@@ -1,0 +1,22 @@
+------KV2=============================
+0300555450-dev78hoadon.petrolimex.com.vn
+user/pass:
+
+sap0300555450user
+Abc@123456
+
+sap0300555450ws
+Abc@123456
+
+Vat: mẫu 1/001, ký hiệu K25TVP
+Pxkkvcnb: Mẫu: 6/002, ký hiệu K25NXD
+
+
+KV1----=============================
+0100107564-dev78hoadon.petrolimex.com.vn
+
+sap0100107564user
+Abc@1234567
+
+sap0100107564ws
+Abc@123456

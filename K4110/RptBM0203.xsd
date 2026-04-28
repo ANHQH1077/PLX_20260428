@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RptBM0203" targetNamespace="http://tempuri.org/RptBM0203.xsd" xmlns:mstns="http://tempuri.org/RptBM0203.xsd" xmlns="http://tempuri.org/RptBM0203.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RptBM0203" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RptBM0203" msprop:Generator_UserDSName="RptBM0203">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client" msprop:Generator_ColumnVarNameInTable="columnClient" msprop:Generator_ColumnPropNameInRow="Client" msprop:Generator_ColumnPropNameInTable="ClientColumn" msprop:Generator_UserColumnName="Client" type="xs:string" minOccurs="0" />
+              <xs:element name="MeterId" msprop:Generator_ColumnVarNameInTable="columnMeterId" msprop:Generator_ColumnPropNameInRow="MeterId" msprop:Generator_ColumnPropNameInTable="MeterIdColumn" msprop:Generator_UserColumnName="MeterId" type="xs:string" minOccurs="0" />
+              <xs:element name="MaHangHoa" msprop:Generator_ColumnVarNameInTable="columnMaHangHoa" msprop:Generator_ColumnPropNameInRow="MaHangHoa" msprop:Generator_ColumnPropNameInTable="MaHangHoaColumn" msprop:Generator_UserColumnName="MaHangHoa" type="xs:string" minOccurs="0" />
+              <xs:element name="SoLuongThucXuat" msprop:Generator_ColumnVarNameInTable="columnSoLuongThucXuat" msprop:Generator_ColumnPropNameInRow="SoLuongThucXuat" msprop:Generator_ColumnPropNameInTable="SoLuongThucXuatColumn" msprop:Generator_UserColumnName="SoLuongThucXuat" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LuongGiamDinh" msprop:Generator_ColumnVarNameInTable="columnLuongGiamDinh" msprop:Generator_ColumnPropNameInRow="LuongGiamDinh" msprop:Generator_ColumnPropNameInTable="LuongGiamDinhColumn" msprop:Generator_UserColumnName="LuongGiamDinh" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ChenhLech" msprop:Generator_ColumnVarNameInTable="columnChenhLech" msprop:Generator_ColumnPropNameInRow="ChenhLech" msprop:Generator_ColumnPropNameInTable="ChenhLechColumn" msprop:Generator_UserColumnName="ChenhLech" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TyLe_CT" msprop:Generator_ColumnVarNameInTable="columnTyLe_CT" msprop:Generator_ColumnPropNameInRow="TyLe_CT" msprop:Generator_ColumnPropNameInTable="TyLe_CTColumn" msprop:Generator_UserColumnName="TyLe_CT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CongTo_PTien" msprop:Generator_ColumnVarNameInTable="columnCongTo_PTien" msprop:Generator_ColumnPropNameInRow="CongTo_PTien" msprop:Generator_ColumnPropNameInTable="CongTo_PTienColumn" msprop:Generator_UserColumnName="CongTo_PTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PTien_CongTo" msprop:Generator_ColumnVarNameInTable="columnPTien_CongTo" msprop:Generator_ColumnPropNameInRow="PTien_CongTo" msprop:Generator_ColumnPropNameInTable="PTien_CongToColumn" msprop:Generator_UserColumnName="PTien_CongTo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SoLanXuat" msprop:Generator_ColumnVarNameInTable="columnSoLanXuat" msprop:Generator_ColumnPropNameInRow="SoLanXuat" msprop:Generator_ColumnPropNameInTable="SoLanXuatColumn" msprop:Generator_UserColumnName="SoLanXuat" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

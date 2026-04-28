@@ -1,0 +1,413 @@
+﻿https://github.com/quangvn88/HTTG.git
+
+ultraview client: 80043130/a@123456a@
+manager
+
+	VL: 39446859/ adad1234
+remote may 27 : Administrator/Thang8@2022#25
+	   189: .\erp\STG$vlt2021	
+Sap Support
+anhqh@fpt.com/123456aA@
+
+https://me.sap.com/licensekey/wizard
+
+wmic process where "name like '%SBO%'" get processid,CreationDate
+wmic process where "name like '%SBO%'" get processid,CreationDate
+
+wmic process where "name like '%SAP B%'" get processid,CreationDate
+wmic process where "name like '%SAP B%'" get processid,CreationDate
+
+wmic process where processid="824" call terminate
+
+SELECT total_physical_memory_kb/1024 AS [Physical Memory (MB)], 
+       available_physical_memory_kb/1024 AS [Available Memory (MB)], 
+       total_page_file_kb/1024 AS [Total Page File (MB)], 
+       available_page_file_kb/1024 AS [Available Page File (MB)], 
+       system_cache_kb/1024 AS [System Cache (MB)],
+       system_memory_state_desc AS [System Memory State]
+FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
+
+SELECT
+ DB_NAME(resource_database_id)
+ , s.original_login_name
+ , s.status
+ , s.program_name
+ , s.host_name
+ , (select text from sys.dm_exec_sql_text(exrequests.sql_handle))
+ ,*
+from
+  sys.dm_tran_locks dbl
+     JOIN sys.dm_exec_sessions s ON dbl.request_session_id = s.session_id
+  INNER JOIN  sys.dm_exec_requests exrequests on dbl.request_session_id = exrequests.session_id
+where
+ DB_NAME(dbl.resource_database_id) = 'dbname'
+
+
+mdlQCI_GetD15_NS
+2046416186
+
+
+103.74.120.244
+Ga`con/0neBS@Serv3r
+
+
+SAP:  S0012828846/S0012828846aA@
+Link client prod:
+
+===20231228=== App mới
+https://app-sap-test:40000/ExtensionManager/
+B1Siteuser: Abc123456
+2: Remote APP: 192.168.1.222 port 3389 user:vcm\app_sap/Vcm@#2023
+		user connect db: app_saplive/Vcm@#2024
+1. connect DB: DB-SAP-TC 192.168.2.15 port 1433  user: app_saplive/Vcm@#2024
+
+
+https://sap.viettelcommerce.net:8100/dispatcher/
+vpn: qltcfpt / s@EN&96fA;
+
+IP trung gian remote:  10.255.50.194:2223  sap_ql/Viettel@2023
+IP trung gian remote:  10.255.50.194:2223  sap_01/Viettel@@123
+IP trung gian remote:  10.255.50.194:2223  sap_02/Viettel@@123
+
+sql connect  : 192.168.2.83  app_sap/Viettel%%2023
+
+app1: 10.255.51.40:2222  remote vcm\app_sap/Vcm@#2023
+app2: 10.255.51.40:2223  remote vcm\app_sap/Vcm@#2023
+sql connect  : 192.168.2.83  app_sap/Viettel%%2023
+
+\\192.168.1.55\f\SAP_DATA
+
+May ca nhan cty
+IP: 10.15.183.64
+====================================================================
+--Prod
+	5URL_VO: http://10.60.101.245:8888/ServiceMobile_V02/resources/
+	5AppCode: XNK_SAP
+-Test VOffice
+	5URL_VO: http://10.60.108.86:8596/ServiceMobile_V02/resources/
+	5AppCode: SAPERP
+
+ Dim URL As String = "http://10.60.108.86:8596/ServiceMobile_V02/resources/"
+                Dim USER As String = "tuandn5"
+                Dim PASS As String = "222222a@"
+
+
+Datnv5 / 222222a@
+Ngandt5 / 222222a@   Ký nháy Đinh Thị Ngân
+
+
+Tuandn5 / 222222a@  Đinh ngọc tuấn  chan ky 1
+Tuantm30 / 222222a@  GD - Trần Minh Tuấn  chan ky 2 
+
+http://10.60.108.86:8596/app-view/theme/admin-ex/pages/main.zul
+
+
+May chu UAT VT_CMR
+
+https://WIN-A8UAI6FQ42C:8100/dispatcher
+https://WIN-A8UAI6FQ42C:40000/ExtensionManager/
+1. APP: 
+RMD: 10.30.1.58
+###user: qltc_dev
+###pass: Viettel@1234
+sap_dev/123456a@
+10.30.1.58	WIN-A8UAI6FQ42C
+
+2. DB
+Connect db: 
+1. APP to DB: 172.16.0.240 port 1433
+2. Client user: 10.30.1.56 port 8903
+User: qltc_db/V123456@
+
+3. Tk VPN
+user: qltcfpt
+pass: D2Qw9jT#Pz
+
+
+
+https://launchpad.support.sap.com/#/licensekey/requestoverview/BUSINESS_ONE/73554900100900001012/20712386/LicenseKeyRequests/800287709
+S0012828846/S0012828846aA@
+
+
+G01.801.000.000-230223-0028
+link xem dang ky cho tieng viet tren SAP B1
+	https://www.facebook.com/groups/303860067144890/posts/303917897139107/
+============================
+https://docs.google.com/spreadsheets/d/1wQaBUQL42zP9XDmkbKrAuKkGdaOfPp6HtfkRolNXXYw/edit#gid=0
+
+----May chu Viteltel_XNK cua FIS=================================
+211753-VIETTEL / 10.14.185.30 / Administrator / q#DGPT!6hAaT
+
+https://211753-viettel:8100/dispatcher
+
+Customer Name	Expired Date	Passwords
+VT_VPN1	12/31/2023	1234567a@
+VT_VPN2	12/31/2023	1234567a@
+VT_VPN3	12/31/2023	1234567a@
+VT_VPN4	12/31/2023	1234567a@
+
+==================================================
+
+ePayment
+(description=(address_list=(address=(protocol=tcp)(port=1521)(host=10.14.189.3)))(connect_data=(SID=orclg1)))  
+      username: egp_pm
+      password: Egppm@123
+
+
+VietLot
+Danh sách công việc support
+https://docs.google.com/spreadsheets/d/1HF2yng48Q7nL9MnJuPfP-LZ-cZp2qMo2/edit#gid=2014181333
+DRIVER={HDBODBC32};SERVERNODE=10.96.25.81:30015;DATABASE=DB_SAP_VIETLOTT
+B1ADMIN
+Abc12345
+
+39446735 - 11111111
+39446859 - VL!@#2022
+--==========================================
+ODOO server
+Master Password: ccc
+
+HostName: localhost
+Port: 5432
+UserName/Pass: openpg/ 123456aA@
+http://localhost:8069/web/database/selector
+http://10.15.164.30:8069/
+hoanganh1077@gmail.com/123456aA@
+===================================================
+https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900003264&V=INST&TA=ACTUAL&PAGE=SEARCH/SAP%20BUSINESS%20ONE%2010.0
+SAP Page  S0012828846/S0012828846a@
+
+[SBO-COMMON].[dbo].[SRGC]
+[SLDModel.SLDData].[dbo].[CompanyDBs]
+anhqhRes.private01.Res001
+
+======BaoNgoc
+115.146.121.173	WIN-IAC7QMNIFQM
+115.146.121.173,9968
+tichhop/123123aA@
+--=========================================================================
+Tài khoản remote còn DB -SQL như sau: 
+116.97.240.210:2023
+https://onebs-db-sql:8100/dispatcher/
+user remote: Administrator / OneBS@#2022$098
+
+U/P SQL: sa/a@123456
+Solution Packager x64: User name (user2022) Company Name (TEST2022)	
+
+a bảo mọi người cài cái này lên máy, sau đó join vào mang này nhé: 88503383909587fd
+172.24.57.252:2023 remote
+
+--=========================================================================
+Forti :
+Connaction Name: PhuongLinh
+Remote gateway: 101.99.23.95
+customize port : 8441
+user forticlient :  fpt/123456789O   sap-support/PlxnkYm23aX@
+IP SQL: 192.168.1.254
+USER/PASS SQL: sap1/a@12345
+sap: sap1/123456a@
+b1siteuser/20192021
+SAP : manager/11111
+remote : 10.15.163.37 manhnd6/123456
+192.168.1.254	servererp
+=======================================================
+Thong tin host Nhatlam
+192.168.110.31	SAP-Server
+192.168.110.36	SAP-Data	
+fptdev1 / 123456a@
+
+b1siteuser: y6KUEv4$
+
+Remote: 192.168.110.158   FPT Services / Nlc@123
+192.168.110.158
+manager/a@12345
+
+
+
+
+FPTServices / Nlc@123
+192.168.110.158
+manager/a@12345
+
+
+Thong tin vpn Nhatlam(VPN cua window)
+PN WINDOW : 118.70.170.232  vpn-fpt/Nhatlam@123
+=======================================================
+KeiKei:
+
+SAP 10.0
+Host:  WIN-D3MCL9B5BV5	10.15.163.55
+IP sql 10.15.163.55 
+sa/123456a@
+remote 10.15.163.55 dell/123456
+==========================================================
+
+VIETLOT:
+https://docs.google.com/spreadsheets/d/1iNtk-wPMZZA0us_RbkHvoGp8dBQwCeEVkgW3lz3-LYQ/edit#gid=1055889001
+SAP B1:
+https://docs.google.com/spreadsheets/d/1HK_x6_KWM9UabwiNHbD8Rxha2odD1vJ3/edit#gid=654161437
+
+
+http://smoapi.piacom.com.vn:5047
+
+May KhanhV:  10.15.163.22  vl / 123 456
+
+
+
+10.0.1.20 erp_fpt/Fpt2016
+
+
+
+Em gửi anh thông tin account VPN để FPT truy cập vào mạng Piacom:
+Username: fptsmo
+Password: fptsmo
+113.190.255.122
+port: 10443
+
+kv1@123**
+fpt-is.webex.com
+
+máy chủ  .19 mới
+Anhqh.fpt
+anhqh123123
+
+2023769372
+ASHOST=10.200.9.67;SYSNR=01;CLIENT=900;USER=tichhop;PASSWD=a12345678
+
+
+131.7
+User Windows: PetroAdmin / P@ssword
+User SQL: fpt / fpt123321
+
+
+#ASHOST=10.0.9.148;SYSNR=01;CLIENT=900;USER=tichhop;PASSWD=a12345678
+
+10.200.9.67   01-PRD   tichhop/a12345678
+
+KV2_Test 131.7   user vpn va remote  fpt.kv2/ P@ssword 
+
+Sa / httg@123456
+
+
+10.0.1.20	erp_fpt/Fpt2016
+
+vpn.petrolimex.com.vn
+
+remote plx server: 10.200.0.42	DR-HTTG
+	remote adminfpt/Fpt#2025
+
+tich hop httg test
+quangvn3:  user:fpt.010   pass: abc1234
+fpt.thangvq/ Vo@123456789
+
+PLX
+
+10.200.0.42	DR-HTTG	Windows Server 2022 Standard	adminfpt/Fpt#2025
+
+
+Thong tin Prod: 10.0.9.147 
+		sysnr: 01
+		Client: 900
+		tichhop/a12345678
+Thong tin dev 300: 10.200.9.80
+		sysnr: 21
+		Client: 300
+	USER=fpt.thangvq;PASSWD=Vo@123456789
+erp07/  vOz0$bJc /  3rp0&@plx A. Hoàng Anh  anhqh
+erp01/3rp0!@plx
+
+erp02/3rp0@@plx
+
+erp03/3rp0#@plx
+
+erp04/3rp0$@plx
+
+erp05/3rp0%@plx
+
+erp06/3rp0^@plx
+
+erp07/3rp0&@plx
+
+erp08/3rp0*@plx
+
+
+https://0300555450-dev78hoadon.petrolimex.com.vn/petroservice.asmx
+"OK:1/001;K25TKL-20G4UN3L_76"
+magtracuu: 20G4UN3L
+
+662AA00725
+662AA00727
+
+
+
+ipconfig /flushdns
+
+
+
+erp07/vOz0$bJc
+
+sup002/234234a
+1908010008
+
+001178006886  Hồng
+
+miniMBA tai lieu acc: fcuh38, pass: fsb@123aB    
+
+ASHOST=10.0.9.64;SYSNR=01;CLIENT=900;USER=tichhop;PASSWD=a12345678  prod
+
+ASHOST=10.0.9.83;SYSNR=21;CLIENT=900;USER=sup002;PASSWD=123123c   tesst
+39015603 / Wifi VPDU
+
+ 0601005   
+ 
+         SaveLog("mod_SYS_GET_DATASET(" & Date.Now.ToString & ")", Ex.Message, g_Connection.Database.ToString.Trim)
+
+ 
+ may chu .83
+ do user chị dương
+anh dùng sup021/emtenbinh1993A@
+
+
+
+ B12 Pass Acccess: supercb12
+ 
+ user remote: fpt/hoanganh123!qwe    may chu .20 kv2
+ fpt / hoanganh
+DB_Name: HTTG_Training
+ 
+
+
+pass VPN kv2:  erp.kv2/Uat@Httg1     erp.kv2/123456789      erp.kv2/erp.kv2
+
+3352
+
+TMD server   1391525080  TMD@123      ultraview 14528014/TMD@123
+
+KV3: 9112001/9500
+
+0986 778 934
+
+281089/ 5259
+
+0914 695 399 Cuong Lao cai
+
+
+6543  lao cai
+
+sqlserver ay chu 8 cua KV2: anhqh/567765
+ 
+WF
+2. POS2: 31582610/ 2505
+3. POS3: 20877067/ 9137
+
+
+WINDOWS-IDTIJJU
+32078922  1391
+
+31769829    7775
+
+FIS
+[26/02/2020 10:21:17] Mạnh Nguyễn: 10.15.163.45
+[26/02/2020 10:21:20] Quách Hoàng Anh: anh dùng cisco VPN
+[26/02/2020 10:21:27] Mạnh Nguyễn: Sap1/123456a@
+[26/02/2020 10:21:32] Mạnh Nguyễn: Remote

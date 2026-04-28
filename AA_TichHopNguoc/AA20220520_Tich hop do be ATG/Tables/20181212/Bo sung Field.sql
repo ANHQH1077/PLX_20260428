@@ -1,0 +1,1 @@
+alter table [ztblTankLineImp] add BAREM_HEIGHT nvarchar(10), BAREM_WATER nvarchar(10)

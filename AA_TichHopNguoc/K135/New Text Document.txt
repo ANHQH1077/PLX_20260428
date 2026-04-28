@@ -1,0 +1,1 @@
+,isnull( dbo.FPT_CheckTankE5(bb.BeXuat) ,0) as FlagTankLineE5      

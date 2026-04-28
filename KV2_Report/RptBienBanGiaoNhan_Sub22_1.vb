@@ -1,0 +1,3 @@
+﻿Public Class RptBienBanGiaoNhan_Sub22_1
+
+End Class

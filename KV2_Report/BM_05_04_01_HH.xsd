@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BM_05_04_01_HH" targetNamespace="http://tempuri.org/BM_05_04_01_HH.xsd" xmlns:mstns="http://tempuri.org/BM_05_04_01_HH.xsd" xmlns="http://tempuri.org/BM_05_04_01_HH.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BM_05_04_01_HH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BM_05_04_01_HH" msprop:Generator_UserDSName="BM_05_04_01_HH">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="_x0030_1_HH_x0020_" msprop:Generator_TableClassName="_01_HH_DataTable" msprop:Generator_TableVarName="table01_HH_" msprop:Generator_TablePropName="_01_HH_" msprop:Generator_RowDeletingName="_01_HH_RowDeleting" msprop:Generator_RowChangingName="_01_HH_RowChanging" msprop:Generator_RowEvHandlerName="_01_HH_RowChangeEventHandler" msprop:Generator_RowDeletedName="_01_HH_RowDeleted" msprop:Generator_UserTableName="01_HH " msprop:Generator_RowChangedName="_01_HH_RowChanged" msprop:Generator_RowEvArgName="_01_HH_RowChangeEvent" msprop:Generator_RowClassName="_01_HH_Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client" msprop:Generator_ColumnVarNameInTable="columnClient" msprop:Generator_ColumnPropNameInRow="Client" msprop:Generator_ColumnPropNameInTable="ClientColumn" msprop:Generator_UserColumnName="Client" type="xs:string" minOccurs="0" />
+              <xs:element name="NhomBeXuat" msprop:Generator_ColumnVarNameInTable="columnNhomBeXuat" msprop:Generator_ColumnPropNameInRow="NhomBeXuat" msprop:Generator_ColumnPropNameInTable="NhomBeXuatColumn" msprop:Generator_UserColumnName="NhomBeXuat" type="xs:string" minOccurs="0" />
+              <xs:element name="TONGCONG" msprop:Generator_ColumnVarNameInTable="columnTONGCONG" msprop:Generator_ColumnPropNameInRow="TONGCONG" msprop:Generator_ColumnPropNameInTable="TONGCONGColumn" msprop:Generator_UserColumnName="TONGCONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="M95_V" msprop:Generator_ColumnVarNameInTable="columnM95_V" msprop:Generator_ColumnPropNameInRow="M95_V" msprop:Generator_ColumnPropNameInTable="M95_VColumn" msprop:Generator_UserColumnName="M95_V" type="xs:decimal" minOccurs="0" />
+              <xs:element name="M95_3" msprop:Generator_ColumnVarNameInTable="columnM95_3" msprop:Generator_ColumnPropNameInRow="M95_3" msprop:Generator_ColumnPropNameInTable="M95_3Column" msprop:Generator_UserColumnName="M95_3" type="xs:decimal" minOccurs="0" />
+              <xs:element name="E10" msprop:Generator_ColumnVarNameInTable="columnE10" msprop:Generator_ColumnPropNameInRow="E10" msprop:Generator_ColumnPropNameInTable="E10Column" msprop:Generator_UserColumnName="E10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DO_2" msprop:Generator_ColumnVarNameInTable="columnDO_2" msprop:Generator_ColumnPropNameInRow="DO_2" msprop:Generator_ColumnPropNameInTable="DO_2Column" msprop:Generator_UserColumnName="DO_2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DO_V" msprop:Generator_ColumnVarNameInTable="columnDO_V" msprop:Generator_ColumnPropNameInRow="DO_V" msprop:Generator_ColumnPropNameInTable="DO_VColumn" msprop:Generator_UserColumnName="DO_V" type="xs:decimal" minOccurs="0" />
+              <xs:element name="JET" msprop:Generator_ColumnVarNameInTable="columnJET" msprop:Generator_ColumnPropNameInRow="JET" msprop:Generator_ColumnPropNameInTable="JETColumn" msprop:Generator_UserColumnName="JET" type="xs:decimal" minOccurs="0" />
+              <xs:element name="KO" msprop:Generator_ColumnVarNameInTable="columnKO" msprop:Generator_ColumnPropNameInRow="KO" msprop:Generator_ColumnPropNameInTable="KOColumn" msprop:Generator_UserColumnName="KO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FO_35" msprop:Generator_ColumnVarNameInTable="columnFO_35" msprop:Generator_ColumnPropNameInRow="FO_35" msprop:Generator_ColumnPropNameInTable="FO_35Column" msprop:Generator_UserColumnName="FO_35" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FO_05" msprop:Generator_ColumnVarNameInTable="columnFO_05" msprop:Generator_ColumnPropNameInRow="FO_05" msprop:Generator_ColumnPropNameInTable="FO_05Column" msprop:Generator_UserColumnName="FO_05" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="_x0030_1_Sub" msprop:Generator_TableClassName="_01_SubDataTable" msprop:Generator_TableVarName="table01_Sub" msprop:Generator_TablePropName="_01_Sub" msprop:Generator_RowDeletingName="_01_SubRowDeleting" msprop:Generator_RowChangingName="_01_SubRowChanging" msprop:Generator_RowEvHandlerName="_01_SubRowChangeEventHandler" msprop:Generator_RowDeletedName="_01_SubRowDeleted" msprop:Generator_UserTableName="01_Sub" msprop:Generator_RowChangedName="_01_SubRowChanged" msprop:Generator_RowEvArgName="_01_SubRowChangeEvent" msprop:Generator_RowClassName="_01_SubRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Client" msprop:Generator_ColumnVarNameInTable="columnClient" msprop:Generator_ColumnPropNameInRow="Client" msprop:Generator_ColumnPropNameInTable="ClientColumn" msprop:Generator_UserColumnName="Client" type="xs:string" minOccurs="0" />
+              <xs:element name="LOAI" msprop:Generator_ColumnVarNameInTable="columnLOAI" msprop:Generator_ColumnPropNameInRow="LOAI" msprop:Generator_ColumnPropNameInTable="LOAIColumn" msprop:Generator_UserColumnName="LOAI" type="xs:string" minOccurs="0" />
+              <xs:element name="TenLoai" msprop:Generator_ColumnVarNameInTable="columnTenLoai" msprop:Generator_ColumnPropNameInRow="TenLoai" msprop:Generator_ColumnPropNameInTable="TenLoaiColumn" msprop:Generator_UserColumnName="TenLoai" type="xs:string" minOccurs="0" />
+              <xs:element name="TONGCONG" msprop:Generator_ColumnVarNameInTable="columnTONGCONG" msprop:Generator_ColumnPropNameInRow="TONGCONG" msprop:Generator_ColumnPropNameInTable="TONGCONGColumn" msprop:Generator_UserColumnName="TONGCONG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CH" msprop:Generator_ColumnVarNameInTable="columnCH" msprop:Generator_ColumnPropNameInRow="CH" msprop:Generator_ColumnPropNameInTable="CHColumn" msprop:Generator_UserColumnName="CH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CN" msprop:Generator_ColumnVarNameInTable="columnCN" msprop:Generator_ColumnPropNameInRow="CN" msprop:Generator_ColumnPropNameInTable="CNColumn" msprop:Generator_UserColumnName="CN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NBN" msprop:Generator_ColumnVarNameInTable="columnNBN" msprop:Generator_ColumnPropNameInRow="NBN" msprop:Generator_ColumnPropNameInTable="NBNColumn" msprop:Generator_UserColumnName="NBN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="N30" msprop:Generator_ColumnVarNameInTable="columnN30" msprop:Generator_ColumnPropNameInRow="N30" msprop:Generator_ColumnPropNameInTable="N30Column" msprop:Generator_UserColumnName="N30" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HG" msprop:Generator_ColumnVarNameInTable="columnHG" msprop:Generator_ColumnPropNameInRow="HG" msprop:Generator_ColumnPropNameInTable="HGColumn" msprop:Generator_UserColumnName="HG" type="xs:decimal" minOccurs="0" />
+              <xs:element name="JET" msprop:Generator_ColumnVarNameInTable="columnJET" msprop:Generator_ColumnPropNameInRow="JET" msprop:Generator_ColumnPropNameInTable="JETColumn" msprop:Generator_UserColumnName="JET" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

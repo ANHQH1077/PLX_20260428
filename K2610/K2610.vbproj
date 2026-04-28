@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{553613A6-F116-483B-8ED0-6727895868B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>K2610</RootNamespace>
+    <AssemblyName>K2610</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\RPT_TichKe.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RPT_TichKe.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\RPT_TichKe.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DocumentationFile>K2610.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RPT_TichKe.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeRush.Common, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.CodeRush.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.CodeRush.PlugInCore, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.CodeRush.StructuralParser, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.CodeRush.UserControls, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DXCore.Localization, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.DXCore.Parser, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.DXCore.Platform, Version=11.1.6.0, Culture=neutral, PublicKeyToken=35c9f04b7764aa3d" />
+    <Reference Include="DevExpress.PivotGrid.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Refactor.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=3f8e338797a7a380, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v11.1.Designer, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.Extensions, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1.Extensions, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BSThongTinHoaDon.vb" />
+    <Compile Include="ChungTuHoaDon.vb" />
+    <Compile Include="Class1.vb" />
+    <Compile Include="dtTTBX.Designer.vb">
+      <DependentUpon>dtTTBX.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dtTTBX.vb">
+      <DependentUpon>dtTTBX.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtTTHH.Designer.vb">
+      <DependentUpon>dtTTHH.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dtTTHH.vb">
+      <DependentUpon>dtTTHH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtTTHX.Designer.vb">
+      <DependentUpon>dtTTHX.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dtTTLX.Designer.vb">
+      <DependentUpon>dtTTLX.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="K130_TichKe_A3.Designer.vb">
+      <DependentUpon>K130_TichKe_A3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="K130_TichKe_A3.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TichKe_A3.Designer.vb">
+      <DependentUpon>KV2_TichKe_A3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TichKe_A3.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TichKe_A322.Designer.vb">
+      <DependentUpon>KV2_TichKe_A322.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TichKe_A322.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TichKe_New.Designer.vb">
+      <DependentUpon>KV2_TichKe_New.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TichKe_New.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TichKe_XuatBo.Designer.vb">
+      <DependentUpon>KV2_TichKe_XuatBo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TichKe_XuatBo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBM_01_32.Designer.vb">
+      <DependentUpon>RptBM_01_32.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_01_32.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBM_01_32New.Designer.vb">
+      <DependentUpon>RptBM_01_32New.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_01_32New.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTTBX.Designer.vb">
+      <DependentUpon>RptTTBX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptTTBX.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTTHH.Designer.vb">
+      <DependentUpon>RptTTHH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptTTHH.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTTHX.Designer.vb">
+      <DependentUpon>RptTTHX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptTTHX.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptTTLX.Designer.vb">
+      <DependentUpon>RptTTLX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptTTLX.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptXeBonTH.Designer.vb">
+      <DependentUpon>RptXeBonTH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptXeBonTH.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptXaLanTH.Designer.vb">
+      <DependentUpon>RptXaLanTH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptXaLanTH.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dtHoaNghiem.Designer.vb">
+      <DependentUpon>dtHoaNghiem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dtHoaNghiem.vb">
+      <DependentUpon>dtHoaNghiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_DCCH.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonVCNB_DCCH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_DCCH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonHangGiuHo.Designer.vb">
+      <DependentUpon>KV2_HoaDonHangGiuHo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonHangGiuHo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonHangGiuHo_Sub.Designer.vb">
+      <DependentUpon>KV2_HoaDonHangGiuHo_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonHangGiuHo_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_CIF.Designer.vb">
+      <DependentUpon>KV2_HoaDonVCNB_CIF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_CIF.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_CIF_Sub.Designer.vb">
+      <DependentUpon>KV2_HoaDonVCNB_CIF_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_CIF_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_LenhXKTheoPhoi_Sub.Designer.vb">
+      <DependentUpon>KV2_LenhXKTheoPhoi_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_LenhXKTheoPhoi_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDon.Designer.vb">
+      <DependentUpon>KV2_HoaDon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDon.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKhoKDD.designer.vb">
+      <DependentUpon>KV2_LenhXuatKhoKDD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKhoKDD.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKhoKDD_Sub.Designer.vb">
+      <DependentUpon>KV2_LenhXuatKhoKDD_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKhoKDD_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RpSub.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RpSub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0203.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBM0203.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0203.vb">
+      <DependentUpon>RptBM0203.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_01_26.Designer.vb">
+      <DependentUpon>RptBM_01_26.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_01_26.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_CIF.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonVCNB_CIF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_CIF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_NBN.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonVCNB_NBN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB_NBN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KV2_LenhXKTheoPhoi.designer.vb">
+      <DependentUpon>KV2_LenhXKTheoPhoi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_LenhXKTheoPhoi.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBM0126.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBM0126.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0126.vb">
+      <DependentUpon>RptBM0126.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_02_03.Designer.vb">
+      <DependentUpon>RptBM_02_03.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_02_03.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptCongTo_Thuy.Designer.vb">
+      <DependentUpon>RptCongTo_Thuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptCongTo_Thuy.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptCongTo_Bo.Designer.vb">
+      <DependentUpon>RptCongTo_Bo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptCongTo_Bo.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBM0504.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBM0504.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0504.vb">
+      <DependentUpon>RptBM0504.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_14_03.Designer.vb">
+      <DependentUpon>RptBM_14_03.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_14_03.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsReport_01.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport_01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.Designer.vb">
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDon.Designer.vb">
+      <DependentUpon>frmImfor_HoaDon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonHangGiuHo.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonHangGiuHo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonHangGiuHo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonTaiXuat.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonTaiXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonTaiXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonTaiXuat_EN.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonTaiXuat_EN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonTaiXuat_EN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB.Designer.vb">
+      <DependentUpon>frmImfor_HoaDonVCNB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImfor_HoaDonVCNB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KV2_Bill.Designer.vb">
+      <DependentUpon>KV2_Bill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_Bill.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDon1.Designer.vb">
+      <DependentUpon>KV2_HoaDon1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDon1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_EN.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat_EN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_EN.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub_EN.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub_EN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub_EN.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub_VN.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub_VN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_Sub_VN.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_VN.Designer.vb">
+      <DependentUpon>KV2_HoaDonTaiXuat_VN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonTaiXuat_VN.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB.Designer.vb">
+      <DependentUpon>KV2_HoaDonVCNB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_Sub.Designer.vb">
+      <DependentUpon>KV2_HoaDonVCNB_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDonVCNB_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDon_Sub.Designer.vb">
+      <DependentUpon>KV2_HoaDon_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDon_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_HoaDon_Sub1.Designer.vb">
+      <DependentUpon>KV2_HoaDon_Sub1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_HoaDon_Sub1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKho.Designer.vb">
+      <DependentUpon>KV2_LenhXuatKho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_LenhXuatKho.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TichKe_Thuy.Designer.vb">
+      <DependentUpon>KV2_TichKe_Thuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TichKe_Thuy.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="mdlFunction.vb" />
+    <Compile Include="KV2.vb" />
+    <Compile Include="mdlQCI.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Report.vb" />
+    <Compile Include="RpDataset.Designer.vb">
+      <DependentUpon>RpDataset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RpDataset.vb">
+      <DependentUpon>RpDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RpSub.vb">
+      <DependentUpon>RpSub.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0132.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBM0132.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM0132.vb">
+      <DependentUpon>RptBM0132.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_05_04.Designer.vb">
+      <DependentUpon>RptBM_05_04.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM_05_04.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RptBM1403.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBM1403.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptBM1403.vb">
+      <DependentUpon>RptBM1403.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptCongTo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptCongTo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RptCongTo.vb">
+      <DependentUpon>RptCongTo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptHoaNghiem.Designer.vb">
+      <DependentUpon>rptHoaNghiem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="rptHoaNghiem.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="K130_TichKe_A3.resx">
+      <DependentUpon>K130_TichKe_A3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TichKe_A3.resx">
+      <DependentUpon>KV2_TichKe_A3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TichKe_A322.resx">
+      <DependentUpon>KV2_TichKe_A322.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TichKe_New.resx">
+      <DependentUpon>KV2_TichKe_New.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TichKe_XuatBo.resx">
+      <DependentUpon>KV2_TichKe_XuatBo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="RptBM_01_32.resx">
+      <DependentUpon>RptBM_01_32.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBM_01_32New.resx">
+      <DependentUpon>RptBM_01_32New.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTTBX.resx">
+      <DependentUpon>RptTTBX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTTHH.resx">
+      <DependentUpon>RptTTHH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTTHX.resx">
+      <DependentUpon>RptTTHX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptTTLX.resx">
+      <DependentUpon>RptTTLX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptXeBonTH.resx">
+      <DependentUpon>RptXeBonTH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptXaLanTH.resx">
+      <DependentUpon>RptXaLanTH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonVCNB_DCCH.resx">
+      <DependentUpon>frmImfor_HoaDonVCNB_DCCH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonHangGiuHo.resx">
+      <DependentUpon>KV2_HoaDonHangGiuHo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonHangGiuHo_Sub.resx">
+      <DependentUpon>KV2_HoaDonHangGiuHo_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonVCNB_CIF.resx">
+      <DependentUpon>KV2_HoaDonVCNB_CIF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonVCNB_CIF_Sub.resx">
+      <DependentUpon>KV2_HoaDonVCNB_CIF_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_LenhXKTheoPhoi_Sub.resx">
+      <DependentUpon>KV2_LenhXKTheoPhoi_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDon.resx">
+      <DependentUpon>KV2_HoaDon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_LenhXuatKhoKDD.resx">
+      <DependentUpon>KV2_LenhXuatKhoKDD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_LenhXuatKhoKDD_Sub.resx">
+      <DependentUpon>KV2_LenhXuatKhoKDD_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBM_01_26.resx">
+      <DependentUpon>RptBM_01_26.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonVCNB_CIF.resx">
+      <DependentUpon>frmImfor_HoaDonVCNB_CIF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonVCNB_NBN.resx">
+      <DependentUpon>frmImfor_HoaDonVCNB_NBN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_LenhXKTheoPhoi.resx">
+      <DependentUpon>KV2_LenhXKTheoPhoi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBM_02_03.resx">
+      <DependentUpon>RptBM_02_03.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptCongTo_Thuy.resx">
+      <DependentUpon>RptCongTo_Thuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptCongTo_Bo.resx">
+      <DependentUpon>RptCongTo_Bo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBM_14_03.resx">
+      <DependentUpon>RptBM_14_03.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDon.resx">
+      <DependentUpon>frmImfor_HoaDon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonHangGiuHo.resx">
+      <DependentUpon>frmImfor_HoaDonHangGiuHo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonTaiXuat.resx">
+      <DependentUpon>frmImfor_HoaDonTaiXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonTaiXuat_EN.resx">
+      <DependentUpon>frmImfor_HoaDonTaiXuat_EN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImfor_HoaDonVCNB.resx">
+      <DependentUpon>frmImfor_HoaDonVCNB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_Bill.resx">
+      <DependentUpon>KV2_Bill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDon1.resx">
+      <DependentUpon>KV2_HoaDon1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat_EN.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat_EN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat_Sub.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat_Sub_EN.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub_EN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat_Sub_VN.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat_Sub_VN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonTaiXuat_VN.resx">
+      <DependentUpon>KV2_HoaDonTaiXuat_VN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonVCNB.resx">
+      <DependentUpon>KV2_HoaDonVCNB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDonVCNB_Sub.resx">
+      <DependentUpon>KV2_HoaDonVCNB_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDon_Sub.resx">
+      <DependentUpon>KV2_HoaDon_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_HoaDon_Sub1.resx">
+      <DependentUpon>KV2_HoaDon_Sub1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_LenhXuatKho.resx">
+      <DependentUpon>KV2_LenhXuatKho.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TichKe_Thuy.resx">
+      <DependentUpon>KV2_TichKe_Thuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBM_05_04.resx">
+      <DependentUpon>RptBM_05_04.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptHoaNghiem.resx">
+      <DependentUpon>rptHoaNghiem.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="dsReport_01.xsc">
+      <DependentUpon>dsReport_01.xsd</DependentUpon>
+    </None>
+    <None Include="dsReport_01.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport_01.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsReport_01.xss">
+      <DependentUpon>dsReport_01.xsd</DependentUpon>
+    </None>
+    <None Include="dtHoaNghiem.xsc">
+      <DependentUpon>dtHoaNghiem.xsd</DependentUpon>
+    </None>
+    <None Include="dtHoaNghiem.xsd" />
+    <None Include="dtHoaNghiem.xss">
+      <DependentUpon>dtHoaNghiem.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTBX.xsc">
+      <DependentUpon>dtTTBX.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTBX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTTBX.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtTTBX.xss">
+      <DependentUpon>dtTTBX.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTHH.xsc">
+      <DependentUpon>dtTTHH.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTHH.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTTHH.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtTTHH.xss">
+      <DependentUpon>dtTTHH.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTHX.xsc">
+      <DependentUpon>dtTTHX.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTHX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTTHX.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtTTHX.xss">
+      <DependentUpon>dtTTHX.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTLX.xsc">
+      <DependentUpon>dtTTLX.xsd</DependentUpon>
+    </None>
+    <None Include="dtTTLX.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTTLX.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtTTLX.xss">
+      <DependentUpon>dtTTLX.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RpDataset.xsc">
+      <DependentUpon>RpDataset.xsd</DependentUpon>
+    </None>
+    <None Include="RpDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RpDataset1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RpDataset.xss">
+      <DependentUpon>RpDataset.xsd</DependentUpon>
+    </None>
+    <None Include="RpSub.xsc">
+      <DependentUpon>RpSub.xsd</DependentUpon>
+    </None>
+    <None Include="RpSub.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RpSub.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RpSub.xss">
+      <DependentUpon>RpSub.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0126.xsc">
+      <DependentUpon>RptBM0126.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0126.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptBM0126.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptBM0126.xss">
+      <DependentUpon>RptBM0126.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0132.xsc">
+      <DependentUpon>RptBM0132.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0132.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptBM0132.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptBM0132.xss">
+      <DependentUpon>RptBM0132.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0203.xsc">
+      <DependentUpon>RptBM0203.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0203.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptBM0203.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptBM0203.xss">
+      <DependentUpon>RptBM0203.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0504.xsc">
+      <DependentUpon>RptBM0504.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM0504.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptBM0504.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptBM0504.xss">
+      <DependentUpon>RptBM0504.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM1403.xsc">
+      <DependentUpon>RptBM1403.xsd</DependentUpon>
+    </None>
+    <None Include="RptBM1403.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptBM1403.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptBM1403.xss">
+      <DependentUpon>RptBM1403.xsd</DependentUpon>
+    </None>
+    <None Include="RptCongTo.xsc">
+      <DependentUpon>RptCongTo.xsd</DependentUpon>
+    </None>
+    <None Include="RptCongTo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RptCongTo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RptCongTo.xss">
+      <DependentUpon>RptCongTo.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FPTModule\FPTModule.vbproj">
+      <Project>{9AD65902-417A-4B71-95D8-09050A7EF487}</Project>
+      <Name>FPTModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\U_CusForm\U_CusForm.vbproj">
+      <Project>{792A24F6-4CCB-4D6E-952D-2DC7F418C32B}</Project>
+      <Name>U_CusForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\U_TextBox\U_Control.vbproj">
+      <Project>{FE498378-41D3-4A44-A25D-E8D67A04C6C8}</Project>
+      <Name>U_Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+1. Đồng bộ hàng hóa
+2. Khai báo tỷ lệ phối trộn trên chức năng Thông tin tỷ lệ phối trộn
+3. Bổ sung thêm bản ghi Map mã hàng hóa và mã TĐH trong bảng tblMap_MaHangHoa
+4. Khai báo danh mục bể logic E10 và khai báo tỷ trọng đầu ngày
+5. Khai báo họng xuất cho E10 trong chức năng Khai báo công tơ E5
+6. Khai bao nhóm bể trên SAP và đồng bọ về HTTG
+
+
+
+Cập nhật HTTG 
+	1. Procedure FPT_GetDataTableList
+
+

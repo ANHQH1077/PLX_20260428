@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Invoices>
+<Inv>
+<key>19HLNYG1</key>
+<Invoice>
+<CusCode>200006</CusCode>
+<CusName/>
+<Buyer>Công ty TNHH một thành viên VITACO Sài Gòn</Buyer>
+<CusAddress>Số 155 Hai Bà Trưng,Phường 6, Quận 3,TP Hồ Chí Minh</CusAddress>
+<CusPhone/>
+<CusTaxCode>0305399484</CusTaxCode>
+<PaymentMethod>Thanh toán bằng chuyển khoản</PaymentMethod>
+<KindOfService/>
+<CusBankNo/>
+<Products>
+<Product>
+<Code>000000000000601002</Code>
+<ProdName>DO 0,05S-II</ProdName>
+<ProdUnit>KG</ProdUnit>
+<ProdQuantity>831.000</ProdQuantity>
+<ProdPrice>18206</ProdPrice>
+<Remark/>
+<VATRate/>
+<Total/>
+<VATAmount>1512919</VATAmount>
+<Amount>15129186</Amount>
+</Product>
+<Product>
+<Code/>
+<ProdName>Nhiệt độ TT/LTT/L15/D15/VCF/WCF: 33,14/1.000/985/0,8448/0,9846/0,8437</ProdName>
+<ProdUnit/>
+<ProdQuantity/>
+<ProdPrice/>
+<Remark>1</Remark>
+<VATRate/>
+<Total/>
+<VATAmount/>
+<Amount/>
+</Product>
+</Products>
+<Total>15129186</Total>
+<VATRate>10</VATRate>
+<VATAmount>1512919</VATAmount>
+<Amount>16642105</Amount>
+<AmountInWords>Mười sáu triệu sáu trăm bốn mươi hai nghìn một trăm lẻ năm đồng chẵn.</AmountInWords>
+<Extra/>
+<ArisingDate>01/12/2019 00:00:00</ArisingDate>
+<PaymentStatus/>
+<GrossValue/>
+<GrossValue0/>
+<VatAmount0/>
+<GrossValue5/>
+<VatAmount5/>
+<GrossValue10/>
+<VatAmount10/>
+<GrossValue_NonTax/>
+<CurrencyUnit>VND</CurrencyUnit>
+<DonViBanHang/>
+<DiaChiBanHang/>
+<CuaHangSo/>
+<SoHopDong/>
+<NgayHopDong/>
+<DiemGiaoHang/>
+<DiemNhanHang/>
+<DaiLy/>
+<DiaChiDaiLy/>
+<TienPhiKhac/>
+<SoVanDon/>
+<NgayVanDon/>
+<ThoiHanThanhToan>15 ngày-Hóa đơn</ThoiHanThanhToan>
+<KhoXuat>Tổng kho Xăng dầu Nhà Bè</KhoXuat>
+<SoPhuongTien>@</SoPhuongTien>
+<TyGiaHoachToan/>
+<DonViCungCapVanTai>Công ty cp vận tải và dịch vụ</DonViCungCapVanTai>
+<MaTimKiem>3018583609</MaTimKiem>
+<NguoiVanTai/>
+<KhoangCachTamMuc/>
+<SoNiem/>
+<SoToKhaiHaiQuanNhap/>
+<SoToKhaiHaiQuanXuat/>
+<ComParentName>TẬP ĐOÀN XĂNG DẦU VIỆT NAM</ComParentName>
+<ComParentTaxCode/>
+<ThongTinBoSung>( Theo lệnh xuất số 2023763819 - 01/12/2019 )</ThongTinBoSung>
+<ThoiGian/>
+<EInvoiceType/>
+<LenhDieuDongSo/>
+<DieuDongNgay/>
+<DonViDieuDong/>
+<KhoNhap/>
+<NoteHuy/>
+<NoteBienBan/>
+<Extra2/>
+<ComParentAddress/>
+<DonViGiaoHang/>
+<DonViNhanHang/>
+<DiaChiGiaoHang/>
+<DiaChiNhanHang/>
+<NgayGioXuatKho>01/12/2019 00:00:00</NgayGioXuatKho>
+<CamKet>Doanh nghiệp chúng tôi cam kết lô hàng đạt chất lượng, phù hợp TCCS đã công bố.</CamKet>
+<SMS/>
+<Mail>ABC@Petrolimex.com.vn</Mail>
+<Status/>
+</Invoice>
+</Inv>
+</Invoices>

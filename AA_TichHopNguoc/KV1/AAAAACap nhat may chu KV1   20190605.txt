@@ -1,0 +1,4 @@
+1. FPT_GetTaiTrongKG    buil procedure
+2. Tham so   WEIGHTRATE   =20
+3. Build Procedure MauKiemSoatTaiTrong  cho bao cao  
+4. Dang ky bao cao   MauKiemSoatTaiTrong  

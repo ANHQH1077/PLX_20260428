@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0417D37-3BA7-4A43-8D83-7DEC88C4DAEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>FPTSO</RootNamespace>
+    <AssemblyName>FPTSO</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FPTSO.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FPTSO.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DocumentationFile>FPTSO.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\FPTSO.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DocumentationFile>FPTSO.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\FPTSO.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Connect2SAP, Version=1.0.4420.25816, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Connect2SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="Connect2SapEx, Version=1.0.6697.16378, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Connect2SapEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v11.1.UI, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v11.1, Version=11.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SAP.Connector.Rfc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BSQci.vb" />
+    <Compile Include="ChiaNgan.vb" />
+    <Compile Include="Class1.vb" />
+    <Compile Include="FmCheckEndDay.Designer.vb">
+      <DependentUpon>FmCheckEndDay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmCheckEndDay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCardAdd.Designer.vb">
+      <DependentUpon>FrCardAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCardAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCardList.Designer.vb">
+      <DependentUpon>FrCardList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCardList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrCardList_Hist.Designer.vb">
+      <DependentUpon>FrCardList_Hist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrCardList_Hist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmATG_Exp.Designer.vb">
+      <DependentUpon>FrmATG_Exp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmATG_Exp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAutoCheck.Designer.vb">
+      <DependentUpon>FrmAutoCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAutoCheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCardInput.Designer.vb">
+      <DependentUpon>FrmCardInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCardInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeClient.Designer.vb">
+      <DependentUpon>FrmChangeClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangeStatus.Designer.vb">
+      <DependentUpon>FrmChangeStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangeStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckScadar.Designer.vb">
+      <DependentUpon>FrmCheckScadar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckScadar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChonBeATG.Designer.vb">
+      <DependentUpon>FrmChonBeATG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChonBeATG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.vb">
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnect.Designer.vb">
+      <DependentUpon>FrmConnect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConnect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopy.Designer.vb">
+      <DependentUpon>FrmCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopyNew.Designer.vb">
+      <DependentUpon>FrmCopyNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopyNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatNgan.Designer.vb">
+      <DependentUpon>FrmDatNgan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDatNgan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDongBoSAP.Designer.vb">
+      <DependentUpon>FrmDongBoSAP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDongBoSAP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExport.Designer.vb">
+      <DependentUpon>FrmExport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtraE5.Designer.vb">
+      <DependentUpon>FrmExtraE5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtraE5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGhiNhanThucXuat.Designer.vb">
+      <DependentUpon>FrmGhiNhanThucXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGhiNhanThucXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGhiNhanThucXuatExt.Designer.vb">
+      <DependentUpon>FrmGhiNhanThucXuatExt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGhiNhanThucXuatExt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHoaDonQL.Designer.vb">
+      <DependentUpon>FrmHoaDonQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHoaDonQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHTTGToSAP.Designer.vb">
+      <DependentUpon>FrmHTTGToSAP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHTTGToSAP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHuyChuyen.Designer.vb">
+      <DependentUpon>frmHuyChuyen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHuyChuyen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHuyTichKe.Designer.vb">
+      <DependentUpon>FrmHuyTichKe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHuyTichKe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInChungTu.Designer.vb">
+      <DependentUpon>FrmInChungTu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInChungTu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInChungTu_HDDT.Designer.vb">
+      <DependentUpon>FrmInChungTu_HDDT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInChungTu_HDDT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKiemKe.Designer.vb">
+      <DependentUpon>FrmKiemKe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKiemKe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuatCopy.Designer.vb">
+      <DependentUpon>FrmLenhXuatCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuatCopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_DChuyen.Designer.vb">
+      <DependentUpon>FrmLenhXuat_DChuyen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_DChuyen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_HGui.Designer.vb">
+      <DependentUpon>FrmLenhXuat_HGui.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_HGui.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_NoiDia.Designer.vb">
+      <DependentUpon>FrmLenhXuat_NoiDia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_NoiDia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_NoiDiaDO1.Designer.vb">
+      <DependentUpon>FrmLenhXuat_NoiDiaDO1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_NoiDiaDO1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_TaiXuat.Designer.vb">
+      <DependentUpon>FrmLenhXuat_TaiXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_TaiXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLenhXuat_TaiXuatDO1.Designer.vb">
+      <DependentUpon>FrmLenhXuat_TaiXuatDO1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLenhXuat_TaiXuatDO1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLyDo.Designer.vb">
+      <DependentUpon>FrmLyDo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLyDo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOrderSapUpd.Designer.vb">
+      <DependentUpon>FrmOrderSapUpd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrderSapUpd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhatHanhTichKe.Designer.vb">
+      <DependentUpon>FrmPhatHanhTichKe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPhatHanhTichKe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQCI.Designer.vb">
+      <DependentUpon>FrmQCI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQCI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQciKg.Designer.vb">
+      <DependentUpon>FrmQciKg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQciKg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQCIThuy.Designer.vb">
+      <DependentUpon>FrmQCIThuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQCIThuy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLyHuyTK.Designer.vb">
+      <DependentUpon>FrmQuanLyHuyTK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLyHuyTK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh.Designer.vb">
+      <DependentUpon>FrmQuanLySoLenh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh22.Designer.vb">
+      <DependentUpon>FrmQuanLySoLenh22.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh22.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh_In.Designer.vb">
+      <DependentUpon>FrmQuanLySoLenh_In.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuanLySoLenh_In.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuyDoiATG.Designer.vb">
+      <DependentUpon>FrmQuyDoiATG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuyDoiATG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportCancel.Designer.vb">
+      <DependentUpon>FrmReportCancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScadarFox.Designer.vb">
+      <DependentUpon>FrmScadarFox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScadarFox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScadarSQL.Designer.vb">
+      <DependentUpon>FrmScadarSQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScadarSQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSMOLenh.Designer.vb">
+      <DependentUpon>FrmSMOLenh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSMOLenh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLenhAuto.Designer.vb">
+      <DependentUpon>FrmSoLenhAuto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoLenhAuto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLenhAutoDate.Designer.vb">
+      <DependentUpon>FrmSoLenhAutoDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoLenhAutoDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLenhAuto_Hist.Designer.vb">
+      <DependentUpon>FrmSoLenhAuto_Hist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoLenhAuto_Hist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSoLenh_THN.Designer.vb">
+      <DependentUpon>FrmSoLenh_THN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSoLenh_THN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankATG.Designer.vb">
+      <DependentUpon>FrmTankATG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankATG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankATG_AM.Designer.vb">
+      <DependentUpon>FrmTankATG_AM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankATG_AM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankATG_AM_List.Designer.vb">
+      <DependentUpon>FrmTankATG_AM_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankATG_AM_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankATG_M.Designer.vb">
+      <DependentUpon>FrmTankATG_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankATG_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankBatch.Designer.vb">
+      <DependentUpon>FrmTankBatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankBatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankChange.Designer.vb">
+      <DependentUpon>FrmTankChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankChange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp.Designer.vb">
+      <DependentUpon>FrmTankHeaderImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp_App.Designer.vb">
+      <DependentUpon>FrmTankHeaderImp_App.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp_App.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp_QL.Designer.vb">
+      <DependentUpon>FrmTankHeaderImp_QL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankHeaderImp_QL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankListATG.Designer.vb">
+      <DependentUpon>FrmTankListATG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankListATG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankListATG_AM_Hist.Designer.vb">
+      <DependentUpon>FrmTankListATG_AM_Hist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankListATG_AM_Hist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankListATG_Hist.Designer.vb">
+      <DependentUpon>FrmTankListATG_Hist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankListATG_Hist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankListATG_M_Hist.Designer.vb">
+      <DependentUpon>FrmTankListATG_M_Hist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankListATG_M_Hist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaoMoiLenhXuat.Designer.vb">
+      <DependentUpon>FrmTaoMoiLenhXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaoMoiLenhXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTichKe.Designer.vb">
+      <DependentUpon>FrmTichKe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTichKe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTraCuuSoLieuDoBon.Designer.vb">
+      <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTraCuuSoLieuDoBon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehicle_TaiTrong.Designer.vb">
+      <DependentUpon>FrmVehicle_TaiTrong.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVehicle_TaiTrong.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXacNhanThucXuat.Designer.vb">
+      <DependentUpon>FrmXacNhanThucXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXacNhanThucXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HTTG_SAP.vb" />
+    <Compile Include="HTTG_SCADAR.vb" />
+    <Compile Include="HUYTICHKE.vb" />
+    <Compile Include="mdlQCI.vb" />
+    <Compile Include="mdlSyncMaster.vb" />
+    <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
+    <Compile Include="Module3.vb" />
+    <Compile Include="Module4.vb" />
+    <Compile Include="Module5.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TyTrong15.vb" />
+    <Compile Include="XtraForm1.Designer.vb">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FmCheckEndDay.resx">
+      <DependentUpon>FmCheckEndDay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCardAdd.resx">
+      <DependentUpon>FrCardAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCardList.resx">
+      <DependentUpon>FrCardList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrCardList_Hist.resx">
+      <DependentUpon>FrCardList_Hist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmATG_Exp.resx">
+      <DependentUpon>FrmATG_Exp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAutoCheck.resx">
+      <DependentUpon>FrmAutoCheck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCardInput.resx">
+      <DependentUpon>FrmCardInput.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeClient.resx">
+      <DependentUpon>FrmChangeClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangeStatus.resx">
+      <DependentUpon>FrmChangeStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckScadar.resx">
+      <DependentUpon>FrmCheckScadar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChonBeATG.resx">
+      <DependentUpon>FrmChonBeATG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConnect.resx">
+      <DependentUpon>FrmConnect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopy.resx">
+      <DependentUpon>FrmCopy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopyNew.resx">
+      <DependentUpon>FrmCopyNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatNgan.resx">
+      <DependentUpon>FrmDatNgan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDongBoSAP.resx">
+      <DependentUpon>FrmDongBoSAP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExport.resx">
+      <DependentUpon>FrmExport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtraE5.resx">
+      <DependentUpon>FrmExtraE5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGhiNhanThucXuat.resx">
+      <DependentUpon>FrmGhiNhanThucXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGhiNhanThucXuatExt.resx">
+      <DependentUpon>FrmGhiNhanThucXuatExt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHoaDonQL.resx">
+      <DependentUpon>FrmHoaDonQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHTTGToSAP.resx">
+      <DependentUpon>FrmHTTGToSAP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHuyChuyen.resx">
+      <DependentUpon>frmHuyChuyen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHuyTichKe.resx">
+      <DependentUpon>FrmHuyTichKe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInChungTu.resx">
+      <DependentUpon>FrmInChungTu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInChungTu_HDDT.resx">
+      <DependentUpon>FrmInChungTu_HDDT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKiemKe.resx">
+      <DependentUpon>FrmKiemKe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuatCopy.resx">
+      <DependentUpon>FrmLenhXuatCopy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_DChuyen.resx">
+      <DependentUpon>FrmLenhXuat_DChuyen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_HGui.resx">
+      <DependentUpon>FrmLenhXuat_HGui.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_NoiDia.resx">
+      <DependentUpon>FrmLenhXuat_NoiDia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_NoiDiaDO1.resx">
+      <DependentUpon>FrmLenhXuat_NoiDiaDO1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_TaiXuat.resx">
+      <DependentUpon>FrmLenhXuat_TaiXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLenhXuat_TaiXuatDO1.resx">
+      <DependentUpon>FrmLenhXuat_TaiXuatDO1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLyDo.resx">
+      <DependentUpon>FrmLyDo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderSapUpd.resx">
+      <DependentUpon>FrmOrderSapUpd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhatHanhTichKe.resx">
+      <DependentUpon>FrmPhatHanhTichKe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQCI.resx">
+      <DependentUpon>FrmQCI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQciKg.resx">
+      <DependentUpon>FrmQciKg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQCIThuy.resx">
+      <DependentUpon>FrmQCIThuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLyHuyTK.resx">
+      <DependentUpon>FrmQuanLyHuyTK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLySoLenh.resx">
+      <DependentUpon>FrmQuanLySoLenh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLySoLenh22.resx">
+      <DependentUpon>FrmQuanLySoLenh22.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuanLySoLenh_In.resx">
+      <DependentUpon>FrmQuanLySoLenh_In.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuyDoiATG.resx">
+      <DependentUpon>FrmQuyDoiATG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportCancel.resx">
+      <DependentUpon>FrmReportCancel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScadarFox.resx">
+      <DependentUpon>FrmScadarFox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScadarSQL.resx">
+      <DependentUpon>FrmScadarSQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSMOLenh.resx">
+      <DependentUpon>FrmSMOLenh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLenhAuto.resx">
+      <DependentUpon>FrmSoLenhAuto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLenhAutoDate.resx">
+      <DependentUpon>FrmSoLenhAutoDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLenhAuto_Hist.resx">
+      <DependentUpon>FrmSoLenhAuto_Hist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSoLenh_THN.resx">
+      <DependentUpon>FrmSoLenh_THN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankATG.resx">
+      <DependentUpon>FrmTankATG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankATG_AM.resx">
+      <DependentUpon>FrmTankATG_AM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankATG_AM_List.resx">
+      <DependentUpon>FrmTankATG_AM_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankATG_M.resx">
+      <DependentUpon>FrmTankATG_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankBatch.resx">
+      <DependentUpon>FrmTankBatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankChange.resx">
+      <DependentUpon>FrmTankChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankHeaderImp.resx">
+      <DependentUpon>FrmTankHeaderImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankHeaderImp_App.resx">
+      <DependentUpon>FrmTankHeaderImp_App.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankHeaderImp_QL.resx">
+      <DependentUpon>FrmTankHeaderImp_QL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankListATG.resx">
+      <DependentUpon>FrmTankListATG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankListATG_AM_Hist.resx">
+      <DependentUpon>FrmTankListATG_AM_Hist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankListATG_Hist.resx">
+      <DependentUpon>FrmTankListATG_Hist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankListATG_M_Hist.resx">
+      <DependentUpon>FrmTankListATG_M_Hist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaoMoiLenhXuat.resx">
+      <DependentUpon>FrmTaoMoiLenhXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTichKe.resx">
+      <DependentUpon>FrmTichKe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTraCuuSoLieuDoBon.resx">
+      <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicle_TaiTrong.resx">
+      <DependentUpon>FrmVehicle_TaiTrong.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXacNhanThucXuat.resx">
+      <DependentUpon>FrmXacNhanThucXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACCESS_OBJECT\ACCESS_OBJECT.vbproj">
+      <Project>{20A0E9B3-A1E6-44C2-A489-6EDE53CF2A4C}</Project>
+      <Name>ACCESS_OBJECT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ECCDestination\ECCDestination.vbproj">
+      <Project>{0A9C7BC6-F572-43A1-84A8-FCEA5C4D3E77}</Project>
+      <Name>ECCDestination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FOX_OBJECT\FOX_OBJECT.vbproj">
+      <Project>{A9209CC4-4FDE-413A-B206-2DF801C6E74D}</Project>
+      <Name>FOX_OBJECT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FPTModule\FPTModule.vbproj">
+      <Project>{9AD65902-417A-4B71-95D8-09050A7EF487}</Project>
+      <Name>FPTModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HDDT\HDDT.vbproj">
+      <Project>{6A3F8855-6AD9-4B2E-B358-1A1DF29850BD}</Project>
+      <Name>HDDT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HTTG_COMMON\HTTG_COMMON.vbproj">
+      <Project>{B211E001-842A-4974-9D96-8B646C0BEE9B}</Project>
+      <Name>HTTG_COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibCustom\LibCustom.vbproj">
+      <Project>{ADB9D4C1-CC73-4208-B40B-0F0EBF9B9D29}</Project>
+      <Name>LibCustom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportSetup\ReportSetup.vbproj">
+      <Project>{07306190-3C38-40AF-913F-8B5F99C51AB1}</Project>
+      <Name>ReportSetup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAP_OBJECT\SAP_OBJECT.vbproj">
+      <Project>{0343852E-D57D-45CE-AEE6-E8A3393A90B8}</Project>
+      <Name>SAP_OBJECT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMOInterface\WindowsApplication1\SMOInterface.vbproj">
+      <Project>{0CC171BA-E0D1-4161-B9D2-753BECCFE68E}</Project>
+      <Name>SMOInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SOAP_API\SOAP_API.vbproj">
+      <Project>{D1C25141-2BFC-4609-97C1-A1C15AE30A38}</Project>
+      <Name>SOAP_API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SynMaster\SynMaster.vbproj">
+      <Project>{AA7F7BE7-92E5-4317-B4A7-B76A3A894EB1}</Project>
+      <Name>SynMaster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\THN_SAP_OBJECT\THN_SAP_OBJECT.vbproj">
+      <Project>{F4F3A30E-4A20-4A05-8FFF-A89BF82772AC}</Project>
+      <Name>THN_SAP_OBJECT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\U_CusForm\U_CusForm.vbproj">
+      <Project>{792A24F6-4CCB-4D6E-952D-2DC7F418C32B}</Project>
+      <Name>U_CusForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\U_TextBox\U_Control.vbproj">
+      <Project>{FE498378-41D3-4A44-A25D-E8D67A04C6C8}</Project>
+      <Name>U_Control</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
