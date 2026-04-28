@@ -165,9 +165,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BM_05_04_01_HH.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BM_05_04_01_HH.vb">
-      <DependentUpon>BM_05_04_01_HH.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BSThongTinHoaDon.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="DataSet1.Designer.vb">

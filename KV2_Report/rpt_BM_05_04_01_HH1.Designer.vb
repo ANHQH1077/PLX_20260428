@@ -19,7 +19,6 @@ Partial Public Class rpt_BM_05_04_01_HH1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim XrSummary2 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim XrSummary3 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim XrSummary4 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
@@ -28,6 +27,8 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Dim XrSummary7 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim XrSummary8 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Dim XrSummary9 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
+        Dim XrSummary10 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
+        Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
@@ -53,6 +54,8 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel15 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel18 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel19 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.BM_05_04_01_HH1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -86,7 +89,7 @@ Partial Public Class rpt_BM_05_04_01_HH1
         '
         'Detail1
         '
-        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel17, Me.XrLabel14, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel3})
+        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel19, Me.XrLabel17, Me.XrLabel14, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel3})
         Me.Detail1.HeightF = 20.91665!
         Me.Detail1.Name = "Detail1"
         '
@@ -100,9 +103,9 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel17.SizeF = New System.Drawing.SizeF(60.211!, 20.91665!)
         Me.XrLabel17.StylePriority.UseBorders = False
         Me.XrLabel17.StylePriority.UseTextAlignment = False
-        XrSummary1.FormatString = "{0:#}"
-        XrSummary1.IgnoreNullValues = True
-        Me.XrLabel17.Summary = XrSummary1
+        XrSummary2.FormatString = "{0:#}"
+        XrSummary2.IgnoreNullValues = True
+        Me.XrLabel17.Summary = XrSummary2
         Me.XrLabel17.Text = "XrLabel17"
         Me.XrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrLabel17.WordWrap = False
@@ -119,9 +122,9 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel14.StylePriority.UseBorders = False
         Me.XrLabel14.StylePriority.UseFont = False
         Me.XrLabel14.StylePriority.UseTextAlignment = False
-        XrSummary2.FormatString = "{0:#}"
-        XrSummary2.IgnoreNullValues = True
-        Me.XrLabel14.Summary = XrSummary2
+        XrSummary3.FormatString = "{0:#}"
+        XrSummary3.IgnoreNullValues = True
+        Me.XrLabel14.Summary = XrSummary3
         Me.XrLabel14.Text = "XrLabel14"
         Me.XrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel14.WordWrap = False
@@ -138,9 +141,9 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel13.StylePriority.UseBorders = False
         Me.XrLabel13.StylePriority.UseFont = False
         Me.XrLabel13.StylePriority.UseTextAlignment = False
-        XrSummary3.FormatString = "{0:#}"
-        XrSummary3.IgnoreNullValues = True
-        Me.XrLabel13.Summary = XrSummary3
+        XrSummary4.FormatString = "{0:#}"
+        XrSummary4.IgnoreNullValues = True
+        Me.XrLabel13.Summary = XrSummary4
         Me.XrLabel13.Text = "XrLabel13"
         Me.XrLabel13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel13.WordWrap = False
@@ -157,9 +160,9 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel12.StylePriority.UseBorders = False
         Me.XrLabel12.StylePriority.UseFont = False
         Me.XrLabel12.StylePriority.UseTextAlignment = False
-        XrSummary4.FormatString = "{0:#}"
-        XrSummary4.IgnoreNullValues = True
-        Me.XrLabel12.Summary = XrSummary4
+        XrSummary5.FormatString = "{0:#}"
+        XrSummary5.IgnoreNullValues = True
+        Me.XrLabel12.Summary = XrSummary5
         Me.XrLabel12.Text = "XrLabel12"
         Me.XrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel12.WordWrap = False
@@ -172,13 +175,13 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(406.0432!, 0.0!)
         Me.XrLabel11.Name = "XrLabel11"
         Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel11.SizeF = New System.Drawing.SizeF(92.83292!, 20.91665!)
+        Me.XrLabel11.SizeF = New System.Drawing.SizeF(81.37457!, 20.91665!)
         Me.XrLabel11.StylePriority.UseBorders = False
         Me.XrLabel11.StylePriority.UseFont = False
         Me.XrLabel11.StylePriority.UseTextAlignment = False
-        XrSummary5.FormatString = "{0:#}"
-        XrSummary5.IgnoreNullValues = True
-        Me.XrLabel11.Summary = XrSummary5
+        XrSummary6.FormatString = "{0:#}"
+        XrSummary6.IgnoreNullValues = True
+        Me.XrLabel11.Summary = XrSummary6
         Me.XrLabel11.Text = "XrLabel11"
         Me.XrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel11.WordWrap = False
@@ -188,16 +191,16 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel10.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "01_Sub.N30", "{0:#,#}")})
         Me.XrLabel10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(498.8761!, 0.0!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(487.4178!, 0.0!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel10.SizeF = New System.Drawing.SizeF(89.70798!, 20.91665!)
+        Me.XrLabel10.SizeF = New System.Drawing.SizeF(78.12512!, 20.91665!)
         Me.XrLabel10.StylePriority.UseBorders = False
         Me.XrLabel10.StylePriority.UseFont = False
         Me.XrLabel10.StylePriority.UseTextAlignment = False
-        XrSummary6.FormatString = "{0:#}"
-        XrSummary6.IgnoreNullValues = True
-        Me.XrLabel10.Summary = XrSummary6
+        XrSummary7.FormatString = "{0:#}"
+        XrSummary7.IgnoreNullValues = True
+        Me.XrLabel10.Summary = XrSummary7
         Me.XrLabel10.Text = "XrLabel10"
         Me.XrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel10.WordWrap = False
@@ -207,16 +210,16 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel9.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "01_Sub.HG", "{0:#,#}")})
         Me.XrLabel9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(588.5841!, 0.0!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(629.2092!, 0.0!)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel9.SizeF = New System.Drawing.SizeF(87.62457!, 20.91665!)
+        Me.XrLabel9.SizeF = New System.Drawing.SizeF(73.04126!, 20.91665!)
         Me.XrLabel9.StylePriority.UseBorders = False
         Me.XrLabel9.StylePriority.UseFont = False
         Me.XrLabel9.StylePriority.UseTextAlignment = False
-        XrSummary7.FormatString = "{0:#}"
-        XrSummary7.IgnoreNullValues = True
-        Me.XrLabel9.Summary = XrSummary7
+        XrSummary8.FormatString = "{0:#}"
+        XrSummary8.IgnoreNullValues = True
+        Me.XrLabel9.Summary = XrSummary8
         Me.XrLabel9.Text = "XrLabel9"
         Me.XrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel9.WordWrap = False
@@ -226,16 +229,16 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel8.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel8.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "01_Sub.JET", "{0:#,#}")})
         Me.XrLabel8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(676.2087!, 0.0!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(702.2505!, 0.0!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(91.7912!, 20.91665!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(65.74939!, 20.91665!)
         Me.XrLabel8.StylePriority.UseBorders = False
         Me.XrLabel8.StylePriority.UseFont = False
         Me.XrLabel8.StylePriority.UseTextAlignment = False
-        XrSummary8.FormatString = "{0:#}"
-        XrSummary8.IgnoreNullValues = True
-        Me.XrLabel8.Summary = XrSummary8
+        XrSummary9.FormatString = "{0:#}"
+        XrSummary9.IgnoreNullValues = True
+        Me.XrLabel8.Summary = XrSummary9
         Me.XrLabel8.Text = "XrLabel8"
         Me.XrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         Me.XrLabel8.WordWrap = False
@@ -251,9 +254,9 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(85.04185!, 20.91665!)
         Me.XrLabel3.StylePriority.UseBorders = False
         Me.XrLabel3.StylePriority.UseTextAlignment = False
-        XrSummary9.FormatString = "{0:#}"
-        XrSummary9.IgnoreNullValues = True
-        Me.XrLabel3.Summary = XrSummary9
+        XrSummary10.FormatString = "{0:#}"
+        XrSummary10.IgnoreNullValues = True
+        Me.XrLabel3.Summary = XrSummary10
         Me.XrLabel3.Text = "XrLabel3"
         Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrLabel3.WordWrap = False
@@ -323,7 +326,7 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(406.0432!, 0.0!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(92.83298!, 34.45823!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(81.37463!, 34.45823!)
         Me.XrLabel4.StylePriority.UseBackColor = False
         Me.XrLabel4.StylePriority.UseBorders = False
         Me.XrLabel4.StylePriority.UseFont = False
@@ -337,10 +340,10 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel5.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
                     Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(498.8761!, 0.0!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(487.4178!, 0.0!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(89.70792!, 34.45823!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(78.12524!, 34.45823!)
         Me.XrLabel5.StylePriority.UseBackColor = False
         Me.XrLabel5.StylePriority.UseBorders = False
         Me.XrLabel5.StylePriority.UseFont = False
@@ -354,10 +357,10 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel6.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
                     Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(588.5841!, 0.0!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(629.2093!, 0.0!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(87.62463!, 34.45823!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(73.0412!, 34.45823!)
         Me.XrLabel6.StylePriority.UseBackColor = False
         Me.XrLabel6.StylePriority.UseBorders = False
         Me.XrLabel6.StylePriority.UseFont = False
@@ -371,10 +374,10 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel7.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
                     Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.XrLabel7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(676.2088!, 0.0!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(702.2505!, 0.0!)
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(91.7912!, 34.45823!)
+        Me.XrLabel7.SizeF = New System.Drawing.SizeF(65.74951!, 34.45823!)
         Me.XrLabel7.StylePriority.UseBackColor = False
         Me.XrLabel7.StylePriority.UseBorders = False
         Me.XrLabel7.StylePriority.UseFont = False
@@ -401,7 +404,7 @@ Partial Public Class rpt_BM_05_04_01_HH1
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel16, Me.XrLabel15, Me.XrLabel58, Me.XrLabel1, Me.XrLabel2, Me.XrLabel4, Me.XrLabel5, Me.XrLabel6, Me.XrLabel7})
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel16, Me.XrLabel15, Me.XrLabel58, Me.XrLabel1, Me.XrLabel2, Me.XrLabel4, Me.XrLabel5, Me.XrLabel6, Me.XrLabel7, Me.XrLabel18})
         Me.ReportHeader.HeightF = 34.45823!
         Me.ReportHeader.Name = "ReportHeader"
         '
@@ -421,6 +424,42 @@ Partial Public Class rpt_BM_05_04_01_HH1
         Me.XrLabel16.StylePriority.UseTextAlignment = False
         Me.XrLabel16.Text = "Kho"
         Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'XrLabel18
+        '
+        Me.XrLabel18.BackColor = System.Drawing.Color.LightGray
+        Me.XrLabel18.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
+                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel18.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(565.543!, 0.0!)
+        Me.XrLabel18.Name = "XrLabel18"
+        Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel18.SizeF = New System.Drawing.SizeF(63.6662!, 34.45823!)
+        Me.XrLabel18.StylePriority.UseBackColor = False
+        Me.XrLabel18.StylePriority.UseBorders = False
+        Me.XrLabel18.StylePriority.UseFont = False
+        Me.XrLabel18.StylePriority.UseTextAlignment = False
+        Me.XrLabel18.Text = "N45"
+        Me.XrLabel18.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'XrLabel19
+        '
+        Me.XrLabel19.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel19.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "01_Sub.N45", "{0:#,#}")})
+        Me.XrLabel19.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(565.543!, 0.0!)
+        Me.XrLabel19.Name = "XrLabel19"
+        Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel19.SizeF = New System.Drawing.SizeF(63.66626!, 20.91665!)
+        Me.XrLabel19.StylePriority.UseBorders = False
+        Me.XrLabel19.StylePriority.UseFont = False
+        Me.XrLabel19.StylePriority.UseTextAlignment = False
+        XrSummary1.FormatString = "{0:#}"
+        XrSummary1.IgnoreNullValues = True
+        Me.XrLabel19.Summary = XrSummary1
+        Me.XrLabel19.Text = "XrLabel19"
+        Me.XrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrLabel19.WordWrap = False
         '
         'rpt_BM_05_04_01_HH1
         '
@@ -461,4 +500,6 @@ Partial Public Class rpt_BM_05_04_01_HH1
     Friend WithEvents ReportHeader As DevExpress.XtraReports.UI.ReportHeaderBand
     Friend WithEvents XrLabel17 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel16 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel18 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
 End Class

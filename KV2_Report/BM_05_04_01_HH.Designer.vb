@@ -735,6 +735,8 @@ Partial Public Class BM_05_04_01_HH
         
         Private columnJET As Global.System.Data.DataColumn
         
+        Private columnN45 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -851,6 +853,14 @@ Partial Public Class BM_05_04_01_HH
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property N45Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnN45
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -887,9 +897,9 @@ Partial Public Class BM_05_04_01_HH
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Add_01_SubRow(ByVal Client As String, ByVal LOAI As String, ByVal TenLoai As String, ByVal TONGCONG As Decimal, ByVal CH As Decimal, ByVal CN As Decimal, ByVal NBN As Decimal, ByVal N30 As Decimal, ByVal HG As Decimal, ByVal JET As Decimal) As _01_SubRow
+        Public Overloads Function Add_01_SubRow(ByVal Client As String, ByVal LOAI As String, ByVal TenLoai As String, ByVal TONGCONG As Decimal, ByVal CH As Decimal, ByVal CN As Decimal, ByVal NBN As Decimal, ByVal N30 As Decimal, ByVal HG As Decimal, ByVal JET As Decimal, ByVal N45 As String) As _01_SubRow
             Dim row_01_SubRow As _01_SubRow = CType(Me.NewRow,_01_SubRow)
-            Dim columnValuesArray() As Object = New Object() {Client, LOAI, TenLoai, TONGCONG, CH, CN, NBN, N30, HG, JET}
+            Dim columnValuesArray() As Object = New Object() {Client, LOAI, TenLoai, TONGCONG, CH, CN, NBN, N30, HG, JET, N45}
             row_01_SubRow.ItemArray = columnValuesArray
             Me.Rows.Add(row_01_SubRow)
             Return row_01_SubRow
@@ -922,6 +932,7 @@ Partial Public Class BM_05_04_01_HH
             Me.columnN30 = MyBase.Columns("N30")
             Me.columnHG = MyBase.Columns("HG")
             Me.columnJET = MyBase.Columns("JET")
+            Me.columnN45 = MyBase.Columns("N45")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -947,6 +958,8 @@ Partial Public Class BM_05_04_01_HH
             MyBase.Columns.Add(Me.columnHG)
             Me.columnJET = New Global.System.Data.DataColumn("JET", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnJET)
+            Me.columnN45 = New Global.System.Data.DataColumn("N45", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnN45)
             Me.ExtendedProperties.Add("Generator_TableVarName", "table01_Sub")
             Me.ExtendedProperties.Add("Generator_UserTableName", "01_Sub")
         End Sub
@@ -1585,6 +1598,21 @@ Partial Public Class BM_05_04_01_HH
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property N45() As String
+            Get
+                Try 
+                    Return CType(Me(Me.table01_Sub.N45Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'N45' in table '01_Sub' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.table01_Sub.N45Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsClientNull() As Boolean
             Return Me.IsNull(Me.table01_Sub.ClientColumn)
         End Function
@@ -1701,6 +1729,18 @@ Partial Public Class BM_05_04_01_HH
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetJETNull()
             Me(Me.table01_Sub.JETColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsN45Null() As Boolean
+            Return Me.IsNull(Me.table01_Sub.N45Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetN45Null()
+            Me(Me.table01_Sub.N45Column) = Global.System.Convert.DBNull
         End Sub
     End Class
     
