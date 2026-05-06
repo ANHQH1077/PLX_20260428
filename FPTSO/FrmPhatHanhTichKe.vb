@@ -1807,7 +1807,7 @@ Line_tt:
             'End If
             If Not Me.SoLenh.EditValue Is Nothing Then
 
-                If p_SOLENH_QR = True And Len(Not Me.SoLenh.EditValue.ToString.Trim) > 10 Then
+                If p_SOLENH_QR = True And Len(Me.SoLenh.EditValue.ToString.Trim) > 10 Then
                     GetSoLenh_QRCode(Me.SoLenh.EditValue.ToString.Trim)
 
                     Exit Sub

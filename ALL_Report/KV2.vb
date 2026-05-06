@@ -148,11 +148,27 @@ Module KV2
         Dim p_Rpt As New KV2_TichKe_New
 
         Dim p_Rpt2540 As New KV2_TichKe_A3
-
-
+        Dim p_Table As DataTable
+        Dim p_SQL As String = "select * from SYS_CONFIG  where keycode = 'SOLENH_QR'"
         Dim p_RptThuy As New KV2_TichKe_Thuy
+        Dim p_BarCode As Boolean = False
+
+        Dim encoder As New Codec.QRCodeEncoder 'MessagingToolkit.QRCode.Codec.QRCodeEncoder
+        Dim qrCodeImage As Bitmap
+        qrCodeImage = encoder.Encode(i_dt_trans.Rows(0).Item("MaTichKe").ToString)
+
         Try
             If g_Company_Code <> "2540" Then
+                p_Table = GetDataTable(p_SQL, p_SQL)
+                If Not p_Table Is Nothing Then
+                    If p_Table.Rows.Count > 0 Then
+                        If p_Table.Rows(0).Item("KEYVALUE").ToString.Trim = "Y" Then
+                            p_BarCode = True
+                        End If
+                    End If
+                End If
+
+
 
 
                 p_Rpt.Parameters.Item("p_Day").Value = CDate(i_dt_trans.Rows(0).Item("NgayXuat")).ToString("dd")
@@ -179,7 +195,9 @@ Module KV2
 
                 If i_Preview Then
                     If i_dt_trans.Rows(0).Item("Bo").ToString().Trim() = "X" Then
-
+                        'p_Rpt.XrBarCode1.Visible = p_BarCode
+                        p_Rpt.PictureEdit1.Image = qrCodeImage
+                        p_Rpt.PictureEdit1.Visible = p_BarCode
                         p_Rpt.PrinterName = g_DefaultPrint
                         p_Rpt.DataSource = i_dt_trans
                         p_Rpt.Print()
@@ -189,7 +207,11 @@ Module KV2
                         p_RptThuy.Print()
                     End If
                 Else
+                    
                     If i_dt_trans.Rows(0).Item("Bo").ToString().Trim() = "X" Then
+                        'p_Rpt.XrBarCode1.Visible = p_BarCode
+                        p_Rpt.PictureEdit1.Image = qrCodeImage
+                        p_Rpt.PictureEdit1.Visible = p_BarCode
                         p_Rpt.PrinterName = g_DefaultPrint
                         p_Rpt.DataSource = i_dt_trans
                         p_Rpt.ShowPreviewDialog()

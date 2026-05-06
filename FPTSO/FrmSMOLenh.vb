@@ -61,6 +61,7 @@
         End If
     End Sub
     Private Sub SoTichKe_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SoTichKe.KeyDown
+
         If e.KeyCode = Keys.Enter Then
             LoadData()
         End If
