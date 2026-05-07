@@ -10208,6 +10208,10 @@ Line_tt:
         Dim p_Int As Integer
         Dim p_SoLenhArr() As String
         Dim p_Value As String
+        Dim p_Str_SoLenh As String
+
+        Dim p_DT As DataTable
+
         p_Datatable.Columns.Add("SoLenh")
 
         p_DataTableDel.Columns.Add("STRSQL")
@@ -10220,6 +10224,7 @@ Line_tt:
                 If Len(p_SoLenhArr(p_Int).ToString.Trim) = 10 Then
                     p_Row = p_Datatable.NewRow
                     p_Row.Item(0) = p_SoLenhArr(p_Int).ToString.Trim
+                    p_Str_SoLenh = p_Str_SoLenh & "," & p_SoLenhArr(p_Int).ToString.Trim
                     p_Datatable.Rows.Add(p_Row)
                 End If
 
@@ -10237,11 +10242,23 @@ Line_tt:
         If Not p_Datatable Is Nothing Then
             If p_Datatable.Rows.Count = 0 Then
                 p_SQL = "Số lệnh không xác định"
+                Me.SoLenh.EditValue = ""
                 Cursor = Cursors.Default
                 ShowMessageBox("", p_SQL)
                 Exit Sub
             End If
 
+            p_SQL = "select SoLenh from tblLenhXuatE5  where CHARINDEX (SoLenh,'" & p_Str_SoLenh & "',1) >0  and isnull(status,'1') in ('3','4','5','31')"
+            p_DT = GetDataTable(p_SQL, p_SQL)
+            If Not p_DT Is Nothing Then
+                If p_DT.Rows.Count > 0 Then
+                    p_SQL = "Lệnh xuất " & p_DT.Rows(0).Item("SoLenh").ToString & " đã thực hiện bơm xuất hàng"
+                    Me.SoLenh.EditValue = ""
+                    Cursor = Cursors.Default
+                    ShowMessageBox("", p_SQL)
+                    Exit Sub
+                End If
+            End If
             ''Xử lý các lệnh đã kéo về và trạng thái là 1''
             For p_Count = 0 To p_Datatable.Rows.Count - 1
                 p_DataRow = p_DataTableDel.NewRow
