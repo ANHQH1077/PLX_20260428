@@ -209,6 +209,13 @@ Module Driver
             o_err = ex.Message.ToString()
             SyncVEHICLE = False
             'Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
@@ -547,6 +554,13 @@ Module Driver
             End Try
             o_err = ex.Message.ToString()
             Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
@@ -631,6 +645,13 @@ Module Driver
             End Try
             o_err = ex.Message.ToString()
             'Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
@@ -813,10 +834,185 @@ Module Driver
             'Lỗi do chưa remote-enable trong tab Atribute của function module
             o_err = ex.Message.ToString()
             Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
     End Function
+
+
+
+    'anhqh
+    'Ham dung lay nguon N30 de kiem tra voi thoi gian kiem ke
+    '202601
+    Public Function N30_Get_DO2_Infor(ByVal p_SoLenh As String, ByRef o_err As String) As DataTable
+
+        Dim l_func As IRfcFunction
+        Dim l_tabl As IRfcTable
+        Dim l_ret2 As IRfcStructure
+        Dim _ecc As RfcDestination
+        Dim p_TEst As IDestinationConfiguration
+        Dim p_Table As RfcTableMetadata
+        Dim repository As RfcRepository ' = _ecc.Repository
+        Dim p_E_DO As String = ""
+        Dim p_E_KUNNR As String = ""
+        Dim p_CreateDate As String = ""
+
+        Dim p_TableReturn As New DataTable("Table01")
+        Dim p_Row As DataRow
+        Try
+
+            p_TableReturn.Columns.Add("ParName")
+            p_TableReturn.Columns.Add("ParValue")
+
+            p_TEst = New ECCDestinationConfig(p_ConnectString, p_Language, p_IdleTimeout, g_CompanyCode)
+
+            Try
+                _ecc = RfcDestinationManager.GetDestination(g_GetDestination)
+            Catch ex As Exception
+                RfcDestinationManager.RegisterDestinationConfiguration(p_TEst)
+                _ecc = RfcDestinationManager.GetDestination(g_GetDestination)
+            End Try
+            repository = _ecc.Repository
+
+
+            l_func = repository.CreateFunction("ZFM_INT_DELIVERIES_SPECIFIC_V1")
+            l_func.SetValue("I_ORDERNO", p_SoLenh)
+            l_func.SetValue("I_STATUS", "N")
+            l_func.Invoke(_ecc)
+
+            ' p_Table = l_func.Metadata.Item(3).ValueMetadataAsTableMetadata
+            l_tabl = l_func.GetTable("T_DELIVERIES")
+
+            If l_tabl.ElementCount <= 0 Then
+                o_err = ""
+                Return Nothing
+            End If
+            ' l_func.SetValue  ("ZSM_THN"
+            '  p_E_KUNNR = l_func.GetString("E_KUNNR")
+            'p_E_DO = l_func.GetString("E_DO")
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "SOTYPE"
+            p_Row.Item("ParValue") = l_tabl.GetValue("SOTYPE").ToString
+            p_TableReturn.Rows.Add(p_Row)
+
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "PRSDT"
+            p_E_DO = l_tabl.GetValue("PRSDT").ToString
+            p_E_DO = Replace(p_E_DO, "-", "")
+            p_Row.Item("ParValue") = p_E_DO
+            p_TableReturn.Rows.Add(p_Row)
+
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "INCO1"
+            p_Row.Item("ParValue") = l_tabl.GetValue("INCO1").ToString
+            p_TableReturn.Rows.Add(p_Row)
+
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "TKTX_Date"
+            p_E_DO = l_tabl.GetValue("TKTX_Date").ToString
+            p_E_DO = Replace(p_E_DO, "-", "")
+            p_Row.Item("ParValue") = p_E_DO
+            p_TableReturn.Rows.Add(p_Row)
+
+            '20241110 bo sung cho kv2
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "TKTX"
+            p_Row.Item("ParValue") = l_tabl.GetValue("TKTX").ToString
+            p_TableReturn.Rows.Add(p_Row)
+
+            '20241122 bo sung cho kv2
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "NhomBeXuat"
+            p_Row.Item("ParValue") = l_tabl.GetValue("Tankgroup").ToString
+            p_TableReturn.Rows.Add(p_Row)
+
+
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "KONDA"
+            p_Row.Item("ParValue") = l_tabl.GetValue("KONDA").ToString
+            p_TableReturn.Rows.Add(p_Row)
+            '
+            p_Row = p_TableReturn.NewRow
+            p_Row.Item("ParName") = "BATCH_ND"
+            p_Row.Item("ParValue") = l_tabl.GetValue("BATCH_ND").ToString
+            p_TableReturn.Rows.Add(p_Row)
+
+            Try
+                p_Row = p_TableReturn.NewRow
+                p_Row.Item("ParName") = "CHOTLO"
+                p_Row.Item("ParValue") = l_tabl.GetValue("CHOTLO").ToString
+                p_TableReturn.Rows.Add(p_Row)
+            Catch ex As Exception
+            End Try
+
+            Try
+                p_Row = p_TableReturn.NewRow
+                p_Row.Item("ParName") = "LOAI_KH"
+                p_Row.Item("ParValue") = l_tabl.GetValue("LOAI_KH").ToString
+                p_TableReturn.Rows.Add(p_Row)
+            Catch ex As Exception
+            End Try
+
+            Try
+                p_Row = p_TableReturn.NewRow
+                p_Row.Item("ParName") = "SO_CHUYEN"
+                p_Row.Item("ParValue") = l_tabl.GetValue("SO_CHUYEN").ToString
+                p_TableReturn.Rows.Add(p_Row)
+            Catch ex As Exception
+            End Try
+
+            Try
+                p_Row = p_TableReturn.NewRow
+                p_Row.Item("ParName") = "NOTE_SMO"
+                p_Row.Item("ParValue") = l_tabl.GetValue("NOTE_SMO").ToString
+                p_TableReturn.Rows.Add(p_Row)
+            Catch ex As Exception
+            End Try
+
+            Try
+                p_CreateDate = l_tabl.GetValue("ERDAT").ToString & " " & l_tabl.GetValue("ERZET").ToString
+                p_CreateDate = CDate(p_CreateDate).ToString("yyyyMMdd HH:mm:ss")
+                p_Row = p_TableReturn.NewRow
+                p_Row.Item("ParName") = "CREATEDATE"
+                p_Row.Item("ParValue") = p_CreateDate
+                p_TableReturn.Rows.Add(p_Row)
+            Catch ex As Exception
+                p_CreateDate = ""
+            End Try
+
+            'RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
+
+            Return p_TableReturn
+
+        Catch ex As Exception
+            Try
+                ' RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
+            Catch ex1 As Exception
+
+            End Try
+            '"The function module "ZFM_INT_DELIVERIES_SPECIFIC_V1" cannot be used for 'remote' calls."  
+            'Lỗi do chưa remote-enable trong tab Atribute của function module
+            o_err = ex.Message.ToString()
+            Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
+        End Try
+
+
+    End Function
+
 
 
 
@@ -3287,6 +3483,13 @@ Module Driver
             End Try
             o_err = ex.Message.ToString()
             Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
@@ -3560,6 +3763,13 @@ Module Driver
             End Try
             o_err = ex.Message.ToString()
             '  Return Nothing
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 
@@ -3783,7 +3993,13 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
-
+        Finally
+            l_func = Nothing
+            l_tabl = Nothing
+            l_ret2 = Nothing
+            _ecc = Nothing
+            p_TEst = Nothing
+            repository = Nothing
         End Try
 
 

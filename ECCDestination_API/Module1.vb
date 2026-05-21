@@ -63,21 +63,21 @@ Module Module1
 
                     
                     Using client = New HttpClient()
-                        Dim p_requestMsg = New HttpRequestMessage With {
+                        Using p_requestMsg = New HttpRequestMessage With {
                                            .Method = HttpMethod.Post,
                                            .RequestUri = New Uri(p_Link),
                                                .Content = New StringContent(p_SQL, System.Text.Encoding.UTF8, "application/json")
                                        }
-                        client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Basic", p_String)
+                            client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Basic", p_String)
 
-                        Dim response = client.SendAsync(p_requestMsg).Result
-                        If Not response.IsSuccessStatusCode Then
-                            o_err = "API: " & response.ToString
-                        End If
-                        ' Dim responseBody = response.Content.ReadAsStringAsync().Result
-
+                            Using response = client.SendAsync(p_requestMsg).Result
+                                If Not response.IsSuccessStatusCode Then
+                                    o_err = "API: " & response.ToString
+                                End If
+                                ' Dim responseBody = response.Content.ReadAsStringAsync().Result
+                            End Using
+                        End Using
                     End Using
-
 
                 End If
 
@@ -128,23 +128,22 @@ Module Module1
 
 
             Using client = New HttpClient()
-                Dim p_requestMsg = New HttpRequestMessage With {
+                Using p_requestMsg = New HttpRequestMessage With {
                                    .Method = HttpMethod.Post,
                                    .RequestUri = New Uri(p_Link),
                                        .Content = New StringContent(p_SQL, System.Text.Encoding.UTF8, "application/json")
                                }
-                client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Basic", p_String)
+                    client.DefaultRequestHeaders.Authorization = New AuthenticationHeaderValue("Basic", p_String)
 
-                Dim response = client.SendAsync(p_requestMsg).Result
-                If Not response.IsSuccessStatusCode Then
-                    o_err = "API: " & response.ToString
-                End If
+                    Using response = client.SendAsync(p_requestMsg).Result
+                        If Not response.IsSuccessStatusCode Then
+                            o_err = "API: " & response.ToString
+                        End If
 
+                    End Using
+                End Using
 
             End Using
-
-
-
         Catch ex As Exception
             Try
                 ' RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)

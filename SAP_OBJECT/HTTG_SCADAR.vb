@@ -339,6 +339,7 @@ Line_TT:
         Dim p_ValueTable_E5 As String = ""
         Dim p_TableExec_E5 As New DataTable("Table01")
         Dim p_MaHangHoa As String
+        Dim p_MaHangHoaTG As String = ""
         Dim p_HangHoaE5 As Boolean
         Dim p_TyleE5 As Double
         Dim p_TyTrongNenE5 As Double
@@ -461,12 +462,18 @@ Line_TT:
                     Exit Sub
                 End If
                 p_HangHoaE5 = False
-                p_MaHangHoa = p_DataRowHTTG.Item("MaHangHoa").ToString.Trim
 
+                Try
+                    p_MaHangHoaTG = p_DataRowHTTG.Item("MaHangHoaTG").ToString.Trim
+                Catch ex As Exception
+                    p_MaHangHoaTG = ""
+                End Try
+
+                p_MaHangHoa = p_DataRowHTTG.Item("MaHangHoa").ToString.Trim
                 'anhqh
                 '20170720
                 'Them dieu kien   g_HTTG_E5 = True
-                If CheckHangHoaE5(p_MaHangHoa) = True And g_HTTG_E5 = True Then
+                If (CheckHangHoaE5(p_MaHangHoa) = True Or CheckHangHoaE5(p_MaHangHoa) = True) And g_HTTG_E5 = True Then
                     '   If p_MaHangHoa.ToString.Trim = g_TableMaHangHoaE5.Rows(0).Item("MaHangHoa_Scada").ToString.Trim Then
                     p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
                     p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)

@@ -259,6 +259,12 @@
     <Compile Include="FrmHangHoa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmHangHoaE5.Designer.vb">
+      <DependentUpon>FrmHangHoaE5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHangHoaE5.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmHangHoa_Map.Designer.vb">
       <DependentUpon>FrmHangHoa_Map.vb</DependentUpon>
     </Compile>
@@ -558,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHangHoa.resx">
       <DependentUpon>FrmHangHoa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHangHoaE5.resx">
+      <DependentUpon>FrmHangHoaE5.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHangHoa_Map.resx">
       <DependentUpon>FrmHangHoa_Map.vb</DependentUpon>

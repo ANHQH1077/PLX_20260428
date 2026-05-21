@@ -161,6 +161,11 @@ Public Class ECCDestinationConfig
         clsGet_DO2_Infor = Get_DO2_Infor(p_SoLenh, o_err)
     End Function
 
+    Public Function clsN30_Get_DO2_Infor(ByVal p_SoLenh As String, ByRef o_err As String) As DataTable
+        clsN30_Get_DO2_Infor = N30_Get_DO2_Infor(p_SoLenh, o_err)
+    End Function
+
+
     Public Function clsGet_HoaDon_Infor(ByRef o_err As String) As DataTable
         clsGet_HoaDon_Infor = Get_HoaDon_Infor(o_err)
 

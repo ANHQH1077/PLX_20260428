@@ -31,7 +31,7 @@ Module HTTG_SCADAR
     Public g_METER_E5 As Boolean = True
 
 
-
+    Public g_OPTION_SCADAR_E As Boolean = True
 
     '1
     Public g_INTANK_E5 As Boolean = False
@@ -164,6 +164,10 @@ Module HTTG_SCADAR
             p_SQL = "exec FPT_GetDataTableList"
             p_DataSet = g_Services.Sys_SYS_GET_DATASET_Des(p_SQL, p_SQL)
 
+
+            'g_OpntionE5
+
+
             g_METER_E5 = True
             If Not p_DataSet Is Nothing Then
                 If p_DataSet.Tables.Count > 0 Then
@@ -220,6 +224,15 @@ Module HTTG_SCADAR
                             g_Convert_Font = True
                         End If
                     End If
+
+                    g_OPTION_SCADAR_E = True
+                    p_ArrRow = g_Table_Sys_Config.Select("KEYCODE='OPTION_SCADAR_E'")
+                    If p_ArrRow.Length > 0 Then
+                        If p_ArrRow(0).Item("KEYVALUE").ToString.Trim = "N" Then
+                            g_OPTION_SCADAR_E = False
+                        End If
+                    End If
+
                 End If
             End If
 
@@ -533,22 +546,43 @@ Module HTTG_SCADAR
                 'anhqh
                 '20170720
                 'Them dieu kien   g_HTTG_E5 = True
-                If CheckHangHoaE5(p_MaHangHoa) = True And g_HTTG_E5 = True Then
-                    p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
-                    p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
-                    p_HangHoaE5 = True
-                    If p_DataRowMap_cp.Length <= 0 Then
-                        Exit Sub
+
+                If g_OPTION_SCADAR_E = True Then
+                    If CheckHangHoaE5(p_MaHangHoa) = True And g_HTTG_E5 = True Then
+                        p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                        p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                        p_HangHoaE5 = True
+                        If p_DataRowMap_cp.Length <= 0 Then
+                            Exit Sub
+                        End If
+                    Else
+                        'p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                        p_STT = p_DataRowMap_cp_Old(0).Item("STT").ToString.Trim
+                        p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                        If p_DataRowMap_cp.Length <= 0 Then
+                            Exit Sub
+                        End If
                     End If
                 Else
-                    'p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
-                    p_STT = p_DataRowMap_cp_Old(0).Item("STT").ToString.Trim
-                    p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
-                    If p_DataRowMap_cp.Length <= 0 Then
-                        Exit Sub
+                    ''Tach rieng truong hop cau hinh cua TNB
+                    If CheckHangHoaE5(p_MaHangHoa) = True And g_HTTG_E5 = True And p_DataRowHTTG.Item("FlagTankLineE5").ToString = "1" Then
+                        p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                        p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                        p_HangHoaE5 = True
+                        If p_DataRowMap_cp.Length <= 0 Then
+                            Exit Sub
+                        End If
+                    Else
+                        'p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                        p_STT = p_DataRowMap_cp_Old(0).Item("STT").ToString.Trim
+                        p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                        If p_DataRowMap_cp.Length <= 0 Then
+                            Exit Sub
+                        End If
                     End If
-                End If
 
+                End If
+               
 
 
                 p_SQLInsert = ""
@@ -978,26 +1012,68 @@ Module HTTG_SCADAR
                 End If
 
 
-                'p_StrExe = p_InsertTable & "(" & p_SQLInsert & ") "
-                'p_StrExe = p_StrExe & p_ValueTable & "(" & p_SQLValue & ")"
+                If g_OPTION_SCADAR_E = True Then
 
-                If p_HangHoaE5 = True Then
-                    If p_SQLInsert <> "" And p_SQLValue <> "" Then
-                        p_StrExeE5 = p_InsertTable_E5 & "(" & p_SQLInsert & ") "
-                        p_StrExeE5 = p_StrExeE5 & p_ValueTable & "(" & p_SQLValue & ")"
-                        p_DataRow = p_TableExec_E5.NewRow
-                        p_DataRow.Item(0) = p_StrExeE5
-                        p_TableExec_E5.Rows.Add(p_DataRow)
+
+                    If p_HangHoaE5 = True Then
+                        If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                            p_StrExeE5 = p_InsertTable_E5 & "(" & p_SQLInsert & ") "
+                            p_StrExeE5 = p_StrExeE5 & p_ValueTable & "(" & p_SQLValue & ")"
+                            p_DataRow = p_TableExec_E5.NewRow
+                            p_DataRow.Item(0) = p_StrExeE5
+                            p_TableExec_E5.Rows.Add(p_DataRow)
+                        End If
+                    Else
+                        If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                            p_StrExe = p_InsertTable & "(" & p_SQLInsert & ") "
+                            p_StrExe = p_StrExe & p_ValueTable & "(" & p_SQLValue & ")"
+                            p_DataRow = p_TableExec.NewRow
+                            p_DataRow.Item(0) = p_StrExe
+                            p_TableExec.Rows.Add(p_DataRow)
+                        End If
                     End If
+
                 Else
-                    If p_SQLInsert <> "" And p_SQLValue <> "" Then
-                        p_StrExe = p_InsertTable & "(" & p_SQLInsert & ") "
-                        p_StrExe = p_StrExe & p_ValueTable & "(" & p_SQLValue & ")"
-                        p_DataRow = p_TableExec.NewRow
-                        p_DataRow.Item(0) = p_StrExe
-                        p_TableExec.Rows.Add(p_DataRow)
+                    ''Chay cau hình cho TNB  có kiểm tra pha chế đẩy vào tđh inline hay intank
+                    If p_HangHoaE5 = True Then
+
+                        If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                            p_StrExeE5 = p_InsertTable_E5 & "(" & p_SQLInsert & ") "
+                            p_StrExeE5 = p_StrExeE5 & p_ValueTable & "(" & p_SQLValue & ")"
+                            p_DataRow = p_TableExec_E5.NewRow
+                            p_DataRow.Item(0) = p_StrExeE5
+                            p_TableExec_E5.Rows.Add(p_DataRow)
+                        End If
+
+                    Else
+                        If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                            p_StrExe = p_InsertTable & "(" & p_SQLInsert & ") "
+                            p_StrExe = p_StrExe & p_ValueTable & "(" & p_SQLValue & ")"
+                            p_DataRow = p_TableExec.NewRow
+                            p_DataRow.Item(0) = p_StrExe
+                            p_TableExec.Rows.Add(p_DataRow)
+                        End If
                     End If
+
                 End If
+                '''20260520
+                'If p_HangHoaE5 = True Then
+                '    If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                '        p_StrExeE5 = p_InsertTable_E5 & "(" & p_SQLInsert & ") "
+                '        p_StrExeE5 = p_StrExeE5 & p_ValueTable & "(" & p_SQLValue & ")"
+                '        p_DataRow = p_TableExec_E5.NewRow
+                '        p_DataRow.Item(0) = p_StrExeE5
+                '        p_TableExec_E5.Rows.Add(p_DataRow)
+                '    End If
+                'Else
+                '    If p_SQLInsert <> "" And p_SQLValue <> "" Then
+                '        p_StrExe = p_InsertTable & "(" & p_SQLInsert & ") "
+                '        p_StrExe = p_StrExe & p_ValueTable & "(" & p_SQLValue & ")"
+                '        p_DataRow = p_TableExec.NewRow
+                '        p_DataRow.Item(0) = p_StrExe
+                '        p_TableExec.Rows.Add(p_DataRow)
+                '    End If
+                'End If
 
                 ' End If
 
@@ -1130,13 +1206,13 @@ Module HTTG_SCADAR
             End If
         End If
 
+        If g_OPTION_SCADAR_E = True Then
 
-
-        'Trường họp có Insert tự động hàng E5 vào tự động hóa pha chế sắn
-        If p_INTANK_E5_TDH = True Then
-            SQLGetDataToScadar_InTank(p_TypeIn, p_SoLenh, g_LoaiVanChuyen, p_Error, p_Desc, p_Terminal)
+            'Trường họp có Insert tự động hàng E5 vào tự động hóa pha chế sắn
+            If p_INTANK_E5_TDH = True Then
+                SQLGetDataToScadar_InTank(p_TypeIn, p_SoLenh, g_LoaiVanChuyen, p_Error, p_Desc, p_Terminal)
+            End If
         End If
-
 
     End Sub
 

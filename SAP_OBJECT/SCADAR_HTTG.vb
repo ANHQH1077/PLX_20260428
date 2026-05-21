@@ -3420,8 +3420,12 @@ Line_TT:
             If p_HongXuat = "" Then
                 Return ""
             End If
+            If g_Company_Code = "6610" Then
+                p_SQL = "exec FPT_GetMeter_E5_KV2  " & p_HongXuat & ",'" & g_Client_E5 & "'"
+            Else
+                p_SQL = "exec FPT_GetMeter_E5  " & p_HongXuat
+            End If
 
-            p_SQL = "exec FPT_GetMeter_E5  " & p_HongXuat
             p_Table = GetDataTable(p_SQL, p_SQL)
             If Not p_Table Is Nothing Then
                 If p_Table.Rows.Count > 0 Then

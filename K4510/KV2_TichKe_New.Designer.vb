@@ -21,7 +21,6 @@ Partial Public Class KV2_TichKe_New
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(KV2_TichKe_New))
         Dim XrSummary1 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
-        Dim XrSummary2 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel29 = New DevExpress.XtraReports.UI.XRLabel()
@@ -86,24 +85,20 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
-        Me.XrLabel45 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel42 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel51 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel50 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel49 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel48 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel47 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel41 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel40 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel39 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel43 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel44 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel46 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLine3 = New DevExpress.XtraReports.UI.XRLine()
         Me.DetailReport = New DevExpress.XtraReports.UI.DetailReportBand()
         Me.Detail1 = New DevExpress.XtraReports.UI.DetailBand()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLine2 = New DevExpress.XtraReports.UI.XRLine()
+        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.RpDataset1 = New K4510.RpDataset()
         Me.XrCrossBandBox1 = New DevExpress.XtraReports.UI.XRCrossBandBox()
         Me.XrCrossBandLine1 = New DevExpress.XtraReports.UI.XRCrossBandLine()
@@ -311,15 +306,14 @@ Partial Public Class KV2_TichKe_New
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel67, Me.XrLabel66, Me.XrLabel65, Me.XrLabel64, Me.XrLabel63, Me.XrLabel62, Me.XrLabel61, Me.XrLabel60, Me.XrLabel59, Me.XrLabel58, Me.XrLabel57, Me.XrLabel56, Me.XrLabel54, Me.XrLabel18, Me.XrLabel17, Me.XrLabel16, Me.XrLine1, Me.XrLabel53, Me.XrLabel52, Me.XrLabel26, Me.XrLabel25, Me.XrLabel24, Me.XrLabel23, Me.XrLabel15, Me.XrLabel14, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel7, Me.XrLabel5, Me.XrLabel19, Me.XrLabel20, Me.XrLabel21, Me.XrLabel4, Me.XrPictureBox1, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1, Me.XrLabel6, Me.XrLabel22})
-        Me.ReportHeader.HeightF = 426.0!
+        Me.ReportHeader.HeightF = 0.0!
         Me.ReportHeader.Name = "ReportHeader"
         '
         'XrLabel67
         '
         Me.XrLabel67.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.DiemTraHang, "Text", "")})
         Me.XrLabel67.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel67.LocationFloat = New DevExpress.Utils.PointFloat(640.2919!, 258.7083!)
+        Me.XrLabel67.LocationFloat = New DevExpress.Utils.PointFloat(629.6252!, 254.7083!)
         Me.XrLabel67.Name = "XrLabel67"
         Me.XrLabel67.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel67.SizeF = New System.Drawing.SizeF(166.2914!, 48.0!)
@@ -335,7 +329,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel66
         '
         Me.XrLabel66.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel66.LocationFloat = New DevExpress.Utils.PointFloat(530.0001!, 258.7083!)
+        Me.XrLabel66.LocationFloat = New DevExpress.Utils.PointFloat(519.3336!, 254.7083!)
         Me.XrLabel66.Name = "XrLabel66"
         Me.XrLabel66.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel66.SizeF = New System.Drawing.SizeF(105.4999!, 23.0!)
@@ -348,7 +342,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel65.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaPhuongThucBan")})
         Me.XrLabel65.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel65.LocationFloat = New DevExpress.Utils.PointFloat(445.9166!, 190.2083!)
+        Me.XrLabel65.LocationFloat = New DevExpress.Utils.PointFloat(435.25!, 186.2083!)
         Me.XrLabel65.Name = "XrLabel65"
         Me.XrLabel65.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel65.SizeF = New System.Drawing.SizeF(351.0833!, 23.0!)
@@ -361,7 +355,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel64.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaVanChuyen")})
         Me.XrLabel64.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel64.LocationFloat = New DevExpress.Utils.PointFloat(156.8332!, 258.7083!)
+        Me.XrLabel64.LocationFloat = New DevExpress.Utils.PointFloat(146.1666!, 254.7083!)
         Me.XrLabel64.Name = "XrLabel64"
         Me.XrLabel64.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel64.SizeF = New System.Drawing.SizeF(197.7501!, 23.0!)
@@ -374,7 +368,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel63.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaKhachHang")})
         Me.XrLabel63.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel63.LocationFloat = New DevExpress.Utils.PointFloat(156.8333!, 219.375!)
+        Me.XrLabel63.LocationFloat = New DevExpress.Utils.PointFloat(146.1667!, 215.375!)
         Me.XrLabel63.Multiline = True
         Me.XrLabel63.Name = "XrLabel63"
         Me.XrLabel63.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -388,7 +382,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel62.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaNguon")})
         Me.XrLabel62.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel62.LocationFloat = New DevExpress.Utils.PointFloat(156.8333!, 190.2083!)
+        Me.XrLabel62.LocationFloat = New DevExpress.Utils.PointFloat(146.1667!, 186.2083!)
         Me.XrLabel62.Name = "XrLabel62"
         Me.XrLabel62.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel62.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -401,7 +395,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel61.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.LoaiPhieu")})
         Me.XrLabel61.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel61.LocationFloat = New DevExpress.Utils.PointFloat(635.625!, 219.375!)
+        Me.XrLabel61.LocationFloat = New DevExpress.Utils.PointFloat(624.9585!, 215.375!)
         Me.XrLabel61.Name = "XrLabel61"
         Me.XrLabel61.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel61.SizeF = New System.Drawing.SizeF(161.3749!, 23.00003!)
@@ -411,7 +405,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel60
         '
         Me.XrLabel60.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel60.LocationFloat = New DevExpress.Utils.PointFloat(530.1251!, 219.375!)
+        Me.XrLabel60.LocationFloat = New DevExpress.Utils.PointFloat(519.4586!, 215.375!)
         Me.XrLabel60.Name = "XrLabel60"
         Me.XrLabel60.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel60.SizeF = New System.Drawing.SizeF(105.4999!, 23.0!)
@@ -423,7 +417,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel59
         '
         Me.XrLabel59.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel59.LocationFloat = New DevExpress.Utils.PointFloat(370.0417!, 190.2083!)
+        Me.XrLabel59.LocationFloat = New DevExpress.Utils.PointFloat(359.3751!, 186.2083!)
         Me.XrLabel59.Name = "XrLabel59"
         Me.XrLabel59.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel59.SizeF = New System.Drawing.SizeF(71.20831!, 23.0!)
@@ -435,7 +429,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel58
         '
         Me.XrLabel58.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel58.LocationFloat = New DevExpress.Utils.PointFloat(25.16664!, 258.7083!)
+        Me.XrLabel58.LocationFloat = New DevExpress.Utils.PointFloat(14.50008!, 254.7083!)
         Me.XrLabel58.Name = "XrLabel58"
         Me.XrLabel58.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel58.SizeF = New System.Drawing.SizeF(131.6666!, 23.0!)
@@ -447,7 +441,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel57
         '
         Me.XrLabel57.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel57.LocationFloat = New DevExpress.Utils.PointFloat(25.16671!, 219.375!)
+        Me.XrLabel57.LocationFloat = New DevExpress.Utils.PointFloat(14.50015!, 215.375!)
         Me.XrLabel57.Name = "XrLabel57"
         Me.XrLabel57.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel57.SizeF = New System.Drawing.SizeF(131.6666!, 23.0!)
@@ -459,7 +453,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel56
         '
         Me.XrLabel56.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel56.LocationFloat = New DevExpress.Utils.PointFloat(25.16671!, 190.2083!)
+        Me.XrLabel56.LocationFloat = New DevExpress.Utils.PointFloat(14.50015!, 186.2083!)
         Me.XrLabel56.Name = "XrLabel56"
         Me.XrLabel56.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel56.SizeF = New System.Drawing.SizeF(131.6666!, 23.0!)
@@ -472,7 +466,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel54.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.p_CompanyName, "Text", "")})
         Me.XrLabel54.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel54.LocationFloat = New DevExpress.Utils.PointFloat(85.99993!, 14.0!)
+        Me.XrLabel54.LocationFloat = New DevExpress.Utils.PointFloat(75.33337!, 9.999974!)
         Me.XrLabel54.Name = "XrLabel54"
         Me.XrLabel54.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel54.SizeF = New System.Drawing.SizeF(399.25!, 23.0!)
@@ -490,7 +484,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.p_Year, "Text", "")})
         Me.XrLabel18.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(539.4167!, 109.4584!)
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(528.7501!, 105.4584!)
         Me.XrLabel18.Name = "XrLabel18"
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel18.SizeF = New System.Drawing.SizeF(100.0!, 23.0!)
@@ -508,7 +502,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel17.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.p_Month, "Text", "")})
         Me.XrLabel17.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(445.9166!, 109.4584!)
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(435.25!, 105.4584!)
         Me.XrLabel17.Name = "XrLabel17"
         Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel17.SizeF = New System.Drawing.SizeF(39.33334!, 22.99999!)
@@ -526,7 +520,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding(Me.p_Day, "Text", "")})
         Me.XrLabel16.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(354.5833!, 109.4584!)
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(343.9168!, 105.4584!)
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel16.SizeF = New System.Drawing.SizeF(38.16653!, 23.0!)
@@ -542,7 +536,7 @@ Partial Public Class KV2_TichKe_New
         '
         'XrLine1
         '
-        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(13.08327!, 423.9167!)
+        Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(11.99994!, 415.0!)
         Me.XrLine1.Name = "XrLine1"
         Me.XrLine1.SizeF = New System.Drawing.SizeF(786.0!, 2.083344!)
         '
@@ -550,7 +544,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel53.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.NguoiVanChuyen")})
         Me.XrLabel53.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel53.LocationFloat = New DevExpress.Utils.PointFloat(514.0833!, 161.2083!)
+        Me.XrLabel53.LocationFloat = New DevExpress.Utils.PointFloat(503.4168!, 157.2083!)
         Me.XrLabel53.Name = "XrLabel53"
         Me.XrLabel53.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel53.SizeF = New System.Drawing.SizeF(284.9999!, 23.0!)
@@ -563,7 +557,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel52.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaPhuongTien")})
         Me.XrLabel52.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel52.LocationFloat = New DevExpress.Utils.PointFloat(156.8333!, 161.2083!)
+        Me.XrLabel52.LocationFloat = New DevExpress.Utils.PointFloat(146.1667!, 157.2083!)
         Me.XrLabel52.Name = "XrLabel52"
         Me.XrLabel52.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel52.SizeF = New System.Drawing.SizeF(148.5417!, 23.0!)
@@ -577,7 +571,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel26.BackColor = System.Drawing.Color.Empty
         Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel26.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(741.1666!, 321.5417!)
+        Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(741.1666!, 313.5414!)
         Me.XrLabel26.Multiline = True
         Me.XrLabel26.Name = "XrLabel26"
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -594,7 +588,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel25.BackColor = System.Drawing.Color.Empty
         Me.XrLabel25.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(690.75!, 321.5418!)
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(690.75!, 313.5416!)
         Me.XrLabel25.Multiline = True
         Me.XrLabel25.Name = "XrLabel25"
         Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -611,7 +605,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel24.BackColor = System.Drawing.Color.Empty
         Me.XrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(635.5417!, 321.5418!)
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(635.5417!, 313.5416!)
         Me.XrLabel24.Multiline = True
         Me.XrLabel24.Name = "XrLabel24"
         Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -628,7 +622,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel23.BackColor = System.Drawing.Color.Empty
         Me.XrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel23.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(559.5!, 321.5418!)
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(559.5!, 313.5416!)
         Me.XrLabel23.Multiline = True
         Me.XrLabel23.Name = "XrLabel23"
         Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -645,7 +639,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel15.BackColor = System.Drawing.Color.Empty
         Me.XrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel15.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(482.4584!, 321.5418!)
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(482.4584!, 313.5416!)
         Me.XrLabel15.Multiline = True
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -662,7 +656,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel14.BackColor = System.Drawing.Color.Empty
         Me.XrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(427.9167!, 321.5417!)
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(427.9167!, 313.5414!)
         Me.XrLabel14.Multiline = True
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -679,7 +673,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel13.BackColor = System.Drawing.Color.Empty
         Me.XrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel13.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(376.8334!, 321.5417!)
+        Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(376.8334!, 313.5414!)
         Me.XrLabel13.Multiline = True
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -696,7 +690,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel12.BackColor = System.Drawing.Color.Empty
         Me.XrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel12.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(337.5833!, 321.5417!)
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(337.5833!, 313.5414!)
         Me.XrLabel12.Multiline = True
         Me.XrLabel12.Name = "XrLabel12"
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -713,7 +707,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel11.BackColor = System.Drawing.Color.Empty
         Me.XrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(298.5417!, 321.5417!)
+        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(298.5417!, 313.5414!)
         Me.XrLabel11.Multiline = True
         Me.XrLabel11.Name = "XrLabel11"
         Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -730,7 +724,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel10.BackColor = System.Drawing.Color.Empty
         Me.XrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(172.25!, 321.5419!)
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(172.25!, 313.5417!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(125.0!, 101.4583!)
@@ -746,7 +740,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel9.BackColor = System.Drawing.Color.Empty
         Me.XrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel9.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(101.0!, 321.5417!)
+        Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(101.0!, 313.5414!)
         Me.XrLabel9.Multiline = True
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -761,7 +755,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel8
         '
         Me.XrLabel8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(360.3334!, 283.7083!)
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(349.6668!, 279.7083!)
         Me.XrLabel8.Name = "XrLabel8"
         Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel8.SizeF = New System.Drawing.SizeF(281.8332!, 23.0!)
@@ -773,7 +767,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel7
         '
         Me.XrLabel7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(25.16664!, 283.7083!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(14.50008!, 279.7083!)
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(329.4167!, 23.0!)
@@ -785,7 +779,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel5
         '
         Me.XrLabel5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(370.0417!, 161.2083!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(359.3751!, 157.2083!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(144.0415!, 23.0!)
@@ -797,7 +791,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel19
         '
         Me.XrLabel19.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(309.375!, 109.4584!)
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(298.7084!, 105.4584!)
         Me.XrLabel19.Name = "XrLabel19"
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel19.SizeF = New System.Drawing.SizeF(45.2083!, 23.0!)
@@ -809,7 +803,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel20
         '
         Me.XrLabel20.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(396.0417!, 109.4584!)
+        Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(385.3751!, 105.4584!)
         Me.XrLabel20.Name = "XrLabel20"
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel20.SizeF = New System.Drawing.SizeF(45.2083!, 23.0!)
@@ -821,7 +815,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel21
         '
         Me.XrLabel21.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(485.25!, 109.4584!)
+        Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(474.5834!, 105.4584!)
         Me.XrLabel21.Name = "XrLabel21"
         Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel21.SizeF = New System.Drawing.SizeF(45.2083!, 23.0!)
@@ -833,7 +827,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel4
         '
         Me.XrLabel4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(25.1667!, 161.2083!)
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(14.50014!, 157.2083!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel4.SizeF = New System.Drawing.SizeF(131.6666!, 23.0!)
@@ -845,7 +839,7 @@ Partial Public Class KV2_TichKe_New
         'XrPictureBox1
         '
         Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(39.58333!, 48.62502!)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(28.91677!, 44.625!)
         Me.XrPictureBox1.Name = "XrPictureBox1"
         Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(115.0!, 106.5833!)
         '
@@ -853,7 +847,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel3.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.MaTichKe")})
         Me.XrLabel3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(717.0!, 14.0!)
+        Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(706.3335!, 9.999974!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel3.SizeF = New System.Drawing.SizeF(89.58325!, 23.0!)
@@ -865,7 +859,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel2
         '
         Me.XrLabel2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(629.0834!, 14.0!)
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(618.4168!, 9.999974!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel2.SizeF = New System.Drawing.SizeF(87.91663!, 23.0!)
@@ -877,7 +871,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel1
         '
         Me.XrLabel1.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(218.75!, 65.625!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(208.0834!, 61.62497!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel1.SizeF = New System.Drawing.SizeF(433.7499!, 43.83334!)
@@ -891,7 +885,7 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel6.BackColor = System.Drawing.Color.Empty
         Me.XrLabel6.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel6.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(11.99994!, 321.5419!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(11.99994!, 313.5417!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(87.95836!, 101.4583!)
@@ -905,7 +899,7 @@ Partial Public Class KV2_TichKe_New
         'XrLabel22
         '
         Me.XrLabel22.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(25.16667!, 14.0!)
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(14.50011!, 9.999974!)
         Me.XrLabel22.Name = "XrLabel22"
         Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel22.SizeF = New System.Drawing.SizeF(60.83326!, 23.0!)
@@ -916,41 +910,14 @@ Partial Public Class KV2_TichKe_New
         '
         'ReportFooter
         '
-        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel45, Me.XrLabel42, Me.XrLabel51, Me.XrLabel50, Me.XrLabel49, Me.XrLabel48, Me.XrLabel47, Me.XrLabel41, Me.XrLabel40, Me.XrLabel39, Me.XrLabel43, Me.XrLabel44, Me.XrLabel46, Me.XrLine3})
-        Me.ReportFooter.HeightF = 101.125!
+        Me.ReportFooter.HeightF = 0.0!
         Me.ReportFooter.Name = "ReportFooter"
-        '
-        'XrLabel45
-        '
-        Me.XrLabel45.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel45.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel45.LocationFloat = New DevExpress.Utils.PointFloat(690.75!, 0.0!)
-        Me.XrLabel45.Name = "XrLabel45"
-        Me.XrLabel45.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel45.SizeF = New System.Drawing.SizeF(50.0!, 43.83334!)
-        Me.XrLabel45.StylePriority.UseBorders = False
-        Me.XrLabel45.StylePriority.UseFont = False
-        Me.XrLabel45.StylePriority.UseTextAlignment = False
-        Me.XrLabel45.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrLabel42
-        '
-        Me.XrLabel42.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel42.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel42.LocationFloat = New DevExpress.Utils.PointFloat(482.4584!, 0.0!)
-        Me.XrLabel42.Name = "XrLabel42"
-        Me.XrLabel42.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel42.SizeF = New System.Drawing.SizeF(76.0!, 43.83334!)
-        Me.XrLabel42.StylePriority.UseBorders = False
-        Me.XrLabel42.StylePriority.UseFont = False
-        Me.XrLabel42.StylePriority.UseTextAlignment = False
-        Me.XrLabel42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
         'XrLabel51
         '
         Me.XrLabel51.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel51.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel51.LocationFloat = New DevExpress.Utils.PointFloat(642.1666!, 65.625!)
+        Me.XrLabel51.LocationFloat = New DevExpress.Utils.PointFloat(639.0!, 47.16669!)
         Me.XrLabel51.Name = "XrLabel51"
         Me.XrLabel51.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel51.SizeF = New System.Drawing.SizeF(156.9166!, 35.5!)
@@ -964,7 +931,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel50.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel50.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel50.LocationFloat = New DevExpress.Utils.PointFloat(485.25!, 65.625!)
+        Me.XrLabel50.LocationFloat = New DevExpress.Utils.PointFloat(482.0834!, 47.16669!)
         Me.XrLabel50.Name = "XrLabel50"
         Me.XrLabel50.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel50.SizeF = New System.Drawing.SizeF(156.9166!, 35.5!)
@@ -978,7 +945,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel49.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel49.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel49.LocationFloat = New DevExpress.Utils.PointFloat(328.3333!, 65.625!)
+        Me.XrLabel49.LocationFloat = New DevExpress.Utils.PointFloat(325.1667!, 47.16669!)
         Me.XrLabel49.Name = "XrLabel49"
         Me.XrLabel49.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel49.SizeF = New System.Drawing.SizeF(156.9166!, 35.5!)
@@ -992,7 +959,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel48.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel48.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel48.LocationFloat = New DevExpress.Utils.PointFloat(171.4167!, 65.625!)
+        Me.XrLabel48.LocationFloat = New DevExpress.Utils.PointFloat(168.2501!, 47.16669!)
         Me.XrLabel48.Name = "XrLabel48"
         Me.XrLabel48.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel48.SizeF = New System.Drawing.SizeF(156.9166!, 35.5!)
@@ -1006,7 +973,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel47.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel47.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel47.LocationFloat = New DevExpress.Utils.PointFloat(14.50011!, 65.625!)
+        Me.XrLabel47.LocationFloat = New DevExpress.Utils.PointFloat(11.3335!, 47.16669!)
         Me.XrLabel47.Name = "XrLabel47"
         Me.XrLabel47.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel47.SizeF = New System.Drawing.SizeF(156.9166!, 35.5!)
@@ -1016,37 +983,22 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel47.Text = "Người lập"
         Me.XrLabel47.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
-        'XrLabel41
-        '
-        Me.XrLabel41.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel41.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel41.LocationFloat = New DevExpress.Utils.PointFloat(427.9167!, 0.0!)
-        Me.XrLabel41.Name = "XrLabel41"
-        Me.XrLabel41.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel41.SizeF = New System.Drawing.SizeF(57.0!, 43.83334!)
-        Me.XrLabel41.StylePriority.UseBorders = False
-        Me.XrLabel41.StylePriority.UseFont = False
-        Me.XrLabel41.StylePriority.UseTextAlignment = False
-        XrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom
-        Me.XrLabel41.Summary = XrSummary1
-        Me.XrLabel41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        '
         'XrLabel40
         '
         Me.XrLabel40.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel40.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "wwTrans.SoLuongDuXuat")})
         Me.XrLabel40.Font = New System.Drawing.Font("Times New Roman", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(376.8334!, 0.0!)
+        Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(375.2083!, 1.250015!)
         Me.XrLabel40.Name = "XrLabel40"
         Me.XrLabel40.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel40.SizeF = New System.Drawing.SizeF(52.0!, 43.83334!)
         Me.XrLabel40.StylePriority.UseBorders = False
         Me.XrLabel40.StylePriority.UseFont = False
         Me.XrLabel40.StylePriority.UseTextAlignment = False
-        XrSummary2.FormatString = "{0:#,#}"
-        XrSummary2.IgnoreNullValues = True
-        XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
-        Me.XrLabel40.Summary = XrSummary2
+        XrSummary1.FormatString = "{0:#,#}"
+        XrSummary1.IgnoreNullValues = True
+        XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel40.Summary = XrSummary1
         Me.XrLabel40.Text = "XrLabel40"
         Me.XrLabel40.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
         '
@@ -1054,7 +1006,7 @@ Partial Public Class KV2_TichKe_New
         '
         Me.XrLabel39.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel39.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel39.LocationFloat = New DevExpress.Utils.PointFloat(10.99994!, 1.000023!)
+        Me.XrLabel39.LocationFloat = New DevExpress.Utils.PointFloat(10.99993!, 2.083328!)
         Me.XrLabel39.Name = "XrLabel39"
         Me.XrLabel39.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel39.SizeF = New System.Drawing.SizeF(364.2084!, 43.83334!)
@@ -1064,54 +1016,15 @@ Partial Public Class KV2_TichKe_New
         Me.XrLabel39.Text = "Tổng dung tích"
         Me.XrLabel39.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
-        'XrLabel43
-        '
-        Me.XrLabel43.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel43.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel43.LocationFloat = New DevExpress.Utils.PointFloat(559.5!, 0.0!)
-        Me.XrLabel43.Name = "XrLabel43"
-        Me.XrLabel43.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel43.SizeF = New System.Drawing.SizeF(76.0!, 43.83334!)
-        Me.XrLabel43.StylePriority.UseBorders = False
-        Me.XrLabel43.StylePriority.UseFont = False
-        Me.XrLabel43.StylePriority.UseTextAlignment = False
-        Me.XrLabel43.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrLabel44
-        '
-        Me.XrLabel44.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel44.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel44.LocationFloat = New DevExpress.Utils.PointFloat(635.5417!, 0.0!)
-        Me.XrLabel44.Name = "XrLabel44"
-        Me.XrLabel44.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel44.SizeF = New System.Drawing.SizeF(55.0!, 43.83334!)
-        Me.XrLabel44.StylePriority.UseBorders = False
-        Me.XrLabel44.StylePriority.UseFont = False
-        Me.XrLabel44.StylePriority.UseTextAlignment = False
-        Me.XrLabel44.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrLabel46
-        '
-        Me.XrLabel46.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel46.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel46.LocationFloat = New DevExpress.Utils.PointFloat(741.1666!, 0.0!)
-        Me.XrLabel46.Name = "XrLabel46"
-        Me.XrLabel46.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel46.SizeF = New System.Drawing.SizeF(57.0!, 43.83334!)
-        Me.XrLabel46.StylePriority.UseBorders = False
-        Me.XrLabel46.StylePriority.UseFont = False
-        Me.XrLabel46.StylePriority.UseTextAlignment = False
-        Me.XrLabel46.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
         'XrLine3
         '
-        Me.XrLine3.LocationFloat = New DevExpress.Utils.PointFloat(11.29154!, 0.0!)
+        Me.XrLine3.LocationFloat = New DevExpress.Utils.PointFloat(10.99994!, 0.0!)
         Me.XrLine3.Name = "XrLine3"
         Me.XrLine3.SizeF = New System.Drawing.SizeF(786.0001!, 2.083333!)
         '
         'DetailReport
         '
-        Me.DetailReport.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail1})
+        Me.DetailReport.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail1, Me.GroupHeader1, Me.GroupFooter1})
         Me.DetailReport.DataSource = Me.RpDataset1
         Me.DetailReport.Level = 0
         Me.DetailReport.Name = "DetailReport"
@@ -1143,6 +1056,20 @@ Partial Public Class KV2_TichKe_New
         Me.XrLine2.Name = "XrLine2"
         Me.XrLine2.SizeF = New System.Drawing.SizeF(786.0!, 2.083333!)
         '
+        'GroupHeader1
+        '
+        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel22, Me.XrLabel1, Me.XrLabel2, Me.XrLabel3, Me.XrPictureBox1, Me.XrLabel4, Me.XrLabel21, Me.XrLabel20, Me.XrLabel19, Me.XrLabel5, Me.XrLabel7, Me.XrLabel8, Me.XrLabel52, Me.XrLabel53, Me.XrLabel16, Me.XrLabel17, Me.XrLabel18, Me.XrLabel54, Me.XrLabel56, Me.XrLabel57, Me.XrLabel58, Me.XrLabel59, Me.XrLabel60, Me.XrLabel61, Me.XrLabel62, Me.XrLabel63, Me.XrLabel64, Me.XrLabel65, Me.XrLabel66, Me.XrLabel67, Me.XrLabel6, Me.XrLabel9, Me.XrLabel10, Me.XrLabel11, Me.XrLabel12, Me.XrLabel13, Me.XrLabel14, Me.XrLabel15, Me.XrLabel23, Me.XrLabel24, Me.XrLabel25, Me.XrLabel26, Me.XrLine1})
+        Me.GroupHeader1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("MaHangHoa", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.GroupHeader1.HeightF = 417.0833!
+        Me.GroupHeader1.Name = "GroupHeader1"
+        '
+        'GroupFooter1
+        '
+        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLine3, Me.XrLabel39, Me.XrLabel40, Me.XrLabel51, Me.XrLabel48, Me.XrLabel49, Me.XrLabel50, Me.XrLabel47})
+        Me.GroupFooter1.HeightF = 83.41667!
+        Me.GroupFooter1.Name = "GroupFooter1"
+        Me.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand
+        '
         'RpDataset1
         '
         Me.RpDataset1.DataSetName = "RpDataset"
@@ -1150,122 +1077,122 @@ Partial Public Class KV2_TichKe_New
         '
         'XrCrossBandBox1
         '
-        Me.XrCrossBandBox1.EndBand = Me.ReportFooter
-        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(10.99993!, 47.91667!)
-        Me.XrCrossBandBox1.LocationFloat = New DevExpress.Utils.PointFloat(10.99993!, 317.7083!)
+        Me.XrCrossBandBox1.EndBand = Me.GroupFooter1
+        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(10.99994!, 46.24997!)
+        Me.XrCrossBandBox1.LocationFloat = New DevExpress.Utils.PointFloat(10.99994!, 306.2499!)
         Me.XrCrossBandBox1.Name = "XrCrossBandBox1"
-        Me.XrCrossBandBox1.StartBand = Me.ReportHeader
-        Me.XrCrossBandBox1.StartPointFloat = New DevExpress.Utils.PointFloat(10.99993!, 317.7083!)
+        Me.XrCrossBandBox1.StartBand = Me.GroupHeader1
+        Me.XrCrossBandBox1.StartPointFloat = New DevExpress.Utils.PointFloat(10.99994!, 306.2499!)
         Me.XrCrossBandBox1.WidthF = 788.0833!
         '
         'XrCrossBandLine1
         '
-        Me.XrCrossBandLine1.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine1.EndPointFloat = New DevExpress.Utils.PointFloat(99.95829!, 1.000023!)
-        Me.XrCrossBandLine1.LocationFloat = New DevExpress.Utils.PointFloat(99.95829!, 318.75!)
+        Me.XrCrossBandLine1.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine1.EndPointFloat = New DevExpress.Utils.PointFloat(99.95828!, 1.249992!)
+        Me.XrCrossBandLine1.LocationFloat = New DevExpress.Utils.PointFloat(99.95828!, 308.3333!)
         Me.XrCrossBandLine1.Name = "XrCrossBandLine1"
-        Me.XrCrossBandLine1.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine1.StartPointFloat = New DevExpress.Utils.PointFloat(99.95829!, 318.75!)
-        Me.XrCrossBandLine1.WidthF = 1.041672!
+        Me.XrCrossBandLine1.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine1.StartPointFloat = New DevExpress.Utils.PointFloat(99.95828!, 308.3333!)
+        Me.XrCrossBandLine1.WidthF = 1.041679!
         '
         'XrCrossBandLine2
         '
-        Me.XrCrossBandLine2.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine2.EndPointFloat = New DevExpress.Utils.PointFloat(171.25!, 1.08331!)
-        Me.XrCrossBandLine2.LocationFloat = New DevExpress.Utils.PointFloat(171.25!, 319.8334!)
+        Me.XrCrossBandLine2.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine2.EndPointFloat = New DevExpress.Utils.PointFloat(171.25!, 1.249992!)
+        Me.XrCrossBandLine2.LocationFloat = New DevExpress.Utils.PointFloat(171.25!, 309.4167!)
         Me.XrCrossBandLine2.Name = "XrCrossBandLine2"
-        Me.XrCrossBandLine2.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine2.StartPointFloat = New DevExpress.Utils.PointFloat(171.25!, 319.8334!)
-        Me.XrCrossBandLine2.WidthF = 1.041672!
+        Me.XrCrossBandLine2.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine2.StartPointFloat = New DevExpress.Utils.PointFloat(171.25!, 309.4167!)
+        Me.XrCrossBandLine2.WidthF = 1.041687!
         '
         'XrCrossBandLine3
         '
-        Me.XrCrossBandLine3.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine3.EndPointFloat = New DevExpress.Utils.PointFloat(297.0417!, 1.041667!)
-        Me.XrCrossBandLine3.LocationFloat = New DevExpress.Utils.PointFloat(297.0417!, 318.75!)
+        Me.XrCrossBandLine3.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine3.EndPointFloat = New DevExpress.Utils.PointFloat(297.0417!, 1.249992!)
+        Me.XrCrossBandLine3.LocationFloat = New DevExpress.Utils.PointFloat(297.0417!, 308.3333!)
         Me.XrCrossBandLine3.Name = "XrCrossBandLine3"
-        Me.XrCrossBandLine3.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine3.StartPointFloat = New DevExpress.Utils.PointFloat(297.0417!, 318.75!)
+        Me.XrCrossBandLine3.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine3.StartPointFloat = New DevExpress.Utils.PointFloat(297.0417!, 308.3333!)
         Me.XrCrossBandLine3.WidthF = 1.041687!
         '
         'XrCrossBandLine4
         '
-        Me.XrCrossBandLine4.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine4.EndPointFloat = New DevExpress.Utils.PointFloat(337.125!, 1.000023!)
-        Me.XrCrossBandLine4.LocationFloat = New DevExpress.Utils.PointFloat(337.125!, 319.7917!)
+        Me.XrCrossBandLine4.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine4.EndPointFloat = New DevExpress.Utils.PointFloat(337.125!, 1.249992!)
+        Me.XrCrossBandLine4.LocationFloat = New DevExpress.Utils.PointFloat(337.125!, 309.375!)
         Me.XrCrossBandLine4.Name = "XrCrossBandLine4"
-        Me.XrCrossBandLine4.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine4.StartPointFloat = New DevExpress.Utils.PointFloat(337.125!, 319.7917!)
+        Me.XrCrossBandLine4.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine4.StartPointFloat = New DevExpress.Utils.PointFloat(337.125!, 309.375!)
         Me.XrCrossBandLine4.WidthF = 1.041687!
         '
         'XrCrossBandLine5
         '
-        Me.XrCrossBandLine5.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine5.EndPointFloat = New DevExpress.Utils.PointFloat(375.2083!, 47.28374!)
-        Me.XrCrossBandLine5.LocationFloat = New DevExpress.Utils.PointFloat(375.2083!, 319.7916!)
+        Me.XrCrossBandLine5.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine5.EndPointFloat = New DevExpress.Utils.PointFloat(375.2083!, 43.24997!)
+        Me.XrCrossBandLine5.LocationFloat = New DevExpress.Utils.PointFloat(375.2083!, 309.3749!)
         Me.XrCrossBandLine5.Name = "XrCrossBandLine5"
-        Me.XrCrossBandLine5.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine5.StartPointFloat = New DevExpress.Utils.PointFloat(375.2083!, 319.7916!)
-        Me.XrCrossBandLine5.WidthF = 1.041656!
+        Me.XrCrossBandLine5.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine5.StartPointFloat = New DevExpress.Utils.PointFloat(375.2083!, 309.3749!)
+        Me.XrCrossBandLine5.WidthF = 1.041687!
         '
         'XrCrossBandLine6
         '
-        Me.XrCrossBandLine6.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine6.EndPointFloat = New DevExpress.Utils.PointFloat(427.875!, 47.28374!)
-        Me.XrCrossBandLine6.LocationFloat = New DevExpress.Utils.PointFloat(427.875!, 319.7917!)
+        Me.XrCrossBandLine6.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine6.EndPointFloat = New DevExpress.Utils.PointFloat(427.875!, 43.24997!)
+        Me.XrCrossBandLine6.LocationFloat = New DevExpress.Utils.PointFloat(427.875!, 309.375!)
         Me.XrCrossBandLine6.Name = "XrCrossBandLine6"
-        Me.XrCrossBandLine6.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine6.StartPointFloat = New DevExpress.Utils.PointFloat(427.875!, 319.7917!)
+        Me.XrCrossBandLine6.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine6.StartPointFloat = New DevExpress.Utils.PointFloat(427.875!, 309.375!)
         Me.XrCrossBandLine6.WidthF = 1.041687!
         '
         'XrCrossBandLine7
         '
-        Me.XrCrossBandLine7.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine7.EndPointFloat = New DevExpress.Utils.PointFloat(482.4167!, 45.79163!)
-        Me.XrCrossBandLine7.LocationFloat = New DevExpress.Utils.PointFloat(482.4167!, 319.7917!)
+        Me.XrCrossBandLine7.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine7.EndPointFloat = New DevExpress.Utils.PointFloat(482.4167!, 43.24997!)
+        Me.XrCrossBandLine7.LocationFloat = New DevExpress.Utils.PointFloat(482.4167!, 309.375!)
         Me.XrCrossBandLine7.Name = "XrCrossBandLine7"
-        Me.XrCrossBandLine7.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine7.StartPointFloat = New DevExpress.Utils.PointFloat(482.4167!, 319.7917!)
+        Me.XrCrossBandLine7.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine7.StartPointFloat = New DevExpress.Utils.PointFloat(482.4167!, 309.375!)
         Me.XrCrossBandLine7.WidthF = 1.041687!
         '
         'XrCrossBandLine8
         '
-        Me.XrCrossBandLine8.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine8.EndPointFloat = New DevExpress.Utils.PointFloat(558.4584!, 45.79163!)
-        Me.XrCrossBandLine8.LocationFloat = New DevExpress.Utils.PointFloat(558.4584!, 317.7084!)
+        Me.XrCrossBandLine8.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine8.EndPointFloat = New DevExpress.Utils.PointFloat(558.4584!, 43.24997!)
+        Me.XrCrossBandLine8.LocationFloat = New DevExpress.Utils.PointFloat(558.4584!, 307.2917!)
         Me.XrCrossBandLine8.Name = "XrCrossBandLine8"
-        Me.XrCrossBandLine8.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine8.StartPointFloat = New DevExpress.Utils.PointFloat(558.4584!, 317.7084!)
+        Me.XrCrossBandLine8.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine8.StartPointFloat = New DevExpress.Utils.PointFloat(558.4584!, 307.2917!)
         Me.XrCrossBandLine8.WidthF = 1.041687!
         '
         'XrCrossBandLine9
         '
-        Me.XrCrossBandLine9.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine9.EndPointFloat = New DevExpress.Utils.PointFloat(634.5834!, 45.79163!)
-        Me.XrCrossBandLine9.LocationFloat = New DevExpress.Utils.PointFloat(634.5834!, 319.7916!)
+        Me.XrCrossBandLine9.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine9.EndPointFloat = New DevExpress.Utils.PointFloat(634.5834!, 43.24997!)
+        Me.XrCrossBandLine9.LocationFloat = New DevExpress.Utils.PointFloat(634.5834!, 309.3749!)
         Me.XrCrossBandLine9.Name = "XrCrossBandLine9"
-        Me.XrCrossBandLine9.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine9.StartPointFloat = New DevExpress.Utils.PointFloat(634.5834!, 319.7916!)
+        Me.XrCrossBandLine9.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine9.StartPointFloat = New DevExpress.Utils.PointFloat(634.5834!, 309.3749!)
         Me.XrCrossBandLine9.WidthF = 1.041626!
         '
         'XrCrossBandLine10
         '
-        Me.XrCrossBandLine10.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine10.EndPointFloat = New DevExpress.Utils.PointFloat(689.7917!, 45.79163!)
-        Me.XrCrossBandLine10.LocationFloat = New DevExpress.Utils.PointFloat(689.7917!, 319.7917!)
+        Me.XrCrossBandLine10.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine10.EndPointFloat = New DevExpress.Utils.PointFloat(689.7917!, 43.24997!)
+        Me.XrCrossBandLine10.LocationFloat = New DevExpress.Utils.PointFloat(689.7917!, 309.375!)
         Me.XrCrossBandLine10.Name = "XrCrossBandLine10"
-        Me.XrCrossBandLine10.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine10.StartPointFloat = New DevExpress.Utils.PointFloat(689.7917!, 319.7917!)
+        Me.XrCrossBandLine10.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine10.StartPointFloat = New DevExpress.Utils.PointFloat(689.7917!, 309.375!)
         Me.XrCrossBandLine10.WidthF = 1.041687!
         '
         'XrCrossBandLine11
         '
-        Me.XrCrossBandLine11.EndBand = Me.ReportFooter
-        Me.XrCrossBandLine11.EndPointFloat = New DevExpress.Utils.PointFloat(739.7917!, 45.79163!)
-        Me.XrCrossBandLine11.LocationFloat = New DevExpress.Utils.PointFloat(739.7917!, 317.7084!)
+        Me.XrCrossBandLine11.EndBand = Me.GroupFooter1
+        Me.XrCrossBandLine11.EndPointFloat = New DevExpress.Utils.PointFloat(739.7917!, 43.24997!)
+        Me.XrCrossBandLine11.LocationFloat = New DevExpress.Utils.PointFloat(739.7917!, 307.2917!)
         Me.XrCrossBandLine11.Name = "XrCrossBandLine11"
-        Me.XrCrossBandLine11.StartBand = Me.ReportHeader
-        Me.XrCrossBandLine11.StartPointFloat = New DevExpress.Utils.PointFloat(739.7917!, 317.7084!)
+        Me.XrCrossBandLine11.StartBand = Me.GroupHeader1
+        Me.XrCrossBandLine11.StartPointFloat = New DevExpress.Utils.PointFloat(739.7917!, 307.2917!)
         Me.XrCrossBandLine11.WidthF = 1.041687!
         '
         'PageFooter
@@ -1348,17 +1275,11 @@ Partial Public Class KV2_TichKe_New
     Friend WithEvents XrLabel34 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel39 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel40 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel41 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel47 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel48 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel49 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel50 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel51 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel45 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel43 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel44 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel46 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel53 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel52 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrCrossBandBox1 As DevExpress.XtraReports.UI.XRCrossBandBox
@@ -1400,4 +1321,6 @@ Partial Public Class KV2_TichKe_New
     Friend WithEvents DiemTraHang As DevExpress.XtraReports.Parameters.Parameter
     Friend WithEvents XrLabel66 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel67 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents GroupHeader1 As DevExpress.XtraReports.UI.GroupHeaderBand
+    Friend WithEvents GroupFooter1 As DevExpress.XtraReports.UI.GroupFooterBand
 End Class

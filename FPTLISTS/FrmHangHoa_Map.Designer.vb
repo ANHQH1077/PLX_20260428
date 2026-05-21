@@ -22,7 +22,6 @@ Partial Class FrmHangHoa_Map
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.TrueDBGrid1 = New U_TextBox.TrueDBGrid()
         Me.GridView1 = New U_TextBox.GridView()
         Me.STT = New U_TextBox.GridColumn()
@@ -30,7 +29,8 @@ Partial Class FrmHangHoa_Map
         Me.TenHangHoa_Scada = New U_TextBox.GridColumn()
         Me.MaHangHoa_Scada = New U_TextBox.GridColumn()
         Me.ID = New U_TextBox.GridColumn()
-        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus()
+        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus()
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -315,6 +315,7 @@ Partial Class FrmHangHoa_Map
         Me.ID.UpdateWhenFormLock = False
         Me.ID.UpperValue = False
         Me.ID.ValidateValue = True
+        Me.ID.Visible = True
         '
         'U_ButtonCus1
         '
@@ -328,11 +329,24 @@ Partial Class FrmHangHoa_Map
         Me.U_ButtonCus1.TabIndex = 500
         Me.U_ButtonCus1.Text = "Lưu"
         '
+        'U_ButtonCus2
+        '
+        Me.U_ButtonCus2.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.U_ButtonCus2.Appearance.Options.UseFont = True
+        Me.U_ButtonCus2.DefaultUpdate = False
+        Me.U_ButtonCus2.EnableWhenFormLock = False
+        Me.U_ButtonCus2.Location = New System.Drawing.Point(12, 431)
+        Me.U_ButtonCus2.Name = "U_ButtonCus2"
+        Me.U_ButtonCus2.Size = New System.Drawing.Size(155, 26)
+        Me.U_ButtonCus2.TabIndex = 501
+        Me.U_ButtonCus2.Text = "Thông tin phối trộn"
+        '
         'FrmHangHoa_Map
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(546, 469)
+        Me.Controls.Add(Me.U_ButtonCus2)
         Me.Controls.Add(Me.U_ButtonCus1)
         Me.Controls.Add(Me.TrueDBGrid1)
         Me.Name = "FrmHangHoa_Map"
@@ -340,6 +354,7 @@ Partial Class FrmHangHoa_Map
         Me.Text = "Danh mục hàng hóa-scadar"
         Me.Controls.SetChildIndex(Me.TrueDBGrid1, 0)
         Me.Controls.SetChildIndex(Me.U_ButtonCus1, 0)
+        Me.Controls.SetChildIndex(Me.U_ButtonCus2, 0)
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).EndInit()
@@ -357,4 +372,5 @@ Partial Class FrmHangHoa_Map
     Friend WithEvents STT As U_TextBox.GridColumn
     Friend WithEvents MaHangHoa_Sap As U_TextBox.GridColumn
     Friend WithEvents U_ButtonCus1 As U_TextBox.U_ButtonCus
+    Friend WithEvents U_ButtonCus2 As U_TextBox.U_ButtonCus
 End Class

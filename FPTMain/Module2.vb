@@ -2103,6 +2103,33 @@ Module Module2
         Dim p_Table As DataTable
         Try
             
+            p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblProjects' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblProjects]([Auart] [nvarchar](50) NULL,[Guebg] [nvarchar](50) NULL,[Gueen] [nvarchar](50) NULL, " & _
+             "[Inco1] [nvarchar](50) NULL,[Kunnr] [nvarchar](50) NULL,[Matnr] [nvarchar](50) NULL,[Meins] [nvarchar](50) NULL, " & _
+             "[Posnr] [nvarchar](50) NULL,[Spart] [nvarchar](50) NULL,[Vbeln] [nvarchar](50) NOT NULL,[Vbtyp] [nvarchar](50) NULL, " & _
+             "[Vkorg] [nvarchar](50) NULL,[Vtweg] [nvarchar](50) NULL,[ZLSCH] [nvarchar](100) NULL,[ZTERM] [nvarchar](100) NULL, " & _
+             "[INCO2] [nvarchar](100) NULL,[PriceGroup] [nvarchar](100) NULL,CONSTRAINT [PK_tblProjects] PRIMARY KEY CLUSTERED  " & _
+                "([Vbeln] ASC)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, " & _
+                "OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]) ON [PRIMARY]; end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
+
+            p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblProject_Details' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblProject_Details]([Auart] [nvarchar](50) NULL,[Guebg] [nvarchar](50) NULL, " & _
+                 "[Gueen] [nvarchar](50) NULL,[Inco1] [nvarchar](50) NULL,[Kunnr] [nvarchar](50) NULL, " & _
+                 "[Matnr] [nvarchar](50) NULL,[Meins] [nvarchar](50) NULL,[Posnr] [nvarchar](50) NULL, " & _
+                 "[Spart] [nvarchar](50) NULL,[Vbeln] [nvarchar](50) NOT NULL,[Vbtyp] [nvarchar](50) NULL, " & _
+                 "[Vkorg] [nvarchar](50) NULL,[Vtweg] [nvarchar](50) NULL) ON [PRIMARY]; end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
 
             ''20251104 tao cac bang THN
             p_Error = ""

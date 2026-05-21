@@ -1,0 +1,7 @@
+MaHangHoa	string	1000
+TenHangHoa	string	1000
+TongDuXuat	number
+DonViTinh	string	1000
+DonGia	number
+ThanhTien	number
+Bottom	string	1000

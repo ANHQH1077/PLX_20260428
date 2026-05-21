@@ -342,6 +342,8 @@ Partial Public Class BM_05_04_01_HH
         
         Private columnFO_05 As Global.System.Data.DataColumn
         
+        Private columnE10_V As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -474,6 +476,14 @@ Partial Public Class BM_05_04_01_HH
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property E10_VColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnE10_V
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -510,9 +520,9 @@ Partial Public Class BM_05_04_01_HH
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Add_01_HH_Row(ByVal Client As String, ByVal NhomBeXuat As String, ByVal TONGCONG As Decimal, ByVal M95_V As Decimal, ByVal M95_3 As Decimal, ByVal E10 As Decimal, ByVal DO_2 As Decimal, ByVal DO_V As Decimal, ByVal JET As Decimal, ByVal KO As Decimal, ByVal FO_35 As Decimal, ByVal FO_05 As Decimal) As _01_HH_Row
+        Public Overloads Function Add_01_HH_Row(ByVal Client As String, ByVal NhomBeXuat As String, ByVal TONGCONG As Decimal, ByVal M95_V As Decimal, ByVal M95_3 As Decimal, ByVal E10 As Decimal, ByVal DO_2 As Decimal, ByVal DO_V As Decimal, ByVal JET As Decimal, ByVal KO As Decimal, ByVal FO_35 As Decimal, ByVal FO_05 As Decimal, ByVal E10_V As Decimal) As _01_HH_Row
             Dim row_01_HH_Row As _01_HH_Row = CType(Me.NewRow,_01_HH_Row)
-            Dim columnValuesArray() As Object = New Object() {Client, NhomBeXuat, TONGCONG, M95_V, M95_3, E10, DO_2, DO_V, JET, KO, FO_35, FO_05}
+            Dim columnValuesArray() As Object = New Object() {Client, NhomBeXuat, TONGCONG, M95_V, M95_3, E10, DO_2, DO_V, JET, KO, FO_35, FO_05, E10_V}
             row_01_HH_Row.ItemArray = columnValuesArray
             Me.Rows.Add(row_01_HH_Row)
             Return row_01_HH_Row
@@ -547,6 +557,7 @@ Partial Public Class BM_05_04_01_HH
             Me.columnKO = MyBase.Columns("KO")
             Me.columnFO_35 = MyBase.Columns("FO_35")
             Me.columnFO_05 = MyBase.Columns("FO_05")
+            Me.columnE10_V = MyBase.Columns("E10_V")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -576,6 +587,8 @@ Partial Public Class BM_05_04_01_HH
             MyBase.Columns.Add(Me.columnFO_35)
             Me.columnFO_05 = New Global.System.Data.DataColumn("FO_05", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFO_05)
+            Me.columnE10_V = New Global.System.Data.DataColumn("E10_V", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnE10_V)
             Me.ExtendedProperties.Add("Generator_TableVarName", "table01_HH_")
             Me.ExtendedProperties.Add("Generator_UserTableName", "01_HH ")
         End Sub
@@ -1288,6 +1301,21 @@ Partial Public Class BM_05_04_01_HH
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property E10_V() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.table01_HH_.E10_VColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'E10_V' in table '01_HH ' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.table01_HH_.E10_VColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsClientNull() As Boolean
             Return Me.IsNull(Me.table01_HH_.ClientColumn)
         End Function
@@ -1428,6 +1456,18 @@ Partial Public Class BM_05_04_01_HH
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetFO_05Null()
             Me(Me.table01_HH_.FO_05Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsE10_VNull() As Boolean
+            Return Me.IsNull(Me.table01_HH_.E10_VColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetE10_VNull()
+            Me(Me.table01_HH_.E10_VColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

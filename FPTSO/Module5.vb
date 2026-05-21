@@ -1501,7 +1501,7 @@
                         p_Batch_ND = "N30"
                         p_CreateDate = p_TableCheck33.Rows(0).Item("CrDate").ToString
                     Else
-                        p_TableCheck = p_ECCDestinationConfig.clsGet_DO2_Infor(p_SAP_SoLenh, p_Error)
+                        p_TableCheck = p_ECCDestinationConfig.clsN30_Get_DO2_Infor(p_SAP_SoLenh, p_Error)
                         If p_Error <> "" Then
                             ShowMessageBox("", p_Error)
                             Return True

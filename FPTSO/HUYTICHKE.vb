@@ -466,6 +466,7 @@ Module HUYTICHKE
         '20170630
         p_CountIntank = 1
 
+        Dim p_RowE5() As DataRow
         If Not p_DataHTTG Is Nothing Then
             For p_Count = 0 To p_DataHTTG.Rows.Count - 1
 
@@ -492,12 +493,14 @@ Line_Intank:
 
                 If g_TableMaHangHoaE5.Rows.Count <= 0 Then
                     p_Error = True
-                    p_Desc = "Không có thông tin lệnh xuất"
+                    p_Desc = "Không có thông tin Hang hoa E5.."
                     Exit Sub
                 End If
                 p_HangHoaE5 = False
                 p_MaHangHoa = p_DataRowHTTG.Item("MaHangHoa").ToString.Trim
-                If p_MaHangHoa.ToString.Trim = g_TableMaHangHoaE5.Rows(0).Item("MaHangHoa_Scada").ToString.Trim And p_DataRowMap_cp_E5.Length > 0 Then
+                p_RowE5 = g_TableMaHangHoaE5.Select("MaHangHoa_Scada ='" & p_MaHangHoa & "'")
+                If (p_MaHangHoa.ToString.Trim = g_TableMaHangHoaE5.Rows(0).Item("MaHangHoa_Scada").ToString.Trim And p_DataRowMap_cp_E5.Length > 0) _
+                        Or (p_RowE5.Length > 0 And p_DataRowMap_cp_E5.Length > 0) Then
                     p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
                     p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
                     p_HangHoaE5 = True
