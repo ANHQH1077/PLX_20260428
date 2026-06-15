@@ -102,7 +102,7 @@
     Private p_CHIEUCAO_MD As Boolean
     Private p_NHIETDOXE_CHXD As Boolean
     Dim p_KIEMKE_N30 As Boolean = False
-
+    Private p_E_SCADAR_REV As Boolean = False
     Function GetLoadingSite(ByVal p_LoaiVanChuyen As String) As String
         Dim p_Value As String
         Dim p_Count As Integer
@@ -515,6 +515,14 @@
                     End If
                 End If
 
+
+                p_E_SCADAR_REV = False
+                p_DataRow = p_TableConfig.Select("KEYCODE='E_SCADAR_REV'")
+                If p_DataRow.Length > 0 Then
+                    If p_DataRow(0).Item("KEYVALUE").ToString.Trim = "Y" Then
+                        p_E_SCADAR_REV = True
+                    End If
+                End If
 
             End If
         End If
@@ -2554,8 +2562,20 @@ Line_tt:
             End If
             Me.FormStatus = False
 
+
+            ''2026-06-01
+            ''Kiểm tra với xăngn sinh học khi xuất Inline thì xóa lệnh trong intank và ngược lại
+
+            'If Me.Status.EditValue.ToString.Trim = "31" And p_E_SCADAR_REV = True Then
+            '    HuyMaLenhE10(p_SoLenh, "")
+            'End If
+
             ShowStatusMessage(False, "", "Rút họng xuất thành công", 10)
-            'Me.GridView2.BestFitColumns()
+            
+
+       
+
+
 Line_tt:
             Set_Grid_Property()
 
@@ -5655,7 +5675,59 @@ Line_tt:
 
     End Sub
 
-    Private Sub NguoiVanChuyen_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NguoiVanChuyen.EditValueChanged
+
+
+    '20260602
+    'Thuc hiện xử lý các mã lệnh hàng hóa phối trộn (Inline thì xóa mã lệnh In tank và ngược lại)
+    Private Sub HuyMaLenhE10(ByVal p_SoLenh As String, Optional ByVal p_LyDo As String = "")
+        Dim p_Message, p_SQL, p_Type, p_Terminal, p_LoaiHinhVanChuyen As String
+        Dim p_DataSet As DataSet
+        Dim e As System.EventArgs
+        Dim p_TableUser As DataTable
+
+
+        p_Terminal = g_Terminal
+        If Not Me.Client.EditValue Is Nothing Then
+            If Me.Client.EditValue.ToString.Trim <> "" Then
+                p_Terminal = Me.Client.EditValue.ToString.Trim
+            End If
+        End If
+
+        If Not Me.LoaiXuat.EditValue Is Nothing Then
+            p_LoaiHinhVanChuyen = Me.LoaiXuat.EditValue.ToString.Trim
+        End If
+
+        p_SQL = "select * from SYS_CONFIG where KeyCode='WEBSERVER64';select * from tblconfig;"
+        p_DataSet = GetDataSet(p_SQL, p_SQL)
+        p_SQL = "Y"
+        If Not p_DataSet Is Nothing Then
+            If p_DataSet.Tables.Count > 0 Then
+
+
+
+                If p_DataSet.Tables(0).Rows.Count > 0 Then
+                    p_SQL = p_DataSet.Tables(0).Rows(0).Item("KeyValue").ToString.Trim
+                End If
+
+                If p_DataSet.Tables(1).Rows.Count > 0 Then
+                    p_Type = p_DataSet.Tables(1).Rows(0).Item("optional").ToString.Trim
+                End If
+            End If
+        End If
+
+        'If p_Type = "FOX" Then
+        '    Dim p_FOx_Obj As New FOX_OBJECT.Class1(g_User_ID, g_Company_Code, g_Services)
+        '    p_Message = p_FOx_Obj.clsScadar_HuyTichKe_fox(g_WareHouse, "out", p_SoLenh, p_LoaiHinhVanChuyen, p_Terminal)
+        'ElseIf p_Type = "ACC" Then
+        '    Dim p_Acc_Obj As New ACCESS_OBJECT.Class1(g_User_ID, g_Company_Code, g_Services)
+        '    p_Message = p_Acc_Obj.clsScadar_HuyTichKe_Access(g_WareHouse, "out", p_SoLenh, p_LoaiHinhVanChuyen, p_Terminal)
+        'Else
+
+        '
+        KV2_modHuyMaLenhE10(g_WareHouse, "out", p_SoLenh, p_LoaiHinhVanChuyen, p_Terminal, p_LyDo, p_Terminal)
+
+
 
     End Sub
+
 End Class

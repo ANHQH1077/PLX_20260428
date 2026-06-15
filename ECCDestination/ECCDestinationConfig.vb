@@ -101,7 +101,7 @@ Public Class ECCDestinationConfig
             End If
         End If
         p_Language = pv_Language
-        p_IdleTimeout = pv_IdleTimeout
+        p_IdleTimeout = 1800 ' pv_IdleTimeout
         g_CompanyCode = p_CompanyCode
     End Sub
 

@@ -89,7 +89,7 @@ Module Driver
         Dim repository As RfcRepository ' = _ecc.Repository      
         Dim p_Count As Integer
         Dim p_DateSync As String = Now.ToString("yyyyMMdd HH:mm:ss")
-
+        Dim p_Header As Boolean = False
         Dim p_SQL As String
         Dim p_Row As DataRow
         Try
@@ -207,6 +207,9 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
+
+            WriteToTxt("SyncVEHICLE-" & o_err)
+
             SyncVEHICLE = False
             'Return Nothing
         Finally
@@ -323,7 +326,8 @@ Module Driver
             Try
                 '  RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
             Catch ex As Exception
-                ' o_err = ex.Message
+                o_err = ex.Message
+                WriteToTxt("Post_PhuongTien-" & o_err)
             End Try
 
             'p_TableReturn = l_tabl
@@ -336,7 +340,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
-
+            WriteToTxt("Post_PhuongTien-" & o_err)
         End Try
 
 
@@ -467,7 +471,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
-
+            'WriteToTxt("SyncVEHICLE-" & o_err)
         End Try
 
 
@@ -553,6 +557,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
+            WriteToTxt("Get_DO1_Infor-" & o_err)
             Return Nothing
         Finally
             l_func = Nothing
@@ -644,6 +649,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
+            WriteToTxt("Get_DO1_Infor-" & o_err)
             'Return Nothing
         Finally
             l_func = Nothing
@@ -719,6 +725,9 @@ Module Driver
             repository = _ecc.Repository
 
 
+            
+
+
             l_func = repository.CreateFunction("ZFM_INT_DELIVERIES_SPECIFIC_V1")
             l_func.SetValue("I_ORDERNO", p_SoLenh)
             l_func.SetValue("I_STATUS", "N")
@@ -726,6 +735,12 @@ Module Driver
 
             ' p_Table = l_func.Metadata.Item(3).ValueMetadataAsTableMetadata
             l_tabl = l_func.GetTable("T_DELIVERIES")
+
+
+            If l_tabl.ElementCount <= 0 Then
+                WriteToTxt("Get_DO2_Infor- Lỗi khi thực hiện số lệnh: " & p_SoLenh)
+                Return Nothing
+            End If
 
             ' l_func.SetValue  ("ZSM_THN"
             '  p_E_KUNNR = l_func.GetString("E_KUNNR")
@@ -826,13 +841,14 @@ Module Driver
 
         Catch ex As Exception
             Try
-                ' RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
+                RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
             Catch ex1 As Exception
 
             End Try
             '"The function module "ZFM_INT_DELIVERIES_SPECIFIC_V1" cannot be used for 'remote' calls."  
             'Lỗi do chưa remote-enable trong tab Atribute của function module
             o_err = ex.Message.ToString()
+            WriteToTxt("Get_DO2_Infor-" & o_err)
             Return Nothing
         Finally
             l_func = Nothing
@@ -892,89 +908,97 @@ Module Driver
 
             If l_tabl.ElementCount <= 0 Then
                 o_err = ""
+
+                WriteToTxt("N30Get_DO2_Infor- Lỗi số lệnh " & p_SoLenh)
                 Return Nothing
             End If
             ' l_func.SetValue  ("ZSM_THN"
             '  p_E_KUNNR = l_func.GetString("E_KUNNR")
             'p_E_DO = l_func.GetString("E_DO")
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "SOTYPE"
-            p_Row.Item("ParValue") = l_tabl.GetValue("SOTYPE").ToString
-            p_TableReturn.Rows.Add(p_Row)
 
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "PRSDT"
-            p_E_DO = l_tabl.GetValue("PRSDT").ToString
-            p_E_DO = Replace(p_E_DO, "-", "")
-            p_Row.Item("ParValue") = p_E_DO
-            p_TableReturn.Rows.Add(p_Row)
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "SOTYPE"
+            'p_Row.Item("ParValue") = l_tabl.GetValue("SOTYPE").ToString
+            'p_TableReturn.Rows.Add(p_Row)
 
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "INCO1"
-            p_Row.Item("ParValue") = l_tabl.GetValue("INCO1").ToString
-            p_TableReturn.Rows.Add(p_Row)
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "PRSDT"
+            'p_E_DO = l_tabl.GetValue("PRSDT").ToString
+            'p_E_DO = Replace(p_E_DO, "-", "")
+            'p_Row.Item("ParValue") = p_E_DO
+            'p_TableReturn.Rows.Add(p_Row)
 
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "TKTX_Date"
-            p_E_DO = l_tabl.GetValue("TKTX_Date").ToString
-            p_E_DO = Replace(p_E_DO, "-", "")
-            p_Row.Item("ParValue") = p_E_DO
-            p_TableReturn.Rows.Add(p_Row)
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "INCO1"
+            'p_Row.Item("ParValue") = l_tabl.GetValue("INCO1").ToString
+            'p_TableReturn.Rows.Add(p_Row)
 
-            '20241110 bo sung cho kv2
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "TKTX"
-            p_Row.Item("ParValue") = l_tabl.GetValue("TKTX").ToString
-            p_TableReturn.Rows.Add(p_Row)
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "TKTX_Date"
+            'p_E_DO = l_tabl.GetValue("TKTX_Date").ToString
+            'p_E_DO = Replace(p_E_DO, "-", "")
+            'p_Row.Item("ParValue") = p_E_DO
+            'p_TableReturn.Rows.Add(p_Row)
 
-            '20241122 bo sung cho kv2
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "NhomBeXuat"
-            p_Row.Item("ParValue") = l_tabl.GetValue("Tankgroup").ToString
-            p_TableReturn.Rows.Add(p_Row)
+            ''20241110 bo sung cho kv2
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "TKTX"
+            'p_Row.Item("ParValue") = l_tabl.GetValue("TKTX").ToString
+            'p_TableReturn.Rows.Add(p_Row)
+
+            ''20241122 bo sung cho kv2
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "NhomBeXuat"
+            'p_Row.Item("ParValue") = l_tabl.GetValue("Tankgroup").ToString
+            'p_TableReturn.Rows.Add(p_Row)
 
 
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "KONDA"
-            p_Row.Item("ParValue") = l_tabl.GetValue("KONDA").ToString
-            p_TableReturn.Rows.Add(p_Row)
+            'p_Row = p_TableReturn.NewRow
+            'p_Row.Item("ParName") = "KONDA"
+            'p_Row.Item("ParValue") = l_tabl.GetValue("KONDA").ToString
+            'p_TableReturn.Rows.Add(p_Row)
             '
-            p_Row = p_TableReturn.NewRow
-            p_Row.Item("ParName") = "BATCH_ND"
-            p_Row.Item("ParValue") = l_tabl.GetValue("BATCH_ND").ToString
-            p_TableReturn.Rows.Add(p_Row)
-
             Try
                 p_Row = p_TableReturn.NewRow
-                p_Row.Item("ParName") = "CHOTLO"
-                p_Row.Item("ParValue") = l_tabl.GetValue("CHOTLO").ToString
+                p_Row.Item("ParName") = "BATCH_ND"
+                p_Row.Item("ParValue") = l_tabl.GetValue("BATCH_ND").ToString
                 p_TableReturn.Rows.Add(p_Row)
             Catch ex As Exception
-            End Try
 
-            Try
-                p_Row = p_TableReturn.NewRow
-                p_Row.Item("ParName") = "LOAI_KH"
-                p_Row.Item("ParValue") = l_tabl.GetValue("LOAI_KH").ToString
-                p_TableReturn.Rows.Add(p_Row)
-            Catch ex As Exception
             End Try
+            
 
-            Try
-                p_Row = p_TableReturn.NewRow
-                p_Row.Item("ParName") = "SO_CHUYEN"
-                p_Row.Item("ParValue") = l_tabl.GetValue("SO_CHUYEN").ToString
-                p_TableReturn.Rows.Add(p_Row)
-            Catch ex As Exception
-            End Try
+            'Try
+            '    p_Row = p_TableReturn.NewRow
+            '    p_Row.Item("ParName") = "CHOTLO"
+            '    p_Row.Item("ParValue") = l_tabl.GetValue("CHOTLO").ToString
+            '    p_TableReturn.Rows.Add(p_Row)
+            'Catch ex As Exception
+            'End Try
 
-            Try
-                p_Row = p_TableReturn.NewRow
-                p_Row.Item("ParName") = "NOTE_SMO"
-                p_Row.Item("ParValue") = l_tabl.GetValue("NOTE_SMO").ToString
-                p_TableReturn.Rows.Add(p_Row)
-            Catch ex As Exception
-            End Try
+            'Try
+            '    p_Row = p_TableReturn.NewRow
+            '    p_Row.Item("ParName") = "LOAI_KH"
+            '    p_Row.Item("ParValue") = l_tabl.GetValue("LOAI_KH").ToString
+            '    p_TableReturn.Rows.Add(p_Row)
+            'Catch ex As Exception
+            'End Try
+
+            'Try
+            '    p_Row = p_TableReturn.NewRow
+            '    p_Row.Item("ParName") = "SO_CHUYEN"
+            '    p_Row.Item("ParValue") = l_tabl.GetValue("SO_CHUYEN").ToString
+            '    p_TableReturn.Rows.Add(p_Row)
+            'Catch ex As Exception
+            'End Try
+
+            'Try
+            '    p_Row = p_TableReturn.NewRow
+            '    p_Row.Item("ParName") = "NOTE_SMO"
+            '    p_Row.Item("ParValue") = l_tabl.GetValue("NOTE_SMO").ToString
+            '    p_TableReturn.Rows.Add(p_Row)
+            'Catch ex As Exception
+            'End Try
 
             Try
                 p_CreateDate = l_tabl.GetValue("ERDAT").ToString & " " & l_tabl.GetValue("ERZET").ToString
@@ -1000,8 +1024,11 @@ Module Driver
             '"The function module "ZFM_INT_DELIVERIES_SPECIFIC_V1" cannot be used for 'remote' calls."  
             'Lỗi do chưa remote-enable trong tab Atribute của function module
             o_err = ex.Message.ToString()
+
+            WriteToTxt("N30Get_DO2_Infor-" & o_err)
             Return Nothing
         Finally
+
             l_func = Nothing
             l_tabl = Nothing
             l_ret2 = Nothing
@@ -1226,6 +1253,8 @@ Module Driver
             '"The function module "ZFM_INT_DELIVERIES_SPECIFIC_V1" cannot be used for 'remote' calls."  
             'Lỗi do chưa remote-enable trong tab Atribute của function module
             o_err = ex.Message.ToString()
+
+            WriteToTxt("THN_Lenhxuat-" & o_err)
             Return Nothing
         End Try
 
@@ -3469,6 +3498,8 @@ Module Driver
             Try
                 ' RfcDestinationManager.UnregisterDestinationConfiguration(p_TEst)
             Catch ex As Exception
+
+                WriteToTxt("Get_DO1_THN3-" & ex.Message.ToString)
                 Return p_TableReturn
             End Try
 
@@ -3482,6 +3513,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
+            WriteToTxt("Get_DO1_THN3-" & o_err.ToString)
             Return Nothing
         Finally
             l_func = Nothing
@@ -3917,6 +3949,11 @@ Module Driver
                 End If
                 If p_SAP_API_FLAG = "Y" Then
                     p_SAP_API.clsPost_LenhXuatBoSung_JSON(p_DataTable, o_err, p_Link, p_UserApi, p_Pass)
+                    If o_err <> "" Then
+                        WriteToTxt("Post_LenhXuatBoSung API-" & o_err.ToString)
+                    End If
+
+
                     Exit Sub
                 End If
                
@@ -3993,6 +4030,7 @@ Module Driver
 
             End Try
             o_err = ex.Message.ToString()
+            WriteToTxt("Post_LenhXuatBoSung-" & o_err.ToString)
         Finally
             l_func = Nothing
             l_tabl = Nothing

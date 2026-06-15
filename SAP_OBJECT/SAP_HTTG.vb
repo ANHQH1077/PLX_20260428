@@ -521,6 +521,9 @@ Module SAP_HTTG
         g_User_ID = p_User_ID
 
 
+
+
+
         g_BATCHSLOG = False
 
         If Not p_DataSet Is Nothing Then

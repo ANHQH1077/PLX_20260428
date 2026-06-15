@@ -4,6 +4,10 @@ Imports System.Net.Http.Headers
 Imports Newtonsoft.Json.Linq
 Module Module1
 
+
+
+
+
     'Public p_LinkServices = "http://erp.petrolimex.com.vn:8001/dev/lims/plx/api/"
     'Public p_UserNameAPI As String = "PLX_LIMS"
     'Public p_PassAPI As String = "PLX_LIMS@!23"
@@ -61,7 +65,7 @@ Module Module1
 
                     Dim p_String = Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes(p_UserAPI & ":" & p_PassAPI))    'UExYX0xJTVM6UExYX0xJTVNAITIz
 
-                    
+
                     Using client = New HttpClient()
                         Using p_requestMsg = New HttpRequestMessage With {
                                            .Method = HttpMethod.Post,
@@ -97,6 +101,9 @@ Module Module1
             End Try
             ' WritetoTxt(p_Starttime & ":  End Error===========Post_LenhXuatBoSung======================")
             o_err = "Post_LenhXuatBoSung: " & ex.Message.ToString()
+
+
+
 
         End Try
 

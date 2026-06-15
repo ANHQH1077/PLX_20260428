@@ -1194,6 +1194,811 @@ Line_Intank:
     End Sub
 
 
+    '20260602
+    'Thuc hiện xử lý các mã lệnh hàng hóa phối trộn (Inline thì xóa mã lệnh In tank và ngược lại)
+    Public Sub KV2_modHuyMaLenhE10(ByVal p_WareHouse As String, ByVal p_TypeIn As String, ByVal p_SoLenh As String, ByVal g_LoaiVanChuyen As String, _
+                             ByRef p_Error As Boolean, ByRef p_Desc As String, _
+                              ByVal p_Terminal As String)
+        Dim p_SQL As String
+        Dim p_DataHTTG As DataTable
+        Dim p_CountRow As Integer
+        'Dim p_CountCol As Integer
+        Dim p_Count As Integer
+        Dim p_DataRowHTTG As DataRow
+        Dim p_SQLInsert As String = ""
+        Dim p_SQLValue As String = ""
+        Dim p_DataRowMap_cp() As DataRow
+        Dim p_FieldType As String
+        Dim p_Value As String
+        Dim p_TableName As String = ""
+        Dim p_STT As Integer
+        Dim p_StrExe As String
+        Dim p_TableExec As New DataTable("Table01")
+        Dim p_TableTichKeHist As New DataTable("Table01")
+        Dim p_DataRow As DataRow
+        Dim p_DataTableCheckID As DataTable
+        Dim p_Where_Check As String  'Dung checkScadar
+        Dim p_TableName_E5 As String = ""
+        Dim p_DataRowMap_cp_E5() As DataRow
+        Dim p_DataRowMap_cp_Old() As DataRow
+        Dim p_TableExec_E5 As New DataTable("Table01")
+        Dim p_MaHangHoa As String
+        Dim p_HangHoaE5 As Boolean
+        Dim p_StrExeE5 As String
+        Dim p_Flag() As String
+        Dim p_StatusType As String
+        Dim p_DataRowCheck() As DataRow
+
+        Dim p_2Scadar As Boolean = False
+        Dim p_2ScadarE5 As Boolean = False
+        Dim p_whereDelete As String = ""
+
+        Dim p_Finish As Boolean
+
+        Dim p_CountIntank As Integer
+
+        If p_TableExec Is Nothing Then
+            p_TableExec.Columns.Add("SQL_STR", GetType(String))
+        Else
+            If p_TableExec.Columns.Count <= 0 Then
+                p_TableExec.Columns.Add("SQL_STR", GetType(String))
+            End If
+        End If
+
+        If p_TableExec_E5 Is Nothing Then
+            p_TableExec_E5.Columns.Add("SQL_STR", GetType(String))
+        Else
+            If p_TableExec_E5.Columns.Count <= 0 Then
+                p_TableExec_E5.Columns.Add("SQL_STR", GetType(String))
+            End If
+        End If
+
+        If g_DataMap_cp Is Nothing Then
+            Exit Sub
+        End If
+        '========================================================================================================
+        'Kiem tra xem he thong co tact thanh 2 bang scadar khong
+        'Neu co phai kiem tra o 2 noi
+        p_DataRowMap_cp_Old = g_DataMap_cp.Select("Client='" & p_Terminal & "'")
+        p_DataRowMap_cp_E5 = g_DataMap_cp.Select("(Client='" & g_Client_E5_Upper & "' or Client='" & g_Client_E5 & "')")
+
+        p_TableName_E5 = ""
+        For p_Count = 0 To p_DataRowMap_cp_Old.Length - 1
+            If p_TableName_E5 = "" Then
+                p_TableName_E5 = UCase(p_DataRowMap_cp_Old(p_Count).Item("TableName").ToString.Trim)
+            Else
+                If p_TableName_E5 <> UCase(p_DataRowMap_cp_Old(p_Count).Item("TableName").ToString.Trim) Then
+                    p_2Scadar = True
+                End If
+            End If
+        Next
+        p_TableName_E5 = ""
+        For p_Count = 0 To p_DataRowMap_cp_E5.Length - 1
+            If p_TableName_E5 = "" Then
+                p_TableName_E5 = UCase(p_DataRowMap_cp_E5(p_Count).Item("TableName").ToString.Trim)
+            Else
+                If p_TableName_E5 <> UCase(p_DataRowMap_cp_E5(p_Count).Item("TableName").ToString.Trim) Then
+                    p_2ScadarE5 = True
+                End If
+            End If
+        Next
+
+       
+        p_TableExec.Clear()
+        p_TableExec_E5.Clear()
+        '========================================================================================================
+
+        p_TableName_E5 = ""
+        p_DataRowMap_cp_Old = g_DataMap_cp.Select("(Status='" & p_TypeIn & "' or Status='" & UCase(p_TypeIn) & "' ) and Client='" & p_Terminal & "'")
+        p_DataRowMap_cp_E5 = g_DataMap_cp.Select("(Status='" & p_TypeIn & "'  or Status='" & UCase(p_TypeIn) & "' ) and (Client='" & g_Client_E5_Upper & "' or Client='" & g_Client_E5 & "')")
+        If p_DataRowMap_cp_Old.Length <= 0 Then
+            p_Error = True
+            p_Desc = "Không có thông tin Map"
+            Exit Sub
+        End If
+
+
+        If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+            p_TableName = p_DataRowMap_cp_Old(0).Item("TableName").ToString.Trim
+        End If
+        If UCase(g_LoaiVanChuyen) = "THUY" Then
+            p_TableName = p_DataRowMap_cp_Old(0).Item("TableName_Thuy").ToString.Trim
+        End If
+        If p_DataRowMap_cp_E5.Length > 0 Then
+            p_TableName_E5 = p_DataRowMap_cp_E5(0).Item("TableName").ToString.Trim
+        End If
+
+        If p_TableName = "" Then
+            ''p_Error = True
+            ''p_Desc = "Không có thông tin tên bảng Map"
+            Exit Sub
+        End If
+        p_Error = False
+        p_Desc = ""
+
+        '20150819
+        'Them dieu kien FOX
+        If UCase(g_TypeConnet) = "FOX" Then
+            If g_StrConnectFox.ToString.Trim = "" Then
+                ''p_Error = True
+                ''p_Desc = "String kết nối đến máy chủ Scadar không xác định"
+                Exit Sub
+            End If
+        Else
+            If g_ConnectToScadar.ToString.Trim = "" Then
+                ''p_Error = True
+                ''p_Desc = "String kết nối đến máy chủ Scadar không xác định"
+                Exit Sub
+            End If
+        End If
+
+
+        p_TableExec.Clear()
+        If UCase(g_TypeConnet) = "FOX" Then
+
+            If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+                p_TableName = Replace(g_PathFileFoxBo, ".dbf", "", 1)
+                p_TableName = Replace(p_TableName, UCase(".dbf"), "", 1)
+
+            Else
+                p_TableName = Replace(g_PathFileFoxThuy, ".dbf", "", 1)
+                p_TableName = Replace(p_TableName, UCase(".dbf"), "", 1)
+
+            End If
+
+        End If
+
+
+        p_TableExec_E5.Clear()
+
+        p_SQL = "exec FPT_GetDataToScadar '" & p_SoLenh.Trim & "'"
+        p_DataHTTG = g_Services.Sys_SYS_GET_DATATABLE_Des(p_SQL, p_SQL)
+
+        p_Desc = ""
+
+        'anhqh
+        '20170630
+        p_CountIntank = 1
+
+        Dim p_RowE5() As DataRow
+        If Not p_DataHTTG Is Nothing Then
+            For p_Count = 0 To p_DataHTTG.Rows.Count - 1
+
+
+
+                '
+                'p_DataRowHTTG = p_DataHTTG.Rows(p_Count)
+
+                'anhqh
+                '20170630
+                'Truong hop xuat Intank 
+
+                p_CountIntank = 1
+
+
+                p_DataRowHTTG = p_DataHTTG.Rows(p_Count)
+
+                'anhqh
+                '20170630
+                'Truong hop xuat Intank 
+
+Line_Intank:
+
+
+                If g_TableMaHangHoaE5.Rows.Count <= 0 Then
+                    'p_Error = True
+                    'p_Desc = "Không có thông tin Hang hoa E5.."
+                    Exit Sub
+                End If
+                p_HangHoaE5 = False
+                p_MaHangHoa = p_DataRowHTTG.Item("MaHangHoa").ToString.Trim
+                p_RowE5 = g_TableMaHangHoaE5.Select("MaHangHoa_Scada ='" & p_MaHangHoa & "'")
+                If (p_MaHangHoa.ToString.Trim = g_TableMaHangHoaE5.Rows(0).Item("MaHangHoa_Scada").ToString.Trim And p_DataRowMap_cp_E5.Length > 0) _
+                        Or (p_RowE5.Length > 0 And p_DataRowMap_cp_E5.Length > 0) Then
+                    p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                    p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                    p_HangHoaE5 = True
+                    If p_DataRowMap_cp.Length <= 0 Then
+                        'p_Error = True
+                        'p_Desc = "Không có thông tin bảng Map"
+                        Exit Sub
+                    End If
+                Else
+                    'p_STT = p_DataRowMap_cp_E5(0).Item("STT").ToString.Trim
+                    p_STT = p_DataRowMap_cp_Old(0).Item("STT").ToString.Trim
+                    p_DataRowMap_cp = g_DataMap_Line_cp.Select("STT=" & p_STT)
+                    If p_DataRowMap_cp.Length <= 0 Then
+                        'p_Error = True
+                        'p_Desc = "Không có thông tin bảng Map"
+                        Exit Sub
+                    End If
+                End If
+
+                If p_HangHoaE5 = False Then
+                    Continue For
+                End If
+
+                p_Where_Check = ""
+                p_whereDelete = ""
+
+                For p_CountRow = 0 To p_DataRowMap_cp.Length - 1
+                    'Lay kieu du lieu
+                    p_FieldType = ""
+                    'If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").ToString.Trim) = "TABLEID" Then
+                    '    MsgBox("")
+                    'End If
+                    If UCase(g_LoaiVanChuyen) = "BO" And p_DataRowMap_cp(p_CountRow).Item("Bo").ToString.Trim = "" Then
+                        Continue For
+                    End If
+
+                    If UCase(g_LoaiVanChuyen) = "THUY" And p_DataRowMap_cp(p_CountRow).Item("Thuy").ToString.Trim = "" Then
+                        Continue For
+                    End If
+                    If UCase(g_LoaiVanChuyen) = "SAT" And p_DataRowMap_cp(p_CountRow).Item("Sat").ToString.Trim = "" Then
+                        Continue For
+
+                    End If
+
+                    If p_HangHoaE5 = True Then
+                        SQLGetColumnType(p_TypeIn, g_LoaiVanChuyen, p_DataRowMap_cp(p_CountRow).Item("FromField").trim, p_FieldType, g_Client_E5, p_HangHoaE5)
+                    Else
+                        SQLGetColumnType(p_TypeIn, g_LoaiVanChuyen, p_DataRowMap_cp(p_CountRow).Item("FromField").trim, p_FieldType, p_Terminal, p_HangHoaE5)
+                    End If
+
+                    If p_FieldType.ToString.Trim <> "" Or UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "FLAG1" Then
+                        p_Value = p_DataRowHTTG.Item(p_DataRowMap_cp(p_CountRow).Item("FromField").trim).ToString.Trim
+
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "FLAG1" Then
+                            If p_HangHoaE5 = True Then
+                                p_Value = p_DataRowMap_cp_E5(0).Item("FlagBegin").ToString.Trim
+                                p_Flag = p_Value.Split(".")
+                                If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+                                    p_Value = p_Flag(0)
+                                Else
+                                    p_Value = p_Flag(1)
+                                End If
+                            Else
+                                p_Value = p_DataRowMap_cp_Old(0).Item("FlagBegin").ToString.Trim
+                                p_Flag = p_Value.Split(".")
+                                If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+                                    p_Value = p_Flag(0)
+                                Else
+                                    p_Value = p_Flag(1)
+                                End If
+                            End If
+                            If p_Value = "" Then
+                                p_Value = "0"
+                            End If
+                            p_StatusType = "<>"
+                            If p_Where_Check.ToString.Trim = "" Then
+                                If UCase(g_TypeConnet) = "FOX" Then
+                                    If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+                                        p_DataRowCheck = g_TableToScadarBo.Select("FieldName='" & p_DataRowMap_cp(p_CountRow).Item("Bo").ToString.Trim & "'")
+                                    Else
+                                        p_DataRowCheck = g_TableToScadarThuy.Select("FieldName='" & p_DataRowMap_cp(p_CountRow).Item("Bo").ToString.Trim & "'")
+                                    End If
+                                    If p_DataRowCheck.Length > 0 Then
+                                        Select Case UCase(p_DataRowCheck(0).Item("FieldType").ToString.Trim)
+                                            Case UCase("Int32"), UCase("Single"), UCase("Double"), UCase("byte"), UCase("decimal")
+                                                p_Value = p_Value
+                                            Case UCase("String")
+                                                p_Value = "'" & p_Value & "'"
+                                        End Select
+                                        Select Case UCase(g_LoaiVanChuyen)
+                                            Case "BO"
+                                                p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case "THUY"
+                                                p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case "SAT"
+                                                p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case Else
+                                                Continue For
+                                        End Select
+                                    End If
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = "RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case "THUY"
+                                            p_Where_Check = "RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case "SAT"
+                                            p_Where_Check = "RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case Else
+                                            Continue For
+                                    End Select
+                                End If
+
+
+                            Else
+                                If UCase(g_TypeConnet) = "FOX" Then
+                                    If UCase(g_LoaiVanChuyen) = "BO" Or UCase(g_LoaiVanChuyen) = "SAT" Then
+                                        p_DataRowCheck = g_TableToScadarBo.Select("FieldName='" & p_DataRowMap_cp(p_CountRow).Item("Bo").ToString.Trim & "'")
+                                    Else
+                                        p_DataRowCheck = g_TableToScadarThuy.Select("FieldName='" & p_DataRowMap_cp(p_CountRow).Item("Bo").ToString.Trim & "'")
+
+                                    End If
+                                    If p_DataRowCheck.Length > 0 Then
+                                        Select Case UCase(p_DataRowCheck(0).Item("FieldType").ToString.Trim)
+                                            Case UCase("Int32"), UCase("Single"), UCase("Double"), UCase("byte"), UCase("decimal")
+                                                p_Value = p_Value
+                                            Case UCase("String")
+                                                p_Value = "'" & p_Value & "'"
+                                        End Select
+                                        Select Case UCase(g_LoaiVanChuyen)
+                                            Case "BO"
+                                                p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case "THUY"
+                                                p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case "SAT"
+                                                p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "" & p_StatusType & "" & p_Value & ""
+                                            Case Else
+                                                Continue For
+                                        End Select
+                                    End If
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = p_Where_Check & " AND RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case "THUY"
+                                            p_Where_Check = p_Where_Check & "  AND RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case "SAT"
+                                            p_Where_Check = p_Where_Check & "  AND RTRIM(ltrim(" & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "))" & p_StatusType & "'" & p_Value & "'"
+                                        Case Else
+                                            Continue For
+                                    End Select
+                                End If
+
+                            End If
+                            Continue For
+                        End If
+
+
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "MAHANGHOA" And UCase(g_LoaiVanChuyen) = "SAT" Then
+                            If p_Where_Check.ToString.Trim = "" Then
+                                p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                            Else
+                                p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                            End If
+
+                            If p_whereDelete.ToString.Trim = "" Then
+                                p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                            Else
+                                p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                            End If
+
+
+                            Continue For
+                        End If
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "MANGAN" And p_DataRowMap_cp(p_CountRow).Item("SWhere").ToString.Trim = "Y" Then
+                            p_Value = p_Value.Substring(1, g_MaNgan_DD)
+                            If p_Where_Check.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            End If
+
+                            If p_whereDelete.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_whereDelete & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            End If
+
+                            Continue For
+                        End If
+
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = UCase("NgayXuat") And p_DataRowMap_cp(p_CountRow).Item("SWhere").ToString.Trim = "Y" Then
+                            If UCase(g_TypeConnet) = "FOX" And p_HangHoaE5 = False Then
+                                If p_Where_Check.ToString.Trim = "" Then
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "THUY"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "SAT"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                    End Select
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "THUY"
+                                            p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "SAT"
+                                            p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                    End Select
+                                End If
+
+                                If p_whereDelete.ToString.Trim = "" Then
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "THUY"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "SAT"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                    End Select
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_whereDelete = p_whereDelete & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "THUY"
+                                            p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                        Case "SAT"
+                                            p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "={d '" & CDate(p_Value.ToString.Trim).ToString("yyyy-MM-dd") & "'}"
+                                    End Select
+                                End If
+
+                            Else
+                                ' End If
+                                If p_Where_Check.ToString.Trim = "" Then
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "THUY"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "SAT"
+                                            p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                    End Select
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "THUY"
+                                            p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "SAT"
+                                            p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                    End Select
+                                End If
+                                If p_whereDelete.ToString.Trim = "" Then
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "THUY"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "SAT"
+                                            p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                    End Select
+                                Else
+                                    Select Case UCase(g_LoaiVanChuyen)
+                                        Case "BO"
+                                            p_whereDelete = p_whereDelete & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "THUY"
+                                            p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                        Case "SAT"
+                                            p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & CDate(p_Value).ToString("yyyyMMdd") & "'"
+                                    End Select
+                                End If
+
+                            End If
+                            Continue For
+                        End If
+                        '
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "TABLEID" And p_DataRowMap_cp(p_CountRow).Item("SWhere").ToString.Trim = "Y" Then
+                            p_Value = p_DataRowHTTG.Item("TableID").ToString.Trim
+                            'If g_MaTuDongHoa = "N" Then
+                            If p_Value.ToString.Trim <> "" Then
+                                p_SQL = "exec FPT_GetMaTuDongHoa '" & g_MaTuDongHoa & "','" & p_Value & "','" & _
+                               p_DataRowHTTG.Item("MaNgan").ToString.Trim & "'"
+                                p_DataTableCheckID = g_Services.Sys_SYS_GET_DATATABLE_Des(p_SQL, p_SQL)
+                                If Not p_DataTableCheckID Is Nothing Then
+                                    If p_DataTableCheckID.Rows.Count > 0 Then
+                                        p_Value = p_DataTableCheckID.Rows(0).Item("MaLenh").ToString.Trim
+                                    End If
+                                End If
+                            Else
+                                'H_TableID
+                                p_Value = p_DataRowHTTG.Item("H_TableID").ToString.Trim
+                                If p_Value.ToString.Trim <> "" Then
+                                    p_SQL = "exec FPT_GetMaTuDongHoa '" & g_MaTuDongHoa & "','" & p_Value & "','" & _
+                                   p_DataRowHTTG.Item("MaNgan").ToString.Trim & "'"
+                                    p_DataTableCheckID = g_Services.Sys_SYS_GET_DATATABLE_Des(p_SQL, p_SQL)
+                                    If Not p_DataTableCheckID Is Nothing Then
+                                        If p_DataTableCheckID.Rows.Count > 0 Then
+                                            p_Value = p_DataTableCheckID.Rows(0).Item("MaLenh").ToString.Trim
+                                        End If
+                                    End If
+                                End If
+                            End If
+                            If p_Where_Check.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            End If
+
+                            If p_whereDelete.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_whereDelete & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "='" & p_Value & "'"
+                                    Case "THUY"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "='" & p_Value & "'"
+                                    Case "SAT"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "='" & p_Value & "'"
+                                End Select
+                            End If
+
+                            'End If
+                            Continue For
+                        End If
+                        If UCase(p_DataRowMap_cp(p_CountRow).Item("FromField").trim) = "MATUDONGHOA" And p_DataRowMap_cp(p_CountRow).Item("SWhere").ToString.Trim = "Y" Then
+                            p_Value = p_DataRowHTTG.Item(p_DataRowMap_cp(p_CountRow).Item("FromField").trim).ToString.Trim
+                            If p_Where_Check.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "=" & p_Value & ""
+                                    Case "THUY"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "=" & p_Value & ""
+                                    Case "SAT"
+                                        p_Where_Check = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "=" & p_Value & ""
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_Where_Check = p_Where_Check & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "=" & p_Value & ""
+                                    Case "THUY"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "=" & p_Value & ""
+                                    Case "SAT"
+                                        p_Where_Check = p_Where_Check & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "=" & p_Value & ""
+                                End Select
+                            End If
+                            If p_whereDelete.ToString.Trim = "" Then
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "=" & p_Value & ""
+                                    Case "THUY"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "=" & p_Value & ""
+                                    Case "SAT"
+                                        p_whereDelete = p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "=" & p_Value & ""
+                                End Select
+                            Else
+                                Select Case UCase(g_LoaiVanChuyen)
+                                    Case "BO"
+                                        p_whereDelete = p_whereDelete & " AND " & p_DataRowMap_cp(p_CountRow).Item("Bo").trim & "=" & p_Value & ""
+                                    Case "THUY"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Thuy").trim & "=" & p_Value & ""
+                                    Case "SAT"
+                                        p_whereDelete = p_whereDelete & "  AND " & p_DataRowMap_cp(p_CountRow).Item("Sat").trim & "=" & p_Value & ""
+                                End Select
+                            End If
+
+                        End If
+                        Continue For
+                    End If
+                Next
+
+                If p_Where_Check.ToString.Trim <> "" Then
+                    p_Finish = False
+                    p_StrExeE5 = ""
+                    p_StrExe = ""
+                    If p_HangHoaE5 = True Then
+                        p_SQL = "select *  from " & p_TableName_E5 & " WHERE " & p_Where_Check
+                        p_DataTableCheckID = p_SYS_GET_DATATABLE_With_Connect_Des(g_ConnectToScadar_E5, p_SQL, p_SQL)
+                        If Not p_DataTableCheckID Is Nothing Then
+                            'If p_DataTableCheckID.Rows.Count > 0 Then
+                            '    p_Desc = "Tích kê đã thực hiện bơm hàng nên không hủy được"
+                            '    p_Error = True
+                            '    Exit Sub
+                            'End If
+                            'p_StrExeE5 = "delete from " & p_TableName_E5 & " WHERE " & p_whereDelete
+                            'p_DataRow = p_TableExec_E5.NewRow
+                            'p_DataRow.Item(0) = p_StrExeE5
+                            'p_TableExec_E5.Rows.Add(p_DataRow)
+                            '' Continue For
+
+                            If p_DataTableCheckID.Rows.Count > 0 Then
+                                p_Finish = True
+                                p_StrExeE5 = ""
+                            Else
+                                p_StrExeE5 = "delete from " & p_TableName_E5 & " WHERE " & p_whereDelete
+
+                            End If
+
+
+
+                            'Else
+                            'p_Desc = p_SQL
+                            'p_Error = True
+                            'Exit Sub
+                        End If
+                    Else
+                        p_SQL = "select * from " & p_TableName & " WHERE " & p_Where_Check
+                        If UCase(g_TypeConnet) = "FOX" Then
+                            p_DataTableCheckID = p_SYS_GET_DATATABLE_With_Connect_Des(g_StrConnectFox, p_SQL, p_SQL)
+                            If Not p_DataTableCheckID Is Nothing Then
+                                'If p_DataTableCheckID.Rows.Count > 0 Then
+                                '    ' Continue For
+                                '    p_Desc = "Tích kê đã thực hiện bơm hàng nên không hủy được"
+                                '    p_Error = True
+                                '    Exit Sub
+                                'End If
+                                'p_StrExe = "delete * from " & p_TableName & " WHERE " & p_whereDelete
+                                'p_DataRow = p_TableExec.NewRow
+                                'p_DataRow.Item(0) = p_StrExe
+                                'p_TableExec.Rows.Add(p_DataRow)
+                                '' Continue For
+
+                                If p_DataTableCheckID.Rows.Count > 0 Then
+                                    p_Finish = True
+                                    p_StrExe = ""
+                                Else
+                                    p_StrExe = "delete * from " & p_TableName & " WHERE " & p_whereDelete
+                                End If
+
+                                'Else
+                                'p_Desc = p_SQL
+                                'p_Error = True
+                                'Exit Sub
+                            End If
+
+                        End If
+                        If UCase(g_TypeConnet) = "SQL" Then
+                            p_DataTableCheckID = p_SYS_GET_DATATABLE_With_Connect_Des(g_ConnectToScadar, p_SQL, p_SQL)
+                            If Not p_DataTableCheckID Is Nothing Then
+                                'If p_DataTableCheckID.Rows.Count > 0 Then
+                                '    'Continue For
+                                '    p_Desc = "Tích kê đã thực hiện bơm hàng nên không hủy được"
+                                '    p_Error = True
+                                '    Exit Sub
+                                'End If
+                                'p_StrExe = "delete  from " & p_TableName & " WHERE " & p_whereDelete
+                                'p_DataRow = p_TableExec.NewRow
+                                'p_DataRow.Item(0) = p_StrExe
+                                'p_TableExec.Rows.Add(p_DataRow)
+                                ''Continue For
+
+                                If p_DataTableCheckID.Rows.Count > 0 Then
+                                    p_Finish = True
+                                    p_StrExe = ""
+                                Else
+                                    p_StrExe = "delete  from " & p_TableName & " WHERE " & p_whereDelete
+                                End If
+
+
+
+                            Else
+                                p_Desc = p_SQL
+                                p_Error = True
+                                Exit Sub
+                            End If
+
+                        End If
+
+                    End If
+
+                    If p_Finish = True Then
+                        If p_StrExeE5 <> "" Then
+                            p_DataRow = p_TableExec_E5.NewRow
+                            p_DataRow.Item(0) = p_StrExeE5
+                            p_TableExec_E5.Rows.Add(p_DataRow)
+                        End If
+
+                        If p_StrExe <> "" Then
+                            p_DataRow = p_TableExec.NewRow
+                            p_DataRow.Item(0) = p_StrExe
+                            p_TableExec.Rows.Add(p_DataRow)
+                        End If
+
+                    End If
+                End If
+
+                'anhqh
+                '20170630 intank
+                If g_INTANK_E5 = True And p_CountIntank <= 1 And p_HangHoaE5 = True Then   'Neu la intank thi can phai xu ly
+                    p_DataRowHTTG.Item("MaHangHoa") = "0201001"
+                    p_CountIntank = p_CountIntank + 1
+                    GoTo Line_Intank
+                End If
+
+            Next
+
+
+
+            If Not p_TableExec Is Nothing Then
+                If p_TableExec.Rows.Count > 0 Then
+                    If g_DBTYPE = "" Then
+                        g_Services.Sys_GetParameterOracle(g_DBTYPE)
+                    End If
+                    If p_TableExec.Rows.Count > 0 Then
+                        If UCase(g_TypeConnet) = "SQL" Then
+                            If Sys_Execute_DataTbl_With_Connection(g_ConnectToScadar, p_TableExec, p_SQL) = False Then
+
+                                'p_Desc = p_SQL
+                                'p_Error = True
+                                'Exit Sub
+                                'Else
+
+                            End If
+                        End If
+
+                        If UCase(g_TypeConnet) = "FOX" Then
+                            If Sys_Execute_DataTbl_With_Connection(g_StrConnectFox, p_TableExec, p_SQL) = False Then
+
+                                'p_Desc = p_SQL
+                                'p_Error = True
+                                'Exit Sub
+
+                            End If
+
+                        End If
+
+                    End If
+                End If
+            End If
+
+            If Not p_TableExec_E5 Is Nothing Then
+                If p_TableExec_E5.Rows.Count > 0 Then
+                    'If g_DBTYPE = "" Then
+                    '    g_Services.Sys_GetParameterOracle(g_DBTYPE)
+                    'End If
+                   
+                    If Sys_Execute_DataTbl_With_Connection(g_ConnectToScadar_E5, p_TableExec_E5, p_SQL) = False Then
+                        'MsgBox(p_SQL)
+                        'g_Module.ModErrExceptionNew("", p_SQL)
+                        'p_Desc = p_SQL
+                        'p_Error = True
+                        'Exit Sub
+                        'Else
+                    End If
+                   
+                End If
+            End If
+
+
+
+        End If
+    End Sub
+
+
     'anhqh
 
     '20180910

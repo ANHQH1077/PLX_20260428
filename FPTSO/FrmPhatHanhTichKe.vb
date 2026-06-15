@@ -1,5 +1,5 @@
 ﻿Public Class FrmPhatHanhTichKe
-    Private p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
+    'Private p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
     Dim p_SYS_MALENH_S As String = ""
     Dim p_FunctionTableId As String = ""
     Dim p_DateCreate As Date
@@ -123,6 +123,8 @@
 
 
     Dim p_KIEMKE_N30 As Boolean = False
+    Private p_E_SCADAR_REV As Boolean = False
+
 
     Private Function GetClient(ByVal p_MaVanChuyen As String) As String
         Dim p_RowArr() As DataRow
@@ -997,6 +999,7 @@ line_TT:
                         p_SOLENH_QR = True
                     End If
                 End If
+
             End If
         End If
 
@@ -1641,7 +1644,7 @@ Line_tt:
 
         Dim p_SQL As String = ""
         Dim p_DataTable As DataTable
-        ' Dim p_DataTable1 As DataTable
+        Dim p_DataTable1 As DataTable
         Dim p_Binding As New U_TextBox.U_BindingSource
         Dim p_BeXuat As String = ""
         Dim p_Count As Integer
@@ -1693,7 +1696,21 @@ Line_tt:
             End If
 
             If p_BeXuat.ToString.Trim = "" And Mid(p_SoLenh, 1, Len(g_WareHouse)) <> g_WareHouse Then
-                ShowMessageBox("", "Bể xuất chưa được chọn")
+                p_SQL = "..."
+                If Not Me.SoLenh.EditValue Is Nothing Then
+                    p_SQL = Me.SoLenh.EditValue.ToString
+                    p_SQL = "select NhomBeXuat from tblLenhXuatE5 where SoLenh  ='" & p_SQL & "'"
+                    p_DataTable1 = GetDataTable(p_SQL, p_SQL)
+                    p_SQL = ""
+                    If Not p_DataTable1 Is Nothing Then
+                        If p_DataTable1.Rows.Count > 0 Then
+                            p_SQL = p_DataTable1.Rows(0).Item("NhomBeXuat").ToString
+                        End If
+                    End If
+                End If
+
+
+                ShowMessageBox("", "Bể xuất chưa được chọn (Nhóm bể xuất " & p_SQL & ")")
                 Exit Sub
             End If
             p_SQL = " exec FPT_GetTaiTrongKG '" & p_BeXuat & "'," & p_NhietDoN & ",'" & g_UserName & "'"
@@ -1774,6 +1791,7 @@ Line_tt:
     End Sub
 
     Private Sub SoLenh_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles SoLenh.KeyDown
+        Dim p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
         Dim p_ValueTmp As String = "0000000000"
         Dim p_Value As String
         Dim p_MaVanChuyen As String
@@ -1790,7 +1808,7 @@ Line_tt:
         Dim p_DR_ZFM_CHECK_DO_CKG As DataRow
 
         If e.KeyCode = Keys.Enter Then
-           
+
 
             p_Client = GetClient(p_MaVanChuyen)
 
@@ -1865,9 +1883,11 @@ Line_tt:
                             If p_KIEMKE_N30 = True Then
                                 p_ECCDestinationConfig = New ECCDestination.ECCDestinationConfig(_SapConnectionString, "EN", 30, g_Company_Code, "", "")
                                 If KiemTraThoiGianKiemKe_N30(p_ECCDestinationConfig, "T", Nothing, p_Value) = True Then
+                                    p_ECCDestinationConfig = Nothing
                                     Cursor = Cursors.Default
                                     Exit Sub
                                 End If
+                                p_ECCDestinationConfig = Nothing
                             End If
 
 
@@ -5340,6 +5360,7 @@ Line_TT001:
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
         'Dim p_ValueTmp As String = "0000000000"
+        Dim p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
         Dim p_Value As String
         Dim p_MaVanChuyen As String
         Dim p_DataTable As DataTable
@@ -5600,8 +5621,10 @@ Line_TT001:
                                 p_ECCDestinationConfig = New ECCDestination.ECCDestinationConfig(_SapConnectionString, "EN", 30, g_Company_Code, "", "")
                                 If KiemTraThoiGianKiemKe_N30(p_ECCDestinationConfig, "T", Nothing, p_Value) = True Then
                                     Cursor = Cursors.Default
+                                    p_ECCDestinationConfig = Nothing
                                     Exit Sub
                                 End If
+                                p_ECCDestinationConfig = Nothing
                             End If
                             If g_KV1 = True Then
                                 If p_SAP_Object.kv1clsSyncDeliveries_SynSpecific(g_Terminal, g_User_ID, g_Company_Code, p_Value, p_SQL, p_Date_KV1, IIf(Me.LenhNgay.Checked = True, "Y", "N")) = False Then
@@ -6813,10 +6836,12 @@ Line_tt:
                     Next
                     If KiemTraThoiGianKiemKe_N30(p_ECCDestinationConfig, "T", p_Datatable_LG, "") = True Then
                         Cursor = Cursors.Default
+                        p_ECCDestinationConfig = Nothing
                         Exit Sub
                     End If
                 Else
                     If KiemTraThoiGianKiemKe_N30(p_ECCDestinationConfig, "T", Nothing, p_SoLenh) = True Then
+                        p_ECCDestinationConfig = Nothing
                         Cursor = Cursors.Default
                         Exit Sub
                     End If
@@ -7808,6 +7833,9 @@ LineTT1:
 
 
     End Sub
+
+
+
 
     Private Sub MaPhuongTien_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MaPhuongTien.EditValueChanged
 
@@ -9608,6 +9636,7 @@ LineTT1:
     End Sub
 
     Private Sub CreateSMO()
+        Dim p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
         Dim p_MaPTien As String = ""
         Dim p_SoChuyen As Integer = 0
         Dim p_SQL As String = ""
@@ -9736,8 +9765,10 @@ LineTT1:
                     p_ECCDestinationConfig = New ECCDestination.ECCDestinationConfig(_SapConnectionString, "EN", 30, g_Company_Code, "", "")
                     If KiemTraThoiGianKiemKe_N30(p_ECCDestinationConfig, "T", p_Datatable, "") = True Then
                         Cursor = Cursors.Default
+                        p_ECCDestinationConfig = Nothing
                         Exit Sub
                     End If
+                    p_ECCDestinationConfig = Nothing
                 End If
 
                 Dim p_SAP_Object As New SAP_OBJECT.Class1(g_User_ID, g_Company_Code, g_Services)
@@ -10154,6 +10185,7 @@ Line_tt:
         If Not e_Message Is Nothing Then
             ' ShowMessageBox("", e_Message, 3)
         End If
+        p_ECCDestinationConfig = Nothing
     End Function
 
     Private Function ZFM_CHECK_XEPTAI_THUY(ByVal p_SoLenh As String, ByVal p_MaVanChuyen As String) As Boolean

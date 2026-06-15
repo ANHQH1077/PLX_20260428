@@ -1,4 +1,7 @@
 ﻿Imports SAP.Middleware.Connector
+Imports System.Windows.Forms
+
+
 Module Module2
 
     Public Function GET_HTTG_GET_LX_STAGING(ByVal p_SoLenh As String,
@@ -403,6 +406,38 @@ Module Module2
 
 
     End Function
+
+
+
+
+    Public Sub WriteToTxt(ByVal p_Desc As String)
+        Dim p_Table As DataTable
+        Dim p_SQL As String = "SELECT [KEYVALUE]  FROM [SYS_CONFIG] where KeyCode = 'ERROR_TEXT' and  KEYVALUE   ='N' "
+        Dim p_Int As Integer = 0
+        Dim filePath As String = Application.StartupPath
+        '"C:\path\to\your\file.txt"
+        Dim textToAppend As String = vbCrLf & Now.ToString & ":" & p_Desc
+        Try
+            If Strings.Right(filePath, 1) = "\" Then
+                filePath = filePath & "Log_" & Now.ToString("yyyyMMdd") & ".txt"
+            Else
+                filePath = filePath & "\Log_" & Now.ToString("yyyyMMdd") & ".txt"
+            End If
+
+            p_Table = GetDataTableSQL(p_SQL, p_SQL)
+            If Not p_Table Is Nothing Then
+                If p_Table.Rows.Count > 0 Then
+                    Exit Sub
+                End If
+            End If
+            ' Ghi nối tiếp (Tham số append = True)
+            My.Computer.FileSystem.WriteAllText(filePath, textToAppend, True)
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
 
 
 End Module
