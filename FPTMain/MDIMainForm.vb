@@ -283,12 +283,12 @@ Public Class MDIMainForm
                                                                 p_DBUser, p_DBPass, g_CompanyAPI, Nothing, Me.ToolStripStatusLabel1, Me.ToolStrip1)
                 p_FptSO_ShowForm.P_Show_Form(Me, p_Form, p_User_Database, _
                                                     g_User_ID, p_Company_ID, p_Company_Host, p_Function_Id)
-            Case "FPTUPDATE"
-                Dim p_FptUpdate_ShowForm As New FPTUpdate.UpdateCls(g_Config_XMLDatatable, g_Company_Code, g_WareHouse, g_Services, p_UsrB1, p_PassB1, p_Port, _
-                                                                p_Company_Host, p_User_Database, g_UserName, p_LicenceHost, _
-                                                                p_DBUser, p_DBPass, g_CompanyAPI, Nothing, Me.ToolStripStatusLabel1, Me.ToolStrip1)
-                p_FptUpdate_ShowForm.P_Show_Form(Me, p_Form, p_User_Database, _
-                                                    g_User_ID, p_Company_ID, p_Company_Host, p_Function_Id)
+                'Case "FPTUPDATE"
+                '    Dim p_FptUpdate_ShowForm As New FPTUpdate.UpdateCls(g_Config_XMLDatatable, g_Company_Code, g_WareHouse, g_Services, p_UsrB1, p_PassB1, p_Port, _
+                '                                                    p_Company_Host, p_User_Database, g_UserName, p_LicenceHost, _
+                '                                                    p_DBUser, p_DBPass, g_CompanyAPI, Nothing, Me.ToolStripStatusLabel1, Me.ToolStrip1)
+                '    p_FptUpdate_ShowForm.P_Show_Form(Me, p_Form, p_User_Database, _
+                '                                        g_User_ID, p_Company_ID, p_Company_Host, p_Function_Id)
                 'Case "FPTMRP"
                 '    Dim p_FptMRP_ShowForm As New FPTMRP.Class1(g_Company_Code, g_Services, p_UsrB1, p_PassB1, p_Port, _
                 '                                                    p_Company_Host, p_User_Database, g_UserName, p_LicenceHost, _

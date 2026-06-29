@@ -882,6 +882,7 @@ Line_TT:
                                         p_TyleE5, _
                                         p_TyTrongNenE5, _
                                         p_TyTrongEthanolE5, p_HongXUat)
+
                     If (p_TyleE5 = 0 Or p_TyTrongNenE5 = 0 Or p_TyTrongEthanolE5 = 0) And g_METER_E5 = True Then
                         p_Desc = "Không xác định Tỷ lệ phối trộn hoặc tỷ trọng nền " & vbCrLf & "    hoặc tỷ trong Ethanol"
                         p_Error = True
@@ -2503,21 +2504,26 @@ Line_TT:
         'TYTRONG_E()
         Dim p_SQL As String
         Dim p_DataTable As DataTable
-        p_Tyle = 0
-        p_TyTrongNen = 0
-        p_TyTrongEthanol = 0
-        p_SQL = "exec FPT_TyLe_TyTrong '" & p_TableID & "','" & p_MaLenh & "','" & CDate(p_NgayThang).ToString("yyyyMMdd") & "','" & p_LineID & "'"
-        p_DataTable = g_Services.Sys_SYS_GET_DATATABLE_Des(p_SQL, p_SQL)
-        If Not p_DataTable Is Nothing Then
-            If p_DataTable.Rows.Count > 0 Then
-                p_Tyle = p_DataTable.Rows(0).Item("ERate").ToString.Trim
-                p_TyTrongNen = IIf(p_DataTable.Rows(0).Item("XangNen").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("XangNen").ToString.Trim)
-                p_TyTrongEthanol = IIf(p_DataTable.Rows(0).Item("Ethanol").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("Ethanol").ToString.Trim)
+        Try
+            p_Tyle = 0
+            p_TyTrongNen = 0
+            p_TyTrongEthanol = 0
+            p_SQL = "exec FPT_TyLe_TyTrong '" & p_TableID & "','" & p_MaLenh & "','" & CDate(p_NgayThang).ToString("yyyyMMdd") & "','" & p_LineID & "'"
+            p_DataTable = g_Services.Sys_SYS_GET_DATATABLE_Des(p_SQL, p_SQL)
+            If Not p_DataTable Is Nothing Then
+                If p_DataTable.Rows.Count > 0 Then
+                    p_Tyle = p_DataTable.Rows(0).Item("ERate").ToString.Trim
+                    p_TyTrongNen = IIf(p_DataTable.Rows(0).Item("XangNen").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("XangNen").ToString.Trim)
+                    p_TyTrongEthanol = IIf(p_DataTable.Rows(0).Item("Ethanol").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("Ethanol").ToString.Trim)
 
-                p_HongXuat = IIf(p_DataTable.Rows(0).Item("ArmNo").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("ArmNo").ToString.Trim)
+                    p_HongXuat = IIf(p_DataTable.Rows(0).Item("ArmNo").ToString.Trim = "", 0, p_DataTable.Rows(0).Item("ArmNo").ToString.Trim)
 
+                End If
             End If
-        End If
+        Catch ex As Exception
+            p_Tyle = 0
+        End Try
+        
     End Sub
 
 

@@ -277,10 +277,6 @@
       <Project>{E0417D37-3BA7-4A43-8D83-7DEC88C4DAEB}</Project>
       <Name>FPTSO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FPTUpdate\FPTUpdate.vbproj">
-      <Project>{FD2336A5-E6E6-4F65-929F-E57E40E15B72}</Project>
-      <Name>FPTUpdate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MnuClass\MnuSystem.vbproj">
       <Project>{DE6EC2DF-3BD1-4D33-AEDC-C719E6D845DE}</Project>
       <Name>MnuSystem</Name>
