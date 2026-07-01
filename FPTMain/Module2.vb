@@ -2102,7 +2102,28 @@ Module Module2
         Dim p_Error As String = ""
         Dim p_Table As DataTable
         Try
-            
+
+            p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblHeSoGianNo' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblHeSoGianNo](" & _
+                         "[ID] [int] IDENTITY(1,1) NOT NULL," & _
+                         "[HeSo] [numeric](18, 6) NULL," & _
+                         "[FromDate] [datetime] NULL," & _
+                         "[To_Date] [datetime] NULL, MaHangHoa  nvarchar(50) " & _
+                                        ") ON [PRIMARY]; end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
+
+            p_Error = ""
+            p_SQL = " create view tblHeSoGianNo_V as SELECT [ID],[HeSo],[FromDate],[To_Date],'N' CHECKUPD, MaHangHoa FROM [dbo].[tblHeSoGianNo];"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
             p_Error = ""
             p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblProjects' AND xtype='U') " & _
                  "  begin CREATE TABLE [dbo].[tblProjects]([Auart] [nvarchar](50) NULL,[Guebg] [nvarchar](50) NULL,[Gueen] [nvarchar](50) NULL, " & _

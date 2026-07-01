@@ -6,7 +6,12 @@
 
     Private Sub FrmTankActiveNew_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
         If Asc(e.KeyChar) = 19 Then
-            Save()
+
+            If g_Company_Code = "6610" Then
+                Save_KV2()
+            Else
+                Save()
+            End If
         End If
     End Sub
     Private Sub FrmTankActiveNew_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -79,7 +84,7 @@
             End If
         End If
 
-      
+
 
 
 
@@ -153,7 +158,7 @@
             Me.GridView2.SetFocusedRowCellValue("Date_nd", p_ConVert_Date)
         End If
 
-        
+
         p_Column = Me.GridView2.FocusedColumn
 
 
@@ -167,7 +172,7 @@
 
                 p_GetCurrentDate(p_DateTime)
                 p_Row.Item("FromDate") = p_DateTime
-               
+
             End If
         End If
 
@@ -215,6 +220,10 @@
         Dim p_HSGianNo As Double
 
         Dim p_BeXuat As String = ""
+
+        If Kiemtrathongtinhasogianno() = False Then
+            Exit Sub
+        End If
 
         'anhqh
         '20171225
@@ -328,7 +337,7 @@
                                 Double.TryParse(.Rows(p_Count).Item("ERate").ToString.Trim, p_TyLe)
                                 Double.TryParse(.Rows(p_Count).Item("HS_GianNoE").ToString.Trim, p_HSGianNo)
 
-                                
+
                                 If p_TyLe = 0 Or p_TyTrong_E = 0 Or p_HSGianNo = 0 Or p_Tytrong_Nen = 0 Then
                                     ShowMessageBox("", "Thông tin Tỷ lệ phối trộn hoặc Tỷ trọng Nền hoặc Tỷ trọng (Hệ số giãn nở) Ethanol không xác định")
                                     Continue For
@@ -446,7 +455,7 @@
 
         Me.GridView1.Focus()
         Me.GridView2.RefreshData()
-      
+
         Me.Focus()
 
         Dim p_Tytrong_Nen As Double
@@ -676,6 +685,54 @@
         End If
     End Sub
 
+    Private Function Kiemtrathongtinhasogianno() As Boolean
+        Dim p_DataRow As DataRow
+        Dim p_Datatable As DataTable
+        Dim p_SQL As String
+        Dim p_HS_GianNo As Double = 0
+        Dim p_Int As Integer
+        Try '
+
+            For p_Int = 0 To Me.GridView2.RowCount - 1
+                p_DataRow = Me.GridView2.GetDataRow(p_Int)
+                If Not p_DataRow Is Nothing Then
+                    If p_DataRow.Item("Product_nd").ToString = "0301001" Or p_DataRow.Item("Product_nd").ToString = "0301002" Then
+                        Double.TryParse(p_DataRow.Item("HS_GianNo").ToString, p_HS_GianNo)
+                        If p_HS_GianNo = 0 Then
+                            p_SQL = "select [HeSo]  from tblHeSoGianNo where mahanghoa  =   '" & p_DataRow.Item("Product_nd").ToString & "' " & _
+                                             "and convert(date,getdate()) >=  convert(date,isnull(fromdate,getdate()-1)) " & _
+                                             "and  convert(date,getdate()) <=  convert(date,isnull([To_Date],getdate()+1)) "
+                            p_Datatable = GetDataTable(p_SQL, p_SQL)
+                            If Not p_Datatable Is Nothing Then
+                                If p_Datatable.Rows.Count > 0 Then
+                                    Double.TryParse(p_Datatable(0).Item("HeSo").ToString, p_HS_GianNo)
+
+                                    If p_HS_GianNo = 0 Then
+                                        MsgBox("Hệ số giãn nở chưa nhập", MsgBoxStyle.Critical, "Thông báo")
+                                        Return False
+                                    Else
+                                        p_DataRow.Item("HS_GianNo") = p_HS_GianNo
+                                    End If
+                                End If
+                            End If
+
+                            If p_HS_GianNo = 0 Then
+                                MsgBox("Hệ số giãn nở chưa nhập", MsgBoxStyle.Critical, "Thông báo")
+
+                                Return False
+                            End If
+                        End If
+                    End If
+                End If
+            Next
+
+        Catch ex As Exception
+
+        End Try
+        Return True
+
+    End Function
+
 
 
     Private Sub GridView2_ValidatingEditor(ByVal sender As Object, ByVal e As DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs) Handles GridView2.ValidatingEditor
@@ -685,6 +742,9 @@
         Dim p_DataRow As DataRow
         Dim p_DateTime As DateTime
         Dim p_Column As U_TextBox.GridColumn
+        Dim p_Datatable As DataTable
+        Dim p_HS_GianNo As Double = 0
+        Dim p_SQL = ""
         Try
 
             p_Column = Me.GridView1.FocusedColumn
@@ -721,6 +781,7 @@
                 e.Value = p_String
 
             End If
+
 
         Catch ex As Exception
             MsgBox("Nhập sai định dạng số", MsgBoxStyle.Critical, "Thông báo")
@@ -786,7 +847,7 @@
 
                     If cl_HTTG_COMMON.g_LMS = "Y" Then
                         p_DataRow.Item("Dens_nd") = cl_SOAP_API.GetDensity(Name_nd, Product_nd)
-                    End If                    
+                    End If
 
                     Me.GridView2.SetFocusedRowCellValue("Name_nd", p_DataRow.Item("Name_nd").ToString.Trim)
                     Me.GridView2.SetFocusedRowCellValue("Dens_nd", p_DataRow.Item("Dens_nd").ToString.Trim)
@@ -795,7 +856,7 @@
                     Me.GridView2.SetFocusedRowCellValue("CHECKUPD", "I")
                 End If
             Next
-            Me.GridView1.DeleteSelectedRows()            
+            Me.GridView1.DeleteSelectedRows()
         End If
     End Sub
 
@@ -922,7 +983,7 @@
         FrmVehicleTmp.ShowDialog(Me)
     End Sub
 
-    Private Sub TSB_SYNLMS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSB_SYNLMS.Click        
+    Private Sub TSB_SYNLMS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSB_SYNLMS.Click
         Dim p_Index As Integer
         Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API
         Dim Name_nd, Product_nd As String
@@ -1026,6 +1087,10 @@
 
 
         ShowStatusMessage(True, "Không có dữ liệu đồng bộ")
+
+    End Sub
+
+    Private Sub TrueDBGrid2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrueDBGrid2.Click
 
     End Sub
 End Class
