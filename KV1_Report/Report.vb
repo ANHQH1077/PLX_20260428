@@ -761,8 +761,14 @@ Module Report
         p_Report.PrintingSystem.SetCommandVisibility(PrintingSystemCommand.ExportXlsx, CommandVisibility.None)
         p_Report.PrintingSystem.SetCommandVisibility(PrintingSystemCommand.ExportXps, CommandVisibility.None)
         ' p_Report.Export()
-        p_Report.ShowPreviewDialog()
 
+        '        p_Report.CreateDocument()
+        'documentViewer1.DocumentSource = xtraReport1;
+
+        '// Ép viewer chuyển sang chế độ chọn Text thay vì cuộn trang (Hand Tool)
+        'documentViewer1.ExecCommand(DevExpress.XtraPrinting.PrintingSystemCommand.SelectTool);
+        'PrintingSystemCommand.SelectTool)
+        p_Report.ShowPreviewDialog()
 
     End Sub
 
