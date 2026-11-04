@@ -23,8 +23,8 @@ Partial Class FrmVehicleCer_QL
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVehicleCer_QL))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TuNgay = New U_TextBox.U_DateEdit()
@@ -37,6 +37,7 @@ Partial Class FrmVehicleCer_QL
         Me.GridView2 = New U_TextBox.GridView()
         Me.ID = New U_TextBox.GridColumn()
         Me.GridColumn2 = New U_TextBox.GridColumn()
+        Me.GridColumn13 = New U_TextBox.GridColumn()
         Me.GridColumn3 = New U_TextBox.GridColumn()
         Me.GridColumn4 = New U_TextBox.GridColumn()
         Me.GridColumn5 = New U_TextBox.GridColumn()
@@ -48,7 +49,6 @@ Partial Class FrmVehicleCer_QL
         Me.GridColumn11 = New U_TextBox.GridColumn()
         Me.GridColumn12 = New U_TextBox.GridColumn()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
-        Me.GridColumn13 = New U_TextBox.GridColumn()
         Me.RepositoryItemButtonEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemButtonEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemButtonEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
@@ -361,6 +361,7 @@ Partial Class FrmVehicleCer_QL
         Me.ID.UpdateWhenFormLock = False
         Me.ID.UpperValue = False
         Me.ID.ValidateValue = True
+        Me.ID.Visible = True
         '
         'GridColumn2
         '
@@ -409,7 +410,57 @@ Partial Class FrmVehicleCer_QL
         Me.GridColumn2.UpdateWhenFormLock = False
         Me.GridColumn2.UpperValue = False
         Me.GridColumn2.ValidateValue = True
+        Me.GridColumn2.Visible = True
         Me.GridColumn2.Width = 110
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.AllowInsert = True
+        Me.GridColumn13.AllowUpdate = True
+        Me.GridColumn13.ButtonClick = True
+        Me.GridColumn13.Caption = "Ngày xuất"
+        Me.GridColumn13.CFLColumnHide = ""
+        Me.GridColumn13.CFLKeyField = ""
+        Me.GridColumn13.CFLPage = False
+        Me.GridColumn13.CFLReturn0 = ""
+        Me.GridColumn13.CFLReturn1 = ""
+        Me.GridColumn13.CFLReturn2 = ""
+        Me.GridColumn13.CFLReturn3 = ""
+        Me.GridColumn13.CFLReturn4 = ""
+        Me.GridColumn13.CFLReturn5 = ""
+        Me.GridColumn13.CFLReturn6 = ""
+        Me.GridColumn13.CFLReturn7 = ""
+        Me.GridColumn13.CFLShowLoad = False
+        Me.GridColumn13.ChangeFormStatus = True
+        Me.GridColumn13.ColumnKey = False
+        Me.GridColumn13.ComboLine = 5
+        Me.GridColumn13.CopyFromItem = ""
+        Me.GridColumn13.DefaultButtonClick = False
+        Me.GridColumn13.Digit = False
+        Me.GridColumn13.FieldType = "C"
+        Me.GridColumn13.FieldView = "NgayXuat_D"
+        Me.GridColumn13.FormarNumber = True
+        Me.GridColumn13.FormList = False
+        Me.GridColumn13.KeyInsert = ""
+        Me.GridColumn13.LocalDecimal = False
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.NoUpdate = ""
+        Me.GridColumn13.NumberDecimal = 0
+        Me.GridColumn13.ParentControl = ""
+        Me.GridColumn13.RefreshSource = False
+        Me.GridColumn13.Required = False
+        Me.GridColumn13.SequenceName = ""
+        Me.GridColumn13.ShowCalc = True
+        Me.GridColumn13.ShowDataTime = False
+        Me.GridColumn13.ShowOnlyTime = False
+        Me.GridColumn13.SQLString = ""
+        Me.GridColumn13.UpdateIfNull = ""
+        Me.GridColumn13.UpdateWhenFormLock = False
+        Me.GridColumn13.UpperValue = False
+        Me.GridColumn13.ValidateValue = True
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 0
+        Me.GridColumn13.Width = 110
         '
         'GridColumn3
         '
@@ -900,59 +951,10 @@ Partial Class FrmVehicleCer_QL
         'RepositoryItemButtonEdit2
         '
         Me.RepositoryItemButtonEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject3, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         Me.RepositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.AllowInsert = True
-        Me.GridColumn13.AllowUpdate = True
-        Me.GridColumn13.ButtonClick = True
-        Me.GridColumn13.Caption = "Ngày xuất"
-        Me.GridColumn13.CFLColumnHide = ""
-        Me.GridColumn13.CFLKeyField = ""
-        Me.GridColumn13.CFLPage = False
-        Me.GridColumn13.CFLReturn0 = ""
-        Me.GridColumn13.CFLReturn1 = ""
-        Me.GridColumn13.CFLReturn2 = ""
-        Me.GridColumn13.CFLReturn3 = ""
-        Me.GridColumn13.CFLReturn4 = ""
-        Me.GridColumn13.CFLReturn5 = ""
-        Me.GridColumn13.CFLReturn6 = ""
-        Me.GridColumn13.CFLReturn7 = ""
-        Me.GridColumn13.CFLShowLoad = False
-        Me.GridColumn13.ChangeFormStatus = True
-        Me.GridColumn13.ColumnKey = False
-        Me.GridColumn13.ComboLine = 5
-        Me.GridColumn13.CopyFromItem = ""
-        Me.GridColumn13.DefaultButtonClick = False
-        Me.GridColumn13.Digit = False
-        Me.GridColumn13.FieldType = "C"
-        Me.GridColumn13.FieldView = "NgayXuat_D"
-        Me.GridColumn13.FormarNumber = True
-        Me.GridColumn13.FormList = False
-        Me.GridColumn13.KeyInsert = ""
-        Me.GridColumn13.LocalDecimal = False
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.NoUpdate = ""
-        Me.GridColumn13.NumberDecimal = 0
-        Me.GridColumn13.ParentControl = ""
-        Me.GridColumn13.RefreshSource = False
-        Me.GridColumn13.Required = False
-        Me.GridColumn13.SequenceName = ""
-        Me.GridColumn13.ShowCalc = True
-        Me.GridColumn13.ShowDataTime = False
-        Me.GridColumn13.ShowOnlyTime = False
-        Me.GridColumn13.SQLString = ""
-        Me.GridColumn13.UpdateIfNull = ""
-        Me.GridColumn13.UpdateWhenFormLock = False
-        Me.GridColumn13.UpperValue = False
-        Me.GridColumn13.ValidateValue = True
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 0
-        Me.GridColumn13.Width = 110
         '
         'RepositoryItemButtonEdit5
         '
@@ -975,7 +977,7 @@ Partial Class FrmVehicleCer_QL
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject4, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor

@@ -17,21 +17,22 @@
         Dim p_Values As String = ""
         p_Values = "20000101"
         If Not Me.TuNgay.EditValue Is Nothing Then
-            p_Values = CDate(Me.TuNgay.EditValue).ToString("yyyyMMdd")
+            p_Values = CDate(Me.TuNgay.EditValue).ToString("yyyyMMdd HH:mm:ss")
         End If
-        p_Where = "NgayXuat>='" & p_Values & "' "
+        p_Where = "NgayKTNhap>='" & p_Values & "' "
         p_Values = "20400101"
         If Not Me.TuNgay.EditValue Is Nothing Then
-            p_Values = CDate(Me.DenNgay.EditValue).ToString("yyyyMMdd")
+            p_Values = CDate(Me.DenNgay.EditValue).ToString("yyyyMMdd HH:mm:ss")
         End If
-        p_Where = p_Where & " and  NgayXuat<='" & p_Values & "' "
+        p_Where = p_Where & " and  NgayKTNhap<='" & p_Values & "' "
 
         p_Values = ""
-        If Not Me.MaPhuongTien.EditValue Is Nothing Then
-            If Me.MaPhuongTien.EditValue.ToString.Trim <> "" Then
-                p_Values = Me.MaPhuongTien.EditValue.ToString.Trim
-            End If
+        If Not Me.MaBe.EditValue Is Nothing Then
+            If Me.MaBe.EditValue.ToString.Trim <> "" Then
+                p_Values = Me.MaBe.EditValue.ToString.Trim
+                p_Where = p_Where & " and  SoBon='" & p_Values & "' "
 
+            End If
         End If
         Me.GridView2.Where = p_Where
         ''Me.DefaultFormLoad = True

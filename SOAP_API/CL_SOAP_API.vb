@@ -136,7 +136,7 @@ Public Class CL_SOAP_API
                                    ",[TiTrong],[DoDanDien] ,[NhietDo],[MauSacSayBolt],[KiemTraBenNgoai],[KhoXuat],[FromRequestDate] " & _
                                    ",[MaHangHoa],[SoBon],[NiemGiao],[IsTankSplit],[TiTrongTren],[TiTrongGiua],[TiTrongDuoi] " & _
                                    ",[FormRequestCodeSeperationLayer],[FormRequestDateSeperationLayer],[CrUser]) " & _
-                                    " ON (tgt.[MaPhuongTien] = src.[MaPhuongTien] and tgt.[FormRequestCode] = src.[FormRequestCode] ) " & _
+                                    " ON (tgt.[MaPhuongTien] = src.[MaPhuongTien] and tgt.[NgayXuat] = src.[NgayXuat] and   tgt.[SoTichKe] = src.[SoTichKe]) " & _
                             "WHEN NOT MATCHED THEN " & _
                                    " INSERT (CertNo,[MaPhuongTien],[SoTichKe],[NgayXuat],[FormRequestCode] " & _
                                    ",[TiTrong],[DoDanDien] ,[NhietDo],[MauSacSayBolt],[KiemTraBenNgoai],[KhoXuat],[FromRequestDate] " & _

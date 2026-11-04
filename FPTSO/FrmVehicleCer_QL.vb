@@ -30,6 +30,7 @@
         If Not Me.MaPhuongTien.EditValue Is Nothing Then
             If Me.MaPhuongTien.EditValue.ToString.Trim <> "" Then
                 p_Values = Me.MaPhuongTien.EditValue.ToString.Trim
+                p_Where = p_Where & " and  MaPhuongTien='" & p_Values & "' "
             End If
 
         End If
@@ -59,6 +60,12 @@
         Dim p_SoTichKe As String = ""
         Dim p_NgayXuat As String = ""
         Dim p_FormRequestCode As String
+        Dim p_RptPhuongTienCert As New ReportSetup.Class1(g_Config_XMLDatatable, _
+                                                                 g_Company_Code, _
+                                                                 g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                                 g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                                 g_DBPass, g_CompanyAPI)
+
         p_DataRow = Me.GridView2.GetFocusedDataRow
         If Not p_DataRow Is Nothing Then
             p_maPhuongTien = p_DataRow.Item("MaPhuongTien").ToString.Trim
@@ -66,6 +73,9 @@
             p_FormRequestCode = p_DataRow.Item("FormRequestCode").ToString.Trim
             p_NgayXuat = CDate(p_DataRow.Item("NgayXuat")).ToString("yyyyMMdd")
             ' ShowMessageBox("", "")
+            'p_RptPhuongTienCert.clsInChungChiPhuongTien(
+
+
         End If
         
     End Sub

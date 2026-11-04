@@ -26,6 +26,7 @@ SELECT [MaPhuongTien]
       ,[UpdDate]
       ,[UpdUser]
       ,[ID]
+	  ,CertNo
   FROM [dbo].[tblPhuongTien_Cert]
 
 GO

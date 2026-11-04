@@ -22,7 +22,7 @@ Partial Class FrmTankCerAdd
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.HoVaTen = New U_TextBox.U_TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -164,9 +164,9 @@ Partial Class FrmTankCerAdd
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(38, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(154, 19)
+        Me.Label3.Size = New System.Drawing.Size(143, 19)
         Me.Label3.TabIndex = 428
-        Me.Label3.Text = "Mã bể (Ví dụ: A031)"
+        Me.Label3.Text = "Mã bể (Ví dụ: B14)"
         '
         'Label4
         '
@@ -204,7 +204,7 @@ Partial Class FrmTankCerAdd
         Me.GioNhap.Properties.AppearanceReadOnly.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.GioNhap.Properties.AppearanceReadOnly.Options.UseFont = True
         Me.GioNhap.Properties.AutoHeight = False
-        Me.GioNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
+        Me.GioNhap.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
         Me.GioNhap.Properties.DisplayFormat.FormatString = "HH:mm:ss"
         Me.GioNhap.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom
         Me.GioNhap.Properties.Mask.EditMask = "HH:mm:ss"

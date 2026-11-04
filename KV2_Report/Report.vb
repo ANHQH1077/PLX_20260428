@@ -1804,6 +1804,7 @@ Module Report
         ShowReport(p_Report)
     End Sub
 
+
     Public Sub mdlRptBM_14_03(ByVal p_Form As U_CusForm.XtraCusForm1, ByVal p_datatable As DataTable, ByVal p_ReportCode As String)
         Dim p_ShowParent As Boolean = False
         Dim p_ShowCompany As Boolean = False
@@ -4547,5 +4548,45 @@ Module Report
         End Try
 
     End Function
+
+
+    Public Sub mdlRptChungChiPTien(ByVal p_CertNo As String, ByVal p_FormRequestCode As String, ByVal p_SoTichKe As String, ByVal p_NgayXuat As String)
+        Dim p_Dataset As DataSet
+        Dim p_SQL As String = "exec  FPT_ChungChiPhuongTien "
+        Dim p_Value As String = ""
+        Dim p_Table1, p_Table2 As DataTable
+        Dim p_Report As New KV2_PhuongTien_Cert
+        p_Value = "null"
+        If p_CertNo <> "" Then
+            p_Value = p_CertNo
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Value = ",null"
+        If p_FormRequestCode <> "" Then
+            p_Value = p_FormRequestCode
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Value = ",null"
+        If p_SoTichKe <> "" Then
+            p_Value = p_SoTichKe
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Value = ",null"
+        If p_NgayXuat <> "" Then
+            p_Value = p_NgayXuat
+        End If
+        p_SQL = p_SQL & p_Value
+
+        p_Dataset = GetDataSet(p_SQL, p_SQL)
+        If Not p_Dataset Is Nothing Then
+            If p_Dataset.Tables.Count > 0 Then
+                p_Table1 = p_Dataset.Tables(0)
+                p_Table2 = p_Dataset.Tables(1)
+            End If
+        End If
+        p_Report.DataSource = p_Dataset
+        ShowReport(p_Report)
+
+    End Sub
 
 End Module

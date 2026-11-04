@@ -23,13 +23,12 @@ Partial Class FrmTankCer_QL
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTankCer_QL))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TuNgay = New U_TextBox.U_DateEdit()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MaPhuongTien = New U_TextBox.U_TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DenNgay = New U_TextBox.U_DateEdit()
         Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
@@ -37,7 +36,6 @@ Partial Class FrmTankCer_QL
         Me.GridView2 = New U_TextBox.GridView()
         Me.ID = New U_TextBox.GridColumn()
         Me.GridColumn2 = New U_TextBox.GridColumn()
-        Me.GridColumn13 = New U_TextBox.GridColumn()
         Me.GridColumn3 = New U_TextBox.GridColumn()
         Me.GridColumn4 = New U_TextBox.GridColumn()
         Me.GridColumn5 = New U_TextBox.GridColumn()
@@ -46,7 +44,6 @@ Partial Class FrmTankCer_QL
         Me.GridColumn8 = New U_TextBox.GridColumn()
         Me.GridColumn9 = New U_TextBox.GridColumn()
         Me.GridColumn10 = New U_TextBox.GridColumn()
-        Me.GridColumn11 = New U_TextBox.GridColumn()
         Me.GridColumn12 = New U_TextBox.GridColumn()
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemButtonEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
@@ -55,12 +52,12 @@ Partial Class FrmTankCer_QL
         Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.MaBe = New U_TextBox.U_ButtonEdit()
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TuNgay.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TuNgay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MaPhuongTien.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DenNgay.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DenNgay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrueDBGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +68,7 @@ Partial Class FrmTankCer_QL
         CType(Me.RepositoryItemButtonEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MaBe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -79,9 +77,9 @@ Partial Class FrmTankCer_QL
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(17, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 19)
+        Me.Label2.Size = New System.Drawing.Size(95, 19)
         Me.Label2.TabIndex = 546
-        Me.Label2.Text = "Từ ngày"
+        Me.Label2.Text = "Từ ngày giờ"
         '
         'TuNgay
         '
@@ -112,11 +110,11 @@ Partial Class FrmTankCer_QL
         Me.TuNgay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.TuNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
         Me.TuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.TuNgay.Properties.Mask.EditMask = "dd/MM/yyyy"
+        Me.TuNgay.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss"
         Me.TuNgay.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.TuNgay.Required = "N"
-        Me.TuNgay.ShowDateTime = False
-        Me.TuNgay.Size = New System.Drawing.Size(118, 26)
+        Me.TuNgay.ShowDateTime = True
+        Me.TuNgay.Size = New System.Drawing.Size(197, 26)
         Me.TuNgay.TabIndex = 545
         Me.TuNgay.TableName = ""
         Me.TuNgay.TabStop = False
@@ -128,57 +126,21 @@ Partial Class FrmTankCer_QL
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 52)
+        Me.Label1.Location = New System.Drawing.Point(17, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 19)
+        Me.Label1.Size = New System.Drawing.Size(51, 19)
         Me.Label1.TabIndex = 544
-        Me.Label1.Text = "Phương tiện"
-        '
-        'MaPhuongTien
-        '
-        Me.MaPhuongTien.AllowInsert = True
-        Me.MaPhuongTien.AllowUpdate = True
-        Me.MaPhuongTien.AutoKeyFix = ""
-        Me.MaPhuongTien.AutoKeyName = ""
-        Me.MaPhuongTien.BindingSourceName = ""
-        Me.MaPhuongTien.ChangeFormStatus = True
-        Me.MaPhuongTien.CopyFromItem = ""
-        Me.MaPhuongTien.DefaultValue = ""
-        Me.MaPhuongTien.FieldName = ""
-        Me.MaPhuongTien.FieldType = "C"
-        Me.MaPhuongTien.KeyInsert = "Y"
-        Me.MaPhuongTien.LinkLabel = ""
-        Me.MaPhuongTien.Location = New System.Drawing.Point(119, 49)
-        Me.MaPhuongTien.Name = "MaPhuongTien"
-        Me.MaPhuongTien.NoUpdate = "N"
-        Me.MaPhuongTien.PrimaryKey = ""
-        Me.MaPhuongTien.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.MaPhuongTien.Properties.Appearance.Options.UseFont = True
-        Me.MaPhuongTien.Properties.AppearanceDisabled.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.MaPhuongTien.Properties.AppearanceDisabled.Options.UseFont = True
-        Me.MaPhuongTien.Properties.AppearanceFocused.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.MaPhuongTien.Properties.AppearanceFocused.Options.UseFont = True
-        Me.MaPhuongTien.Properties.AppearanceReadOnly.Font = New System.Drawing.Font("Tahoma", 12.0!)
-        Me.MaPhuongTien.Properties.AppearanceReadOnly.Options.UseFont = True
-        Me.MaPhuongTien.Properties.AutoHeight = False
-        Me.MaPhuongTien.Required = "N"
-        Me.MaPhuongTien.Size = New System.Drawing.Size(161, 26)
-        Me.MaPhuongTien.TabIndex = 543
-        Me.MaPhuongTien.TableName = ""
-        Me.MaPhuongTien.UpdateIfNull = "Y"
-        Me.MaPhuongTien.UpdateWhenFormLock = False
-        Me.MaPhuongTien.UpperValue = False
-        Me.MaPhuongTien.ViewName = ""
+        Me.Label1.Text = "Mã bể"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(271, 14)
+        Me.Label3.Location = New System.Drawing.Point(333, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 19)
+        Me.Label3.Size = New System.Drawing.Size(103, 19)
         Me.Label3.TabIndex = 548
-        Me.Label3.Text = "Đến ngày"
+        Me.Label3.Text = "Đến ngày giờ"
         '
         'DenNgay
         '
@@ -193,7 +155,7 @@ Partial Class FrmTankCer_QL
         Me.DenNgay.FieldType = "D"
         Me.DenNgay.KeyInsert = ""
         Me.DenNgay.LinkLabel = ""
-        Me.DenNgay.Location = New System.Drawing.Point(357, 12)
+        Me.DenNgay.Location = New System.Drawing.Point(444, 12)
         Me.DenNgay.Name = "DenNgay"
         Me.DenNgay.NoUpdate = ""
         Me.DenNgay.PrimaryKey = ""
@@ -209,11 +171,11 @@ Partial Class FrmTankCer_QL
         Me.DenNgay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.DenNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
         Me.DenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.DenNgay.Properties.Mask.EditMask = "dd/MM/yyyy"
+        Me.DenNgay.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss"
         Me.DenNgay.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.DenNgay.Required = "N"
-        Me.DenNgay.ShowDateTime = False
-        Me.DenNgay.Size = New System.Drawing.Size(118, 26)
+        Me.DenNgay.ShowDateTime = True
+        Me.DenNgay.Size = New System.Drawing.Size(213, 26)
         Me.DenNgay.TabIndex = 547
         Me.DenNgay.TableName = ""
         Me.DenNgay.TabStop = False
@@ -297,7 +259,7 @@ Partial Class FrmTankCer_QL
         Me.GridView2.ColumnKey = ""
         Me.GridView2.ColumnKeyIns = True
         Me.GridView2.ColumnKeyType = "N"
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.ID, Me.GridColumn2, Me.GridColumn13, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.ID, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn12})
         Me.GridView2.CompanyCode = ""
         Me.GridView2.DefaultRemove = True
         Me.GridView2.GetB1 = False
@@ -309,11 +271,11 @@ Partial Class FrmTankCer_QL
         Me.GridView2.OptionsCustomization.AllowSort = False
         Me.GridView2.OptionsView.ColumnAutoWidth = False
         Me.GridView2.OptionsView.ShowGroupPanel = False
-        Me.GridView2.OrderBy = "NgayXuat Desc, MaPhuongTien, FromRequestDate desc"
+        Me.GridView2.OrderBy = "NgayKTNhap desc"
         Me.GridView2.ParentItem = Nothing
         Me.GridView2.RowNumber = ""
         Me.GridView2.TableName = ""
-        Me.GridView2.ViewName = "tblPhuongTien_Cert_v"
+        Me.GridView2.ViewName = "tblTank_Cert"
         Me.GridView2.Where = "1=0"
         '
         'ID
@@ -368,7 +330,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn2.AllowInsert = True
         Me.GridColumn2.AllowUpdate = True
         Me.GridColumn2.ButtonClick = True
-        Me.GridColumn2.Caption = "Ngày xuất"
+        Me.GridColumn2.Caption = "Thời gian KT"
         Me.GridColumn2.CFLColumnHide = ""
         Me.GridColumn2.CFLKeyField = ""
         Me.GridColumn2.CFLPage = False
@@ -390,7 +352,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn2.DisplayFormat.FormatString = "dd-MM-yyyy"
         Me.GridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn2.FieldType = "D"
-        Me.GridColumn2.FieldView = "NgayXuat"
+        Me.GridColumn2.FieldView = "NgayKTNhap"
         Me.GridColumn2.FormarNumber = True
         Me.GridColumn2.FormList = False
         Me.GridColumn2.KeyInsert = ""
@@ -403,7 +365,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn2.Required = False
         Me.GridColumn2.SequenceName = ""
         Me.GridColumn2.ShowCalc = True
-        Me.GridColumn2.ShowDataTime = False
+        Me.GridColumn2.ShowDataTime = True
         Me.GridColumn2.ShowOnlyTime = False
         Me.GridColumn2.SQLString = ""
         Me.GridColumn2.UpdateIfNull = ""
@@ -411,63 +373,15 @@ Partial Class FrmTankCer_QL
         Me.GridColumn2.UpperValue = False
         Me.GridColumn2.ValidateValue = True
         Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 0
         Me.GridColumn2.Width = 110
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.AllowInsert = True
-        Me.GridColumn13.AllowUpdate = True
-        Me.GridColumn13.ButtonClick = True
-        Me.GridColumn13.Caption = "Ngày xuất"
-        Me.GridColumn13.CFLColumnHide = ""
-        Me.GridColumn13.CFLKeyField = ""
-        Me.GridColumn13.CFLPage = False
-        Me.GridColumn13.CFLReturn0 = ""
-        Me.GridColumn13.CFLReturn1 = ""
-        Me.GridColumn13.CFLReturn2 = ""
-        Me.GridColumn13.CFLReturn3 = ""
-        Me.GridColumn13.CFLReturn4 = ""
-        Me.GridColumn13.CFLReturn5 = ""
-        Me.GridColumn13.CFLReturn6 = ""
-        Me.GridColumn13.CFLReturn7 = ""
-        Me.GridColumn13.CFLShowLoad = False
-        Me.GridColumn13.ChangeFormStatus = True
-        Me.GridColumn13.ColumnKey = False
-        Me.GridColumn13.ComboLine = 5
-        Me.GridColumn13.CopyFromItem = ""
-        Me.GridColumn13.DefaultButtonClick = False
-        Me.GridColumn13.Digit = False
-        Me.GridColumn13.FieldType = "C"
-        Me.GridColumn13.FieldView = "NgayXuat_D"
-        Me.GridColumn13.FormarNumber = True
-        Me.GridColumn13.FormList = False
-        Me.GridColumn13.KeyInsert = ""
-        Me.GridColumn13.LocalDecimal = False
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.NoUpdate = ""
-        Me.GridColumn13.NumberDecimal = 0
-        Me.GridColumn13.ParentControl = ""
-        Me.GridColumn13.RefreshSource = False
-        Me.GridColumn13.Required = False
-        Me.GridColumn13.SequenceName = ""
-        Me.GridColumn13.ShowCalc = True
-        Me.GridColumn13.ShowDataTime = False
-        Me.GridColumn13.ShowOnlyTime = False
-        Me.GridColumn13.SQLString = ""
-        Me.GridColumn13.UpdateIfNull = ""
-        Me.GridColumn13.UpdateWhenFormLock = False
-        Me.GridColumn13.UpperValue = False
-        Me.GridColumn13.ValidateValue = True
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 0
-        Me.GridColumn13.Width = 110
         '
         'GridColumn3
         '
         Me.GridColumn3.AllowInsert = True
         Me.GridColumn3.AllowUpdate = True
         Me.GridColumn3.ButtonClick = True
-        Me.GridColumn3.Caption = "Phương tiện"
+        Me.GridColumn3.Caption = "Bể xuất"
         Me.GridColumn3.CFLColumnHide = ""
         Me.GridColumn3.CFLKeyField = ""
         Me.GridColumn3.CFLPage = False
@@ -487,7 +401,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn3.DefaultButtonClick = False
         Me.GridColumn3.Digit = False
         Me.GridColumn3.FieldType = "C"
-        Me.GridColumn3.FieldView = "MaPhuongTien"
+        Me.GridColumn3.FieldView = "SoBon"
         Me.GridColumn3.FormarNumber = True
         Me.GridColumn3.FormList = False
         Me.GridColumn3.KeyInsert = ""
@@ -509,14 +423,14 @@ Partial Class FrmTankCer_QL
         Me.GridColumn3.ValidateValue = True
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 1
-        Me.GridColumn3.Width = 100
+        Me.GridColumn3.Width = 70
         '
         'GridColumn4
         '
         Me.GridColumn4.AllowInsert = True
         Me.GridColumn4.AllowUpdate = True
         Me.GridColumn4.ButtonClick = True
-        Me.GridColumn4.Caption = "Tích kê"
+        Me.GridColumn4.Caption = "Niêm giao"
         Me.GridColumn4.CFLColumnHide = ""
         Me.GridColumn4.CFLKeyField = ""
         Me.GridColumn4.CFLPage = False
@@ -536,7 +450,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn4.DefaultButtonClick = False
         Me.GridColumn4.Digit = False
         Me.GridColumn4.FieldType = "C"
-        Me.GridColumn4.FieldView = "SoTichKe"
+        Me.GridColumn4.FieldView = "NiemGiao"
         Me.GridColumn4.FormarNumber = True
         Me.GridColumn4.FormList = False
         Me.GridColumn4.KeyInsert = ""
@@ -558,13 +472,14 @@ Partial Class FrmTankCer_QL
         Me.GridColumn4.ValidateValue = True
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 2
+        Me.GridColumn4.Width = 100
         '
         'GridColumn5
         '
         Me.GridColumn5.AllowInsert = True
         Me.GridColumn5.AllowUpdate = True
         Me.GridColumn5.ButtonClick = True
-        Me.GridColumn5.Caption = "Chứng chỉ P.Tiện"
+        Me.GridColumn5.Caption = "Chứng chỉ"
         Me.GridColumn5.CFLColumnHide = ""
         Me.GridColumn5.CFLKeyField = ""
         Me.GridColumn5.CFLPage = False
@@ -584,7 +499,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn5.DefaultButtonClick = False
         Me.GridColumn5.Digit = False
         Me.GridColumn5.FieldType = "C"
-        Me.GridColumn5.FieldView = "FormRequestCode"
+        Me.GridColumn5.FieldView = "FormRequestCodeSeperationLayer"
         Me.GridColumn5.FormarNumber = True
         Me.GridColumn5.FormList = False
         Me.GridColumn5.KeyInsert = ""
@@ -606,7 +521,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn5.ValidateValue = True
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 3
-        Me.GridColumn5.Width = 150
+        Me.GridColumn5.Width = 180
         '
         'GridColumn6
         '
@@ -778,7 +693,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn9.DefaultButtonClick = False
         Me.GridColumn9.Digit = False
         Me.GridColumn9.FieldType = "C"
-        Me.GridColumn9.FieldView = "KiemTraBenNgoai"
+        Me.GridColumn9.FieldView = "KiemTraBeNgoai"
         Me.GridColumn9.FormarNumber = True
         Me.GridColumn9.FormList = False
         Me.GridColumn9.KeyInsert = ""
@@ -807,7 +722,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn10.AllowInsert = True
         Me.GridColumn10.AllowUpdate = True
         Me.GridColumn10.ButtonClick = True
-        Me.GridColumn10.Caption = "Kho xuất"
+        Me.GridColumn10.Caption = "Ghi chú tách lớp"
         Me.GridColumn10.CFLColumnHide = ""
         Me.GridColumn10.CFLKeyField = ""
         Me.GridColumn10.CFLPage = False
@@ -827,7 +742,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn10.DefaultButtonClick = False
         Me.GridColumn10.Digit = False
         Me.GridColumn10.FieldType = "C"
-        Me.GridColumn10.FieldView = "KhoXuat"
+        Me.GridColumn10.FieldView = "ghichutachlop"
         Me.GridColumn10.FormarNumber = True
         Me.GridColumn10.FormList = False
         Me.GridColumn10.KeyInsert = ""
@@ -849,55 +764,7 @@ Partial Class FrmTankCer_QL
         Me.GridColumn10.ValidateValue = True
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 8
-        '
-        'GridColumn11
-        '
-        Me.GridColumn11.AllowInsert = True
-        Me.GridColumn11.AllowUpdate = True
-        Me.GridColumn11.ButtonClick = True
-        Me.GridColumn11.Caption = "Chứng chỉ bồn"
-        Me.GridColumn11.CFLColumnHide = ""
-        Me.GridColumn11.CFLKeyField = ""
-        Me.GridColumn11.CFLPage = False
-        Me.GridColumn11.CFLReturn0 = ""
-        Me.GridColumn11.CFLReturn1 = ""
-        Me.GridColumn11.CFLReturn2 = ""
-        Me.GridColumn11.CFLReturn3 = ""
-        Me.GridColumn11.CFLReturn4 = ""
-        Me.GridColumn11.CFLReturn5 = ""
-        Me.GridColumn11.CFLReturn6 = ""
-        Me.GridColumn11.CFLReturn7 = ""
-        Me.GridColumn11.CFLShowLoad = False
-        Me.GridColumn11.ChangeFormStatus = True
-        Me.GridColumn11.ColumnKey = False
-        Me.GridColumn11.ComboLine = 5
-        Me.GridColumn11.CopyFromItem = ""
-        Me.GridColumn11.DefaultButtonClick = False
-        Me.GridColumn11.Digit = False
-        Me.GridColumn11.FieldType = "C"
-        Me.GridColumn11.FieldView = "FormRequestCodeSeperationLayer"
-        Me.GridColumn11.FormarNumber = True
-        Me.GridColumn11.FormList = False
-        Me.GridColumn11.KeyInsert = ""
-        Me.GridColumn11.LocalDecimal = False
-        Me.GridColumn11.Name = "GridColumn11"
-        Me.GridColumn11.NoUpdate = ""
-        Me.GridColumn11.NumberDecimal = 0
-        Me.GridColumn11.ParentControl = ""
-        Me.GridColumn11.RefreshSource = False
-        Me.GridColumn11.Required = False
-        Me.GridColumn11.SequenceName = ""
-        Me.GridColumn11.ShowCalc = True
-        Me.GridColumn11.ShowDataTime = False
-        Me.GridColumn11.ShowOnlyTime = False
-        Me.GridColumn11.SQLString = ""
-        Me.GridColumn11.UpdateIfNull = ""
-        Me.GridColumn11.UpdateWhenFormLock = False
-        Me.GridColumn11.UpperValue = False
-        Me.GridColumn11.ValidateValue = True
-        Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 9
-        Me.GridColumn11.Width = 150
+        Me.GridColumn10.Width = 200
         '
         'GridColumn12
         '
@@ -946,12 +813,12 @@ Partial Class FrmTankCer_QL
         Me.GridColumn12.UpperValue = False
         Me.GridColumn12.ValidateValue = True
         Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 10
+        Me.GridColumn12.VisibleIndex = 9
         '
         'RepositoryItemButtonEdit2
         '
         Me.RepositoryItemButtonEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject11, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         Me.RepositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -977,7 +844,7 @@ Partial Class FrmTankCer_QL
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject6, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject12, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -996,17 +863,66 @@ Partial Class FrmTankCer_QL
         Me.U_ButtonCus1.Appearance.Options.UseFont = True
         Me.U_ButtonCus1.DefaultUpdate = True
         Me.U_ButtonCus1.EnableWhenFormLock = False
-        Me.U_ButtonCus1.Location = New System.Drawing.Point(357, 44)
+        Me.U_ButtonCus1.Location = New System.Drawing.Point(444, 44)
         Me.U_ButtonCus1.Name = "U_ButtonCus1"
         Me.U_ButtonCus1.Size = New System.Drawing.Size(118, 36)
         Me.U_ButtonCus1.TabIndex = 551
         Me.U_ButtonCus1.Text = "Tìm kiếm"
+        '
+        'MaBe
+        '
+        Me.MaBe.AllowInsert = True
+        Me.MaBe.AllowUpdate = True
+        Me.MaBe.AutoWidth = False
+        Me.MaBe.BindingSourceName = ""
+        Me.MaBe.ChangeFormStatus = False
+        Me.MaBe.CopyFromItem = ""
+        Me.MaBe.DefaultButtonClick = True
+        Me.MaBe.DefaultValue = ""
+        Me.MaBe.FieldName = ""
+        Me.MaBe.FieldType = "C"
+        Me.MaBe.FormList = True
+        Me.MaBe.ItemReturn1 = ""
+        Me.MaBe.ItemReturn2 = ""
+        Me.MaBe.ItemReturn3 = ""
+        Me.MaBe.KeyInsert = ""
+        Me.MaBe.LinkLabel = "Label9"
+        Me.MaBe.Location = New System.Drawing.Point(119, 44)
+        Me.MaBe.MultiSelect = False
+        Me.MaBe.Name = "MaBe"
+        Me.MaBe.NoUpdate = "N"
+        Me.MaBe.OrderbyEx = ""
+        Me.MaBe.PrimaryKey = ""
+        Me.MaBe.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.MaBe.Properties.Appearance.Options.UseFont = True
+        Me.MaBe.Properties.AppearanceDisabled.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.MaBe.Properties.AppearanceDisabled.Options.UseFont = True
+        Me.MaBe.Properties.AppearanceFocused.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.MaBe.Properties.AppearanceFocused.Options.UseFont = True
+        Me.MaBe.Properties.AppearanceReadOnly.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.MaBe.Properties.AppearanceReadOnly.Options.UseFont = True
+        Me.MaBe.Properties.AutoHeight = False
+        Me.MaBe.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.MaBe.Required = "N"
+        Me.MaBe.ShowLoad = True
+        Me.MaBe.Size = New System.Drawing.Size(118, 26)
+        Me.MaBe.SqlFielKey = "Map_sap"
+        Me.MaBe.SqlString = "select Map_sap from tblTank  where Product_nd = '0101002'  and isnull(Map_sap,'')" & _
+            " <> '' "
+        Me.MaBe.TabIndex = 552
+        Me.MaBe.TableName = ""
+        Me.MaBe.UpdateIfNull = ""
+        Me.MaBe.UpdateWhenFormLock = False
+        Me.MaBe.UpperValue = True
+        Me.MaBe.ValidateValue = True
+        Me.MaBe.ViewName = "FPT_tblLenhXuatE5_V"
         '
         'FrmTankCer_QL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1189, 626)
+        Me.Controls.Add(Me.MaBe)
         Me.Controls.Add(Me.U_ButtonCus1)
         Me.Controls.Add(Me.TrueDBGrid2)
         Me.Controls.Add(Me.U_ButtonCus2)
@@ -1015,11 +931,9 @@ Partial Class FrmTankCer_QL
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TuNgay)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.MaPhuongTien)
         Me.DefaultSave = False
         Me.Name = "FrmTankCer_QL"
         Me.Text = "Danh sách chứng chỉ bồn"
-        Me.Controls.SetChildIndex(Me.MaPhuongTien, 0)
         Me.Controls.SetChildIndex(Me.Label1, 0)
         Me.Controls.SetChildIndex(Me.TuNgay, 0)
         Me.Controls.SetChildIndex(Me.Label2, 0)
@@ -1028,12 +942,12 @@ Partial Class FrmTankCer_QL
         Me.Controls.SetChildIndex(Me.U_ButtonCus2, 0)
         Me.Controls.SetChildIndex(Me.TrueDBGrid2, 0)
         Me.Controls.SetChildIndex(Me.U_ButtonCus1, 0)
+        Me.Controls.SetChildIndex(Me.MaBe, 0)
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TuNgay.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TuNgay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MaPhuongTien.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DenNgay.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DenNgay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrueDBGrid2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1044,6 +958,7 @@ Partial Class FrmTankCer_QL
         CType(Me.RepositoryItemButtonEdit7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MaBe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1051,7 +966,6 @@ Partial Class FrmTankCer_QL
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TuNgay As U_TextBox.U_DateEdit
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents MaPhuongTien As U_TextBox.U_TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents DenNgay As U_TextBox.U_DateEdit
     Friend WithEvents U_ButtonCus2 As U_TextBox.U_ButtonCus
@@ -1072,10 +986,9 @@ Partial Class FrmTankCer_QL
     Friend WithEvents GridColumn8 As U_TextBox.GridColumn
     Friend WithEvents GridColumn9 As U_TextBox.GridColumn
     Friend WithEvents GridColumn10 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn11 As U_TextBox.GridColumn
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents GridColumn12 As U_TextBox.GridColumn
     Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
-    Friend WithEvents GridColumn13 As U_TextBox.GridColumn
+    Friend WithEvents MaBe As U_TextBox.U_ButtonEdit
 End Class

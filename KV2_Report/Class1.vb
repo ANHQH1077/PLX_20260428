@@ -18,7 +18,9 @@ Public Class Class1
         InBaoCao(p_datatable, p_ReportCode)
     End Sub
 
-
+    Public Sub clsRptChungChiPTien(ByVal p_CertNo As String, ByVal p_FormRequestCode As String, ByVal p_SoTichKe As String, ByVal p_NgayXuat As String)
+        mdlRptChungChiPTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
+    End Sub
     Public Sub InBaoCaoNew(ByVal p_Form As U_CusForm.XtraCusForm1, ByVal p_datatable As DataTable, ByVal p_ReportCode As String, ByVal p_DataSetReturn As DataSet)
 
         Dim p_SQL As String = "select * from tblVCF"

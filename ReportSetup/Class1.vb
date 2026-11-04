@@ -73,7 +73,9 @@ Public Class Class1
         InChungTu(p_Form, p_Preview, p_SoLenh, p_Type)
     End Sub
 
-   
+    Public Sub clsInChungChiPhuongTien(ByVal p_CertNo As String, ByVal p_FormRequestCode As String, ByVal p_SoTichKe As String, ByVal p_NgayXuat As String)
+        InChungChiPhuongTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
+    End Sub
 
     Public Sub clsInChungTu_ALL(ByVal p_Form As Object, ByVal p_Preview As Boolean, ByVal p_SoLenh As String, ByVal p_Type As String)
         InChungTu_ALL(p_Form, p_Preview, p_SoLenh, p_Type)

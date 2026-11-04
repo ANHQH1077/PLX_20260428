@@ -416,6 +416,20 @@
 
 
 
+    Public Sub InChungChiPhuongTien(ByVal p_CertNo As String, ByVal p_FormRequestCode As String, ByVal p_SoTichKe As String, ByVal p_NgayXuat As String)
+        Select Case g_Company_Code
+            Case "6610"  'KV2
+                Dim p_TichKeKV2 As New KV_2_Report.Class1(g_Config_XMLDatatable, _
+                                                          g_Company_Code, _
+                                                          g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                          g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                          g_DBPass, g_CompanyAPI)
+                p_TichKeKV2.clsRptChungChiPTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
+
+                Exit Sub
+        End Select
+    End Sub
+
     Public Sub InChungTu_ALL(ByVal p_Form As Object, ByVal p_Preview As Boolean, ByVal p_SoLenh As String, ByVal p_Type As String)
         If p_CHUNGTU_ALL = False Then
             Select Case g_Company_Code
@@ -481,7 +495,7 @@
                 p_AllReport.InChungTuHoaDon(p_Form, p_Type, p_SoLenh)
                 Exit Sub
             End If
-            
+
 
 
             Select Case g_Company_Code
@@ -809,8 +823,8 @@
             p_KV1_LenhxuatKho.Parameters.Item("STO").Value = DtTable.Rows(0).Item("STO")
             p_KV1_LenhxuatKho.Parameters.Item("NguoiDaiDien").Value = DtTable.Rows(0).Item("NguoiDaiDien")
             p_KV1_LenhxuatKho.Parameters.Item("DonViCungCapVanTai").Value = DtTable.Rows(0).Item("DonViCungCapVanTai")
-            
-                p_KV1_LenhxuatKho.Parameters.Item("KhoNhap").Value = DtTable.Rows(0).Item("KhoNhap").ToString
+
+            p_KV1_LenhxuatKho.Parameters.Item("KhoNhap").Value = DtTable.Rows(0).Item("KhoNhap").ToString
 
             p_KV1_LenhxuatKho.Parameters.Item("KhoXuat").Value = DtTable.Rows(0).Item("KhoXuat").ToString
             'p_KV1_LenhxuatKho.Parameters.Item("KhoNhap").Value = "Kho 100 hieptd4" 'hieptd4 add for test
@@ -833,7 +847,7 @@
                 p_KV1_LenhxuatKho.Parameters.Item("DonViNhanHang").Value = DtTable.Rows(0).Item("DVNhanHang").ToString
 
             End Try
-           
+
             p_KV1_LenhxuatKho.Parameters.Item("PhuongThucVanTai").Value = DtTable.Rows(0).Item("PhuongThucVanTai").ToString
             p_KV1_LenhxuatKho.Parameters.Item("SoChuyenVanTai").Value = DtTable.Rows(0).Item("SoChuyenVanTai").ToString
             p_KV1_LenhxuatKho.Parameters.Item("MaPhuongTien").Value = DtTable.Rows(0).Item("MaPhuongTien").ToString

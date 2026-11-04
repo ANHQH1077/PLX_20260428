@@ -206,6 +206,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtLietKeBienBanGiaoNhanSub.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dtPhuongTienCert.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtPhuongTienCert.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmImfor_HoaDon.Designer.vb">
       <DependentUpon>frmImfor_HoaDon.vb</DependentUpon>
     </Compile>
@@ -309,6 +314,30 @@
       <DependentUpon>dtTTLX.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert.Designer.vb">
+      <DependentUpon>KV2_PhuongTien_Cert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub.Designer.vb">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub1.Designer.vb">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub2.Designer.vb">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_PhuongTien_Cert_Sub2.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RpDataset1.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -845,6 +874,18 @@
     <EmbeddedResource Include="KV2_LenhXuatKhoKDDA4.resx">
       <DependentUpon>KV2_LenhXuatKhoKDDA4.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KV2_PhuongTien_Cert.resx">
+      <DependentUpon>KV2_PhuongTien_Cert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_PhuongTien_Cert_Sub.resx">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_PhuongTien_Cert_Sub1.resx">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_PhuongTien_Cert_Sub2.resx">
+      <DependentUpon>KV2_PhuongTien_Cert_Sub2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="rptBienBanDoBe.resx">
       <DependentUpon>rptBienBanDoBe.vb</DependentUpon>
@@ -1155,6 +1196,17 @@
     </None>
     <None Include="dtLietKeBienBanGiaoNhanSub.xss">
       <DependentUpon>dtLietKeBienBanGiaoNhanSub.xsd</DependentUpon>
+    </None>
+    <None Include="dtPhuongTienCert.xsc">
+      <DependentUpon>dtPhuongTienCert.xsd</DependentUpon>
+    </None>
+    <None Include="dtPhuongTienCert.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtPhuongTienCert.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dtPhuongTienCert.xss">
+      <DependentUpon>dtPhuongTienCert.xsd</DependentUpon>
     </None>
     <None Include="dtTTBX.xsc">
       <DependentUpon>dtTTBX.xsd</DependentUpon>
