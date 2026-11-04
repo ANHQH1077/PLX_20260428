@@ -22,7 +22,6 @@ Partial Class FrmTankListATG
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTankListATG))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -49,8 +48,8 @@ Partial Class FrmTankListATG
         Me.RepositoryItemButtonEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.RepositoryItemButtonEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit()
-        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
-        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus()
+        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()

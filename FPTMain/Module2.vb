@@ -2104,6 +2104,49 @@ Module Module2
         Try
 
             p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblTank_Cert' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblTank_Cert]([NgayKTNhap] [datetime] NULL,	[GioKTNhap] [time](7) NULL,	[ThoiGianOnDinh] [int] NULL, " & _
+                     "[HovaTen] [nvarchar](300) NULL,	[ChucDanh] [nvarchar](200) NULL,[FormRequestCode] [nvarchar](100) NULL, " & _
+                     "[titrong] [nvarchar](30) NULL,[dodandien] [nvarchar](30) NULL,[nhietdo] [nvarchar](30) NULL, " & _
+                     "[mausacsaybolt] [nvarchar](150) NULL,[kiemtrabengoai] [nvarchar](150) NULL,[khoxuat] [nvarchar](30) NULL, " & _
+                     "[FormRequestDate] [date] NULL,[MaHangHoa] [nvarchar](30) NULL,[TenHangHoa] [nvarchar](130) NULL, " & _
+                     "[SoBon] [nvarchar](30) NULL,[NiemGiao] [nvarchar](130) NULL,[titrongtren] [nvarchar](30) NULL, " & _
+                     "[titronggiua] [nvarchar](30) NULL,[titrongduoi] [nvarchar](30) NULL,[ghichutachlop] [nvarchar](230) NULL, " & _
+                     "[issplit] [nvarchar](30) NULL,[FormRequestCodeSeperationLayer] [nvarchar](30) NULL, " & _
+                     "[FormRequestDateSeperationLayer] [datetime] NULL,[CrUser] [nvarchar](130) NULL,[CrDate] [datetime] DEFAULT (getdate()) , " & _
+                     "[UpdUser] [nvarchar](30) NULL,[UpdDate] [datetime] NULL,[ID] [int] IDENTITY(1,1) NOT NULL)  end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
+
+            p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblPhuongTien_Cert' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblPhuongTien_Cert](CertNo varchar(50), MaPhuongTien nvarchar(100), SoTichKe nvarchar(50),NgayXuat date, [FormRequestCode] [nvarchar](200) NULL,	[TiTrong] [nvarchar](10) NULL," & _
+                 "[DoDanDien] [nvarchar](10) NULL,[NhietDo] [nvarchar](10) NULL,[MauSacSayBolt] [nvarchar](10) NULL," & _
+                 "[KiemTraBenNgoai] [nvarchar](200) NULL,[KhoXuat] [nvarchar](10) NULL,[FromRequestDate] [nvarchar](100) NULL," & _
+                 "[MaHangHoa] [nvarchar](20) NULL,[SoBon] [nvarchar](10) NULL,[NiemGiao] [nvarchar](50) NULL," & _
+                 "[IsTankSplit] [nvarchar](10) NULL,[TiTrongTren] [nvarchar](10) NULL,[TiTrongGiua] [nvarchar](10) NULL," & _
+                 "[TiTrongDuoi] [nvarchar](10) NULL,[FormRequestCodeSeperationLayer] [nvarchar](100) NULL," & _
+                 "[FormRequestDateSeperationLayer] [nvarchar](100) NULL,[CrDate] [datetime] default getdate() ,[CrUser] [nvarchar](100) NULL,[UpdDate] [datetime] default getdate() ,[UpdUser] [nvarchar](100) NULL," & _
+                 "[ID] [int] IDENTITY(1,1) NOT NULL) end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
+            p_Error = ""
+            p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblVehicleCertNum' AND xtype='U') " & _
+                 "  begin CREATE TABLE [dbo].[tblVehicleCertNum]([ID] [int] IDENTITY(1,1) NOT NULL,[CrDate] [datetime] NOT NULL,	[CrUser] [varchar](250) NULL," & _
+                     "CONSTRAINT [PK_tblVehicleCertNum] PRIMARY KEY CLUSTERED " & _
+                    "([ID] ASC)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]) end;"
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
+
+            p_Error = ""
             p_SQL = " IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='tblHeSoGianNo' AND xtype='U') " & _
                  "  begin CREATE TABLE [dbo].[tblHeSoGianNo](" & _
                          "[ID] [int] IDENTITY(1,1) NOT NULL," & _
@@ -3001,10 +3044,23 @@ Module Module2
                                 "  begin alter table  tblDO_Item_Material add TongSoTien  decimal(18,6) " & _
                         "  end;"
 
+
             If g_Services.Sys_Execute(p_SQL, _
                                       p_Error) = False Then
 
-                End If
+            End If
+
+            p_Error = ""
+
+            p_SQL = " if  COL_LENGTH('tblDO_Item_Material','MaHangHoa') is null " & _
+                                "  begin alter table  tblDO_Item_Material add MaHangHoa  nvarchar(30) " & _
+                        "  end;"
+
+
+            If g_Services.Sys_Execute(p_SQL, _
+                                      p_Error) = False Then
+
+            End If
                 'tblChungTuLine
             p_Error = ""
 

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PLX\\HTTG_CODE\\PLX_20260428\\VinhND_Code\\OneDrive-2021-04-26\\Connect2SapEx_2010\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0359A598-A7FF-431D-98CD-B8C3FCFA713C}|Connect2SapEx.csproj|d:\\plx\\httg_code\\plx_20260428\\vinhnd_code\\onedrive-2021-04-26\\connect2sapex_2010\\connect2sap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0359A598-A7FF-431D-98CD-B8C3FCFA713C}|Connect2SapEx.csproj|solutionrelative:connect2sap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0359A598-A7FF-431D-98CD-B8C3FCFA713C}|Connect2SapEx.csproj|d:\\plx\\httg_code\\plx_20260428\\vinhnd_code\\onedrive-2021-04-26\\connect2sapex_2010\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0359A598-A7FF-431D-98CD-B8C3FCFA713C}|Connect2SapEx.csproj|solutionrelative:assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Connect2Sap.cs",
+              "DocumentMoniker": "D:\\PLX\\HTTG_CODE\\PLX_20260428\\VinhND_Code\\OneDrive-2021-04-26\\Connect2SapEx_2010\\Connect2Sap.cs",
+              "RelativeDocumentMoniker": "Connect2Sap.cs",
+              "ToolTip": "D:\\PLX\\HTTG_CODE\\PLX_20260428\\VinhND_Code\\OneDrive-2021-04-26\\Connect2SapEx_2010\\Connect2Sap.cs",
+              "RelativeToolTip": "Connect2Sap.cs",
+              "ViewState": "AgIAANsFAAAAAAAAAAAQwPMFAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T02:05:15.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\PLX\\HTTG_CODE\\PLX_20260428\\VinhND_Code\\OneDrive-2021-04-26\\Connect2SapEx_2010\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "AssemblyInfo.cs",
+              "ToolTip": "D:\\PLX\\HTTG_CODE\\PLX_20260428\\VinhND_Code\\OneDrive-2021-04-26\\Connect2SapEx_2010\\AssemblyInfo.cs",
+              "RelativeToolTip": "AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T02:05:07.766Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

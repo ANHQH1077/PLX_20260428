@@ -1983,7 +1983,7 @@ Line_tt:
         Dim p_DataTableL15 As DataTable
 
         Dim p_DataRow As DataRow
-        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API
+        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API(g_UserName)
         Dim p_Density As String
         Dim cl_HTTG_COMMON As New HTTG_COMMON.CL_HTTG_COMMON
         cl_HTTG_COMMON.getSYS_CONFIG()
@@ -5730,4 +5730,24 @@ Line_tt:
 
     End Sub
 
+    Private Sub PTCert_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PTCert.Click
+        Dim p_SoLenh As String = ""
+        If Not Me.SoLenh.EditValue Is Nothing Then
+            p_SoLenh = Me.SoLenh.EditValue.ToString
+        End If
+        If p_SoLenh = "" Then
+            ShowMessageBox("", "Số lệnh không xác định")
+            Exit Sub
+        End If
+        Dim p_FrmVehicleCerAdd As New FrmTankCerAdd(p_SoLenh)
+        p_FrmVehicleCerAdd.p_XtraModuleObj = p_XtraModuleObj ' p_FptModule
+        p_FrmVehicleCerAdd.g_XtraServicesObj = g_XtraServicesObj
+        'FrmMenu.DefaultWhere = "DocEntry=" & p_DataRow.Item(Me.U_TrueDBGrid1.ColumnKey).ToString.Trim        
+        p_FrmVehicleCerAdd.p_XtraToolTripLabel = g_ToolStripStatus
+        p_FrmVehicleCerAdd.p_XtraDataSet_TrueGird = p_DataSet_TrueGird
+        p_FrmVehicleCerAdd.p_XtraMessageStatusl = g_MessageStatus
+        'p_TrangThai = p_FrmXacNhanThucXuat.p_Status
+        p_FrmVehicleCerAdd.ShowDialog(Me)
+
+    End Sub
 End Class

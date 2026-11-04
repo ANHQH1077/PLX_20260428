@@ -50,6 +50,7 @@ Partial Class FrmVehicleDetail
         Me.U_TextBox1.NoUpdate = "N"
         Me.U_TextBox1.PrimaryKey = ""
         Me.U_TextBox1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!)
+        Me.U_TextBox1.Properties.Appearance.Options.UseFont = True
         Me.U_TextBox1.Properties.AppearanceDisabled.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.U_TextBox1.Properties.AppearanceDisabled.Options.UseFont = True
         Me.U_TextBox1.Properties.AppearanceFocused.Font = New System.Drawing.Font("Tahoma", 12.0!)

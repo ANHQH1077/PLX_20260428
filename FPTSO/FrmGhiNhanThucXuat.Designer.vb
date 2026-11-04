@@ -22,6 +22,7 @@ Partial Class FrmGhiNhanThucXuat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmGhiNhanThucXuat))
         Me.TrueDBGrid1 = New U_TextBox.TrueDBGrid()
         Me.GridView1 = New U_TextBox.GridView()
@@ -143,8 +144,9 @@ Partial Class FrmGhiNhanThucXuat
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Ngay_TKTX = New U_TextBox.U_DateEdit()
         Me.MaPhuongThucBan = New U_TextBox.U_TextBox()
-        Me.CmdSMO = New U_TextBox.U_ButtonCus()
+        Me.CmdSMO = New U_TextBox.U_ButtonCus(Me.components)
         Me.HNhomBeXuat = New U_TextBox.U_TextBox()
+        Me.PTCert = New U_TextBox.U_ButtonCus(Me.components)
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2872,7 +2874,7 @@ Partial Class FrmGhiNhanThucXuat
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripButton8, Me.ToolStripButton9, Me.ToolStripButton10, Me.ToolStripButton12, Me.ToolStripNhomBe})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1140, 28)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1138, 28)
         Me.ToolStrip1.TabIndex = 467
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -3917,13 +3919,28 @@ Partial Class FrmGhiNhanThucXuat
         Me.HNhomBeXuat.UpperValue = False
         Me.HNhomBeXuat.ViewName = "FPT_tblLenhXuatE5_V"
         '
+        'PTCert
+        '
+        Me.PTCert.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PTCert.Appearance.Options.UseFont = True
+        Me.PTCert.DefaultUpdate = True
+        Me.PTCert.EnableWhenFormLock = False
+        Me.PTCert.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.PTCert.Location = New System.Drawing.Point(272, 86)
+        Me.PTCert.Name = "PTCert"
+        Me.PTCert.Size = New System.Drawing.Size(94, 53)
+        Me.PTCert.TabIndex = 913
+        Me.PTCert.TabStop = False
+        Me.PTCert.Text = "In chứng " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&chỉ P.tiện"
+        '
         'FrmGhiNhanThucXuat
         '
         Me.Appearance.BackColor = System.Drawing.Color.LightGray
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1140, 638)
+        Me.ClientSize = New System.Drawing.Size(1138, 638)
+        Me.Controls.Add(Me.PTCert)
         Me.Controls.Add(Me.HNhomBeXuat)
         Me.Controls.Add(Me.CmdSMO)
         Me.Controls.Add(Me.TrueDBGrid1)
@@ -4042,6 +4059,7 @@ Partial Class FrmGhiNhanThucXuat
         Me.Controls.SetChildIndex(Me.TrueDBGrid1, 0)
         Me.Controls.SetChildIndex(Me.CmdSMO, 0)
         Me.Controls.SetChildIndex(Me.HNhomBeXuat, 0)
+        Me.Controls.SetChildIndex(Me.PTCert, 0)
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4226,4 +4244,5 @@ Partial Class FrmGhiNhanThucXuat
     Friend WithEvents NhietDoXe As U_TextBox.GridColumn
     Friend WithEvents TrangThai As U_TextBox.GridColumn
     Friend WithEvents MaLo As U_TextBox.GridColumn
+    Friend WithEvents PTCert As U_TextBox.U_ButtonCus
 End Class

@@ -514,6 +514,18 @@
     <Compile Include="FrmTankBatch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmTankCerAdd.Designer.vb">
+      <DependentUpon>FrmTankCerAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankCerAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTankCer_QL.Designer.vb">
+      <DependentUpon>FrmTankCer_QL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTankCer_QL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmTankChange.Designer.vb">
       <DependentUpon>FrmTankChange.vb</DependentUpon>
     </Compile>
@@ -578,6 +590,18 @@
       <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmTraCuuSoLieuDoBon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehicleCerAdd.Designer.vb">
+      <DependentUpon>FrmVehicleCerAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVehicleCerAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehicleCer_QL.Designer.vb">
+      <DependentUpon>FrmVehicleCer_QL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVehicleCer_QL.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVehicle_TaiTrong.Designer.vb">
@@ -804,6 +828,12 @@
     <EmbeddedResource Include="FrmTankBatch.resx">
       <DependentUpon>FrmTankBatch.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankCerAdd.resx">
+      <DependentUpon>FrmTankCerAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTankCer_QL.resx">
+      <DependentUpon>FrmTankCer_QL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTankChange.resx">
       <DependentUpon>FrmTankChange.vb</DependentUpon>
     </EmbeddedResource>
@@ -836,6 +866,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTraCuuSoLieuDoBon.resx">
       <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicleCerAdd.resx">
+      <DependentUpon>FrmVehicleCerAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehicleCer_QL.resx">
+      <DependentUpon>FrmVehicleCer_QL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVehicle_TaiTrong.resx">
       <DependentUpon>FrmVehicle_TaiTrong.vb</DependentUpon>

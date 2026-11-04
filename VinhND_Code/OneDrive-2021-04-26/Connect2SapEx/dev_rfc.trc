@@ -1,0 +1,86 @@
+
+**** ERROR file opened at 20050707 163016 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:3504 Error in program 'devenv': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=10.0.9.83, GWSERV=sapgw01, SYSNR=01
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner '10.0.9.83:3301' not reached
+
+TIME        Thu Jul 07 16:30:16 2005
+RELEASE     710
+COMPONENT   NI (network interface)
+VERSION     39
+RC          -10
+MODULE      nixxi.cpp
+LINE        3068
+DETAIL      NiPConnect2: 10.0.9.83:3301
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     1
+
+
+**** ERROR file opened at 20170926 082800 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:5364 Error in program 'devenv': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=10.0.9.83, GWSERV=sapgw01, SYSNR=01
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       connection to partner '10.0.9.83:3301' broken
+
+TIME        Tue Sep 26 08:28:00 2017
+RELEASE     710
+COMPONENT   NI (network interface)
+VERSION     39
+RC          -6
+MODULE      gwxx.c
+LINE        644
+DETAIL      NiIRead: P=10.0.9.83:3301; L=0.0.0.0:1131
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+>TS> Tue Sep 26 08:30:13 2017
+T:4892 Error in program 'devenv': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=10.0.9.83, GWSERV=sapgw01, SYSNR=01
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       connection to partner '10.0.9.83:3301' broken
+
+TIME        Tue Sep 26 08:30:13 2017
+RELEASE     710
+COMPONENT   NI (network interface)
+VERSION     39
+RC          -6
+MODULE      gwxx.c
+LINE        644
+DETAIL      NiIRead: P=10.0.9.83:3301; L=0.0.0.0:1197
+SYSTEM CALL GwRead
+ERRNO       10054
+ERRNO TEXT  WSAECONNRESET: Connection reset by peer
+COUNTER     1
+
+
+**** ERROR file opened at 20180316 220956 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:3208 Error in program 'devenv': ======> SAP_CMINIT3 : rc=20 > Connect to SAP gateway failed
+Connect_PM  GWHOST=10.0.9.83, GWSERV=sapgw01, SYSNR=01
+
+LOCATION    CPIC (TCP/IP) on local host
+ERROR       partner '10.0.9.83:3301' not reached
+
+TIME        Fri Mar 16 22:09:56 2018
+RELEASE     710
+COMPONENT   NI (network interface)
+VERSION     39
+RC          -10
+MODULE      nixxi.cpp
+LINE        3068
+DETAIL      NiPConnect2: 10.0.9.83:3301
+SYSTEM CALL connect
+ERRNO       10060
+ERRNO TEXT  WSAETIMEDOUT: Connection timed out
+COUNTER     1
+
+
+**** ERROR file opened at 20181123 091621 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:2316 ======> Missing SYSNR=... in connect_param in RfcOpenEx

@@ -799,7 +799,7 @@
         Dim p_DataTable As DataTable
         Dim p_Array() As DataRow
         Dim p_Count As Integer
-        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API
+        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API(g_UserName)
         Dim Name_nd, Product_nd As String
         Dim cl_HTTG_COMMON As New HTTG_COMMON.CL_HTTG_COMMON
         cl_HTTG_COMMON.getSYS_CONFIG()
@@ -985,7 +985,7 @@
 
     Private Sub TSB_SYNLMS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSB_SYNLMS.Click
         Dim p_Index As Integer
-        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API
+        Dim cl_SOAP_API As New SOAP_API.CL_SOAP_API(g_UserName)
         Dim Name_nd, Product_nd As String
         Dim p_Dens As Double
         Dim p_DateTime As DateTime

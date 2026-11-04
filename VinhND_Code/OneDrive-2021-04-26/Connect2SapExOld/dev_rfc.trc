@@ -1,0 +1,11 @@
+
+**** ERROR file opened at 20121006 143850 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:7176 Error in program 'devenv': ======> Password logon no longer possible - too many failed attempts
+T:7176 Error in program 'devenv': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+
+**** ERROR file opened at 20140515 111619 SE Asia Standard Time, SAP-REL 710,0,64 RFC-VER 3 930462 MT-SL
+T:3880 Error in program 'devenv': ======> Name or password is incorrect (repeat logon)
+T:3880 Error in program 'devenv': <* RfcReceive [1] : returns 3:RFC_SYS_EXCEPTION
+>TS> Thu May 15 11:17:02 2014
+T:1360 Error in program 'devenv': ======> User is locked. Please notify the person responsible
+T:1360 Error in program 'devenv': <* RfcReceive [2] : returns 3:RFC_SYS_EXCEPTION

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0359A598-A7FF-431D-98CD-B8C3FCFA713C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Connect2SapEx</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Connect2SapEx</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAP.Connector">
+      <Name>SAP.Connector</Name>
+      <HintPath>..\..\..\..\..\Program Files\SAP\SAP .NET Connector 2.0\\SAP.Connector.DLL</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc">
+      <Name>SAP.Connector.Rfc</Name>
+      <HintPath>..\..\..\..\..\Program Files\SAP\SAP .NET Connector 2.0\\SAP.Connector.Rfc.DLL</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BAPIRET2.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connect2Sap.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="ZBAPI_STR_ROUTE.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZBAPI_STR_ROUTETable.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZTB_INT_LX_TANK.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZTB_INT_LX_TANKTable.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZTB_INT_LX_TEMP.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZTB_INT_LX_TEMPTable.cs">
+      <DependentUpon>Connect2Sap.sapwsdl</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="Connect2Sap.sapwsdl">
+      <Generator>SAPConnectorGenerator</Generator>
+      <LastGenOutput>Connect2Sap.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

@@ -1975,7 +1975,7 @@ Module Report
                     If StrParameter <> "" Then
                         labelDetail = New DevExpress.XtraReports.UI.XRLabel
                         'labelDetail.WidthF = .PageSize.Width - 30
-                        labelDetail.WidthF = .PageSize.Width '300
+                        labelDetail.WidthF = .PageSize.Width - 50 '300
                         labelDetail.LeftF = 15
                         labelDetail.Text = StrParameter
                         labelDetail.TopF = p_Top_Title

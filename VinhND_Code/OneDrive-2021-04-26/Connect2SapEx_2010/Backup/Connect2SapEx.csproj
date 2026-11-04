@@ -1,0 +1,422 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{0359A598-A7FF-431D-98CD-B8C3FCFA713C}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Connect2SapEx"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "Connect2SapEx"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "SAP.Connector"
+                    AssemblyName = "SAP.Connector"
+                    HintPath = "..\..\..\..\..\Program Files\SAP\SAP .NET Connector 2.0\\SAP.Connector.DLL"
+                />
+                <Reference
+                    Name = "SAP.Connector.Rfc"
+                    AssemblyName = "SAP.Connector.Rfc"
+                    HintPath = "..\..\..\..\..\Program Files\SAP\SAP .NET Connector 2.0\\SAP.Connector.Rfc.DLL"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Connect2Sap.sapwsdl"
+                    BuildAction = "None"
+                    Generator = "SAPConnectorGenerator"
+                    LastGenOutput = "Connect2Sap.cs"
+                />
+                <File
+                    RelPath = "BAPIPAREX.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BAPIPAREXTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BAPIRET2.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BAPIRET2Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Connect2Sap.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "DD07T.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DD07TTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LIPSO2.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LIPSO2Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OIB_A05.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OIB_A05Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OIB_A10.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OIB_A10Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_BATCH.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_BATCHTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_CONTRACT.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_CONTRACTTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_DISCHARD_2.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_DISCHARD_2Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_ITEM_THN.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_ITEM_THNTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_THN.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_THN2.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_THN2Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_EXPORT_THNTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_PAYMENTTERM.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_PAYMENTTERMTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_ROUTE.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_ROUTETable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_TK13_ND.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_TK13_NDTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_VENDOR3.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_VENDOR3Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_VK13_ND.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZBAPI_STR_VK13_NDTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_INT_OIISOCISL.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_INT_OIISOCISLTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_KH_NEW.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_KH_NEWTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_OIISLVCPO.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZST_OIISLVCPOTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZSTBAPI_TANK_DIP.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZSTBAPI_TANK_DIPTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_E5.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_E5Table.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_TANK.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_TANKTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_TEMP.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_LX_TEMPTable.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ZTB_INT_TIME.cs"
+                    DependentUpon = "Connect2Sap.sapwsdl"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

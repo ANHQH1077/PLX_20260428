@@ -22,10 +22,9 @@ Partial Class FrmTankActive
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTankActive))
-        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
-        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus()
+        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()

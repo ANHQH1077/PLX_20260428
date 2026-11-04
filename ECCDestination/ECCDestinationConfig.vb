@@ -251,4 +251,10 @@ Public Class ECCDestinationConfig
                                               ByRef o_err As String) As System.Data.DataTable
         clsGET_HTTG_GET_LX_STAGING = GET_HTTG_GET_LX_STAGING(p_SoLenh, o_err)
     End Function
+
+
+    Public Function slcGet_HTTG_DO_INIO(ByVal p_SoLenh As String, ByRef o_err As String) As DataTable
+
+        slcGet_HTTG_DO_INIO = Get_HTTG_DO_INIO(p_SoLenh, o_err)
+    End Function
 End Class

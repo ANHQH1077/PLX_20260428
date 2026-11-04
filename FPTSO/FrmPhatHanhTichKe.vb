@@ -5597,11 +5597,28 @@ Line_TT001:
                         p_DataRow.Item(1) = "tblLenhXuat_HangHoaE5"
 
                         p_DataTableDel.Rows.Add(p_DataRow)
+
                         p_DataRow = p_DataTableDel.NewRow
                         p_SQL = "delete from tblLenhXuatE5  where SoLenh='" & p_Value & "'"
                         p_DataRow.Item(0) = p_SQL
                         p_DataRow.Item(1) = "tblLenhXuatE5"
                         p_DataTableDel.Rows.Add(p_DataRow)
+
+
+
+                        p_DataRow = p_DataTableDel.NewRow
+                        p_SQL = "delete from tblDO_Header  where SoLenh='" & p_Value & "'"
+                        p_DataRow.Item(0) = p_SQL
+                        p_DataRow.Item(1) = "tblDO_Header"
+                        p_DataTableDel.Rows.Add(p_DataRow)
+
+                        p_DataRow = p_DataTableDel.NewRow
+                        p_SQL = "delete from tblDO_Item_Material  where SoLenh='" & p_Value & "'"
+                        p_DataRow.Item(0) = p_SQL
+                        p_DataRow.Item(1) = "tblDO_Item_Material"
+                        p_DataTableDel.Rows.Add(p_DataRow)
+
+
                         If g_Services.Sys_Execute_DataTbl(p_DataTableDel, _
                                            p_SQL) = False Then
                             MsgBox("Error:" & p_SQL)

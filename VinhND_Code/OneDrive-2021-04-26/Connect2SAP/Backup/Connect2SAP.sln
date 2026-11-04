@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connect2SAP", "Connect2SAP.csproj", "{C78F564E-9EC1-4519-9AFB-BA292BF5D8DA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {9BD0E558-6578-4EF8-B299-9D7D4BE34F29}
+		SccProjectUniqueName1 = Connect2SAP.csproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C78F564E-9EC1-4519-9AFB-BA292BF5D8DA}.Debug.ActiveCfg = Debug|.NET
+		{C78F564E-9EC1-4519-9AFB-BA292BF5D8DA}.Debug.Build.0 = Debug|.NET
+		{C78F564E-9EC1-4519-9AFB-BA292BF5D8DA}.Release.ActiveCfg = Release|.NET
+		{C78F564E-9EC1-4519-9AFB-BA292BF5D8DA}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

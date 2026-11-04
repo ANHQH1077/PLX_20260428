@@ -6043,10 +6043,10 @@ TaoMaLenh:
     Public Function mdlSyncDeliveries_SynSpecific_ExNew(ByVal p_Client As String, ByVal p_User_ID As Integer, _
                                                     ByVal p_Company_Code As String, ByVal i_solenh As String, ByRef o_err As String) As Boolean
 
-        Dim l_c2sap As Connect2SapEx.Connect2Sap
-        Dim l_ztb_hd As Connect2SapEx.STR_HEADER_THN2Table
-        Dim l_ztb_it As Connect2SapEx.STR_ITEM_THNTable
-        Dim l_ret2 As Connect2SapEx.BAPIRET2
+        'Dim l_c2sap As Connect2SapEx.Connect2Sap
+        'Dim l_ztb_hd As Connect2SapEx.STR_HEADER_THN2Table
+        'Dim l_ztb_it As Connect2SapEx.STR_ITEM_THNTable
+        'Dim l_ret2 As Connect2SapEx.BAPIRET2
         Dim l_err As String
         Dim l_f As Boolean = False
         ' Dim p_Table As DataTable
@@ -6168,144 +6168,147 @@ TaoMaLenh:
 
 
         Try
-            l_c2sap = New Connect2SapEx.Connect2Sap(p_SapConnectionString)
-            l_ret2 = New Connect2SapEx.BAPIRET2()
-            l_ztb_hd = New Connect2SapEx.STR_HEADER_THN2Table
-            l_ztb_it = New Connect2SapEx.STR_ITEM_THNTable()
+            'l_c2sap = New Connect2SapEx.Connect2Sap(p_SapConnectionString)
+            'l_ret2 = New Connect2SapEx.BAPIRET2()
+            'l_ztb_hd = New Connect2SapEx.STR_HEADER_THN2Table
+            'l_ztb_it = New Connect2SapEx.STR_ITEM_THNTable()
 
-            ' l_ztb As Connect2SapEx.LIPSO2Table
-            l_err = String.Empty
+            '' l_ztb As Connect2SapEx.LIPSO2Table
+            'l_err = String.Empty
 
-            Try
-                If p_TableConfig1.Rows(0).Item("TimeOut").ToString.Trim = "25" Then
-                    ' l_c2sap.GetDO_THN2(p_SoLenh_DO1, l_ztb_hd, l_ztb_it, l_ret2)
-                    l_c2sap.GetDO_THN2(i_solenh, l_ztb_hd, l_ztb_it, l_ret2)
-                Else
-                    l_async = l_c2sap.BeginGetDO_THN2(i_solenh, l_ztb_hd, l_ztb_it, Nothing, l_c2sap)
-                    l_isCompleted = l_async.AsyncWaitHandle.WaitOne(p_TimeOut, False)
+            'Try
+            '    If p_TableConfig1.Rows(0).Item("TimeOut").ToString.Trim = "25" Then
+            '        ' l_c2sap.GetDO_THN2(p_SoLenh_DO1, l_ztb_hd, l_ztb_it, l_ret2)
+            '        l_c2sap.GetDO_THN2(i_solenh, l_ztb_hd, l_ztb_it, l_ret2)
+            '    Else
+            '        l_async = l_c2sap.BeginGetDO_THN2(i_solenh, l_ztb_hd, l_ztb_it, Nothing, l_c2sap)
+            '        l_isCompleted = l_async.AsyncWaitHandle.WaitOne(p_TimeOut, False)
 
-                    If l_isCompleted Then
-                        l_c2sap.EndGetDO_THN2(l_async, l_ztb_hd, l_ztb_it, l_ret2)
-                    End If
-                End If
-            Catch ex1 As Exception
-                o_err = ex1.Message
-                Return False
-            End Try
-
-            'If p_TableConfig1.Rows(0).Item("TimeOut").ToString.Trim = "25" Then
-            '    l_c2sap.GetDO_THN(i_solenh, l_ztb_hd, l_ztb_it, l_ret2)
-
-            'Else
-            '    l_async = l_c2sap.BeginGetDO_THN(i_solenh, l_ztb_hd, l_ztb_it, Nothing, l_c2sap)
-            '    l_isCompleted = l_async.AsyncWaitHandle.WaitOne(p_TimeOut, False)
-
-            '    If l_isCompleted Then
-            '        l_c2sap.EndGetDO_THN(l_async, l_ztb_hd, l_ztb_it, l_ret2)
+            '        If l_isCompleted Then
+            '            l_c2sap.EndGetDO_THN2(l_async, l_ztb_hd, l_ztb_it, l_ret2)
+            '        End If
             '    End If
+            'Catch ex1 As Exception
+            '    o_err = ex1.Message
+            '    Return False
+            'End Try
+
+            'l_dem = 0
+            'If l_ztb_hd.Count > 0 Then
+            '    For i As Integer = 0 To l_ztb_hd.Count - 1
+            '        If l_ztb_hd.Item(i).Guebg.ToString() = "00000000" Then
+            '            l_ztb_hd.Item(i).Guebg = ""
+            '        End If
+            '        If l_ztb_hd.Item(i).Lddate.ToString() = "00000000" Then
+            '            l_ztb_hd.Item(i).Lddate = ""
+            '        End If
+            '        If l_ztb_hd.Item(i).Kurrf <> 0 Then
+            '            'l_ztb_hd.Item(i).Kurrf = 21.23
+            '            l_ztb_hd.Item(i).Kurrf = l_ztb_hd.Item(i).Kurrf * 1000
+            '        End If
+
+            '        'anhqh 20210111 thay truong  Replace(l_ztb_hd.Item(i).Vbeln.ToString(), "'", "", 1)  thanh bien i_solenh
+            '        p_SQL = "MERGE tblDO_Header AS target " & _
+            '            " USING (SELECT  '" & Replace(l_ztb_hd.Item(i).Bsart.ToString(), "'", "", 1) & "' as BSART, " & _
+            '                    "'" & i_solenh & "' as SoLenh ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Customer.ToString(), "'", "", 1) & "'  as MaKhachHang ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Long_Name.ToString(), "'", "", 1) & "'  as TenKhachHang ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Adress.ToString(), "'", "", 1) & "'  as DiaChiKH ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Contract.ToString(), "'", "", 1) & "'  as SoHopDong ," & _
+            '                IIf(l_ztb_hd.Item(i).Guebg.ToString.Trim = "", "null", "'" & l_ztb_hd.Item(i).Guebg.ToString() & "'") & "  as NgayHopDong ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Werks.ToString(), "'", "", 1) & "'  as MaKhoXuat ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Name1.ToString(), "'", "", 1) & "'  as TenKhoXuat ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Knota.ToString(), "'", "", 1) & "'  as LoadingPoint ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Loading_Point.ToString(), "'", "", 1) & "'  as DesLoadingPoint ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Knotz.ToString(), "'", "", 1) & "'  as DischargePoint ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Discharg_Point.ToString(), "'", "", 1) & "'  as DesDischargePoint ," & _
+            '                      Replace(l_ztb_hd.Item(i).Vat.ToString(), "'", "", 1) & "  as VAT ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Unit.ToString(), "'", "", 1) & "'  as DVT ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Zlsch.ToString(), "'", "", 1) & "'  as PaymentMethod ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Text1.ToString(), "'", "", 1) & "'  as DesPaymentMethod ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Zterm.ToString(), "'", "", 1) & "'  as Term ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Vtext.ToString(), "'", "", 1) & "'  as DesTerm ," & _
+            '                      Replace(l_ztb_hd.Item(i).Kurrf.ToString(), "'", "", 1) & "  as TyGia ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Tk_Number.ToString(), "'", "", 1) & "'  as SoTKHQNhap ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Tktx.ToString(), "'", "", 1) & "'  as SoTKHQXuat ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Carrier.ToString(), "'", "", 1) & "'  as MaNhaCungCap ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Lifnr_Name.ToString(), "'", "", 1) & "'  as TenNhaCungCap ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Route.ToString(), "'", "", 1) & "'  as MaTuyenDuong ," & _
+            '                      "'" & Replace(l_ztb_hd.Item(i).Werks_Nhap.ToString(), "'", "", 1) & "'  as MaKhoNhap ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Kho_Nhap.ToString(), "'", "", 1) & "'  as TenKhoNhap ," & _
+            '                      "N'" & Replace(l_ztb_hd.Item(i).Phieu_Xuat.ToString(), "'", "", 1) & "'  as SoPXK ," & _
+            '            IIf(l_ztb_hd.Item(i).Lddate.ToString.Trim = "", "null", "'" & l_ztb_hd.Item(i).Lddate.ToString() & "'") & "  as NgayPXK " & _
+            '                    " ) AS source (BSART, SoLenh,MaKhachHang,TenKhachHang,DiaChiKH,SoHopDong,NgayHopDong,MaKhoXuat,TenKhoXuat,LoadingPoint,DesLoadingPoint,DischargePoint,DesDischargePoint,VAT,DVT,PaymentMethod,DesPaymentMethod,Term,DesTerm,TyGia,SoTKHQNhap,SoTKHQXuat,MaNhaCungCap,TenNhaCungCap,MaTuyenDuong,MaKhoNhap,TenKhoNhap,SoPXK,NgayPXK ) " & _
+            '                    " ON (target.SoLenh = source.SoLenh)" & _
+            '                " WHEN MATCHED  THEN UPDATE SET " & _
+            '                        "BSART=source.BSART , " & _
+            '                        "MaKhachHang=source.MaKhachHang , " & _
+            '                        "TenKhachHang=source.TenKhachHang ," & _
+            '                        "DiaChiKH=source.DiaChiKH ," & _
+            '                        "SoHopDong=source.SoHopDong ," & _
+            '                        "NgayHopDong=source.NgayHopDong ," & _
+            '                        "MaKhoXuat=source.MaKhoXuat ," & _
+            '                        "TenKhoXuat=source.TenKhoXuat ," & _
+            '                        "LoadingPoint=source.LoadingPoint ," & _
+            '                        "DesLoadingPoint=source.DesLoadingPoint ," & _
+            '                        "DischargePoint=source.DischargePoint ," & _
+            '                        "DesDischargePoint=source.DesDischargePoint ," & _
+            '                        "VAT=source.VAT ," & _
+            '                        "DVT=source.DVT ," & _
+            '                        "PaymentMethod=source.PaymentMethod ," & _
+            '                        "DesPaymentMethod=source.DesPaymentMethod ," & _
+            '                        "Term=source.Term ," & _
+            '                        "DesTerm=source.DesTerm ," & _
+            '                        "TyGia=source.TyGia ," & _
+            '                        "SoTKHQNhap=source.SoTKHQNhap ," & _
+            '                        "SoTKHQXuat=source.SoTKHQXuat ," & _
+            '                        "MaNhaCungCap=source.MaNhaCungCap ," & _
+            '                        "TenNhaCungCap=source.TenNhaCungCap ," & _
+            '                        "MaTuyenDuong=source.MaTuyenDuong ," & _
+            '                        "MaKhoNhap=source.MaKhoNhap ," & _
+            '                        "TenKhoNhap=source.TenKhoNhap ," & _
+            '                        "SoPXK=source.SoPXK ," & _
+            '                        "NgayPXK=source.NgayPXK " & _
+            '             " WHEN NOT MATCHED THEN " & _
+            '                "INSERT  (BSART, SoLenh,MaKhachHang,TenKhachHang,DiaChiKH,SoHopDong,NgayHopDong,MaKhoXuat,TenKhoXuat,LoadingPoint,DesLoadingPoint,DischargePoint,DesDischargePoint,VAT,DVT,PaymentMethod,DesPaymentMethod,Term,DesTerm,TyGia,SoTKHQNhap,SoTKHQXuat,MaNhaCungCap,TenNhaCungCap,MaTuyenDuong,MaKhoNhap,TenKhoNhap,SoPXK,NgayPXK ) " & _
+            '                "VALUES (source.BSART, source.SoLenh,source.MaKhachHang,source.TenKhachHang,source.DiaChiKH,source.SoHopDong,source.NgayHopDong,source.MaKhoXuat,source.TenKhoXuat,source.LoadingPoint,source.DesLoadingPoint,source.DischargePoint,source.DesDischargePoint,source.VAT,source.DVT,source.PaymentMethod,source.DesPaymentMethod,source.Term,source.DesTerm,source.TyGia,source.SoTKHQNhap,source.SoTKHQXuat,source.MaNhaCungCap,source.TenNhaCungCap,source.MaTuyenDuong,source.MaKhoNhap,source.TenKhoNhap,source.SoPXK,source.NgayPXK ) ;"
+            '        ' p_SQL = Replace(p_SQL, "''", "'", 1)
+            '        p_Row = p_DataTablExe.NewRow
+            '        p_Row.Item(0) = p_SQL
+            '        p_DataTablExe.Rows.Add(p_Row)
+
+            '        l_dem = l_dem + 1
+            '    Next
             'End If
 
-            '  l_ztb_hd(0).Tktx
-            'l_ztb_hd(0).Tk_Number
-            'l_ztb_hd(0).
 
-            l_dem = 0
-            If l_ztb_hd.Count > 0 Then
-                For i As Integer = 0 To l_ztb_hd.Count - 1
-                    If l_ztb_hd.Item(i).Guebg.ToString() = "00000000" Then
-                        l_ztb_hd.Item(i).Guebg = ""
-                    End If
-                    If l_ztb_hd.Item(i).Lddate.ToString() = "00000000" Then
-                        l_ztb_hd.Item(i).Lddate = ""
-                    End If
-                    If l_ztb_hd.Item(i).Kurrf <> 0 Then
-                        'l_ztb_hd.Item(i).Kurrf = 21.23
-                        l_ztb_hd.Item(i).Kurrf = l_ztb_hd.Item(i).Kurrf * 1000
-                    End If
-
-                    'anhqh 20210111 thay truong  Replace(l_ztb_hd.Item(i).Vbeln.ToString(), "'", "", 1)  thanh bien i_solenh
-                    p_SQL = "MERGE tblDO_Header AS target " & _
-                        " USING (SELECT  '" & Replace(l_ztb_hd.Item(i).Bsart.ToString(), "'", "", 1) & "' as BSART, " & _
-                                "'" & i_solenh & "' as SoLenh ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Customer.ToString(), "'", "", 1) & "'  as MaKhachHang ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Long_Name.ToString(), "'", "", 1) & "'  as TenKhachHang ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Adress.ToString(), "'", "", 1) & "'  as DiaChiKH ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Contract.ToString(), "'", "", 1) & "'  as SoHopDong ," & _
-                            IIf(l_ztb_hd.Item(i).Guebg.ToString.Trim = "", "null", "'" & l_ztb_hd.Item(i).Guebg.ToString() & "'") & "  as NgayHopDong ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Werks.ToString(), "'", "", 1) & "'  as MaKhoXuat ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Name1.ToString(), "'", "", 1) & "'  as TenKhoXuat ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Knota.ToString(), "'", "", 1) & "'  as LoadingPoint ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Loading_Point.ToString(), "'", "", 1) & "'  as DesLoadingPoint ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Knotz.ToString(), "'", "", 1) & "'  as DischargePoint ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Discharg_Point.ToString(), "'", "", 1) & "'  as DesDischargePoint ," & _
-                                  Replace(l_ztb_hd.Item(i).Vat.ToString(), "'", "", 1) & "  as VAT ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Unit.ToString(), "'", "", 1) & "'  as DVT ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Zlsch.ToString(), "'", "", 1) & "'  as PaymentMethod ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Text1.ToString(), "'", "", 1) & "'  as DesPaymentMethod ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Zterm.ToString(), "'", "", 1) & "'  as Term ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Vtext.ToString(), "'", "", 1) & "'  as DesTerm ," & _
-                                  Replace(l_ztb_hd.Item(i).Kurrf.ToString(), "'", "", 1) & "  as TyGia ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Tk_Number.ToString(), "'", "", 1) & "'  as SoTKHQNhap ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Tktx.ToString(), "'", "", 1) & "'  as SoTKHQXuat ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Carrier.ToString(), "'", "", 1) & "'  as MaNhaCungCap ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Lifnr_Name.ToString(), "'", "", 1) & "'  as TenNhaCungCap ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Route.ToString(), "'", "", 1) & "'  as MaTuyenDuong ," & _
-                                  "'" & Replace(l_ztb_hd.Item(i).Werks_Nhap.ToString(), "'", "", 1) & "'  as MaKhoNhap ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Kho_Nhap.ToString(), "'", "", 1) & "'  as TenKhoNhap ," & _
-                                  "N'" & Replace(l_ztb_hd.Item(i).Phieu_Xuat.ToString(), "'", "", 1) & "'  as SoPXK ," & _
-                        IIf(l_ztb_hd.Item(i).Lddate.ToString.Trim = "", "null", "'" & l_ztb_hd.Item(i).Lddate.ToString() & "'") & "  as NgayPXK " & _
-                                " ) AS source (BSART, SoLenh,MaKhachHang,TenKhachHang,DiaChiKH,SoHopDong,NgayHopDong,MaKhoXuat,TenKhoXuat,LoadingPoint,DesLoadingPoint,DischargePoint,DesDischargePoint,VAT,DVT,PaymentMethod,DesPaymentMethod,Term,DesTerm,TyGia,SoTKHQNhap,SoTKHQXuat,MaNhaCungCap,TenNhaCungCap,MaTuyenDuong,MaKhoNhap,TenKhoNhap,SoPXK,NgayPXK ) " & _
-                                " ON (target.SoLenh = source.SoLenh)" & _
-                            " WHEN MATCHED  THEN UPDATE SET " & _
-                                    "BSART=source.BSART , " & _
-                                    "MaKhachHang=source.MaKhachHang , " & _
-                                    "TenKhachHang=source.TenKhachHang ," & _
-                                    "DiaChiKH=source.DiaChiKH ," & _
-                                    "SoHopDong=source.SoHopDong ," & _
-                                    "NgayHopDong=source.NgayHopDong ," & _
-                                    "MaKhoXuat=source.MaKhoXuat ," & _
-                                    "TenKhoXuat=source.TenKhoXuat ," & _
-                                    "LoadingPoint=source.LoadingPoint ," & _
-                                    "DesLoadingPoint=source.DesLoadingPoint ," & _
-                                    "DischargePoint=source.DischargePoint ," & _
-                                    "DesDischargePoint=source.DesDischargePoint ," & _
-                                    "VAT=source.VAT ," & _
-                                    "DVT=source.DVT ," & _
-                                    "PaymentMethod=source.PaymentMethod ," & _
-                                    "DesPaymentMethod=source.DesPaymentMethod ," & _
-                                    "Term=source.Term ," & _
-                                    "DesTerm=source.DesTerm ," & _
-                                    "TyGia=source.TyGia ," & _
-                                    "SoTKHQNhap=source.SoTKHQNhap ," & _
-                                    "SoTKHQXuat=source.SoTKHQXuat ," & _
-                                    "MaNhaCungCap=source.MaNhaCungCap ," & _
-                                    "TenNhaCungCap=source.TenNhaCungCap ," & _
-                                    "MaTuyenDuong=source.MaTuyenDuong ," & _
-                                    "MaKhoNhap=source.MaKhoNhap ," & _
-                                    "TenKhoNhap=source.TenKhoNhap ," & _
-                                    "SoPXK=source.SoPXK ," & _
-                                    "NgayPXK=source.NgayPXK " & _
-                         " WHEN NOT MATCHED THEN " & _
-                            "INSERT  (BSART, SoLenh,MaKhachHang,TenKhachHang,DiaChiKH,SoHopDong,NgayHopDong,MaKhoXuat,TenKhoXuat,LoadingPoint,DesLoadingPoint,DischargePoint,DesDischargePoint,VAT,DVT,PaymentMethod,DesPaymentMethod,Term,DesTerm,TyGia,SoTKHQNhap,SoTKHQXuat,MaNhaCungCap,TenNhaCungCap,MaTuyenDuong,MaKhoNhap,TenKhoNhap,SoPXK,NgayPXK ) " & _
-                            "VALUES (source.BSART, source.SoLenh,source.MaKhachHang,source.TenKhachHang,source.DiaChiKH,source.SoHopDong,source.NgayHopDong,source.MaKhoXuat,source.TenKhoXuat,source.LoadingPoint,source.DesLoadingPoint,source.DischargePoint,source.DesDischargePoint,source.VAT,source.DVT,source.PaymentMethod,source.DesPaymentMethod,source.Term,source.DesTerm,source.TyGia,source.SoTKHQNhap,source.SoTKHQXuat,source.MaNhaCungCap,source.TenNhaCungCap,source.MaTuyenDuong,source.MaKhoNhap,source.TenKhoNhap,source.SoPXK,source.NgayPXK ) ;"
-                    ' p_SQL = Replace(p_SQL, "''", "'", 1)
-                    p_Row = p_DataTablExe.NewRow
-                    p_Row.Item(0) = p_SQL
-                    p_DataTablExe.Rows.Add(p_Row)
-
-                    l_dem = l_dem + 1
-                Next
-            End If
-
-            'anhqh
-            '20210112
-            'Goi ham khac de lay them thong tin MaHangHoa
-            ' SoLenh DO1
             Dim p_DataTable As DataTable
+
+
             Dim p_ECCDestinationConfig As ECCDestination.ECCDestinationConfig
             p_SQL = ""
             p_ECCDestinationConfig = New ECCDestination.ECCDestinationConfig(p_SapConnectionString, "EN", 25, g_Company_Code)
+
+            p_SQL = ""
+            p_DataTable = p_ECCDestinationConfig.slcGet_HTTG_DO_INIO(i_solenh, p_SQL)
+
+            If Not p_DataTable Is Nothing Then
+                For i As Integer = 0 To p_DataTable.Rows.Count - 1
+                    p_SQL = p_DataTable.Rows(i).Item(0).trim
+                    p_Row = p_DataTablExe.NewRow
+                    p_Row.Item(0) = p_SQL
+                    p_DataTablExe.Rows.Add(p_Row)
+                Next
+            End If
+
+            p_DataTable = Nothing
+            'anhqh
+            '20210112
+            'Goi ham khac de lay them thong tin MaHangHoa
+            ' SoLenh DO1     
             p_DataTable = p_ECCDestinationConfig.clsGet_DO1_THN3(p_SoLenh_DO1, p_SQL)
+
+
 
             If p_SQL <> "" Then
                 ' MessageBox.Show(p_SQL, "Loi")
@@ -6421,8 +6424,8 @@ TaoMaLenh:
 
             p_DataTablExe.Clear()
 
-            l_c2sap.Connection.Close()
-            l_c2sap.Dispose()
+            ' l_c2sap.Connection.Close()
+            'l_c2sap.Dispose()
 
             Return True
 

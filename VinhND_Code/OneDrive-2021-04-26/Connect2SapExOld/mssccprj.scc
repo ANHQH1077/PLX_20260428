@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[Connect2SapEx.sln]
+SCC_Aux_Path = "\\10.0.1.20\SourceSafe\PLX"
+SCC_Project_Name = "$/AllProjects 2005/KV1/Connect2SapEx", VOKAAAAA
+
+[Connect2SapEx.csproj]
+SCC_Aux_Path = "\\10.0.1.20\SourceSafe\PLX"
+SCC_Project_Name = "$/AllProjects 2005/KV1/Connect2SapEx", VOKAAAAA

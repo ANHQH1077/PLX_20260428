@@ -59,6 +59,7 @@ Partial Class FrmQciKg
         Me.NhietDo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom
         Me.NhietDo.Properties.Mask.EditMask = "#,###.##"
         Me.NhietDo.Required = ""
+        Me.NhietDo.ShowCalc = True
         Me.NhietDo.Size = New System.Drawing.Size(82, 31)
         Me.NhietDo.TabIndex = 1
         Me.NhietDo.TableName = ""
@@ -69,6 +70,7 @@ Partial Class FrmQciKg
         'U_ButtonCus1
         '
         Me.U_ButtonCus1.DefaultUpdate = True
+        Me.U_ButtonCus1.EnableWhenFormLock = False
         Me.U_ButtonCus1.Location = New System.Drawing.Point(100, 12)
         Me.U_ButtonCus1.Name = "U_ButtonCus1"
         Me.U_ButtonCus1.Size = New System.Drawing.Size(94, 31)
@@ -85,7 +87,6 @@ Partial Class FrmQciKg
         Me.Controls.Add(Me.NhietDo)
         Me.DefaultFormLoad = False
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "FrmQciKg"
         Me.Text = "Nhiệt độ"

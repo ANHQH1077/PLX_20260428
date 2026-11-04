@@ -637,7 +637,20 @@ Line_KT:
     End Sub
 
     Private Sub SoNgan_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles SoNgan.Validating
-        GetDetail()
+        Dim p_Text As U_TextBox.U_NumericEdit
+
+        Try
+            p_Text = CType(sender, U_TextBox.U_NumericEdit)
+
+            If p_Text.IsModified = True Then
+                GetDetail()
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+       
     End Sub
 
     Private Sub CmdSync_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

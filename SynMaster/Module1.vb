@@ -2017,8 +2017,8 @@
                 'Matnr = Mặt hàng theo bể 
                 'Motabe = Mô tả bể
 
-                If Replace(l_Tooil.Item(i).Lgort.ToString(), "'", "", 1) = "D097" Then
-                    '  MsgBox("sfghgfjhg")
+                If Replace(l_Tooil.Item(i).Lgort.ToString(), "'", "", 1) = "A029" Then
+                    'MsgBox("sfghgfjhg")
                 End If
                 p_SQL = "MERGE ztblTankInfor AS target " & _
                                             " USING (SELECT '" & Replace(l_Tooil.Item(i).Ccx.ToString(), "'", "", 1) & "' as SafeHeight " & _
