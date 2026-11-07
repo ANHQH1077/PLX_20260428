@@ -10,9 +10,13 @@
         p_FrmVehicleCerAdd.p_XtraMessageStatusl = g_MessageStatus
         'p_TrangThai = p_FrmXacNhanThucXuat.p_Status
         p_FrmVehicleCerAdd.ShowDialog(Me)
+
+        LoadData()
     End Sub
 
-    Private Sub U_ButtonCus1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles U_ButtonCus1.Click
+
+
+    Private Sub LoadData()
         Dim p_Where As String = ""
         Dim p_Values As String = ""
         p_Values = "20000101"
@@ -21,7 +25,7 @@
         End If
         p_Where = "NgayKTNhap>='" & p_Values & "' "
         p_Values = "20400101"
-        If Not Me.TuNgay.EditValue Is Nothing Then
+        If Not Me.DenNgay.EditValue Is Nothing Then
             p_Values = CDate(Me.DenNgay.EditValue).ToString("yyyyMMdd HH:mm:ss")
         End If
         p_Where = p_Where & " and  NgayKTNhap<='" & p_Values & "' "
@@ -35,10 +39,16 @@
             End If
         End If
         Me.GridView2.Where = p_Where
-        ''Me.DefaultFormLoad = True
+        Me.DefaultFormLoad = True
         Me.LoadDataToForm()
-        ''Me.DefaultFormLoad = False
+        Me.DefaultFormLoad = False
 
+
+    End Sub
+
+
+    Private Sub U_ButtonCus1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles U_ButtonCus1.Click
+        LoadData()
 
     End Sub
 
@@ -56,17 +66,23 @@
 
     Public Sub Column_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim p_DataRow As DataRow
-        Dim p_maPhuongTien As String = ""
-        Dim p_SoTichKe As String = ""
-        Dim p_NgayXuat As String = ""
+        Dim p_BeXuat As String = ""
         Dim p_FormRequestCode As String
+        Dim p_RptTankCert As New ReportSetup.Class1(g_Config_XMLDatatable, _
+                                                                 g_Company_Code, _
+                                                                 g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                                 g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                                 g_DBPass, g_CompanyAPI)
+
         p_DataRow = Me.GridView2.GetFocusedDataRow
         If Not p_DataRow Is Nothing Then
-            p_maPhuongTien = p_DataRow.Item("MaPhuongTien").ToString.Trim
-            p_SoTichKe = p_DataRow.Item("SoTichKe").ToString.Trim
+            p_BeXuat = p_DataRow.Item("SoBon").ToString.Trim
             p_FormRequestCode = p_DataRow.Item("FormRequestCode").ToString.Trim
-            p_NgayXuat = CDate(p_DataRow.Item("NgayXuat")).ToString("yyyyMMdd")
+            
             ' ShowMessageBox("", "")
+            p_RptTankCert.clsInChungChiBon(p_BeXuat, p_FormRequestCode)
+
+
         End If
 
     End Sub

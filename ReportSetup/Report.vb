@@ -430,6 +430,37 @@
         End Select
     End Sub
 
+
+
+    Public Sub InTichKeMau(ByVal p_SoTichKe As String, ByVal p_NgayThang As String)
+        Select Case g_Company_Code
+            Case "6610"  'KV2
+                Dim p_TichKeKV2 As New KV_2_Report.Class1(g_Config_XMLDatatable, _
+                                                          g_Company_Code, _
+                                                          g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                          g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                          g_DBPass, g_CompanyAPI)
+                p_TichKeKV2.clsmdlTichKeMau(p_SoTichKe, p_NgayThang)
+
+                Exit Sub
+        End Select
+    End Sub
+
+    Public Sub InChungChiBeXuat(ByVal p_BeXuat As String, ByVal p_FormRequestCode As String)
+        Select Case g_Company_Code
+            Case "6610"  'KV2
+                Dim p_TichKeKV2 As New KV_2_Report.Class1(g_Config_XMLDatatable, _
+                                                          g_Company_Code, _
+                                                          g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                          g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                          g_DBPass, g_CompanyAPI)
+                p_TichKeKV2.clsRptChungChiBonXuat(p_BeXuat, p_FormRequestCode)
+
+                Exit Sub
+        End Select
+    End Sub
+
+
     Public Sub InChungTu_ALL(ByVal p_Form As Object, ByVal p_Preview As Boolean, ByVal p_SoLenh As String, ByVal p_Type As String)
         If p_CHUNGTU_ALL = False Then
             Select Case g_Company_Code

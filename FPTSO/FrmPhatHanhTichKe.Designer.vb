@@ -22,24 +22,23 @@ Partial Class FrmPhatHanhTichKe
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPhatHanhTichKe))
-        Dim XyDiagram1 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
-        Dim Series1 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim StackedBarSeriesLabel1 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
-        Dim SeriesPoint1 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(70.0R, Object)})
-        Dim StackedBarSeriesView1 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
-        Dim Series2 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim StackedBarSeriesLabel2 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
-        Dim SeriesPoint2 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(100.0R, Object)})
-        Dim StackedBarSeriesView2 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
-        Dim Series3 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
-        Dim StackedBarSeriesLabel3 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
-        Dim SeriesPoint3 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(120.0R, Object)})
-        Dim StackedBarSeriesView3 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
-        Dim StackedBarSeriesLabel4 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
-        Dim StackedBarSeriesView4 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim XyDiagram2 As DevExpress.XtraCharts.XYDiagram = New DevExpress.XtraCharts.XYDiagram()
+        Dim Series4 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim StackedBarSeriesLabel5 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
+        Dim SeriesPoint4 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(70.0R, Object)})
+        Dim StackedBarSeriesView5 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
+        Dim Series5 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim StackedBarSeriesLabel6 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
+        Dim SeriesPoint5 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(100.0R, Object)})
+        Dim StackedBarSeriesView6 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
+        Dim Series6 As DevExpress.XtraCharts.Series = New DevExpress.XtraCharts.Series()
+        Dim StackedBarSeriesLabel7 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
+        Dim SeriesPoint6 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("A", New Object() {CType(120.0R, Object)})
+        Dim StackedBarSeriesView7 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
+        Dim StackedBarSeriesLabel8 As DevExpress.XtraCharts.StackedBarSeriesLabel = New DevExpress.XtraCharts.StackedBarSeriesLabel()
+        Dim StackedBarSeriesView8 As DevExpress.XtraCharts.StackedBarSeriesView = New DevExpress.XtraCharts.StackedBarSeriesView()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.TrueDBGrid1 = New U_TextBox.TrueDBGrid()
         Me.GridView1 = New U_TextBox.GridView()
         Me.HColSoLenh = New U_TextBox.GridColumn()
@@ -135,7 +134,7 @@ Partial Class FrmPhatHanhTichKe
         Me.Col3MaNgan = New U_TextBox.GridColumn()
         Me.Col3SoLuongDuXuat = New U_TextBox.GridColumn()
         Me.col3Status = New U_TextBox.GridColumn()
-        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.NhaCungCap = New U_TextBox.U_TextBox()
         Me.SoTichKe = New U_TextBox.U_TextBox()
@@ -143,7 +142,7 @@ Partial Class FrmPhatHanhTichKe
         Me.NgayHetHieuLuc = New U_TextBox.U_DateEdit()
         Me.DateNgayXuat = New U_TextBox.U_DateEdit()
         Me.NgayTichKe = New U_TextBox.U_DateEdit()
-        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus()
         Me.ChartControl2 = New DevExpress.XtraCharts.ChartControl()
         Me.TaiTrong = New U_TextBox.U_NumericEdit()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -157,8 +156,8 @@ Partial Class FrmPhatHanhTichKe
         Me.pTien = New U_TextBox.U_ButtonEdit()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.sChuyen = New U_TextBox.U_ButtonEdit()
-        Me.U_ButtonCus3 = New U_TextBox.U_ButtonCus(Me.components)
-        Me.U_ButtonCus4 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus3 = New U_TextBox.U_ButtonCus()
+        Me.U_ButtonCus4 = New U_TextBox.U_ButtonCus()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.NgayVaoKho = New U_TextBox.U_DateEdit()
         Me.ID = New U_TextBox.U_ButtonEdit()
@@ -215,18 +214,18 @@ Partial Class FrmPhatHanhTichKe
         CType(Me.NgayTichKe.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NgayTichKe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Series3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(StackedBarSeriesView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(XyDiagram2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Series6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(StackedBarSeriesView8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TaiTrong.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aNumber.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LoaiPhieu.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3428,18 +3427,18 @@ Partial Class FrmPhatHanhTichKe
         'ChartControl2
         '
         Me.ChartControl2.BorderOptions.Visible = False
-        XyDiagram1.AxisX.Range.Auto = False
-        XyDiagram1.AxisX.Range.MaxValueInternal = 0.3R
-        XyDiagram1.AxisX.Range.MinValueInternal = -0.1R
-        XyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = True
-        XyDiagram1.AxisX.Range.SideMarginsEnabled = True
-        XyDiagram1.AxisX.Visible = False
-        XyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-        XyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
-        XyDiagram1.AxisY.Range.SideMarginsEnabled = True
-        XyDiagram1.AxisY.Visible = False
-        XyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
-        Me.ChartControl2.Diagram = XyDiagram1
+        XyDiagram2.AxisX.Range.Auto = False
+        XyDiagram2.AxisX.Range.MaxValueInternal = 0.3R
+        XyDiagram2.AxisX.Range.MinValueInternal = -0.1R
+        XyDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = True
+        XyDiagram2.AxisX.Range.SideMarginsEnabled = True
+        XyDiagram2.AxisX.Visible = False
+        XyDiagram2.AxisX.VisibleInPanesSerializable = "-1"
+        XyDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
+        XyDiagram2.AxisY.Range.SideMarginsEnabled = True
+        XyDiagram2.AxisY.Visible = False
+        XyDiagram2.AxisY.VisibleInPanesSerializable = "-1"
+        Me.ChartControl2.Diagram = XyDiagram2
         Me.ChartControl2.Legend.Visible = False
         Me.ChartControl2.Location = New System.Drawing.Point(1224, 314)
         Me.ChartControl2.Name = "ChartControl2"
@@ -3453,24 +3452,24 @@ Partial Class FrmPhatHanhTichKe
         Me.ChartControl2.PaletteRepository.Add("Palette 3", New DevExpress.XtraCharts.Palette("Palette 3", DevExpress.XtraCharts.PaletteScaleMode.Repeat, New DevExpress.XtraCharts.PaletteEntry() {New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.Yellow, System.Drawing.Color.Yellow), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White)}))
         Me.ChartControl2.PaletteRepository.Add("Palette 4", New DevExpress.XtraCharts.Palette("Palette 4", DevExpress.XtraCharts.PaletteScaleMode.Repeat, New DevExpress.XtraCharts.PaletteEntry() {New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White)}))
         Me.ChartControl2.PaletteRepository.Add("Palette 5", New DevExpress.XtraCharts.Palette("Palette 5", DevExpress.XtraCharts.PaletteScaleMode.Repeat, New DevExpress.XtraCharts.PaletteEntry() {New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White), New DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.White, System.Drawing.Color.White)}))
-        StackedBarSeriesLabel1.Font = New System.Drawing.Font("Tahoma", 7.0!)
-        Series1.Label = StackedBarSeriesLabel1
-        Series1.Name = "Series1"
-        Series1.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint1})
-        Series1.ShowInLegend = False
-        Series1.View = StackedBarSeriesView1
-        StackedBarSeriesLabel2.Font = New System.Drawing.Font("Tahoma", 7.0!)
-        Series2.Label = StackedBarSeriesLabel2
-        Series2.Name = "Series2"
-        Series2.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint2})
-        Series2.View = StackedBarSeriesView2
-        Series3.Label = StackedBarSeriesLabel3
-        Series3.Name = "Series3"
-        Series3.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint3})
-        Series3.View = StackedBarSeriesView3
-        Me.ChartControl2.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1, Series2, Series3}
-        Me.ChartControl2.SeriesTemplate.Label = StackedBarSeriesLabel4
-        Me.ChartControl2.SeriesTemplate.View = StackedBarSeriesView4
+        StackedBarSeriesLabel5.Font = New System.Drawing.Font("Tahoma", 7.0!)
+        Series4.Label = StackedBarSeriesLabel5
+        Series4.Name = "Series1"
+        Series4.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint4})
+        Series4.ShowInLegend = False
+        Series4.View = StackedBarSeriesView5
+        StackedBarSeriesLabel6.Font = New System.Drawing.Font("Tahoma", 7.0!)
+        Series5.Label = StackedBarSeriesLabel6
+        Series5.Name = "Series2"
+        Series5.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint5})
+        Series5.View = StackedBarSeriesView6
+        Series6.Label = StackedBarSeriesLabel7
+        Series6.Name = "Series3"
+        Series6.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint6})
+        Series6.View = StackedBarSeriesView7
+        Me.ChartControl2.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series4, Series5, Series6}
+        Me.ChartControl2.SeriesTemplate.Label = StackedBarSeriesLabel8
+        Me.ChartControl2.SeriesTemplate.View = StackedBarSeriesView8
         Me.ChartControl2.Size = New System.Drawing.Size(54, 268)
         Me.ChartControl2.TabIndex = 484
         '
@@ -4095,7 +4094,7 @@ Partial Class FrmPhatHanhTichKe
         Me.U_DateEdit1.Properties.AppearanceReadOnly.Font = New System.Drawing.Font("Tahoma", 12.0!)
         Me.U_DateEdit1.Properties.AppearanceReadOnly.Options.UseFont = True
         Me.U_DateEdit1.Properties.AutoHeight = False
-        Me.U_DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.U_DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject2, "", Nothing, Nothing, True)})
         Me.U_DateEdit1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
         Me.U_DateEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.U_DateEdit1.Properties.Mask.EditMask = "dd/MM/yyyy"
@@ -4323,18 +4322,18 @@ Partial Class FrmPhatHanhTichKe
         CType(Me.DateNgayXuat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NgayTichKe.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NgayTichKe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(XyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesLabel2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesLabel3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Series3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesLabel4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(StackedBarSeriesView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(XyDiagram2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesLabel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesLabel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesView6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesLabel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesView7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Series6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesLabel8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(StackedBarSeriesView8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartControl2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TaiTrong.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aNumber.Properties, System.ComponentModel.ISupportInitialize).EndInit()

@@ -64,7 +64,12 @@
         Dim p_ThoiGianOnDinh As Integer = 0
         Dim p_HovaTen As String = ""
         Dim p_ChucDanh As String = ""
-
+        Dim p_FormRequestCode As String = ""
+        Dim p_RptTankCert As New ReportSetup.Class1(g_Config_XMLDatatable, _
+                                                                 g_Company_Code, _
+                                                                 g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                                 g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                                 g_DBPass, g_CompanyAPI)
         If Not Me.MaBe.EditValue Is Nothing Then
             p_TankCode = Me.MaBe.EditValue.ToString.Trim
         End If
@@ -103,65 +108,27 @@
             Next
         End If
 
-            'If p_SoTichKe <> "" And p_Date <> "" Then
-            '    p_SQL = "select MaPhuongTien from tbllenhxuate5 a where exists (select 1 from tbltichke b where a.SoLenh =b.SoLenh  and b.SoTichKe = '" & p_SoTichKe & "' and b.NgayTichKe = '" & p_Date & "')"
-            '    p_Table = GetDataTable(p_SQL, p_SQL)
-            '    If Not p_Table Is Nothing Then
-            '        If p_Table.Rows.Count > 0 Then
-            '            p_MaphuongTien = p_Table.Rows(0).Item("MaPhuongTien").ToString.Trim
-            '        End If
-            '    End If
-            '    If p_MaphuongTien <> "" Then
+        p_SQL = "exec FPT_ChungChiBon_Update"
 
-            '        'Kiem tra xem da co chung chi chu'
+        If g_Services.Sys_Execute(p_SQL, p_SQL) = False Then
 
-            '        p_SQL = "select 1 as nnumber from   [dbo].[tblPhuongTien_Cert] where MaPhuongTien = '" & p_MaphuongTien & "' and SoTichKe = '" & p_SoTichKe & "' and NgayXuat ='" & p_Date & "'"
-            '        p_Table = GetDataTable(p_SQL, p_SQL)
-            '        If Not p_Table Is Nothing Then
-            '            If p_Table.Rows.Count > 0 Then
-            '                ShowMessageBox("", "Chứng chỉ phương tiện đã có trên HTTG")
-            '                Exit Sub
-            '            End If
-            '        End If
+        End If
+        If p_Check = True Then
+            p_SQL = "select  FormRequestCode from  tblTank_Cert where sobon = '" & p_TankCode & "'  and NgayKTNhap  = '" & p_Date & " " & p_GioKTNhap & "'"
+            p_Table = GetDataTable(p_SQL, p_SQL)
+            If Not p_Table Is Nothing Then
+                If p_Table.Rows.Count > 0 Then
+                    p_FormRequestCode = p_Table.Rows(0).Item("FormRequestCode").ToString.Trim
+                    ' ShowMessageBox("", "")
+                    p_RptTankCert.clsInChungChiBon(p_TankCode, p_FormRequestCode)
+                End If
 
 
-            '        p_DataTable = cl_SOAP_API.GetValueFromTankCode(p_MaphuongTien, p_Date)
-            '        If Not p_DataTable Is Nothing Then
-            '            For p_int = 0 To p_DataTable.Rows.Count - 1
-
-            '                p_SQL = p_DataTable.Rows(p_int).Item(0).ToString.Trim
-            '                If g_Services.Sys_Execute(p_SQL, p_SQL) = False Then
-            '                    ShowMessageBox("", p_SQL)
-            '                    Exit Sub
-            '                Else
-            '                    p_Check = True
-            '                End If
-            '            Next
-            '        End If
-            '    Else
-            '        ShowMessageBox("", "Phương tiện không xác định")
-            '        Exit Sub
-            '    End If
-
-            'End If
-            If p_Check = True Then
-
-            Else
-                ShowMessageBox("", "Không có thông tin của LMS")
             End If
+        Else
+            ShowMessageBox("", "Không có thông tin của LMS")
+        End If
 
-            'If cl_HTTG_COMMON.g_LMS = "Y" Then
-            '    p_SQL = "select  * from FPT_tblLenhXuat_HangHoaE5_V where solenh ='" & p_SoLenh & "'"
-            '    p_DataTable = GetDataTable(p_SQL, p_SQL)
-            '    If Not p_DataTable Is Nothing Then
-            '        For p_Count = 0 To p_DataTable.Rows.Count - 1
-            '            p_DataRow = p_DataTable.Rows(p_Count)
-            '            p_Density = cl_SOAP_API.GetDensity(p_DataRow.Item("BeXuat"), p_DataRow.Item("MaHangHoa"))
-            '            If p_Density <> p_DataRow.Item("D15_BQGQ") Then
-            '                ShowMessageBox("", "Tỷ trọng hiện tại khác với tỷ trọng trên LMS:" & p_DataRow.Item("BeXuat") & ":" & p_DataRow.Item("MaHangHoa") & ":" & p_Density & "(LMS)")
-            '            End If
-            '        Next
-            '    End If
-            'End If
+            
     End Sub
 End Class

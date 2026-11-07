@@ -77,6 +77,14 @@ Public Class Class1
         InChungChiPhuongTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
     End Sub
 
+
+    Public Sub clsInlTichKeMau(ByVal p_SoTichKe As String, ByVal p_NgayThang As String)
+        InTichKeMau(p_SoTichKe, p_NgayThang)
+    End Sub
+    Public Sub clsInChungChiBon(ByVal p_BeXuat As String, ByVal p_FormRequestCode As String)
+        InChungChiBeXuat(p_BeXuat, p_FormRequestCode)
+    End Sub
+
     Public Sub clsInChungTu_ALL(ByVal p_Form As Object, ByVal p_Preview As Boolean, ByVal p_SoLenh As String, ByVal p_Type As String)
         InChungTu_ALL(p_Form, p_Preview, p_SoLenh, p_Type)
     End Sub

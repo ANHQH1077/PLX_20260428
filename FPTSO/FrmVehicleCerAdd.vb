@@ -100,30 +100,47 @@
                         End If
                     Next
                 End If
+                
             Else
                 ShowMessageBox("", "Phương tiện không xác định")
                 Exit Sub
             End If
 
         End If
-        If p_Check = True Then
+        p_SQL = "exec FPT_ChungChiPhuongTien_Update"
 
+        If g_Services.Sys_Execute(p_SQL, p_SQL) = False Then
+
+        End If
+        If p_Check = True Then
+            InChungCHi(p_MaphuongTien, p_Date, p_SoTichKe)
         Else
             ShowMessageBox("", "Không có thông tin của LMS")
         End If
 
-        'If cl_HTTG_COMMON.g_LMS = "Y" Then
-        '    p_SQL = "select  * from FPT_tblLenhXuat_HangHoaE5_V where solenh ='" & p_SoLenh & "'"
-        '    p_DataTable = GetDataTable(p_SQL, p_SQL)
-        '    If Not p_DataTable Is Nothing Then
-        '        For p_Count = 0 To p_DataTable.Rows.Count - 1
-        '            p_DataRow = p_DataTable.Rows(p_Count)
-        '            p_Density = cl_SOAP_API.GetDensity(p_DataRow.Item("BeXuat"), p_DataRow.Item("MaHangHoa"))
-        '            If p_Density <> p_DataRow.Item("D15_BQGQ") Then
-        '                ShowMessageBox("", "Tỷ trọng hiện tại khác với tỷ trọng trên LMS:" & p_DataRow.Item("BeXuat") & ":" & p_DataRow.Item("MaHangHoa") & ":" & p_Density & "(LMS)")
-        '            End If
-        '        Next
-        '    End If
-        'End If
     End Sub
+
+
+    Public Sub InChungCHi(ByVal p_maPhuongTien As String, ByVal p_NgayXuat As String, ByVal p_SoTichKe As String)
+        Dim p_CertNo As String = ""
+        Dim p_FormRequestCode As String
+        Dim p_SQL As String = ""
+        Dim p_Table As DataTable
+        Dim p_RptPhuongTienCert As New ReportSetup.Class1(g_Config_XMLDatatable, _
+                                                                 g_Company_Code, _
+                                                                 g_WareHouse, g_Services, "", "", "", g_Company_Host, _
+                                                                 g_Company_DBName, g_UserName, g_LicenceHost, g_DBUser, _
+                                                                 g_DBPass, g_CompanyAPI)
+        p_SQL = "select CertNo, FormRequestCode    from tblPhuongTien_Cert  where MaPhuongTien ='" & p_maPhuongTien & "' and NgayXuat ='" & p_NgayXuat & "' and SoTichKe ='" & p_SoTichKe & "'"
+        p_Table = GetDataTable(p_SQL, p_SQL)
+        If Not p_Table Is Nothing Then
+            If p_Table.Rows.Count > 0 Then
+                p_FormRequestCode = p_Table.Rows(0).Item("FormRequestCode").ToString.Trim
+                p_CertNo = p_Table.Rows(0).Item("CertNo").ToString.Trim
+                p_RptPhuongTienCert.clsInChungChiPhuongTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
+            End If
+        End If
+    End Sub
+
+
 End Class

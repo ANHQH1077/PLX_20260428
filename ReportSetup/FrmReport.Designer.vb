@@ -22,13 +22,12 @@ Partial Class FrmReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReport))
         Me.CReportCode = New System.Windows.Forms.Label()
         Me.ReportCode = New U_TextBox.U_ButtonEdit()
         Me.ReportName = New U_TextBox.U_TextBox()
-        Me.CmdReport = New U_TextBox.U_ButtonCus(Me.components)
-        Me.cmdRun = New U_TextBox.U_ButtonCus(Me.components)
+        Me.CmdReport = New U_TextBox.U_ButtonCus()
+        Me.cmdRun = New U_TextBox.U_ButtonCus()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.GridView1 = New U_TextBox.GridView()
@@ -59,6 +58,7 @@ Partial Class FrmReport
         '
         Me.ReportCode.AllowInsert = True
         Me.ReportCode.AllowUpdate = True
+        Me.ReportCode.AutoWidth = False
         Me.ReportCode.BindingSourceName = ""
         Me.ReportCode.ChangeFormStatus = False
         Me.ReportCode.CopyFromItem = ""
@@ -76,6 +76,7 @@ Partial Class FrmReport
         Me.ReportCode.MultiSelect = False
         Me.ReportCode.Name = "ReportCode"
         Me.ReportCode.NoUpdate = "N"
+        Me.ReportCode.OrderbyEx = ""
         Me.ReportCode.PrimaryKey = ""
         Me.ReportCode.Properties.AutoHeight = False
         Me.ReportCode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -125,6 +126,7 @@ Partial Class FrmReport
         'CmdReport
         '
         Me.CmdReport.DefaultUpdate = True
+        Me.CmdReport.EnableWhenFormLock = False
         Me.CmdReport.Location = New System.Drawing.Point(310, 32)
         Me.CmdReport.Name = "CmdReport"
         Me.CmdReport.Size = New System.Drawing.Size(75, 23)
@@ -134,6 +136,7 @@ Partial Class FrmReport
         'cmdRun
         '
         Me.cmdRun.DefaultUpdate = True
+        Me.cmdRun.EnableWhenFormLock = False
         Me.cmdRun.Location = New System.Drawing.Point(12, 558)
         Me.cmdRun.Name = "cmdRun"
         Me.cmdRun.Size = New System.Drawing.Size(75, 23)

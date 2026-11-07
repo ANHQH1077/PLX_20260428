@@ -22,7 +22,6 @@ Partial Class FrmTankHeaderImp
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTankHeaderImp))
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
@@ -83,10 +82,10 @@ Partial Class FrmTankHeaderImp
         Me.sType = New U_TextBox.U_Combobox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Status = New U_TextBox.U_TextBox()
-        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus1 = New U_TextBox.U_ButtonCus()
         Me.TankList = New U_TextBox.U_ButtonEdit()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
+        Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus()
         Me.U_CheckBox1 = New U_TextBox.U_CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PurposeName = New U_TextBox.U_TextBox()

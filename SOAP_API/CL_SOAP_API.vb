@@ -200,7 +200,7 @@ Public Class CL_SOAP_API
             For p_int = 0 To p_Table.Rows.Count - 1
                 p_Rows = p_Table.Rows(p_int)
                 p_SQL = "MERGE tblTank_Cert AS tgt " & _
-                           " USING (SELECT '" & CDate(NgayThang & " " & p_GioKTNhap).ToString("yyyyMMdd HH:mm:ss") & "' as [NgayKTNhap],null as [GioKTNhap]," & p_ThoiGianOnDinh & " as [ThoiGianOnDinh],'" & p_HovaTen & "' as  [HovaTen],'" & p_ChucDanh & "' as [ChucDanh]," & _
+                           " USING (SELECT '" & CDate(NgayThang & " " & p_GioKTNhap).ToString("yyyyMMdd HH:mm:ss") & "' as [NgayKTNhap],null as [GioKTNhap]," & p_ThoiGianOnDinh & " as [ThoiGianOnDinh],N'" & p_HovaTen & "' as  [HovaTen],N'" & p_ChucDanh & "' as [ChucDanh]," & _
                             " '" & p_Rows.Item("FormRequestCode").ToString.Trim & "' as  [FormRequestCode],'" & p_Rows.Item("titrong").ToString.Trim & "' as  [titrong],'" & p_Rows.Item("dodandien").ToString.Trim & "' as [dodandien] " & _
                                 ",'" & p_Rows.Item("nhietdo").ToString.Trim & "' as [nhietdo], N'" & p_Rows.Item("mausacsaybolt").ToString.Trim & "' as [mausacsaybolt],N'" & p_Rows.Item("kiemtrabengoai").ToString.Trim & "' as [kiemtrabengoai]," & _
                                 " '" & p_Rows.Item("khoxuat").ToString.Trim & "' as [khoxuat],'" & CDate(p_Rows.Item("FormRequestDate")).ToString("yyyyMMdd") & "' as [FormRequestDate],'" & p_Rows.Item("MaHangHoa").ToString.Trim & "' as  [MaHangHoa],'" & p_Rows.Item("TenHangHoa").ToString.Trim & "' as [TenHangHoa] " & _

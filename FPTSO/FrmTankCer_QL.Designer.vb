@@ -23,8 +23,8 @@ Partial Class FrmTankCer_QL
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTankCer_QL))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TuNgay = New U_TextBox.U_DateEdit()
@@ -34,14 +34,14 @@ Partial Class FrmTankCer_QL
         Me.U_ButtonCus2 = New U_TextBox.U_ButtonCus(Me.components)
         Me.TrueDBGrid2 = New U_TextBox.TrueDBGrid()
         Me.GridView2 = New U_TextBox.GridView()
-        Me.ID = New U_TextBox.GridColumn()
-        Me.GridColumn2 = New U_TextBox.GridColumn()
-        Me.GridColumn3 = New U_TextBox.GridColumn()
-        Me.GridColumn4 = New U_TextBox.GridColumn()
-        Me.GridColumn5 = New U_TextBox.GridColumn()
-        Me.GridColumn6 = New U_TextBox.GridColumn()
-        Me.GridColumn7 = New U_TextBox.GridColumn()
-        Me.GridColumn8 = New U_TextBox.GridColumn()
+        Me.FormRequestCode = New U_TextBox.GridColumn()
+        Me.NgayKTNhap = New U_TextBox.GridColumn()
+        Me.SoBon = New U_TextBox.GridColumn()
+        Me.NiemGiao = New U_TextBox.GridColumn()
+        Me.FormRequestCodeSeperationLayer = New U_TextBox.GridColumn()
+        Me.TiTrong = New U_TextBox.GridColumn()
+        Me.DoDanDien = New U_TextBox.GridColumn()
+        Me.NhietDo = New U_TextBox.GridColumn()
         Me.GridColumn9 = New U_TextBox.GridColumn()
         Me.GridColumn10 = New U_TextBox.GridColumn()
         Me.GridColumn12 = New U_TextBox.GridColumn()
@@ -108,7 +108,7 @@ Partial Class FrmTankCer_QL
         Me.TuNgay.Properties.AppearanceReadOnly.Options.UseFont = True
         Me.TuNgay.Properties.AutoHeight = False
         Me.TuNgay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.TuNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
+        Me.TuNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
         Me.TuNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.TuNgay.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss"
         Me.TuNgay.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -169,7 +169,7 @@ Partial Class FrmTankCer_QL
         Me.DenNgay.Properties.AppearanceReadOnly.Options.UseFont = True
         Me.DenNgay.Properties.AutoHeight = False
         Me.DenNgay.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DenNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy"
+        Me.DenNgay.Properties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm:ss"
         Me.DenNgay.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.DenNgay.Properties.Mask.EditMask = "dd/MM/yyyy HH:mm:ss"
         Me.DenNgay.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
@@ -214,7 +214,7 @@ Partial Class FrmTankCer_QL
         Me.TrueDBGrid2.MainView = Me.GridView2
         Me.TrueDBGrid2.Name = "TrueDBGrid2"
         Me.TrueDBGrid2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemButtonEdit5, Me.RepositoryItemButtonEdit6, Me.RepositoryItemButtonEdit7, Me.RepositoryItemButtonEdit1, Me.RepositoryItemPictureEdit1, Me.RepositoryItemButtonEdit2})
-        Me.TrueDBGrid2.Size = New System.Drawing.Size(1189, 459)
+        Me.TrueDBGrid2.Size = New System.Drawing.Size(1267, 459)
         Me.TrueDBGrid2.TabIndex = 550
         Me.TrueDBGrid2.UseEmbeddedNavigator = True
         Me.TrueDBGrid2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -259,7 +259,7 @@ Partial Class FrmTankCer_QL
         Me.GridView2.ColumnKey = ""
         Me.GridView2.ColumnKeyIns = True
         Me.GridView2.ColumnKeyType = "N"
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.ID, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn12})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.FormRequestCode, Me.NgayKTNhap, Me.SoBon, Me.NiemGiao, Me.FormRequestCodeSeperationLayer, Me.TiTrong, Me.DoDanDien, Me.NhietDo, Me.GridColumn9, Me.GridColumn10, Me.GridColumn12})
         Me.GridView2.CompanyCode = ""
         Me.GridView2.DefaultRemove = True
         Me.GridView2.GetB1 = False
@@ -278,395 +278,395 @@ Partial Class FrmTankCer_QL
         Me.GridView2.ViewName = "tblTank_Cert"
         Me.GridView2.Where = "1=0"
         '
-        'ID
+        'FormRequestCode
         '
-        Me.ID.AllowInsert = True
-        Me.ID.AllowUpdate = True
-        Me.ID.ButtonClick = True
-        Me.ID.Caption = "ID"
-        Me.ID.CFLColumnHide = ""
-        Me.ID.CFLKeyField = ""
-        Me.ID.CFLPage = False
-        Me.ID.CFLReturn0 = ""
-        Me.ID.CFLReturn1 = ""
-        Me.ID.CFLReturn2 = ""
-        Me.ID.CFLReturn3 = ""
-        Me.ID.CFLReturn4 = ""
-        Me.ID.CFLReturn5 = ""
-        Me.ID.CFLReturn6 = ""
-        Me.ID.CFLReturn7 = ""
-        Me.ID.CFLShowLoad = False
-        Me.ID.ChangeFormStatus = True
-        Me.ID.ColumnKey = False
-        Me.ID.ComboLine = 5
-        Me.ID.CopyFromItem = ""
-        Me.ID.DefaultButtonClick = False
-        Me.ID.Digit = False
-        Me.ID.FieldType = "N"
-        Me.ID.FieldView = "ID"
-        Me.ID.FormarNumber = True
-        Me.ID.FormList = False
-        Me.ID.KeyInsert = ""
-        Me.ID.LocalDecimal = False
-        Me.ID.Name = "ID"
-        Me.ID.NoUpdate = ""
-        Me.ID.NumberDecimal = 0
-        Me.ID.ParentControl = ""
-        Me.ID.RefreshSource = False
-        Me.ID.Required = False
-        Me.ID.SequenceName = ""
-        Me.ID.ShowCalc = True
-        Me.ID.ShowDataTime = False
-        Me.ID.ShowOnlyTime = False
-        Me.ID.SQLString = ""
-        Me.ID.UpdateIfNull = ""
-        Me.ID.UpdateWhenFormLock = False
-        Me.ID.UpperValue = False
-        Me.ID.ValidateValue = True
-        Me.ID.Visible = True
+        Me.FormRequestCode.AllowInsert = True
+        Me.FormRequestCode.AllowUpdate = True
+        Me.FormRequestCode.ButtonClick = True
+        Me.FormRequestCode.Caption = "FormRequestCode"
+        Me.FormRequestCode.CFLColumnHide = ""
+        Me.FormRequestCode.CFLKeyField = ""
+        Me.FormRequestCode.CFLPage = False
+        Me.FormRequestCode.CFLReturn0 = ""
+        Me.FormRequestCode.CFLReturn1 = ""
+        Me.FormRequestCode.CFLReturn2 = ""
+        Me.FormRequestCode.CFLReturn3 = ""
+        Me.FormRequestCode.CFLReturn4 = ""
+        Me.FormRequestCode.CFLReturn5 = ""
+        Me.FormRequestCode.CFLReturn6 = ""
+        Me.FormRequestCode.CFLReturn7 = ""
+        Me.FormRequestCode.CFLShowLoad = False
+        Me.FormRequestCode.ChangeFormStatus = True
+        Me.FormRequestCode.ColumnKey = False
+        Me.FormRequestCode.ComboLine = 5
+        Me.FormRequestCode.CopyFromItem = ""
+        Me.FormRequestCode.DefaultButtonClick = False
+        Me.FormRequestCode.Digit = False
+        Me.FormRequestCode.FieldType = "N"
+        Me.FormRequestCode.FieldView = "FormRequestCode"
+        Me.FormRequestCode.FormarNumber = True
+        Me.FormRequestCode.FormList = False
+        Me.FormRequestCode.KeyInsert = ""
+        Me.FormRequestCode.LocalDecimal = False
+        Me.FormRequestCode.Name = "FormRequestCode"
+        Me.FormRequestCode.NoUpdate = ""
+        Me.FormRequestCode.NumberDecimal = 0
+        Me.FormRequestCode.ParentControl = ""
+        Me.FormRequestCode.RefreshSource = False
+        Me.FormRequestCode.Required = False
+        Me.FormRequestCode.SequenceName = ""
+        Me.FormRequestCode.ShowCalc = True
+        Me.FormRequestCode.ShowDataTime = False
+        Me.FormRequestCode.ShowOnlyTime = False
+        Me.FormRequestCode.SQLString = ""
+        Me.FormRequestCode.UpdateIfNull = ""
+        Me.FormRequestCode.UpdateWhenFormLock = False
+        Me.FormRequestCode.UpperValue = False
+        Me.FormRequestCode.ValidateValue = True
+        Me.FormRequestCode.Visible = True
         '
-        'GridColumn2
+        'NgayKTNhap
         '
-        Me.GridColumn2.AllowInsert = True
-        Me.GridColumn2.AllowUpdate = True
-        Me.GridColumn2.ButtonClick = True
-        Me.GridColumn2.Caption = "Thời gian KT"
-        Me.GridColumn2.CFLColumnHide = ""
-        Me.GridColumn2.CFLKeyField = ""
-        Me.GridColumn2.CFLPage = False
-        Me.GridColumn2.CFLReturn0 = ""
-        Me.GridColumn2.CFLReturn1 = ""
-        Me.GridColumn2.CFLReturn2 = ""
-        Me.GridColumn2.CFLReturn3 = ""
-        Me.GridColumn2.CFLReturn4 = ""
-        Me.GridColumn2.CFLReturn5 = ""
-        Me.GridColumn2.CFLReturn6 = ""
-        Me.GridColumn2.CFLReturn7 = ""
-        Me.GridColumn2.CFLShowLoad = False
-        Me.GridColumn2.ChangeFormStatus = True
-        Me.GridColumn2.ColumnKey = False
-        Me.GridColumn2.ComboLine = 5
-        Me.GridColumn2.CopyFromItem = ""
-        Me.GridColumn2.DefaultButtonClick = False
-        Me.GridColumn2.Digit = False
-        Me.GridColumn2.DisplayFormat.FormatString = "dd-MM-yyyy"
-        Me.GridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.GridColumn2.FieldType = "D"
-        Me.GridColumn2.FieldView = "NgayKTNhap"
-        Me.GridColumn2.FormarNumber = True
-        Me.GridColumn2.FormList = False
-        Me.GridColumn2.KeyInsert = ""
-        Me.GridColumn2.LocalDecimal = False
-        Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.NoUpdate = ""
-        Me.GridColumn2.NumberDecimal = 0
-        Me.GridColumn2.ParentControl = ""
-        Me.GridColumn2.RefreshSource = False
-        Me.GridColumn2.Required = False
-        Me.GridColumn2.SequenceName = ""
-        Me.GridColumn2.ShowCalc = True
-        Me.GridColumn2.ShowDataTime = True
-        Me.GridColumn2.ShowOnlyTime = False
-        Me.GridColumn2.SQLString = ""
-        Me.GridColumn2.UpdateIfNull = ""
-        Me.GridColumn2.UpdateWhenFormLock = False
-        Me.GridColumn2.UpperValue = False
-        Me.GridColumn2.ValidateValue = True
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 0
-        Me.GridColumn2.Width = 110
+        Me.NgayKTNhap.AllowInsert = True
+        Me.NgayKTNhap.AllowUpdate = True
+        Me.NgayKTNhap.ButtonClick = True
+        Me.NgayKTNhap.Caption = "Thời gian KT"
+        Me.NgayKTNhap.CFLColumnHide = ""
+        Me.NgayKTNhap.CFLKeyField = ""
+        Me.NgayKTNhap.CFLPage = False
+        Me.NgayKTNhap.CFLReturn0 = ""
+        Me.NgayKTNhap.CFLReturn1 = ""
+        Me.NgayKTNhap.CFLReturn2 = ""
+        Me.NgayKTNhap.CFLReturn3 = ""
+        Me.NgayKTNhap.CFLReturn4 = ""
+        Me.NgayKTNhap.CFLReturn5 = ""
+        Me.NgayKTNhap.CFLReturn6 = ""
+        Me.NgayKTNhap.CFLReturn7 = ""
+        Me.NgayKTNhap.CFLShowLoad = False
+        Me.NgayKTNhap.ChangeFormStatus = True
+        Me.NgayKTNhap.ColumnKey = False
+        Me.NgayKTNhap.ComboLine = 5
+        Me.NgayKTNhap.CopyFromItem = ""
+        Me.NgayKTNhap.DefaultButtonClick = False
+        Me.NgayKTNhap.Digit = False
+        Me.NgayKTNhap.DisplayFormat.FormatString = "dd-MM-yyyy"
+        Me.NgayKTNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.NgayKTNhap.FieldType = "D"
+        Me.NgayKTNhap.FieldView = "NgayKTNhap"
+        Me.NgayKTNhap.FormarNumber = True
+        Me.NgayKTNhap.FormList = False
+        Me.NgayKTNhap.KeyInsert = ""
+        Me.NgayKTNhap.LocalDecimal = False
+        Me.NgayKTNhap.Name = "NgayKTNhap"
+        Me.NgayKTNhap.NoUpdate = ""
+        Me.NgayKTNhap.NumberDecimal = 0
+        Me.NgayKTNhap.ParentControl = ""
+        Me.NgayKTNhap.RefreshSource = False
+        Me.NgayKTNhap.Required = False
+        Me.NgayKTNhap.SequenceName = ""
+        Me.NgayKTNhap.ShowCalc = True
+        Me.NgayKTNhap.ShowDataTime = True
+        Me.NgayKTNhap.ShowOnlyTime = False
+        Me.NgayKTNhap.SQLString = ""
+        Me.NgayKTNhap.UpdateIfNull = ""
+        Me.NgayKTNhap.UpdateWhenFormLock = False
+        Me.NgayKTNhap.UpperValue = False
+        Me.NgayKTNhap.ValidateValue = True
+        Me.NgayKTNhap.Visible = True
+        Me.NgayKTNhap.VisibleIndex = 0
+        Me.NgayKTNhap.Width = 200
         '
-        'GridColumn3
+        'SoBon
         '
-        Me.GridColumn3.AllowInsert = True
-        Me.GridColumn3.AllowUpdate = True
-        Me.GridColumn3.ButtonClick = True
-        Me.GridColumn3.Caption = "Bể xuất"
-        Me.GridColumn3.CFLColumnHide = ""
-        Me.GridColumn3.CFLKeyField = ""
-        Me.GridColumn3.CFLPage = False
-        Me.GridColumn3.CFLReturn0 = ""
-        Me.GridColumn3.CFLReturn1 = ""
-        Me.GridColumn3.CFLReturn2 = ""
-        Me.GridColumn3.CFLReturn3 = ""
-        Me.GridColumn3.CFLReturn4 = ""
-        Me.GridColumn3.CFLReturn5 = ""
-        Me.GridColumn3.CFLReturn6 = ""
-        Me.GridColumn3.CFLReturn7 = ""
-        Me.GridColumn3.CFLShowLoad = False
-        Me.GridColumn3.ChangeFormStatus = True
-        Me.GridColumn3.ColumnKey = False
-        Me.GridColumn3.ComboLine = 5
-        Me.GridColumn3.CopyFromItem = ""
-        Me.GridColumn3.DefaultButtonClick = False
-        Me.GridColumn3.Digit = False
-        Me.GridColumn3.FieldType = "C"
-        Me.GridColumn3.FieldView = "SoBon"
-        Me.GridColumn3.FormarNumber = True
-        Me.GridColumn3.FormList = False
-        Me.GridColumn3.KeyInsert = ""
-        Me.GridColumn3.LocalDecimal = False
-        Me.GridColumn3.Name = "GridColumn3"
-        Me.GridColumn3.NoUpdate = ""
-        Me.GridColumn3.NumberDecimal = 0
-        Me.GridColumn3.ParentControl = ""
-        Me.GridColumn3.RefreshSource = False
-        Me.GridColumn3.Required = False
-        Me.GridColumn3.SequenceName = ""
-        Me.GridColumn3.ShowCalc = True
-        Me.GridColumn3.ShowDataTime = False
-        Me.GridColumn3.ShowOnlyTime = False
-        Me.GridColumn3.SQLString = ""
-        Me.GridColumn3.UpdateIfNull = ""
-        Me.GridColumn3.UpdateWhenFormLock = False
-        Me.GridColumn3.UpperValue = False
-        Me.GridColumn3.ValidateValue = True
-        Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 1
-        Me.GridColumn3.Width = 70
+        Me.SoBon.AllowInsert = True
+        Me.SoBon.AllowUpdate = True
+        Me.SoBon.ButtonClick = True
+        Me.SoBon.Caption = "Bể xuất"
+        Me.SoBon.CFLColumnHide = ""
+        Me.SoBon.CFLKeyField = ""
+        Me.SoBon.CFLPage = False
+        Me.SoBon.CFLReturn0 = ""
+        Me.SoBon.CFLReturn1 = ""
+        Me.SoBon.CFLReturn2 = ""
+        Me.SoBon.CFLReturn3 = ""
+        Me.SoBon.CFLReturn4 = ""
+        Me.SoBon.CFLReturn5 = ""
+        Me.SoBon.CFLReturn6 = ""
+        Me.SoBon.CFLReturn7 = ""
+        Me.SoBon.CFLShowLoad = False
+        Me.SoBon.ChangeFormStatus = True
+        Me.SoBon.ColumnKey = False
+        Me.SoBon.ComboLine = 5
+        Me.SoBon.CopyFromItem = ""
+        Me.SoBon.DefaultButtonClick = False
+        Me.SoBon.Digit = False
+        Me.SoBon.FieldType = "C"
+        Me.SoBon.FieldView = "SoBon"
+        Me.SoBon.FormarNumber = True
+        Me.SoBon.FormList = False
+        Me.SoBon.KeyInsert = ""
+        Me.SoBon.LocalDecimal = False
+        Me.SoBon.Name = "SoBon"
+        Me.SoBon.NoUpdate = ""
+        Me.SoBon.NumberDecimal = 0
+        Me.SoBon.ParentControl = ""
+        Me.SoBon.RefreshSource = False
+        Me.SoBon.Required = False
+        Me.SoBon.SequenceName = ""
+        Me.SoBon.ShowCalc = True
+        Me.SoBon.ShowDataTime = False
+        Me.SoBon.ShowOnlyTime = False
+        Me.SoBon.SQLString = ""
+        Me.SoBon.UpdateIfNull = ""
+        Me.SoBon.UpdateWhenFormLock = False
+        Me.SoBon.UpperValue = False
+        Me.SoBon.ValidateValue = True
+        Me.SoBon.Visible = True
+        Me.SoBon.VisibleIndex = 1
+        Me.SoBon.Width = 70
         '
-        'GridColumn4
+        'NiemGiao
         '
-        Me.GridColumn4.AllowInsert = True
-        Me.GridColumn4.AllowUpdate = True
-        Me.GridColumn4.ButtonClick = True
-        Me.GridColumn4.Caption = "Niêm giao"
-        Me.GridColumn4.CFLColumnHide = ""
-        Me.GridColumn4.CFLKeyField = ""
-        Me.GridColumn4.CFLPage = False
-        Me.GridColumn4.CFLReturn0 = ""
-        Me.GridColumn4.CFLReturn1 = ""
-        Me.GridColumn4.CFLReturn2 = ""
-        Me.GridColumn4.CFLReturn3 = ""
-        Me.GridColumn4.CFLReturn4 = ""
-        Me.GridColumn4.CFLReturn5 = ""
-        Me.GridColumn4.CFLReturn6 = ""
-        Me.GridColumn4.CFLReturn7 = ""
-        Me.GridColumn4.CFLShowLoad = False
-        Me.GridColumn4.ChangeFormStatus = True
-        Me.GridColumn4.ColumnKey = False
-        Me.GridColumn4.ComboLine = 5
-        Me.GridColumn4.CopyFromItem = ""
-        Me.GridColumn4.DefaultButtonClick = False
-        Me.GridColumn4.Digit = False
-        Me.GridColumn4.FieldType = "C"
-        Me.GridColumn4.FieldView = "NiemGiao"
-        Me.GridColumn4.FormarNumber = True
-        Me.GridColumn4.FormList = False
-        Me.GridColumn4.KeyInsert = ""
-        Me.GridColumn4.LocalDecimal = False
-        Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.NoUpdate = ""
-        Me.GridColumn4.NumberDecimal = 0
-        Me.GridColumn4.ParentControl = ""
-        Me.GridColumn4.RefreshSource = False
-        Me.GridColumn4.Required = False
-        Me.GridColumn4.SequenceName = ""
-        Me.GridColumn4.ShowCalc = True
-        Me.GridColumn4.ShowDataTime = False
-        Me.GridColumn4.ShowOnlyTime = False
-        Me.GridColumn4.SQLString = ""
-        Me.GridColumn4.UpdateIfNull = ""
-        Me.GridColumn4.UpdateWhenFormLock = False
-        Me.GridColumn4.UpperValue = False
-        Me.GridColumn4.ValidateValue = True
-        Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 2
-        Me.GridColumn4.Width = 100
+        Me.NiemGiao.AllowInsert = True
+        Me.NiemGiao.AllowUpdate = True
+        Me.NiemGiao.ButtonClick = True
+        Me.NiemGiao.Caption = "Niêm giao"
+        Me.NiemGiao.CFLColumnHide = ""
+        Me.NiemGiao.CFLKeyField = ""
+        Me.NiemGiao.CFLPage = False
+        Me.NiemGiao.CFLReturn0 = ""
+        Me.NiemGiao.CFLReturn1 = ""
+        Me.NiemGiao.CFLReturn2 = ""
+        Me.NiemGiao.CFLReturn3 = ""
+        Me.NiemGiao.CFLReturn4 = ""
+        Me.NiemGiao.CFLReturn5 = ""
+        Me.NiemGiao.CFLReturn6 = ""
+        Me.NiemGiao.CFLReturn7 = ""
+        Me.NiemGiao.CFLShowLoad = False
+        Me.NiemGiao.ChangeFormStatus = True
+        Me.NiemGiao.ColumnKey = False
+        Me.NiemGiao.ComboLine = 5
+        Me.NiemGiao.CopyFromItem = ""
+        Me.NiemGiao.DefaultButtonClick = False
+        Me.NiemGiao.Digit = False
+        Me.NiemGiao.FieldType = "C"
+        Me.NiemGiao.FieldView = "NiemGiao"
+        Me.NiemGiao.FormarNumber = True
+        Me.NiemGiao.FormList = False
+        Me.NiemGiao.KeyInsert = ""
+        Me.NiemGiao.LocalDecimal = False
+        Me.NiemGiao.Name = "NiemGiao"
+        Me.NiemGiao.NoUpdate = ""
+        Me.NiemGiao.NumberDecimal = 0
+        Me.NiemGiao.ParentControl = ""
+        Me.NiemGiao.RefreshSource = False
+        Me.NiemGiao.Required = False
+        Me.NiemGiao.SequenceName = ""
+        Me.NiemGiao.ShowCalc = True
+        Me.NiemGiao.ShowDataTime = False
+        Me.NiemGiao.ShowOnlyTime = False
+        Me.NiemGiao.SQLString = ""
+        Me.NiemGiao.UpdateIfNull = ""
+        Me.NiemGiao.UpdateWhenFormLock = False
+        Me.NiemGiao.UpperValue = False
+        Me.NiemGiao.ValidateValue = True
+        Me.NiemGiao.Visible = True
+        Me.NiemGiao.VisibleIndex = 2
+        Me.NiemGiao.Width = 100
         '
-        'GridColumn5
+        'FormRequestCodeSeperationLayer
         '
-        Me.GridColumn5.AllowInsert = True
-        Me.GridColumn5.AllowUpdate = True
-        Me.GridColumn5.ButtonClick = True
-        Me.GridColumn5.Caption = "Chứng chỉ"
-        Me.GridColumn5.CFLColumnHide = ""
-        Me.GridColumn5.CFLKeyField = ""
-        Me.GridColumn5.CFLPage = False
-        Me.GridColumn5.CFLReturn0 = ""
-        Me.GridColumn5.CFLReturn1 = ""
-        Me.GridColumn5.CFLReturn2 = ""
-        Me.GridColumn5.CFLReturn3 = ""
-        Me.GridColumn5.CFLReturn4 = ""
-        Me.GridColumn5.CFLReturn5 = ""
-        Me.GridColumn5.CFLReturn6 = ""
-        Me.GridColumn5.CFLReturn7 = ""
-        Me.GridColumn5.CFLShowLoad = False
-        Me.GridColumn5.ChangeFormStatus = True
-        Me.GridColumn5.ColumnKey = False
-        Me.GridColumn5.ComboLine = 5
-        Me.GridColumn5.CopyFromItem = ""
-        Me.GridColumn5.DefaultButtonClick = False
-        Me.GridColumn5.Digit = False
-        Me.GridColumn5.FieldType = "C"
-        Me.GridColumn5.FieldView = "FormRequestCodeSeperationLayer"
-        Me.GridColumn5.FormarNumber = True
-        Me.GridColumn5.FormList = False
-        Me.GridColumn5.KeyInsert = ""
-        Me.GridColumn5.LocalDecimal = False
-        Me.GridColumn5.Name = "GridColumn5"
-        Me.GridColumn5.NoUpdate = ""
-        Me.GridColumn5.NumberDecimal = 0
-        Me.GridColumn5.ParentControl = ""
-        Me.GridColumn5.RefreshSource = False
-        Me.GridColumn5.Required = False
-        Me.GridColumn5.SequenceName = ""
-        Me.GridColumn5.ShowCalc = True
-        Me.GridColumn5.ShowDataTime = False
-        Me.GridColumn5.ShowOnlyTime = False
-        Me.GridColumn5.SQLString = ""
-        Me.GridColumn5.UpdateIfNull = ""
-        Me.GridColumn5.UpdateWhenFormLock = False
-        Me.GridColumn5.UpperValue = False
-        Me.GridColumn5.ValidateValue = True
-        Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 3
-        Me.GridColumn5.Width = 180
+        Me.FormRequestCodeSeperationLayer.AllowInsert = True
+        Me.FormRequestCodeSeperationLayer.AllowUpdate = True
+        Me.FormRequestCodeSeperationLayer.ButtonClick = True
+        Me.FormRequestCodeSeperationLayer.Caption = "Chứng chỉ"
+        Me.FormRequestCodeSeperationLayer.CFLColumnHide = ""
+        Me.FormRequestCodeSeperationLayer.CFLKeyField = ""
+        Me.FormRequestCodeSeperationLayer.CFLPage = False
+        Me.FormRequestCodeSeperationLayer.CFLReturn0 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn1 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn2 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn3 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn4 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn5 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn6 = ""
+        Me.FormRequestCodeSeperationLayer.CFLReturn7 = ""
+        Me.FormRequestCodeSeperationLayer.CFLShowLoad = False
+        Me.FormRequestCodeSeperationLayer.ChangeFormStatus = True
+        Me.FormRequestCodeSeperationLayer.ColumnKey = False
+        Me.FormRequestCodeSeperationLayer.ComboLine = 5
+        Me.FormRequestCodeSeperationLayer.CopyFromItem = ""
+        Me.FormRequestCodeSeperationLayer.DefaultButtonClick = False
+        Me.FormRequestCodeSeperationLayer.Digit = False
+        Me.FormRequestCodeSeperationLayer.FieldType = "C"
+        Me.FormRequestCodeSeperationLayer.FieldView = "FormRequestCodeSeperationLayer"
+        Me.FormRequestCodeSeperationLayer.FormarNumber = True
+        Me.FormRequestCodeSeperationLayer.FormList = False
+        Me.FormRequestCodeSeperationLayer.KeyInsert = ""
+        Me.FormRequestCodeSeperationLayer.LocalDecimal = False
+        Me.FormRequestCodeSeperationLayer.Name = "FormRequestCodeSeperationLayer"
+        Me.FormRequestCodeSeperationLayer.NoUpdate = ""
+        Me.FormRequestCodeSeperationLayer.NumberDecimal = 0
+        Me.FormRequestCodeSeperationLayer.ParentControl = ""
+        Me.FormRequestCodeSeperationLayer.RefreshSource = False
+        Me.FormRequestCodeSeperationLayer.Required = False
+        Me.FormRequestCodeSeperationLayer.SequenceName = ""
+        Me.FormRequestCodeSeperationLayer.ShowCalc = True
+        Me.FormRequestCodeSeperationLayer.ShowDataTime = False
+        Me.FormRequestCodeSeperationLayer.ShowOnlyTime = False
+        Me.FormRequestCodeSeperationLayer.SQLString = ""
+        Me.FormRequestCodeSeperationLayer.UpdateIfNull = ""
+        Me.FormRequestCodeSeperationLayer.UpdateWhenFormLock = False
+        Me.FormRequestCodeSeperationLayer.UpperValue = False
+        Me.FormRequestCodeSeperationLayer.ValidateValue = True
+        Me.FormRequestCodeSeperationLayer.Visible = True
+        Me.FormRequestCodeSeperationLayer.VisibleIndex = 3
+        Me.FormRequestCodeSeperationLayer.Width = 180
         '
-        'GridColumn6
+        'TiTrong
         '
-        Me.GridColumn6.AllowInsert = True
-        Me.GridColumn6.AllowUpdate = True
-        Me.GridColumn6.ButtonClick = True
-        Me.GridColumn6.Caption = "Tỷ trọng"
-        Me.GridColumn6.CFLColumnHide = ""
-        Me.GridColumn6.CFLKeyField = ""
-        Me.GridColumn6.CFLPage = False
-        Me.GridColumn6.CFLReturn0 = ""
-        Me.GridColumn6.CFLReturn1 = ""
-        Me.GridColumn6.CFLReturn2 = ""
-        Me.GridColumn6.CFLReturn3 = ""
-        Me.GridColumn6.CFLReturn4 = ""
-        Me.GridColumn6.CFLReturn5 = ""
-        Me.GridColumn6.CFLReturn6 = ""
-        Me.GridColumn6.CFLReturn7 = ""
-        Me.GridColumn6.CFLShowLoad = False
-        Me.GridColumn6.ChangeFormStatus = True
-        Me.GridColumn6.ColumnKey = False
-        Me.GridColumn6.ComboLine = 5
-        Me.GridColumn6.CopyFromItem = ""
-        Me.GridColumn6.DefaultButtonClick = False
-        Me.GridColumn6.Digit = False
-        Me.GridColumn6.FieldType = "C"
-        Me.GridColumn6.FieldView = "TiTrong"
-        Me.GridColumn6.FormarNumber = True
-        Me.GridColumn6.FormList = False
-        Me.GridColumn6.KeyInsert = ""
-        Me.GridColumn6.LocalDecimal = False
-        Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.NoUpdate = ""
-        Me.GridColumn6.NumberDecimal = 0
-        Me.GridColumn6.ParentControl = ""
-        Me.GridColumn6.RefreshSource = False
-        Me.GridColumn6.Required = False
-        Me.GridColumn6.SequenceName = ""
-        Me.GridColumn6.ShowCalc = True
-        Me.GridColumn6.ShowDataTime = False
-        Me.GridColumn6.ShowOnlyTime = False
-        Me.GridColumn6.SQLString = ""
-        Me.GridColumn6.UpdateIfNull = ""
-        Me.GridColumn6.UpdateWhenFormLock = False
-        Me.GridColumn6.UpperValue = False
-        Me.GridColumn6.ValidateValue = True
-        Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 4
+        Me.TiTrong.AllowInsert = True
+        Me.TiTrong.AllowUpdate = True
+        Me.TiTrong.ButtonClick = True
+        Me.TiTrong.Caption = "Tỷ trọng"
+        Me.TiTrong.CFLColumnHide = ""
+        Me.TiTrong.CFLKeyField = ""
+        Me.TiTrong.CFLPage = False
+        Me.TiTrong.CFLReturn0 = ""
+        Me.TiTrong.CFLReturn1 = ""
+        Me.TiTrong.CFLReturn2 = ""
+        Me.TiTrong.CFLReturn3 = ""
+        Me.TiTrong.CFLReturn4 = ""
+        Me.TiTrong.CFLReturn5 = ""
+        Me.TiTrong.CFLReturn6 = ""
+        Me.TiTrong.CFLReturn7 = ""
+        Me.TiTrong.CFLShowLoad = False
+        Me.TiTrong.ChangeFormStatus = True
+        Me.TiTrong.ColumnKey = False
+        Me.TiTrong.ComboLine = 5
+        Me.TiTrong.CopyFromItem = ""
+        Me.TiTrong.DefaultButtonClick = False
+        Me.TiTrong.Digit = False
+        Me.TiTrong.FieldType = "C"
+        Me.TiTrong.FieldView = "TiTrong"
+        Me.TiTrong.FormarNumber = True
+        Me.TiTrong.FormList = False
+        Me.TiTrong.KeyInsert = ""
+        Me.TiTrong.LocalDecimal = False
+        Me.TiTrong.Name = "TiTrong"
+        Me.TiTrong.NoUpdate = ""
+        Me.TiTrong.NumberDecimal = 0
+        Me.TiTrong.ParentControl = ""
+        Me.TiTrong.RefreshSource = False
+        Me.TiTrong.Required = False
+        Me.TiTrong.SequenceName = ""
+        Me.TiTrong.ShowCalc = True
+        Me.TiTrong.ShowDataTime = False
+        Me.TiTrong.ShowOnlyTime = False
+        Me.TiTrong.SQLString = ""
+        Me.TiTrong.UpdateIfNull = ""
+        Me.TiTrong.UpdateWhenFormLock = False
+        Me.TiTrong.UpperValue = False
+        Me.TiTrong.ValidateValue = True
+        Me.TiTrong.Visible = True
+        Me.TiTrong.VisibleIndex = 4
         '
-        'GridColumn7
+        'DoDanDien
         '
-        Me.GridColumn7.AllowInsert = True
-        Me.GridColumn7.AllowUpdate = True
-        Me.GridColumn7.ButtonClick = True
-        Me.GridColumn7.Caption = "Độ dẫn điện"
-        Me.GridColumn7.CFLColumnHide = ""
-        Me.GridColumn7.CFLKeyField = ""
-        Me.GridColumn7.CFLPage = False
-        Me.GridColumn7.CFLReturn0 = ""
-        Me.GridColumn7.CFLReturn1 = ""
-        Me.GridColumn7.CFLReturn2 = ""
-        Me.GridColumn7.CFLReturn3 = ""
-        Me.GridColumn7.CFLReturn4 = ""
-        Me.GridColumn7.CFLReturn5 = ""
-        Me.GridColumn7.CFLReturn6 = ""
-        Me.GridColumn7.CFLReturn7 = ""
-        Me.GridColumn7.CFLShowLoad = False
-        Me.GridColumn7.ChangeFormStatus = True
-        Me.GridColumn7.ColumnKey = False
-        Me.GridColumn7.ComboLine = 5
-        Me.GridColumn7.CopyFromItem = ""
-        Me.GridColumn7.DefaultButtonClick = False
-        Me.GridColumn7.Digit = False
-        Me.GridColumn7.FieldType = "C"
-        Me.GridColumn7.FieldView = "DoDanDien"
-        Me.GridColumn7.FormarNumber = True
-        Me.GridColumn7.FormList = False
-        Me.GridColumn7.KeyInsert = ""
-        Me.GridColumn7.LocalDecimal = False
-        Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.NoUpdate = ""
-        Me.GridColumn7.NumberDecimal = 0
-        Me.GridColumn7.ParentControl = ""
-        Me.GridColumn7.RefreshSource = False
-        Me.GridColumn7.Required = False
-        Me.GridColumn7.SequenceName = ""
-        Me.GridColumn7.ShowCalc = True
-        Me.GridColumn7.ShowDataTime = False
-        Me.GridColumn7.ShowOnlyTime = False
-        Me.GridColumn7.SQLString = ""
-        Me.GridColumn7.UpdateIfNull = ""
-        Me.GridColumn7.UpdateWhenFormLock = False
-        Me.GridColumn7.UpperValue = False
-        Me.GridColumn7.ValidateValue = True
-        Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 5
-        Me.GridColumn7.Width = 100
+        Me.DoDanDien.AllowInsert = True
+        Me.DoDanDien.AllowUpdate = True
+        Me.DoDanDien.ButtonClick = True
+        Me.DoDanDien.Caption = "Độ dẫn điện"
+        Me.DoDanDien.CFLColumnHide = ""
+        Me.DoDanDien.CFLKeyField = ""
+        Me.DoDanDien.CFLPage = False
+        Me.DoDanDien.CFLReturn0 = ""
+        Me.DoDanDien.CFLReturn1 = ""
+        Me.DoDanDien.CFLReturn2 = ""
+        Me.DoDanDien.CFLReturn3 = ""
+        Me.DoDanDien.CFLReturn4 = ""
+        Me.DoDanDien.CFLReturn5 = ""
+        Me.DoDanDien.CFLReturn6 = ""
+        Me.DoDanDien.CFLReturn7 = ""
+        Me.DoDanDien.CFLShowLoad = False
+        Me.DoDanDien.ChangeFormStatus = True
+        Me.DoDanDien.ColumnKey = False
+        Me.DoDanDien.ComboLine = 5
+        Me.DoDanDien.CopyFromItem = ""
+        Me.DoDanDien.DefaultButtonClick = False
+        Me.DoDanDien.Digit = False
+        Me.DoDanDien.FieldType = "C"
+        Me.DoDanDien.FieldView = "DoDanDien"
+        Me.DoDanDien.FormarNumber = True
+        Me.DoDanDien.FormList = False
+        Me.DoDanDien.KeyInsert = ""
+        Me.DoDanDien.LocalDecimal = False
+        Me.DoDanDien.Name = "DoDanDien"
+        Me.DoDanDien.NoUpdate = ""
+        Me.DoDanDien.NumberDecimal = 0
+        Me.DoDanDien.ParentControl = ""
+        Me.DoDanDien.RefreshSource = False
+        Me.DoDanDien.Required = False
+        Me.DoDanDien.SequenceName = ""
+        Me.DoDanDien.ShowCalc = True
+        Me.DoDanDien.ShowDataTime = False
+        Me.DoDanDien.ShowOnlyTime = False
+        Me.DoDanDien.SQLString = ""
+        Me.DoDanDien.UpdateIfNull = ""
+        Me.DoDanDien.UpdateWhenFormLock = False
+        Me.DoDanDien.UpperValue = False
+        Me.DoDanDien.ValidateValue = True
+        Me.DoDanDien.Visible = True
+        Me.DoDanDien.VisibleIndex = 5
+        Me.DoDanDien.Width = 100
         '
-        'GridColumn8
+        'NhietDo
         '
-        Me.GridColumn8.AllowInsert = True
-        Me.GridColumn8.AllowUpdate = True
-        Me.GridColumn8.ButtonClick = True
-        Me.GridColumn8.Caption = "Nhiệt độ"
-        Me.GridColumn8.CFLColumnHide = ""
-        Me.GridColumn8.CFLKeyField = ""
-        Me.GridColumn8.CFLPage = False
-        Me.GridColumn8.CFLReturn0 = ""
-        Me.GridColumn8.CFLReturn1 = ""
-        Me.GridColumn8.CFLReturn2 = ""
-        Me.GridColumn8.CFLReturn3 = ""
-        Me.GridColumn8.CFLReturn4 = ""
-        Me.GridColumn8.CFLReturn5 = ""
-        Me.GridColumn8.CFLReturn6 = ""
-        Me.GridColumn8.CFLReturn7 = ""
-        Me.GridColumn8.CFLShowLoad = False
-        Me.GridColumn8.ChangeFormStatus = True
-        Me.GridColumn8.ColumnKey = False
-        Me.GridColumn8.ComboLine = 5
-        Me.GridColumn8.CopyFromItem = ""
-        Me.GridColumn8.DefaultButtonClick = False
-        Me.GridColumn8.Digit = False
-        Me.GridColumn8.FieldType = "C"
-        Me.GridColumn8.FieldView = "NhietDo"
-        Me.GridColumn8.FormarNumber = True
-        Me.GridColumn8.FormList = False
-        Me.GridColumn8.KeyInsert = ""
-        Me.GridColumn8.LocalDecimal = False
-        Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.NoUpdate = ""
-        Me.GridColumn8.NumberDecimal = 0
-        Me.GridColumn8.ParentControl = ""
-        Me.GridColumn8.RefreshSource = False
-        Me.GridColumn8.Required = False
-        Me.GridColumn8.SequenceName = ""
-        Me.GridColumn8.ShowCalc = True
-        Me.GridColumn8.ShowDataTime = False
-        Me.GridColumn8.ShowOnlyTime = False
-        Me.GridColumn8.SQLString = ""
-        Me.GridColumn8.UpdateIfNull = ""
-        Me.GridColumn8.UpdateWhenFormLock = False
-        Me.GridColumn8.UpperValue = False
-        Me.GridColumn8.ValidateValue = True
-        Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 6
+        Me.NhietDo.AllowInsert = True
+        Me.NhietDo.AllowUpdate = True
+        Me.NhietDo.ButtonClick = True
+        Me.NhietDo.Caption = "Nhiệt độ"
+        Me.NhietDo.CFLColumnHide = ""
+        Me.NhietDo.CFLKeyField = ""
+        Me.NhietDo.CFLPage = False
+        Me.NhietDo.CFLReturn0 = ""
+        Me.NhietDo.CFLReturn1 = ""
+        Me.NhietDo.CFLReturn2 = ""
+        Me.NhietDo.CFLReturn3 = ""
+        Me.NhietDo.CFLReturn4 = ""
+        Me.NhietDo.CFLReturn5 = ""
+        Me.NhietDo.CFLReturn6 = ""
+        Me.NhietDo.CFLReturn7 = ""
+        Me.NhietDo.CFLShowLoad = False
+        Me.NhietDo.ChangeFormStatus = True
+        Me.NhietDo.ColumnKey = False
+        Me.NhietDo.ComboLine = 5
+        Me.NhietDo.CopyFromItem = ""
+        Me.NhietDo.DefaultButtonClick = False
+        Me.NhietDo.Digit = False
+        Me.NhietDo.FieldType = "C"
+        Me.NhietDo.FieldView = "NhietDo"
+        Me.NhietDo.FormarNumber = True
+        Me.NhietDo.FormList = False
+        Me.NhietDo.KeyInsert = ""
+        Me.NhietDo.LocalDecimal = False
+        Me.NhietDo.Name = "NhietDo"
+        Me.NhietDo.NoUpdate = ""
+        Me.NhietDo.NumberDecimal = 0
+        Me.NhietDo.ParentControl = ""
+        Me.NhietDo.RefreshSource = False
+        Me.NhietDo.Required = False
+        Me.NhietDo.SequenceName = ""
+        Me.NhietDo.ShowCalc = True
+        Me.NhietDo.ShowDataTime = False
+        Me.NhietDo.ShowOnlyTime = False
+        Me.NhietDo.SQLString = ""
+        Me.NhietDo.UpdateIfNull = ""
+        Me.NhietDo.UpdateWhenFormLock = False
+        Me.NhietDo.UpperValue = False
+        Me.NhietDo.ValidateValue = True
+        Me.NhietDo.Visible = True
+        Me.NhietDo.VisibleIndex = 6
         '
         'GridColumn9
         '
@@ -818,7 +818,7 @@ Partial Class FrmTankCer_QL
         'RepositoryItemButtonEdit2
         '
         Me.RepositoryItemButtonEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject11, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject3, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit2.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit2.Name = "RepositoryItemButtonEdit2"
         Me.RepositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -844,7 +844,7 @@ Partial Class FrmTankCer_QL
         'RepositoryItemButtonEdit1
         '
         Me.RepositoryItemButtonEdit1.AutoHeight = False
-        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject12, "", Nothing, Nothing, True)})
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "In", -1, True, True, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject4, "", Nothing, Nothing, True)})
         Me.RepositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003
         Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
         Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -921,7 +921,7 @@ Partial Class FrmTankCer_QL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1189, 626)
+        Me.ClientSize = New System.Drawing.Size(1272, 626)
         Me.Controls.Add(Me.MaBe)
         Me.Controls.Add(Me.U_ButtonCus1)
         Me.Controls.Add(Me.TrueDBGrid2)
@@ -976,14 +976,13 @@ Partial Class FrmTankCer_QL
     Friend WithEvents RepositoryItemButtonEdit6 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents U_ButtonCus1 As U_TextBox.U_ButtonCus
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents ID As U_TextBox.GridColumn
-    Friend WithEvents GridColumn2 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn3 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn4 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn5 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn6 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn7 As U_TextBox.GridColumn
-    Friend WithEvents GridColumn8 As U_TextBox.GridColumn
+    Friend WithEvents FormRequestCode As U_TextBox.GridColumn
+    Friend WithEvents NgayKTNhap As U_TextBox.GridColumn
+    Friend WithEvents SoBon As U_TextBox.GridColumn
+    Friend WithEvents NiemGiao As U_TextBox.GridColumn
+    Friend WithEvents FormRequestCodeSeperationLayer As U_TextBox.GridColumn
+    Friend WithEvents TiTrong As U_TextBox.GridColumn
+    Friend WithEvents DoDanDien As U_TextBox.GridColumn
     Friend WithEvents GridColumn9 As U_TextBox.GridColumn
     Friend WithEvents GridColumn10 As U_TextBox.GridColumn
     Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
@@ -991,4 +990,5 @@ Partial Class FrmTankCer_QL
     Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
     Friend WithEvents RepositoryItemButtonEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents MaBe As U_TextBox.U_ButtonEdit
+    Friend WithEvents NhietDo As U_TextBox.GridColumn
 End Class

@@ -20,12 +20,18 @@ Partial Public Class KV2_PhuongTien_Cert
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrSubreport3 = New DevExpress.XtraReports.UI.XRSubreport()
+        Me.KV2_PhuongTien_Cert_Sub21 = New KV_2_Report.KV2_PhuongTien_Cert_Sub2()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand()
         Me.XrLabel26 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrSubreport2 = New DevExpress.XtraReports.UI.XRSubreport()
+        Me.KV2_PhuongTien_Cert_Sub11 = New KV_2_Report.KV2_PhuongTien_Cert_Sub1()
+        Me.XrSubreport1 = New DevExpress.XtraReports.UI.XRSubreport()
+        Me.KV2_PhuongTien_Cert_Sub = New KV_2_Report.KV2_PhuongTien_Cert_Sub()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
@@ -54,16 +60,10 @@ Partial Public Class KV2_PhuongTien_Cert
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.DtPhuongTienCert1 = New KV_2_Report.dtPhuongTienCert()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
-        Me.XrSubreport3 = New DevExpress.XtraReports.UI.XRSubreport()
-        Me.KV2_PhuongTien_Cert_Sub21 = New KV_2_Report.KV2_PhuongTien_Cert_Sub2()
-        Me.XrSubreport2 = New DevExpress.XtraReports.UI.XRSubreport()
-        Me.KV2_PhuongTien_Cert_Sub11 = New KV_2_Report.KV2_PhuongTien_Cert_Sub1()
-        Me.XrSubreport1 = New DevExpress.XtraReports.UI.XRSubreport()
-        Me.KV2_PhuongTien_Cert_Sub = New KV_2_Report.KV2_PhuongTien_Cert_Sub()
-        CType(Me.DtPhuongTienCert1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KV2_PhuongTien_Cert_Sub21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KV2_PhuongTien_Cert_Sub11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.KV2_PhuongTien_Cert_Sub, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DtPhuongTienCert1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
@@ -74,6 +74,14 @@ Partial Public Class KV2_PhuongTien_Cert
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrSubreport3
+        '
+        Me.XrSubreport3.CanShrink = True
+        Me.XrSubreport3.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 0.0!)
+        Me.XrSubreport3.Name = "XrSubreport3"
+        Me.XrSubreport3.ReportSource = Me.KV2_PhuongTien_Cert_Sub21
+        Me.XrSubreport3.SizeF = New System.Drawing.SizeF(793.9999!, 44.875!)
         '
         'TopMargin
         '
@@ -131,11 +139,25 @@ Partial Public Class KV2_PhuongTien_Cert
         Me.XrLabel26.Text = "[NgayIn!dd/MM/yyyy]"
         Me.XrLabel26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
+        'XrSubreport2
+        '
+        Me.XrSubreport2.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 454.5834!)
+        Me.XrSubreport2.Name = "XrSubreport2"
+        Me.XrSubreport2.ReportSource = Me.KV2_PhuongTien_Cert_Sub11
+        Me.XrSubreport2.SizeF = New System.Drawing.SizeF(793.9999!, 44.875!)
+        '
+        'XrSubreport1
+        '
+        Me.XrSubreport1.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 387.8333!)
+        Me.XrSubreport1.Name = "XrSubreport1"
+        Me.XrSubreport1.ReportSource = Me.KV2_PhuongTien_Cert_Sub
+        Me.XrSubreport1.SizeF = New System.Drawing.SizeF(793.9999!, 66.75003!)
+        '
         'XrLabel25
         '
         Me.XrLabel25.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.NgayGioXepHang", "{0:HH:mm:ss}")})
         Me.XrLabel25.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(511.75!, 349.2917!)
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(511.75!, 319.0835!)
         Me.XrLabel25.Name = "XrLabel25"
         Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel25.SizeF = New System.Drawing.SizeF(140.2084!, 30.29166!)
@@ -148,7 +170,7 @@ Partial Public Class KV2_PhuongTien_Cert
         '
         Me.XrLabel24.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.NgayGioXepHang", "{0:dd/MM/yyyy}")})
         Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(511.75!, 319.0!)
+        Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(511.75!, 349.2917!)
         Me.XrLabel24.Name = "XrLabel24"
         Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel24.SizeF = New System.Drawing.SizeF(140.2084!, 30.29166!)
@@ -450,28 +472,6 @@ Partial Public Class KV2_PhuongTien_Cert
         Me.ReportFooter.HeightF = 18.83335!
         Me.ReportFooter.Name = "ReportFooter"
         '
-        'XrSubreport3
-        '
-        Me.XrSubreport3.CanShrink = True
-        Me.XrSubreport3.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 0.0!)
-        Me.XrSubreport3.Name = "XrSubreport3"
-        Me.XrSubreport3.ReportSource = Me.KV2_PhuongTien_Cert_Sub21
-        Me.XrSubreport3.SizeF = New System.Drawing.SizeF(793.9999!, 44.875!)
-        '
-        'XrSubreport2
-        '
-        Me.XrSubreport2.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 454.5834!)
-        Me.XrSubreport2.Name = "XrSubreport2"
-        Me.XrSubreport2.ReportSource = Me.KV2_PhuongTien_Cert_Sub11
-        Me.XrSubreport2.SizeF = New System.Drawing.SizeF(793.9999!, 44.875!)
-        '
-        'XrSubreport1
-        '
-        Me.XrSubreport1.LocationFloat = New DevExpress.Utils.PointFloat(9.999998!, 387.8333!)
-        Me.XrSubreport1.Name = "XrSubreport1"
-        Me.XrSubreport1.ReportSource = Me.KV2_PhuongTien_Cert_Sub
-        Me.XrSubreport1.SizeF = New System.Drawing.SizeF(793.9999!, 66.75003!)
-        '
         'KV2_PhuongTien_Cert
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.ReportHeader, Me.ReportFooter})
@@ -482,10 +482,10 @@ Partial Public Class KV2_PhuongTien_Cert
         Me.PageWidth = 827
         Me.PaperKind = System.Drawing.Printing.PaperKind.A4
         Me.Version = "11.1"
-        CType(Me.DtPhuongTienCert1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KV2_PhuongTien_Cert_Sub21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KV2_PhuongTien_Cert_Sub11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.KV2_PhuongTien_Cert_Sub, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DtPhuongTienCert1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

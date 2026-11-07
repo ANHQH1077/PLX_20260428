@@ -699,7 +699,7 @@ Partial Public Class KV2_PhuongTien_Cert_Sub1
         'KV2_PhuongTien_Cert_Sub1
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin, Me.DetailReport, Me.ReportHeader})
-        Me.DataMember = "PhuongTien"
+        Me.DataMember = "Cert"
         Me.DataSource = Me.DtPhuongTienCert1
         Me.Margins = New System.Drawing.Printing.Margins(14, 17, 0, 0)
         Me.PageHeight = 1169

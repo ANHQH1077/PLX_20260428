@@ -586,6 +586,12 @@
     <Compile Include="FrmTichKe.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmTichKeMau.Designer.vb">
+      <DependentUpon>FrmTichKeMau.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTichKeMau.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmTraCuuSoLieuDoBon.Designer.vb">
       <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>
     </Compile>
@@ -863,6 +869,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTichKe.resx">
       <DependentUpon>FrmTichKe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTichKeMau.resx">
+      <DependentUpon>FrmTichKeMau.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTraCuuSoLieuDoBon.resx">
       <DependentUpon>FrmTraCuuSoLieuDoBon.vb</DependentUpon>

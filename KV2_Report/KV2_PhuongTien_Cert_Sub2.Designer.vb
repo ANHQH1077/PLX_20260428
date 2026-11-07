@@ -339,7 +339,7 @@ Partial Public Class KV2_PhuongTien_Cert_Sub2
         Me.XrLabel44.Multiline = True
         Me.XrLabel44.Name = "XrLabel44"
         Me.XrLabel44.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel44.SizeF = New System.Drawing.SizeF(470.7916!, 33.66672!)
+        Me.XrLabel44.SizeF = New System.Drawing.SizeF(652.5415!, 33.66672!)
         Me.XrLabel44.StylePriority.UseBorders = False
         Me.XrLabel44.StylePriority.UseFont = False
         Me.XrLabel44.StylePriority.UseTextAlignment = False
@@ -364,7 +364,7 @@ Partial Public Class KV2_PhuongTien_Cert_Sub2
         'XrLabel42
         '
         Me.XrLabel42.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel42.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.SDA_Amount", "{0:#.00}")})
+        Me.XrLabel42.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.SDA_Amount", "{0:#0.00}")})
         Me.XrLabel42.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrLabel42.LocationFloat = New DevExpress.Utils.PointFloat(231.9998!, 414.9587!)
         Me.XrLabel42.Multiline = True
@@ -395,7 +395,7 @@ Partial Public Class KV2_PhuongTien_Cert_Sub2
         'XrLabel40
         '
         Me.XrLabel40.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel40.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.SDA_Amount", "{0:#.00}")})
+        Me.XrLabel40.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Cert.SDA_Amount", "{0:#0.00}")})
         Me.XrLabel40.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold)
         Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(231.9998!, 347.6253!)
         Me.XrLabel40.Multiline = True

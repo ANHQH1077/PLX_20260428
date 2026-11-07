@@ -18,6 +18,14 @@ Public Class Class1
         InBaoCao(p_datatable, p_ReportCode)
     End Sub
 
+
+    Public Sub clsmdlTichKeMau(ByVal p_SoTichKe As String, ByVal p_NgayThang As String)
+        mdlTichKeMau(p_SoTichKe, p_NgayThang)
+    End Sub
+    Public Sub clsRptChungChiBonXuat(ByVal p_BonXuat As String, ByVal p_FormRequestCode As String)
+        mdlRptChungChiBonXuat(p_BonXuat, p_FormRequestCode)
+    End Sub
+
     Public Sub clsRptChungChiPTien(ByVal p_CertNo As String, ByVal p_FormRequestCode As String, ByVal p_SoTichKe As String, ByVal p_NgayXuat As String)
         mdlRptChungChiPTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
     End Sub
@@ -156,7 +164,7 @@ Public Class Class1
                     Optional ByVal p_DBPass As String = "", Optional ByVal p_CompanyAPI As Object = Nothing)
 
         'Dim p_SQL As String = "select * from tblVCF"
-      
+
         g_Services = p_Services
 
         Dim p_SQL As String
@@ -169,7 +177,7 @@ Public Class Class1
         g_Company_Code = p_Company_Code
 
 
-        
+
 
 
 
@@ -186,7 +194,7 @@ Public Class Class1
         p_SQL = p_SQL & "SELECT  MaDonVi ,TenDonVi FROM [tblDonvi] where MaDonVi='" & g_Company_Code & "';"
 
         p_SQL = p_SQL & "select isnull(Excel_Rpt,'') as Excel_Rpt  from SYS_USER  where upper(USER_NAME ) = upper('" & p_UserName & "');"
-       
+
         p_DataSet = GetDataSet(p_SQL, p_SQL)
         If Not p_DataSet Is Nothing Then
             g_tblVCF = p_DataSet.Tables(0)
@@ -239,7 +247,7 @@ Public Class Class1
         g_UserName = p_UserName
         g_CompanyAPI = p_CompanyAPI
 
-        
+
 
 
 
@@ -328,7 +336,7 @@ Public Class Class1
 
     Public Sub InChungTuHoaDon_All(ByVal p_Form As Object, ByVal p_Type As String, ByVal p_SoLenh As String)
         Dim l_err As String
-         Select p_Type
+        Select Case p_Type
             Case "LENHXKTHEOPHOI"
                 If Not Print_LenhXKTheoPhoi(True, p_SoLenh, l_err) Then
                     ShowMessageBox("", l_err)
@@ -879,7 +887,7 @@ Public Class Class1
                 Return False
             End If
 
-          
+
 
             DtTable = DtSet.Tables(0)
             If DtTable.Rows.Count <= 0 Then

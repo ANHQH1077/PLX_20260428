@@ -22,7 +22,6 @@ Partial Class FrmGhiNhanThucXuat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmGhiNhanThucXuat))
         Me.TrueDBGrid1 = New U_TextBox.TrueDBGrid()
         Me.GridView1 = New U_TextBox.GridView()
@@ -144,9 +143,9 @@ Partial Class FrmGhiNhanThucXuat
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Ngay_TKTX = New U_TextBox.U_DateEdit()
         Me.MaPhuongThucBan = New U_TextBox.U_TextBox()
-        Me.CmdSMO = New U_TextBox.U_ButtonCus(Me.components)
+        Me.CmdSMO = New U_TextBox.U_ButtonCus()
         Me.HNhomBeXuat = New U_TextBox.U_TextBox()
-        Me.PTCert = New U_TextBox.U_ButtonCus(Me.components)
+        Me.PTCert = New U_TextBox.U_ButtonCus()
         CType(Me.pv_LineRemove, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_TableEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pv_GridViewEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3932,6 +3931,7 @@ Partial Class FrmGhiNhanThucXuat
         Me.PTCert.TabIndex = 913
         Me.PTCert.TabStop = False
         Me.PTCert.Text = "In chứng " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "&chỉ P.tiện"
+        Me.PTCert.Visible = False
         '
         'FrmGhiNhanThucXuat
         '

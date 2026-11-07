@@ -2114,7 +2114,7 @@ Module Module2
                      "[titronggiua] [nvarchar](30) NULL,[titrongduoi] [nvarchar](30) NULL,[ghichutachlop] [nvarchar](230) NULL, " & _
                      "[issplit] [nvarchar](30) NULL,[FormRequestCodeSeperationLayer] [nvarchar](30) NULL, " & _
                      "[FormRequestDateSeperationLayer] [datetime] NULL,[CrUser] [nvarchar](130) NULL,[CrDate] [datetime] DEFAULT (getdate()) , " & _
-                     "[UpdUser] [nvarchar](30) NULL,[UpdDate] [datetime] NULL,[ID] [int] IDENTITY(1,1) NOT NULL)  end;"
+                     "[UpdUser] [nvarchar](30) NULL,[UpdDate] [datetime] NULL,[ID] [int] IDENTITY(1,1) NOT NULL, BatchNum nvarchar(100), SDA_Amount decimal(15,6))  end;"
             If g_Services.Sys_Execute(p_SQL, _
                                       p_Error) = False Then
 
@@ -2129,8 +2129,8 @@ Module Module2
                  "[MaHangHoa] [nvarchar](20) NULL,[SoBon] [nvarchar](10) NULL,[NiemGiao] [nvarchar](50) NULL," & _
                  "[IsTankSplit] [nvarchar](10) NULL,[TiTrongTren] [nvarchar](10) NULL,[TiTrongGiua] [nvarchar](10) NULL," & _
                  "[TiTrongDuoi] [nvarchar](10) NULL,[FormRequestCodeSeperationLayer] [nvarchar](100) NULL," & _
-                 "[FormRequestDateSeperationLayer] [nvarchar](100) NULL,[CrDate] [datetime] default getdate() ,[CrUser] [nvarchar](100) NULL,[UpdDate] [datetime] default getdate() ,[UpdUser] [nvarchar](100) NULL," & _
-                 "[ID] [int] IDENTITY(1,1) NOT NULL) end;"
+                 "[FormRequestDateSeperationLayer] [nvarchar](100) NULL,[CrDate] [datetime] default getdate() ,[CrUser] [nvarchar](100) NULL,[UpdDate] [datetime] default getdate() ,[UpdUser] [nvarchar](100) NULL,BatNum nvarchar(100), SDA_Amount decimal(10,6)," & _
+                 "[ID] [int] IDENTITY(1,1) NOT NULL, CONSTRAINT PK_tblPhuongTien_Cert_CertNo PRIMARY KEY NONCLUSTERED (CertNo)) end;"
             If g_Services.Sys_Execute(p_SQL, _
                                       p_Error) = False Then
 

@@ -211,6 +211,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dtPhuongTienCert.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dtTankCert.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtTankCert.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtTichKeMauJetA1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtTichKeMauJetA1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmImfor_HoaDon.Designer.vb">
       <DependentUpon>frmImfor_HoaDon.vb</DependentUpon>
     </Compile>
@@ -337,6 +347,18 @@
       <DependentUpon>KV2_PhuongTien_Cert_Sub2.vb</DependentUpon>
     </Compile>
     <Compile Include="KV2_PhuongTien_Cert_Sub2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TankCert.Designer.vb">
+      <DependentUpon>KV2_TankCert.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TankCert.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KV2_TicKeMau.Designer.vb">
+      <DependentUpon>KV2_TicKeMau.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KV2_TicKeMau.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RpDataset1.Designer.vb">
@@ -886,6 +908,12 @@
     <EmbeddedResource Include="KV2_PhuongTien_Cert_Sub2.resx">
       <DependentUpon>KV2_PhuongTien_Cert_Sub2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TankCert.resx">
+      <DependentUpon>KV2_TankCert.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KV2_TicKeMau.resx">
+      <DependentUpon>KV2_TicKeMau.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="rptBienBanDoBe.resx">
       <DependentUpon>rptBienBanDoBe.vb</DependentUpon>
@@ -1207,6 +1235,28 @@
     </None>
     <None Include="dtPhuongTienCert.xss">
       <DependentUpon>dtPhuongTienCert.xsd</DependentUpon>
+    </None>
+    <None Include="dtTankCert.xsc">
+      <DependentUpon>dtTankCert.xsd</DependentUpon>
+    </None>
+    <None Include="dtTankCert.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTankCert.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dtTankCert.xss">
+      <DependentUpon>dtTankCert.xsd</DependentUpon>
+    </None>
+    <None Include="dtTichKeMauJetA1.xsc">
+      <DependentUpon>dtTichKeMauJetA1.xsd</DependentUpon>
+    </None>
+    <None Include="dtTichKeMauJetA1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtTichKeMauJetA1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dtTichKeMauJetA1.xss">
+      <DependentUpon>dtTichKeMauJetA1.xsd</DependentUpon>
     </None>
     <None Include="dtTTBX.xsc">
       <DependentUpon>dtTTBX.xsd</DependentUpon>

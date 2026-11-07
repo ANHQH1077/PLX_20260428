@@ -59,6 +59,7 @@
         Dim p_maPhuongTien As String = ""
         Dim p_SoTichKe As String = ""
         Dim p_NgayXuat As String = ""
+        Dim p_CertNo As String = ""
         Dim p_FormRequestCode As String
         Dim p_RptPhuongTienCert As New ReportSetup.Class1(g_Config_XMLDatatable, _
                                                                  g_Company_Code, _
@@ -72,8 +73,9 @@
             p_SoTichKe = p_DataRow.Item("SoTichKe").ToString.Trim
             p_FormRequestCode = p_DataRow.Item("FormRequestCode").ToString.Trim
             p_NgayXuat = CDate(p_DataRow.Item("NgayXuat")).ToString("yyyyMMdd")
+            p_CertNo = p_DataRow.Item("CertNo").ToString.Trim
             ' ShowMessageBox("", "")
-            'p_RptPhuongTienCert.clsInChungChiPhuongTien(
+            p_RptPhuongTienCert.clsInChungChiPhuongTien(p_CertNo, p_FormRequestCode, p_SoTichKe, p_NgayXuat)
 
 
         End If

@@ -4556,24 +4556,29 @@ Module Report
         Dim p_Value As String = ""
         Dim p_Table1, p_Table2 As DataTable
         Dim p_Report As New KV2_PhuongTien_Cert
+        Dim p_Report1 As New KV2_PhuongTien_Cert_Sub
+        Dim p_Report2 As New KV2_PhuongTien_Cert_Sub1
+        Dim p_Report3 As New KV2_PhuongTien_Cert_Sub2
+        Dim p_DanhSachNgan() As String
+        Dim p_Int As Integer
         p_Value = "null"
         If p_CertNo <> "" Then
-            p_Value = p_CertNo
+            p_Value = "'" & p_CertNo & "'"
         End If
         p_SQL = p_SQL & p_Value
         p_Value = ",null"
         If p_FormRequestCode <> "" Then
-            p_Value = p_FormRequestCode
+            p_Value = ",'" & p_FormRequestCode & "'"
         End If
         p_SQL = p_SQL & p_Value
         p_Value = ",null"
         If p_SoTichKe <> "" Then
-            p_Value = p_SoTichKe
+            p_Value = ",'" & p_SoTichKe & "'"
         End If
         p_SQL = p_SQL & p_Value
         p_Value = ",null"
         If p_NgayXuat <> "" Then
-            p_Value = p_NgayXuat
+            p_Value = ",'" & p_NgayXuat & "'"
         End If
         p_SQL = p_SQL & p_Value
 
@@ -4581,10 +4586,86 @@ Module Report
         If Not p_Dataset Is Nothing Then
             If p_Dataset.Tables.Count > 0 Then
                 p_Table1 = p_Dataset.Tables(0)
+                p_Dataset.Tables(0).TableName = "PhuongTien"
                 p_Table2 = p_Dataset.Tables(1)
+                p_Dataset.Tables(1).TableName = "Cert"
+                If p_Table2.Rows.Count > 0 Then
+                    If p_Table2.Rows(0).Item("DS_MaNgan").ToString.Trim <> "" Then
+                        p_DanhSachNgan = p_Table2.Rows(0).Item("DS_MaNgan").ToString.Split(",")
+                        If p_DanhSachNgan.Length > 0 Then
+                            For p_Int = 0 To p_DanhSachNgan.Length - 1
+                                p_Table2.Rows(0).Item("Ngan" & p_Int + 1) = p_DanhSachNgan(p_Int)
+                            Next
+                        End If
+                    End If
+                End If
             End If
         End If
-        p_Report.DataSource = p_Dataset
+        p_Report.DataSource = p_Table2
+        p_Report1.DetailReport.DataSource = p_Table1
+        p_Report.XrSubreport1.ReportSource = p_Report1
+        p_Report2.DataSource = p_Table2
+        p_Report.XrSubreport2.ReportSource = p_Report2
+        p_Report3.DataSource = p_Table2
+        p_Report.XrSubreport3.ReportSource = p_Report3
+        ShowReport(p_Report)
+
+    End Sub
+
+
+
+    Public Sub mdlRptChungChiBonXuat(ByVal p_BonXuat As String, ByVal p_FormRequestCode As String)
+        Dim p_Dataset As DataSet
+        Dim p_SQL As String = "exec  FPT_ChungChiBonXuat "
+        Dim p_Value As String = ""
+        Dim p_Table1, p_Table2 As DataTable
+        Dim p_Report As New KV2_TankCert
+        
+
+        Dim p_Int As Integer
+        p_Value = "null"
+        If p_BonXuat <> "" Then
+            p_Value = "'" & p_BonXuat & "'"
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Value = ",null"
+        If p_FormRequestCode <> "" Then
+            p_Value = ",'" & p_FormRequestCode & "'"
+        End If
+
+        p_Table1 = GetDataTable(p_SQL, p_SQL)
+        
+        p_Report.DataSource = p_Table1
+       
+        ShowReport(p_Report)
+
+    End Sub
+
+
+
+    Public Sub mdlTichKeMau(ByVal p_SoTichKe As String, ByVal p_NgayThang As String)
+        Dim p_Dataset As DataSet
+        Dim p_SQL As String = "exec  FPT_TichKeMau "
+        Dim p_Value As String = ""
+        Dim p_Table1, p_Table2 As DataTable
+        Dim p_Report As New KV2_TicKeMau
+
+
+        Dim p_Int As Integer
+        p_Value = "null"
+        If p_SoTichKe <> "" Then
+            p_Value = "'" & p_SoTichKe & "'"
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Value = ",null"
+        If p_NgayThang <> "" Then
+            p_Value = ",'" & p_NgayThang & "'"
+        End If
+        p_SQL = p_SQL & p_Value
+        p_Table1 = GetDataTable(p_SQL, p_SQL)
+
+        p_Report.DataSource = p_Table1
+
         ShowReport(p_Report)
 
     End Sub
