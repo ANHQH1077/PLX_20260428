@@ -1,0 +1,11 @@
+ If p_DataTable.Rows(p_Count).Item("Date_ND").ToString.Trim <> "" Then
+                                i_date = Mid(p_DataTable.Rows(p_Count).Item("Date_ND").ToString.Trim, 5, 2)
+                                i_date = i_date & "/" & Strings.Right(p_DataTable.Rows(p_Count).Item("Date_ND").ToString.Trim, 2)
+                                i_date = i_date & "/" & Strings.Left(p_DataTable.Rows(p_Count).Item("Date_ND").ToString.Trim, 4)
+                                Try
+                                    p_Datarow.Item("NgayThang") = CDate(i_date).ToString("MM/dd/yyyy")
+                                Catch ex As Exception
+
+                                End Try
+
+                            End If

@@ -90,7 +90,7 @@ Partial Public Class KV2_TicKeMau
         Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(113.5415!, 280.5417!)
         Me.XrLabel29.Name = "XrLabel29"
         Me.XrLabel29.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel29.SizeF = New System.Drawing.SizeF(14.0!, 26.99998!)
+        Me.XrLabel29.SizeF = New System.Drawing.SizeF(14.0!, 31.3334!)
         Me.XrLabel29.StylePriority.UseFont = False
         Me.XrLabel29.StylePriority.UseTextAlignment = False
         Me.XrLabel29.Text = ":"
@@ -114,7 +114,7 @@ Partial Public Class KV2_TicKeMau
         Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(113.5416!, 222.0416!)
         Me.XrLabel27.Name = "XrLabel27"
         Me.XrLabel27.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel27.SizeF = New System.Drawing.SizeF(14.0!, 26.99998!)
+        Me.XrLabel27.SizeF = New System.Drawing.SizeF(14.0!, 30.29166!)
         Me.XrLabel27.StylePriority.UseFont = False
         Me.XrLabel27.StylePriority.UseTextAlignment = False
         Me.XrLabel27.Text = ":"
@@ -126,7 +126,7 @@ Partial Public Class KV2_TicKeMau
         Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(113.5416!, 191.75!)
         Me.XrLabel26.Name = "XrLabel26"
         Me.XrLabel26.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel26.SizeF = New System.Drawing.SizeF(14.0!, 26.99998!)
+        Me.XrLabel26.SizeF = New System.Drawing.SizeF(14.0!, 31.49998!)
         Me.XrLabel26.StylePriority.UseFont = False
         Me.XrLabel26.StylePriority.UseTextAlignment = False
         Me.XrLabel26.Text = ":"

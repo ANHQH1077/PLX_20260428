@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<Config>  
+  <DB_NAME>KV2_20250426</DB_NAME>
+  <DB_USER>sa</DB_USER>
+  <DB_PASS>a@123456</DB_PASS>
+  <DB_IPADDRESS>10.200.0.42</DB_IPADDRESS>
+  <DBTYPE>SQL</DBTYPE>    
+  <DB_PORT>1433</DB_PORT>
+<TIMEOUT>301</TIMEOUT>  
+</Config>

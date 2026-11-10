@@ -1,0 +1,8 @@
+1. copy len may chu
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+
+sc create A_KV2_Sync_Deliveries binPath=  "D:\Service_20210518\B1Service20.exe"
+
+Sc delete A_KV2_Sync_Deliveries
