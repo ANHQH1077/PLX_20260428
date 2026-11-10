@@ -80,6 +80,9 @@
     <Reference Include="ECCDestination">
       <HintPath>..\DLL\ECCDestination.dll</HintPath>
     </Reference>
+    <Reference Include="ECCDestination_API">
+      <HintPath>..\DLL\ECCDestination_API.dll</HintPath>
+    </Reference>
     <Reference Include="FPTBUSSINESS">
       <HintPath>..\DLL\FPTBUSSINESS.dll</HintPath>
     </Reference>
@@ -100,8 +103,7 @@
     <Reference Include="sapnco_utils">
       <HintPath>..\DLL\sapnco_utils.dll</HintPath>
     </Reference>
-    <Reference Include="SAP_OBJECT, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SAP_OBJECT">
       <HintPath>..\DLL\SAP_OBJECT.dll</HintPath>
     </Reference>
     <Reference Include="SynMaster">

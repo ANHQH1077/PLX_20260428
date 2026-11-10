@@ -84,7 +84,7 @@
                     p_Err = ""
                     g_TimeOut = 50
 
-                    SaveLog("A1", "", "")
+                    '  SaveLog("A1", "", "")
 
                     If g_SAP_OBJECT.clsSyncDeliveries_DoListAuto(l_ztb, g_SapConnectionString, i_date, i_dateTo,
                                             g_ShPoint, g_TimeOut, p_DataTable,
@@ -150,7 +150,7 @@
 
                         Next
                         p_Err = ""
-                        SaveLog("A2", "", "")
+                        'SaveLog("A2", "", "")
                         'p_DataGrid.WriteXml("C:\tmp\KV2.xml")
                         If p_DataGrid.Rows.Count > 0 Then
                             ' p_Row = p_DataTable.Select("Resource_Nd='N05'")
@@ -289,12 +289,12 @@ Line_KT:
                                            " VALUES('" & p_DataRow.Item("SoLenh").ToString.Trim & "'" &
                                                    ",'" & p_NgayHieuLuc & "','Y','" & p_User_Name & "', getdate(),N'" & p_Error & "')"
 
-                                SaveLog("D2", "", "")
+                                'SaveLog("D2", "", "")
                             Else
                                 p_Row = p_TblPost.NewRow
                                 p_Row.Item("SoLenh") = p_DataRow.Item("SoLenh").ToString.Trim
                                 p_TblPost.Rows.Add(p_Row)
-                                SaveLog("A3", "", "")
+                                'SaveLog("A3", "", "")
 
                                 p_SQL = "INSERT INTO [FPT_SoLenh_Auto_HIST] ([SoLenh],[NgayThang],[TrangThai],[Createby],[CreateDate],[sDesc],[StatusCode])" &
                                            " VALUES('" & p_DataRow.Item("SoLenh").ToString.Trim & "'" &

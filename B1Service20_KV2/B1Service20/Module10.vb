@@ -100,7 +100,6 @@ Module Module10
 
        
 
-        '' DongBoLenhXuat()
 
         ExecRuntimeToKhai()
         SynCustomer()
